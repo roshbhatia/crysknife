@@ -3,7 +3,7 @@
 CLI 0.1.2258 is locked in this directory.
 Ergogen supplies key positions and KiCad footprints.
 `scripts/generate_tscircuit.py` generates React boards for both complete 21-key halves.
-The model includes every copper pad, non-plated hole, and net from the placement source.
+The model includes every copper pad, non-plated hole, net, and artwork rectangle from the placement source.
 Single-pad nets remain reserved contacts; they need no copper connection.
 These React boards are routing models. They are not a completed electrical schematic or assembly BOM.
 
@@ -19,6 +19,10 @@ npm run route
 
 Generated JSX lives in `tscircuit/generated/`.
 Circuit JSON, previews, and check reports live in `build/tscircuit/`.
+`left-appearance.svg` and `right-appearance.svg` show white mask and black Frida artwork and lettering.
+The React board color properties and KiCad stackup also specify white mask and black silkscreen.
+The editor can retain its layer colors in the 2D routing view.
+Select white mask and black silkscreen when creating the fabrication order.
 `index.circuit.tsx` opens the left board by default.
 `left.circuit.tsx` and `right.circuit.tsx` provide separate named preview entries.
 Both use local autorouting and disable automatic part searches.

@@ -4,7 +4,7 @@ import math
 from pathlib import Path
 from kicad_sexp import parse, children, child
 
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
 
 root = Path(__file__).resolve().parents[1]
@@ -49,6 +49,39 @@ for side, center in [("left", 159), ("right", 176)]:
                         for px, py, radius in keepouts)
             if size >= minimum_feature and clear:
                 pixels.append((x - size / 2, y - size / 2, x + size / 2, y + size / 2))
+    font = ImageFont.truetype(str(root / "assets/kingjola.ttf"), 512)
+    title_center = 110 if side == "left" else 225
+    for label, cy, max_width, max_height in [
+        ("fridakeeb", 72, 34, 4),
+        ("(corne-derived v0.1)", 88, 30, 3.2),
+        ("by @fraud", 91, 24, 2.6),
+    ]:
+        box = font.getbbox(label)
+        mask = Image.new("L", (box[2]-box[0], box[3]-box[1]))
+        ImageDraw.Draw(mask).text((-box[0], -box[1]), label, font=font, fill=255)
+        grid = 0.2
+        mask.thumbnail((round(max_width/grid), round(max_height/grid)), Image.Resampling.LANCZOS)
+        x_start = title_center-mask.width*grid/2
+        y_start = cy-mask.height*grid/2
+        for row in range(mask.height):
+            for col in range(mask.width):
+                if mask.getpixel((col, row)) < 100:
+                    continue
+                x, y = x_start+(col+0.5)*grid, y_start+(row+0.5)*grid
+                clear = all(math.hypot(x-px, y-py) > radius+grid/math.sqrt(2)
+                            for px, py, radius in keepouts)
+                assert clear, (side, label, x, y, "Lettering overlaps a pad or switch hole")
+                pixels.append((x-grid/2, y-grid/2, x+grid/2, y+grid/2))
+    stackup = """(stackup
+      (layer "F.SilkS" (type "Top Silk Screen") (color "Black"))
+      (layer "F.Mask" (type "Top Solder Mask") (color "White"))
+      (layer "F.Cu" (type "copper") (thickness 0.035))
+      (layer "dielectric 1" (type "core") (thickness 1.53) (material "FR4")
+        (epsilon_r 4.5) (loss_tangent 0.02))
+      (layer "B.Cu" (type "copper") (thickness 0.035))
+      (layer "B.Mask" (type "Bottom Solder Mask") (color "White"))
+      (layer "B.SilkS" (type "Bottom Silk Screen") (color "Black")))"""
+    text = text.replace('(setup', '(setup\n'+stackup, 1)
     rectangles = "\n".join(
         f'(fp_rect (start {x0-center:.4f} {y0-82:.4f}) (end {x1-center:.4f} {y1-82:.4f}) '
         '(stroke (width 0) (type default)) (fill solid) (layer "F.SilkS"))'

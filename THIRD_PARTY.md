@@ -16,3 +16,6 @@ The local controller adapter changes only the 24 header drill diameters in gener
 `assets/frida.png` is an unchanged copy of `/Users/roshan/Desktop/frida.png`, supplied by the user.
 `scripts/add_artwork.py` resamples its halftone for draft PCB silkscreen placement.
 The original source image remains unchanged.
+
+`assets/kingjola.ttf` is copied from the user-installed KingjolA font in `/Users/roshan/Library/Fonts/`.
+It supplies the requested lettering, rasterized into silkscreen geometry.

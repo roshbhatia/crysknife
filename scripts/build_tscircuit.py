@@ -31,3 +31,5 @@ for side in ("left", "right"):
         "-o", str(ROOT / f"build/tscircuit/{side}-routed.svg"))
 
 run("bun", "tscircuit/check_live_entries.mjs")
+
+run("node", "tscircuit/render_appearance.mjs")

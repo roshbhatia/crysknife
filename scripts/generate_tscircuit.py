@@ -62,6 +62,19 @@ def descriptor(side):
     def convert(p):
         return {"x": p[0] - origin[0], "y": origin[1] - p[1]}
 
+    silkscreen = []
+    for fp in children(board, "footprint"):
+        if not any(p[1] == "Reference" and p[2] == "ART1" for p in children(fp, "property")):
+            continue
+        at = child(fp, "at")
+        fx, fy = map(float, at[1:3])
+        for rect in children(fp, "fp_rect"):
+            assert child(rect, "layer")[1] == "F.SilkS"
+            x0, y0 = point(rect, "start")
+            x1, y1 = point(rect, "end")
+            silkscreen.append({**convert((fx + (x0+x1)/2, fy + (y0+y1)/2)),
+                               "width": x1-x0, "height": y1-y0})
+    assert silkscreen, "Apply artwork before generating the React model"
     pads = []
     holes = []
     for fp in children(board, "footprint"):
@@ -95,12 +108,12 @@ def descriptor(side):
                          "holeDiameter": float(drill[1]) if drill else None,
                          "net": net[2] if net else None, "netCode": int(net[1]) if net else 0})
     return {"side": side, "origin": origin, "pads": pads, "holes": holes,
-            "outline": [convert(p) for p in outline]}
+            "outline": [convert(p) for p in outline], "silkscreen": silkscreen}
 
 
 def jsx(data, routing):
     lines = ['export default () => (',
-             f'<board outline={{{json.dumps(data["outline"])}}} layers={{2}} thickness={{1.6}} '
+             f'<board solderMaskColor="white" silkscreenColor="black" outline={{{json.dumps(data["outline"])}}} layers={{2}} thickness={{1.6}} '
              f'autorouter="auto-local" routingDisabled={{{str(not routing).lower()}}} '
              f'placementDrcChecksDisabled={{{str(routing).lower()}}} '
              'minTraceWidth={0.25} minTraceToPadEdgeClearance={0.2} '
@@ -131,6 +144,10 @@ def jsx(data, routing):
                      f'footprint={{<footprint>{primitive}</footprint>}} />')
     for hole in data["holes"]:
         lines.append(f'<hole pcbX={{{hole["x"]}}} pcbY={{{hole["y"]}}} diameter={{{hole["diameter"]}}} />')
+    for rect in data["silkscreen"]:
+        lines.append(f'<silkscreenrect pcbX={{{rect["x"]}}} pcbY={{{rect["y"]}}} '
+                     f'width={{{rect["width"]}}} height={{{rect["height"]}}} '
+                     'layer="top" filled={true} stroke="none" strokeWidth={0} />')
     nets = sorted({p["net"] for p in data["pads"] if p["net"]})
     for index, net in enumerate(nets):
         selectors = [f'.{p["name"]} > .pin1' for p in data["pads"] if p["net"] == net]

@@ -66,6 +66,16 @@ def check(side, stage):
         close(actual["hole_diameter"], source["diameter"])
     board = next(n for n in data if n["type"] == "pcb_board")
     close(board["thickness"], 1.6)
+    assert board["solder_mask_color"] == "white"
+    assert board["silkscreen_color"] == "black"
+    artwork = [n for n in data if n["type"] == "pcb_silkscreen_rect"]
+    assert len(artwork) == len(expected["silkscreen"])
+    for source, actual in zip(expected["silkscreen"], artwork):
+        assert actual["layer"] == "top" and actual["is_filled"]
+        for axis in ("x", "y"):
+            close(actual["center"][axis], source[axis])
+        for dimension in ("width", "height"):
+            close(actual[dimension], source[dimension])
     assert len(board["outline"]) == len(expected["outline"])
     for a, b in zip(board["outline"], expected["outline"]):
         for axis in ("x", "y"):
