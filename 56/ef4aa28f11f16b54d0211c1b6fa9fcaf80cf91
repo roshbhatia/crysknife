@@ -1,0 +1,43 @@
+firmware/config/fridakeeb.keymap
+  s_df88920dc610de::t_a3fa667d0c5baa 1-34
+firmware/boards/shields/fridakeeb/fridakeeb_left.overlay
+  s_df88920dc610de::t_a3fa667d0c5baa 1-10
+firmware/config/west.yml
+  s_df88920dc610de::t_a3fa667d0c5baa 1-11
+scripts/build_firmware.py
+  s_df88920dc610de::t_65d6eec2cb8568 1-35
+firmware/boards/shields/fridakeeb/fridakeeb_right.overlay
+  s_df88920dc610de::t_a3fa667d0c5baa 1-40
+.github/workflows/firmware.yml
+  s_df88920dc610de::t_65d6eec2cb8568 1-34
+README.md
+  s_df88920dc610de::t_07b20344946b64 61-71
+firmware/boards/shields/fridakeeb/fridakeeb.dtsi
+  s_df88920dc610de::t_a3fa667d0c5baa 1-35
+firmware/boards/shields/fridakeeb/Kconfig.shield
+  s_df88920dc610de::t_a3fa667d0c5baa 1-5
+firmware/boards/shields/fridakeeb/Kconfig.defconfig
+  s_df88920dc610de::t_a3fa667d0c5baa 1-22
+tools.lock.json
+  s_df88920dc610de::t_a3fa667d0c5baa 7-8,11
+  s_df88920dc610de::t_07b20344946b64 9-10
+firmware/zephyr/module.yml
+  s_df88920dc610de::t_a3fa667d0c5baa 1-2
+  s_df88920dc610de::t_65d6eec2cb8568 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "56ef4aa28f11f16b54d0211c1b6fa9fcaf80cf91",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
