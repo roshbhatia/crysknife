@@ -1,0 +1,23 @@
+scripts/build_firmware.py
+  s_df88920dc610de::t_c03164a2d6c6b2 15
+README.md
+  s_df88920dc610de::t_776d4ab5b8a52d 78-79
+firmware/config/west.lock.yml
+  s_df88920dc610de::t_1ae2885b6e8206 1-313
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e56183e1661efe75620cf1e7c5db5c65888a5167",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
