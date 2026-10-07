@@ -1,0 +1,22 @@
+if SHIELD_FRIDAKEEB_LEFT || SHIELD_FRIDAKEEB_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_POINTING
+    default y
+
+endif
+
+if SHIELD_FRIDAKEEB_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Fridakeeb"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config PS2
+    default y
+
+endif

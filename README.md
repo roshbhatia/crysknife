@@ -58,6 +58,17 @@ The unrouted drafts are expected to have unconnected nets and are not ready for 
 The placement check reads KiCad pads to verify matrix topology, diode polarity, socket assembly sides, mirroring, and controller hole dimensions.
 It does not replace electrical, routing, or physical validation.
 
+## Firmware draft
+
+`firmware/` defines a nice!nano v2 shield with the right half as the central.
+Its pin assignment matches the PCB matrix draft.
+The right half connects the TrackPoint data, clock, and reset to P2, P3, and P4.
+The keymap provides QWERTY, symbols, Bluetooth selection, and mouse buttons.
+The GitHub Actions workflow builds both halves and a settings-reset image.
+It pins ZMK, the external PS/2 driver, the build container, and action revisions.
+Artifacts include UF2 files, compiled devicetree, Kconfig, and resolved dependency revisions.
+These are integration drafts until the builds and physical hardware tests pass.
+
 ## Accepted requirements
 
 - Three rows, six columns, and three thumb keys per half.

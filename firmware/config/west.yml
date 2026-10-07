@@ -1,0 +1,11 @@
+manifest:
+  projects:
+    - name: zmk
+      url: https://github.com/zmkfirmware/zmk
+      revision: 5b51501fead672c41b5cfb396f3dafe0894bf4e9
+      import: app/west.yml
+    - name: ps2-trackpoint
+      url: https://github.com/badjeff/kb_zmk_ps2_mouse_trackpoint_driver
+      revision: 7ab7846a95b233c3ada0e0605b972f36353e7bc4
+  self:
+    path: config
