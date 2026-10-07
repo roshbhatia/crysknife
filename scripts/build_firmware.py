@@ -32,4 +32,4 @@ artifacts.mkdir(parents=True, exist_ok=True)
 for name in ["zmk.uf2", "zephyr.dts", ".config"]:
     shutil.copy2(output / "zephyr" / name, artifacts / name)
 with (artifacts / "west-frozen.yml").open("w") as manifest:
-    subprocess.run(["west", "manifest", "--freeze"], cwd=workspace, stdout=manifest, check=True)
+    subprocess.run(["west", "manifest", "--freeze", "--active-only"], cwd=workspace, stdout=manifest, check=True)
