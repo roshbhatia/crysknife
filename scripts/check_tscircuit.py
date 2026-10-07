@@ -23,6 +23,9 @@ def check(side, stage):
     ports = {components[n["source_component_id"]]: n for n in data if n["type"] == "source_port"}
     nets = {n["name"]: n["subcircuit_connectivity_map_key"] for n in data if n["type"] == "source_net"}
     names = sorted({p["net"] for p in expected["pads"] if p["net"]})
+    required = {f"N{i}" for i, net in enumerate(names)
+                if sum(p["net"] == net for p in expected["pads"]) > 1}
+    assert set(nets) == required, (set(nets), required)
     net_keys = {net: nets[f"N{i}"] for i, net in enumerate(names) if f"N{i}" in nets}
     for source in expected["pads"]:
         actual = pads[source["name"]]

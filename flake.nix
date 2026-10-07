@@ -17,6 +17,7 @@
           default = pkgs.mkShell {
             packages = [
               pkgs.nodejs_24
+              pkgs.bun
               (pkgs.python3.withPackages (ps: [ ps.pillow ]))
               pkgs.librsvg
               pkgs.poppler-utils
