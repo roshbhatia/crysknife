@@ -1,0 +1,21 @@
+THIRD_PARTY.md
+  s_df88920dc610de::t_7cc1199a27fcc1 21-22
+scripts/add_artwork.py
+  s_df88920dc610de::t_7cc1199a27fcc1 59-60,62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "76017315f1dbf9242ded8123b5d38633ccfaef1b",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
