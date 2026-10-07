@@ -1,0 +1,51 @@
+scripts/split_preview.py
+  s_df88920dc610de::t_66560c1078a4ac 1-2,4-7,9-23,25-42
+  s_df88920dc610de::t_dba645a430ec88 3,43-47
+  s_df88920dc610de::t_f504568a9d4475 8,24
+THIRD_PARTY.md
+  s_df88920dc610de::t_92d82ec265e1f2 1-12
+package.json
+  s_df88920dc610de::t_66560c1078a4ac 6-7
+  s_df88920dc610de::t_3eb2819167c8bb 1-5,8-12
+.gitignore
+  s_df88920dc610de::t_3eb2819167c8bb 1-4
+README.md
+  s_df88920dc610de::t_3a3b70bfbf42c0 15,43
+  s_df88920dc610de::t_66560c1078a4ac 26
+  s_df88920dc610de::t_d98a36aaf40fdd 40
+  s_df88920dc610de::t_1ef7f87684418d 52-86
+  s_df88920dc610de::t_92d82ec265e1f2 1-2,4-12,17-25,27-29,33-39,41,46-51
+  s_df88920dc610de::t_489c6228d5bce8 45
+  s_df88920dc610de::t_f504568a9d4475 3,13-14,16,30-31,42,44
+  s_df88920dc610de::t_dba645a430ec88 32
+flake.nix
+  s_df88920dc610de::t_3eb2819167c8bb 1-13,15-18
+  s_df88920dc610de::t_31e5202a32f928 14
+ergogen/layout.yaml
+  s_df88920dc610de::t_1e9fce6a0ad895 106-341,349,355,361,368,378,384,390,401,408,415,422,429,436,443
+  s_df88920dc610de::t_c2ad6a87665982 10-11
+  s_df88920dc610de::t_f504568a9d4475 679
+  s_df88920dc610de::t_f59bd4a2484fd6 468,472,476,480,550,576,578,582,588,594,600,602,612,615,619,623,625,628,632,635,639,641,645,649,651,655,657-660,662-663,665-669,671-672,674-675,677,680-684
+ergogen/LICENSE.corney-island
+  s_df88920dc610de::t_36c429a247abcd 1-21
+flake.lock
+  s_df88920dc610de::t_213089a49b07a6 1-27
+package-lock.json
+  s_df88920dc610de::t_59ba2f4fe708f1 1-645
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a17bfab92331937aad497f382d910300f326be06",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
