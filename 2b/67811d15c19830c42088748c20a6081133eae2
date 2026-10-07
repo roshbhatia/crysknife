@@ -1,0 +1,33 @@
+experiments/tscircuit/check_geometry.py
+  s_df88920dc610de::t_925ae2b253b297 1-21
+experiments/tscircuit/package.json
+  s_df88920dc610de::t_3f535edcbc45cd 1-5
+.gitignore
+  s_df88920dc610de::t_a896e041b1e932 5
+experiments/tscircuit/index.circuit.tsx
+  s_df88920dc610de::t_5fffefe7ab7b38 1-9
+experiments/tscircuit/.gitignore
+  s_df88920dc610de::t_925ae2b253b297 1-2
+experiments/tscircuit/README.md
+  s_df88920dc610de::t_925ae2b253b297 1-39
+experiments/tscircuit/MxHotswap.tsx
+  s_df88920dc610de::t_0128db68af772b 1-16
+experiments/tscircuit/package-lock.json
+  s_df88920dc610de::t_76db0c2985ca51 1-5407
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2b67811d15c19830c42088748c20a6081133eae2",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
