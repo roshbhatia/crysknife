@@ -1,0 +1,12 @@
+{
+  "name": "fridakeeb",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "layout": "ergogen ergogen/layout.yaml --output build/layout --debug",
+    "preview": "python3 scripts/split_preview.py"
+  },
+  "devDependencies": {
+    "ergogen": "4.1.0"
+  }
+}

@@ -1,0 +1,4 @@
+.sysinit/
+node_modules/
+build/
+.DS_Store
