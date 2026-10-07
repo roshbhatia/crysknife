@@ -1,0 +1,49 @@
+flake.nix
+  s_df88920dc610de::t_105837da77d0f0 5-8,10,19
+tools.lock.json
+  s_df88920dc610de::t_01baddd90a7a4b 1-8
+ergogen/pcb.yaml
+  s_df88920dc610de::t_01baddd90a7a4b 71
+  s_df88920dc610de::t_150221d89b6614 56-58
+  s_df88920dc610de::t_f9104c4669786d 1-55,59-70,72-107
+package.json
+  s_df88920dc610de::t_f9104c4669786d 7
+  s_df88920dc610de::t_2871bb8544ac74 11-12
+README.md
+  s_df88920dc610de::t_150221d89b6614 9,17-19,30,40,42-52,54-57
+  s_df88920dc610de::t_921ffc19bbd655 41
+  s_df88920dc610de::t_43c913bde17857 53,58-59
+  s_df88920dc610de::t_fa77445f4075fc 60
+scripts/kicad.py
+  s_df88920dc610de::t_01baddd90a7a4b 1-8,14-18,20
+  s_df88920dc610de::t_0ebb3b2e1c227a 9-13,19
+scripts/check_placement.py
+  s_df88920dc610de::t_0ebb3b2e1c227a 1-66,71
+  s_df88920dc610de::t_43c913bde17857 67-70
+THIRD_PARTY.md
+  s_df88920dc610de::t_150221d89b6614 8,11-14
+  s_df88920dc610de::t_921ffc19bbd655 7
+  s_df88920dc610de::t_5ee5200d11df7a 15
+scripts/generate_pcbs.cjs
+  s_df88920dc610de::t_f9104c4669786d 1-76
+flake.lock
+  s_df88920dc610de::t_a354148076f7de 3-19,38
+package-lock.json
+  s_df88920dc610de::t_67f412f9168500 11-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "96bae61eb74eeaf82dced4ddb8c741928a54b5d7",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
