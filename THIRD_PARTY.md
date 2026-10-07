@@ -18,4 +18,5 @@ The local controller adapter changes only the 24 header drill diameters in gener
 The original source image remains unchanged.
 
 `assets/kingjola.ttf` is copied from the user-installed KingjolA font in `/Users/roshan/Library/Fonts/`.
-It supplies the requested lettering, rasterized into silkscreen geometry.
+It supplies the requested title lettering, rasterized into silkscreen geometry.
+The caption uses Pillow’s bundled default font so digits and the @ symbol remain readable.

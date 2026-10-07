@@ -56,9 +56,10 @@ for side, center in [("left", 159), ("right", 176)]:
         ("(corne-derived v0.1)", 88, 30, 3.2),
         ("by @fraud", 91, 24, 2.6),
     ]:
-        box = font.getbbox(label)
+        label_font = font if label == "fridakeeb" else ImageFont.load_default(size=512)
+        box = label_font.getbbox(label)
         mask = Image.new("L", (box[2]-box[0], box[3]-box[1]))
-        ImageDraw.Draw(mask).text((-box[0], -box[1]), label, font=font, fill=255)
+        ImageDraw.Draw(mask).text((-box[0], -box[1]), label, font=label_font, fill=255)
         grid = 0.2
         mask.thumbnail((round(max_width/grid), round(max_height/grid)), Image.Resampling.LANCZOS)
         x_start = title_center-mask.width*grid/2
