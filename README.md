@@ -16,7 +16,8 @@ Touchpad geometry has been removed.
 One TrackPoint belongs on the right half; its module, stem position, and mounting remain open.
 The layout does not yet include TrackPoint mounting or gasket suspension.
 PCB placement includes switches, diodes, controller contacts, power, reset, and a battery connector.
-TrackPoint circuitry, schematic, routing, and manufacturing outputs remain incomplete.
+TrackPoint circuitry, the electrical schematic, and manufacturing outputs remain incomplete.
+The tscircuit pipeline routes the existing matrix and power placement drafts.
 Its inherited mounting holes describe the upstream sandwich assembly.
 No PCB assembly order is ready.
 
@@ -66,6 +67,25 @@ The original artwork remains unchanged; small dots are resampled for printing.
 The PCB workflow checks artwork with KiCad and uploads silkscreen previews.
 These checks allow the known unrouted connections and footprint-library warnings.
 They do not establish manufacturing readiness.
+
+## React routing and KiCad validation
+
+```sh
+npm ci --prefix tscircuit
+npm run route
+python3 scripts/kicad.py --python scripts/check_tscircuit_source.py
+python3 scripts/kicad.py --python scripts/merge_tscircuit_routes.py
+```
+
+Run these after generating the PCB placement and artwork.
+Ergogen supplies geometry; tscircuit performs local autorouting; KiCad preserves original footprints and checks the final copper.
+Generated React files appear under `tscircuit/generated/`.
+Routing evidence appears under `build/tscircuit/`.
+KiCad outputs are `build/pcb/fridakeeb_left_routed.kicad_pcb` and the corresponding right board.
+The GitHub workflow runs this pipeline without a local Docker service.
+Its routed DRC gate requires zero unconnected items and no unexpected violations.
+Read [the pipeline details](tscircuit/README.md) for conversion checks and known upstream limitations.
+These checks do not prove TrackPoint operation, mechanical fit, or factory acceptance.
 
 ## Firmware draft
 

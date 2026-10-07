@@ -2,7 +2,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
-import re
+from kicad_sexp import parse, children, child
 
 from PIL import Image, ImageFilter
 
@@ -15,30 +15,6 @@ minimum_feature = 0.2
 width = 40
 image = Image.open(source).convert("RGBA").getchannel("A").filter(ImageFilter.GaussianBlur(2))
 image.thumbnail((round(width / pitch), round(width / pitch)), Image.Resampling.BOX)
-
-
-def parse(text):
-    tokens = iter(re.findall(r'"(?:\\.|[^"\\])*"|[()]|[^\s()]+', text))
-    stack = []
-    for token in tokens:
-        if token == "(":
-            stack.append([])
-        elif token == ")":
-            node = stack.pop()
-            if not stack:
-                return node
-            stack[-1].append(node)
-        else:
-            stack[-1].append(token.strip('"'))
-    raise ValueError("Incomplete KiCad expression")
-
-
-def children(node, kind):
-    return [item for item in node if isinstance(item, list) and item[0] == kind]
-
-
-def child(node, kind):
-    return next(iter(children(node, kind)), None)
 
 
 for side, center in [("left", 159), ("right", 176)]:
