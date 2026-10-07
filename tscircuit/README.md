@@ -23,6 +23,16 @@ Circuit JSON, previews, and check reports live in `build/tscircuit/`.
 The right board is `generated/right-routed.circuit.tsx`.
 Both use local autorouting and disable automatic part searches.
 
+Start the live preview from the repository Nix shell:
+
+```sh
+tscircuit/node_modules/.bin/tsci dev tscircuit/index.circuit.tsx --port 3020
+```
+
+Open `http://localhost:3020/#file=tscircuit%2Findex.circuit.tsx`.
+Regenerate the routing models after editing Ergogen geometry.
+The development server watches the React files for changes.
+
 The adapter places each pad at its explicit world coordinate.
 It avoids the direct converter's bottom-side mirroring error.
 It retains pad dimensions, rotations, assembly sides, drills, and net membership.
@@ -30,7 +40,7 @@ Outline arcs are sampled with a maximum 0.005 mm chord error for routing.
 KiCad retains the original exact outline and silkscreen.
 
 The build first checks every pad and hole against the descriptor.
-Five placement diagnostics per half use overlapping bounding boxes for separated shapes.
+Up to five placement diagnostics per half use overlapping bounding boxes for separated shapes.
 The check calculates exact circle and rotated-rectangle clearance for those diagnostics.
 It rejects clearance below 0.2 mm and records the measured values.
 Only after this check does routing disable tscircuit's placement diagnostics.

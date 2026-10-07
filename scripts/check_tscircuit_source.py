@@ -31,7 +31,7 @@ for side in ("left", "right"):
         assert actual.GetNetCode() == expected["netCode"]
         close(pcbnew.ToMM(actual.GetSize().x), expected["width"])
         close(pcbnew.ToMM(actual.GetSize().y), expected["height"])
-        close((actual.GetOrientationDegrees() - expected["rotation"]) % 180, 0)
+        close((actual.GetOrientationDegrees() - expected["rotation"] + 90) % 180 - 90, 0)
         assert actual.GetShape() == {"circle": pcbnew.PAD_SHAPE_CIRCLE, "rect": pcbnew.PAD_SHAPE_RECT,
                                      "oval": pcbnew.PAD_SHAPE_OVAL, "roundrect": pcbnew.PAD_SHAPE_ROUNDRECT}[expected["shape"]]
         if expected["holeDiameter"]:
@@ -40,5 +40,7 @@ for side in ("left", "right"):
                 close(pcbnew.ToMM(axis), expected["holeDiameter"])
         else:
             assert actual.GetAttribute() == pcbnew.PAD_ATTRIB_SMD
-            assert actual.GetLayer() == (pcbnew.B_Cu if expected["layer"] == "bottom" else pcbnew.F_Cu)
+            copper = pcbnew.B_Cu if expected["layer"] == "bottom" else pcbnew.F_Cu
+            opposite = pcbnew.F_Cu if copper == pcbnew.B_Cu else pcbnew.B_Cu
+            assert actual.IsOnLayer(copper) and not actual.IsOnLayer(opposite), expected
     print(f"{side}: KiCad independently confirms all 230 pad/hole descriptors")

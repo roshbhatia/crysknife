@@ -21,6 +21,8 @@ run(sys.executable, "scripts/generate_tscircuit.py")
 for side in ("left", "right"):
     export(side, "placement")
     run(sys.executable, "scripts/check_tscircuit.py", side, "placement")
+    if side == "left":
+        run(sys.executable, "scripts/check_conversion_guards.py")
     export(side, "routed")
     run("node", "tscircuit/check_routing.mjs", f"build/tscircuit/{side}-routed.circuit.json",
         f"build/tscircuit/{side}-routing-checks.json")
