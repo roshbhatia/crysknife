@@ -19,8 +19,8 @@ npm run route
 
 Generated JSX lives in `tscircuit/generated/`.
 Circuit JSON, previews, and check reports live in `build/tscircuit/`.
-`index.circuit.tsx` opens the left board in the tscircuit editor.
-The right board is `generated/right-routed.circuit.tsx`.
+`index.circuit.tsx` opens the left board by default.
+`left.circuit.tsx` and `right.circuit.tsx` provide separate named preview entries.
 Both use local autorouting and disable automatic part searches.
 
 Start the live preview from the repository Nix shell:
@@ -29,7 +29,8 @@ Start the live preview from the repository Nix shell:
 tscircuit/node_modules/.bin/tsci dev tscircuit/index.circuit.tsx --port 3020
 ```
 
-Open `http://localhost:3020/#file=tscircuit%2Findex.circuit.tsx`.
+Open [left PCB](http://localhost:3020/#file=tscircuit%2Fleft.circuit.tsx)
+or [right PCB](http://localhost:3020/#file=tscircuit%2Fright.circuit.tsx).
 Regenerate the routing models after editing Ergogen geometry.
 The development server watches the React files for changes.
 
@@ -47,10 +48,11 @@ The check calculates exact circle and rotated-rectangle clearance for those diag
 It rejects clearance below 0.2 mm and records the measured values.
 Only after this check does routing disable tscircuit's placement diagnostics.
 
-The pinned core can report `Illegal Parameters` during its asynchronous routing DRC.
-The pipeline reruns all routing checks after the export finishes.
-A stale runtime diagnostic is accepted only when that full post-build check passes.
-Other runtime errors, routing errors, and copper shorts fail the build.
+The rounded battery pad specifies zero drill offsets explicitly.
+Undefined offsets crash the live copper checks; JSON serialization drops those fields and can conceal the cause.
+The build renders both named React entries and checks their live, unmodified database before JSON serialization.
+Runtime errors, routing errors, and copper shorts fail the build.
+Post-build routing checks remain an additional gate.
 Warnings about generic pad symbols and missing manufacturer metadata remain visible.
 
 The KiCad job independently checks every descriptor against `pcbnew`.

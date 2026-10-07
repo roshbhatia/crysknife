@@ -124,6 +124,7 @@ def jsx(data, routing):
             primitive = (f'<platedhole shape="circular_hole_with_rect_pad" '
                          f'rectPadWidth={{{pad["width"]}}} rectPadHeight={{{pad["height"]}}} '
                          f'rectBorderRadius={{{pad["radius"]}}} holeDiameter={{{pad["holeDiameter"]}}} '
+                         'holeOffsetX={0} holeOffsetY={0} '
                          f'{common} />')
         lines.append(f'<chip name="{pad["name"]}" pcbX={{{pad["x"]}}} pcbY={{{pad["y"]}}} '
                      f'layer="{pad["layer"]}" pcbRotation={{{pad["rotation"]}}} '

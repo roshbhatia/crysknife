@@ -29,3 +29,5 @@ for side in ("left", "right"):
     run(sys.executable, "scripts/check_tscircuit.py", side, "routed")
     run(str(CLI), "export", f"build/tscircuit/{side}-routed.circuit.json", "-f", "pcb-svg",
         "-o", str(ROOT / f"build/tscircuit/{side}-routed.svg"))
+
+run("bun", "tscircuit/check_live_entries.mjs")

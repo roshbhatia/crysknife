@@ -75,12 +75,6 @@ def check(side, stage):
              if n["type"] in ("pcb_hole", "pcb_smtpad")}
     diagnostics = []
     for error in errors:
-        if error["type"] == "source_runtime_error" and stage == "routed":
-            assert error["phase_name"] == "PcbDesignRuleChecks"
-            assert error["message"] == "DRC could not complete (routing): Illegal Parameters"
-            report = json.loads((ROOT / f"build/tscircuit/{side}-routing-checks.json").read_text())
-            assert report == [], report
-            continue
         assert error["type"] == "pcb_footprint_overlap_error", error
         ids = error.get("pcb_hole_ids", []) + error.get("pcb_smtpad_ids", [])
         assert len(ids) == 2, error

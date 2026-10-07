@@ -1,1 +1,1 @@
-export { default } from "./generated/left-routed.circuit"
+export { default } from "./left.circuit"
