@@ -44,7 +44,7 @@ def child(node, kind):
 for side, center in [("left", 159), ("right", 176)]:
     board_path = root / f"build/pcb/fridakeeb_{side}.kicad_pcb"
     text = board_path.read_text()
-    assert '"frida-silkscreen"' not in text, "Regenerate the PCB before applying artwork."
+    assert "frida-silkscreen" not in text, "Regenerate the PCB before applying artwork."
     board = parse(text)
     keepouts = []
     for footprint in children(board, "footprint"):
@@ -78,7 +78,7 @@ for side, center in [("left", 159), ("right", 176)]:
         '(stroke (width 0) (type default)) (fill solid) (layer "F.SilkS"))'
         for x0, y0, x1, y1 in pixels
     )
-    footprint = f'\n(footprint "frida-silkscreen" (layer "F.Cu") (at {center} 82) (attr board_only exclude_from_pos_files exclude_from_bom)\n{rectangles}\n)\n'
+    footprint = f'\n(footprint "fridakeeb:frida-silkscreen" (layer "F.Cu") (at {center} 82) (attr board_only exclude_from_pos_files exclude_from_bom)\n{rectangles}\n)\n'
     closing = text.rfind(")")
     board_path.write_text(text[:closing] + footprint + text[closing:])
     svg_rectangles = "".join(
