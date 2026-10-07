@@ -43,8 +43,8 @@ jobs:
       - run: kicad-cli pcb drc --format json --output build/pcb/left-drc.json build/pcb/fridakeeb_left.kicad_pcb
       - run: kicad-cli pcb drc --format json --output build/pcb/right-drc.json build/pcb/fridakeeb_right.kicad_pcb
       - run: python3 scripts/check_drc_draft.py
-      - run: kicad-cli pcb export svg --layers F.SilkS,Edge.Cuts --output build/pcb/preview/ build/pcb/fridakeeb_left.kicad_pcb
-      - run: kicad-cli pcb export svg --layers F.SilkS,Edge.Cuts --output build/pcb/preview/ build/pcb/fridakeeb_right.kicad_pcb
+      - run: kicad-cli pcb export svg --mode-single --black-and-white --fit-page-to-board --layers F.SilkS,Edge.Cuts --output build/pcb/left-silkscreen.svg build/pcb/fridakeeb_left.kicad_pcb
+      - run: kicad-cli pcb export svg --mode-single --black-and-white --fit-page-to-board --layers F.SilkS,Edge.Cuts --output build/pcb/right-silkscreen.svg build/pcb/fridakeeb_right.kicad_pcb
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: always()
         with:
