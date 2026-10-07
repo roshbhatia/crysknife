@@ -38,6 +38,8 @@ It avoids the direct converter's bottom-side mirroring error.
 It retains pad dimensions, rotations, assembly sides, drills, and net membership.
 Outline arcs are sampled with a maximum 0.005 mm chord error for routing.
 KiCad retains the original exact outline and silkscreen.
+Routing uses 0.3 mm clearance to holes and 0.6 mm to the board edge.
+These exceed KiCad's default 0.25 mm hole and 0.5 mm edge constraints.
 
 The build first checks every pad and hole against the descriptor.
 Up to five placement diagnostics per half use overlapping bounding boxes for separated shapes.

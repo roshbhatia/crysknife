@@ -104,7 +104,8 @@ def jsx(data, routing):
              f'autorouter="auto-local" routingDisabled={{{str(not routing).lower()}}} '
              f'placementDrcChecksDisabled={{{str(routing).lower()}}} '
              'minTraceWidth={0.25} minTraceToPadEdgeClearance={0.2} '
-             'minBoardEdgeClearance={0.3} minViaHoleDiameter={0.3} minViaPadDiameter={0.6}>']
+             'minTraceToHoleEdgeClearance={0.3} '
+             'minBoardEdgeClearance={0.6} minViaHoleDiameter={0.3} minViaPadDiameter={0.6}>']
     for pad in data["pads"]:
         common = 'portHints={["1"]}'
         if pad["kind"] == "smd":
