@@ -1,0 +1,34 @@
+scripts/add_artwork.py
+  s_df88920dc610de::t_fa2800b0896c12 7,13-14,16-17,69,71-72,74-75,90
+  s_df88920dc610de::t_a0fa2aa2dc0d0d 1-6,8-12,15,18-68,70,73,76-89,91
+.github/workflows/pcb.yml
+  s_df88920dc610de::t_f653316ef7ff67 1-43,45-51
+  s_df88920dc610de::t_104ee4fea49fd2 44
+scripts/check_placement.py
+  s_df88920dc610de::t_f653316ef7ff67 14-15
+scripts/check_drc_draft.py
+  s_df88920dc610de::t_104ee4fea49fd2 1-11
+README.md
+  s_df88920dc610de::t_104ee4fea49fd2 31,62-68
+  s_df88920dc610de::t_aac3a3c99f74b7 69
+THIRD_PARTY.md
+  s_df88920dc610de::t_104ee4fea49fd2 17-18
+flake.nix
+  s_df88920dc610de::t_534d854114e1d8 18-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "85574b4c61bd5368f7fe4d5feb368d128b324e9a",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
