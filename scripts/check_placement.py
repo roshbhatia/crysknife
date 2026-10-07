@@ -11,8 +11,12 @@ controllers = {}
 for side in ("left", "right"):
     board = pcbnew.LoadBoard(str(root / f"build/pcb/fridakeeb_{side}.kicad_pcb"))
     boards[side] = board
-    footprints = [fp for fp in board.GetFootprints()
-                  if fp.GetFPID().GetLibItemName() != "frida-silkscreen"]
+    artwork = [fp for fp in board.GetFootprints() if fp.GetReference() == "ART1"]
+    assert len(artwork) <= 1
+    if artwork:
+        assert len(list(artwork[0].Pads())) == 0
+        assert artwork[0].GetLayer() == pcbnew.F_Cu
+    footprints = [fp for fp in board.GetFootprints() if fp.GetReference() != "ART1"]
     assert len(footprints) == 46, (side, len(footprints))
     keys = [fp for fp in footprints if fp.GetReference().startswith("S")]
     diodes = [fp for fp in footprints if fp.GetReference().startswith("D")]

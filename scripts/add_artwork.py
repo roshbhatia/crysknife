@@ -78,7 +78,8 @@ for side, center in [("left", 159), ("right", 176)]:
         '(stroke (width 0) (type default)) (fill solid) (layer "F.SilkS"))'
         for x0, y0, x1, y1 in pixels
     )
-    footprint = f'\n(footprint "fridakeeb:frida-silkscreen" (layer "F.Cu") (at {center} 82) (attr board_only exclude_from_pos_files exclude_from_bom)\n{rectangles}\n)\n'
+    reference = '(property "Reference" "ART1" (at 0 0) (layer "F.SilkS") hide (effects (font (size 1 1) (thickness 0.15))))'
+    footprint = f'\n(footprint "fridakeeb:frida-silkscreen" (layer "F.Cu") (at {center} 82) (attr board_only exclude_from_pos_files exclude_from_bom)\n{reference}\n{rectangles}\n)\n'
     closing = text.rfind(")")
     board_path.write_text(text[:closing] + footprint + text[closing:])
     svg_rectangles = "".join(

@@ -9,6 +9,7 @@ component = next(item for item in data if item["type"] == "pcb_component"
                  and item["source_component_id"] == source["source_component_id"])
 pads = [item for item in data if item["type"] == "pcb_smtpad"
         and item["pcb_component_id"] == component["pcb_component_id"]]
+assert sorted(pad["port_hints"][0] for pad in pads) == ["1", "2"]
 expected = {"1": (-9 - 7.085, 2.54), "2": (-9 + 5.842, 5.08)}
 failures = []
 for pad in pads:
