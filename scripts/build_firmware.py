@@ -12,6 +12,7 @@ workspace = root / "build/firmware/workspace"
 workspace.mkdir(parents=True, exist_ok=True)
 config = workspace / "config"
 shutil.copytree(root / "firmware/config", config, dirs_exist_ok=True)
+shutil.copy2(config / "west.lock.yml", config / "west.yml")
 
 
 def run(*command):

@@ -75,6 +75,8 @@ The right half connects the TrackPoint data, clock, and reset to P2, P3, and P4.
 The keymap provides QWERTY, symbols, Bluetooth selection, and mouse buttons.
 The GitHub Actions workflow builds both halves and a settings-reset image.
 It pins ZMK, the external PS/2 driver, the build container, and action revisions.
+`firmware/config/west.lock.yml` freezes all active dependencies from the verified build.
+The build script uses this lock instead of resolving upstream branches again.
 Artifacts include UF2 files, compiled devicetree, Kconfig, and resolved dependency revisions.
 These are integration drafts until the builds and physical hardware tests pass.
 
