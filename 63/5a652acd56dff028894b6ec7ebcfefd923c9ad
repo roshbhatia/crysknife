@@ -1,0 +1,35 @@
+THIRD_PARTY.md
+  s_df88920dc610de::t_8af4113ca6f261 19-21
+tscircuit/render_appearance.mjs
+  s_df88920dc610de::t_8af4113ca6f261 1-8,10-11,13-25
+  s_df88920dc610de::t_7159548812bb9c 9,12
+scripts/add_artwork.py
+  s_df88920dc610de::t_9f3ddd35ebe095 71-74
+  s_df88920dc610de::t_4b46d6ca424a12 75-83
+  s_df88920dc610de::t_f78dafa75dc174 53-57
+  s_df88920dc610de::t_b3d4a146a6c4a5 7,52,58-70,84
+scripts/build_tscircuit.py
+  s_df88920dc610de::t_8af4113ca6f261 34-35
+tscircuit/README.md
+  s_df88920dc610de::t_8af4113ca6f261 6,22-25
+scripts/check_tscircuit.py
+  s_df88920dc610de::t_6bc434a84d48b5 69-78
+scripts/generate_tscircuit.py
+  s_df88920dc610de::t_04a69bc3c418e9 65-77,111,116,147-150
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "635a652acd56dff028894b6ec7ebcfefd923c9ad",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
