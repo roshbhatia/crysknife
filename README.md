@@ -24,7 +24,7 @@ No PCB assembly order is ready.
 ## Generate the layout
 
 ```sh
-nix develop path:.
+nix develop .
 npm ci
 npm run layout
 npm run preview
