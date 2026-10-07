@@ -28,6 +28,7 @@ npm ci
 npm run layout
 npm run preview
 npm run pcb
+python3 scripts/add_artwork.py
 ```
 
 Outputs appear under `build/layout/`.
@@ -57,6 +58,14 @@ Read the report: KiCad can exit successfully while reporting violations or uncon
 The unrouted drafts are expected to have unconnected nets and are not ready for assembly.
 The placement check reads KiCad pads to verify matrix topology, diode polarity, socket assembly sides, mirroring, and controller hole dimensions.
 It does not replace electrical, routing, or physical validation.
+
+`scripts/add_artwork.py` converts Frida's halftone into filled front-silkscreen geometry.
+The draft uses 0.6 mm dot spacing and a 0.2 mm minimum dot width.
+It reserves 0.3 mm clearance from conservative pad envelopes.
+The original artwork remains unchanged; small dots are resampled for printing.
+The PCB workflow checks artwork with KiCad and uploads silkscreen previews.
+These checks allow the known unrouted connections and footprint-library warnings.
+They do not establish manufacturing readiness.
 
 ## Firmware draft
 

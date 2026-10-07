@@ -15,7 +15,12 @@
         let pkgs = import nixpkgs { inherit system; };
         in {
           default = pkgs.mkShell {
-            packages = [ pkgs.nodejs_24 pkgs.python3 pkgs.librsvg pkgs.poppler-utils ];
+            packages = [
+              pkgs.nodejs_24
+              (pkgs.python3.withPackages (ps: [ ps.pillow ]))
+              pkgs.librsvg
+              pkgs.poppler-utils
+            ];
             ERGOGEN_FOOTPRINTS = footprints;
           };
         });

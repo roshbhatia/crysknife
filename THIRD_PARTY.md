@@ -14,4 +14,5 @@ No upstream footprint files are edited or vendored.
 The local controller adapter changes only the 24 header drill diameters in generated output.
 
 `assets/frida.png` is an unchanged copy of `/Users/roshan/Desktop/frida.png`, supplied by the user.
-Artwork placement and manufacturing conversion remain pending.
+`scripts/add_artwork.py` resamples its halftone for draft PCB silkscreen placement.
+The original source image remains unchanged.

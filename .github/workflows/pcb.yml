@@ -1,0 +1,51 @@
+name: PCB draft checks
+
+on:
+  push:
+    paths:
+      - ergogen/**
+      - assets/**
+      - scripts/**
+      - flake.*
+      - package*.json
+      - .github/workflows/pcb.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: DeterminateSystems/nix-installer-action@c5a866b6ab867e88becbed4467b93592bce69f8a
+      - run: nix develop path:. --command npm ci
+      - run: nix develop path:. --command npm run pcb
+      - run: nix develop path:. --command python3 scripts/add_artwork.py
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: pcb-drafts
+          path: build/pcb
+  check:
+    needs: generate
+    runs-on: ubuntu-24.04
+    container:
+      image: kicad/kicad@sha256:e36e29b5f4a638a1a7238eba3d2fcbc8e061ffed1e99a8f39cb722706c94a58e
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53
+        with:
+          name: pcb-drafts
+          path: build/pcb
+      - run: python3 scripts/check_placement.py
+      - run: kicad-cli pcb drc --format json --output build/pcb/left-drc.json build/pcb/fridakeeb_left.kicad_pcb
+      - run: kicad-cli pcb drc --format json --output build/pcb/right-drc.json build/pcb/fridakeeb_right.kicad_pcb
+      - run: python3 scripts/check_drc_draft.py
+      - run: kicad-cli pcb export svg --layers F.SilkS,Edge.Cuts --output build/pcb/preview/ build/pcb/fridakeeb_left.kicad_pcb
+      - run: kicad-cli pcb export svg --layers F.SilkS,Edge.Cuts --output build/pcb/preview/ build/pcb/fridakeeb_right.kicad_pcb
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: pcb-check-evidence
+          path: build/pcb
