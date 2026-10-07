@@ -116,9 +116,9 @@ This keeps the TrackPoint connection local to the half that sends mouse reports 
 [Current ZMK](https://zmk.dev/docs/hardware-integration/pointing) also supports pointing input from peripherals.
 The proposed central placement simplifies integration but is not a firmware restriction.
 The [badjeff PS/2 driver](https://github.com/badjeff/kb_zmk_ps2_mouse_trackpoint_driver/tree/7ab7846a95b233c3ada0e0605b972f36353e7bc4) emits Zephyr input events.
-Compatibility still requires a pinned ZMK build and a physical module test.
+Compatibility still requires a physical module test.
 
-Both halves and the reset image passed the pinned firmware build.
+Both halves and the reset image [passed the pinned firmware build](https://github.com/roshbhatia/corne/actions/runs/37675127728).
 The physical module test remains open.
 A [Corne TrackPoint build](https://github.com/joh/crkbd-trackpoint/tree/e7f2f0581cea261c441d9648132b6b4fd5f9d41f) places its stem between Y, U, H, and J.
 It provides a mounting case, stem adapter, and a jig for modifying those four keycaps.
