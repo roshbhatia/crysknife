@@ -1,0 +1,107 @@
+# Electrical placement prototype. TrackPoint circuitry and routing remain pending.
+pcbs:
+  fridakeeb_left:
+    template: kicad8
+    outlines:
+      board:
+        outline: left__pcb_outline
+    footprints:
+      switches:
+        what: ceoloide/switch_mx
+        where: [[key, "meta.mirrored ~ false"]]
+        params:
+          side: B
+          reversible: false
+          hotswap: true
+          solder: false
+          from: "{{column_net}}"
+          to: "{{colrow}}_SW"
+      diodes:
+        what: ceoloide/diode_tht_sod123
+        where: [[key, "meta.mirrored ~ false"]]
+        params:
+          side: B
+          reversible: false
+          include_tht: false
+          from: "{{colrow}}_SW"
+          to: "{{row_net}}"
+        adjust:
+          resist: true
+          shift: [horizontal_diode_shift, vertical_diode_shift]
+          rotate: 90
+      controller:
+        what: fridakeeb/nice_nano_spring
+        where:
+          ref: matrix_inner_top
+        params:
+          side: F
+          reversible: false
+          include_extra_pins: false
+          include_traces: false
+          show_instructions: false
+          show_via_labels: false
+          P21: C0
+          P20: C1
+          P19: C2
+          P18: C3
+          P15: C4
+          P14: C5
+          P5: R0
+          P6: R1
+          P7: R2
+          P8: R3
+          P2: TP_DATA
+          P3: TP_CLK
+          P4: TP_RST
+          P2_label: D2
+          P3_label: D3
+          P4_label: D4
+        adjust:
+          shift: [19.704, "0.375 kp - 18.37"]
+      power:
+        what: ceoloide/power_switch_smd_side
+        where:
+          ref: matrix_inner_top
+        params:
+          side: F
+          reversible: false
+          from: BAT_P
+          to: RAW
+        adjust:
+          shift: ["1.5 ks - 0.75", "0.375 kp - 46.50"]
+      reset:
+        what: ceoloide/reset_switch_smd_side
+        where:
+          ref: matrix_inner_top
+        params:
+          side: F
+          reversible: false
+          include_bosses: true
+          from: GND
+          to: RST
+        adjust:
+          shift: [19.704, "0.24 kp - 0.1"]
+      battery:
+        what: ceoloide/battery_connector_jst_ph_2
+        where:
+          ref: matrix_inner_top
+        params:
+          side: B
+          reversible: false
+          BAT_P: BAT_P
+          BAT_N: GND
+        adjust:
+          shift: ["0.5 ks + 7.25", "0.375 kp - 45.25"]
+          rotate: 90
+  fridakeeb_right:
+    $extends: pcbs.fridakeeb_left
+    outlines.board.outline: right__pcb_outline
+    footprints:
+      switches.asym: clone
+      diodes.asym: clone
+      controller.asym: clone
+      power:
+        asym: clone
+        adjust.rotate: 180
+      reset.asym: clone
+      battery.asym: clone

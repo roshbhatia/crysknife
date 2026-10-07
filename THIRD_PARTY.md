@@ -4,9 +4,14 @@
 The source revision is `b7cadab700a4a198a7217d05b6692b787136d043`.
 Its MIT license is preserved in `ergogen/LICENSE.corney-island`.
 
-This prototype retains upstream points and outlines, selects MX dimensions, and excludes electronics and case generation.
-The upstream footprint library and build scripts are not included.
+The layout source retains upstream points and outlines, selects MX dimensions, and excludes upstream electronics and case generation.
+The upstream build scripts are not included.
 Upstream updates require explicit review and permission.
+
+PCB generation loads [ceoloide/ergogen-footprints](https://github.com/ceoloide/ergogen-footprints/tree/48935f54b456ff1503d78d6b17d9d146b54e8ade) from the pinned Nix input.
+Revision `48935f54b456ff1503d78d6b17d9d146b54e8ade` and its MIT license remain in the immutable dependency source.
+No upstream footprint files are edited or vendored.
+The local controller adapter changes only the 24 header drill diameters in generated output.
 
 `assets/frida.png` is an unchanged copy of `/Users/roshan/Desktop/frida.png`, supplied by the user.
 Artwork placement and manufacturing conversion remain pending.

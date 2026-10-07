@@ -6,6 +6,7 @@ The user assembles it with plugs and screws, without soldering.
 ## Current artifacts
 
 - `ergogen/layout.yaml`: Corney Island geometry with its MX preset selected.
+- `ergogen/pcb.yaml`: separate left and right electrical placement prototypes.
 - `assets/frida.png`: original transparent Frida artwork.
 - `.sysinit/rfc-fridakeeb.md`: research, proposed architecture, and unresolved manufacturing requirements.
 - `THIRD_PARTY.md`: pinned source attribution and license location.
@@ -13,7 +14,9 @@ The user assembles it with plugs and screws, without soldering.
 The layout defines one half, and the split preview mirrors it to show both halves.
 Touchpad geometry has been removed.
 One TrackPoint belongs on the right half; its module, stem position, and mounting remain open.
-The layout does not yet include TrackPoint mounting, gasket suspension, circuitry, routing, or manufacturing outputs.
+The layout does not yet include TrackPoint mounting or gasket suspension.
+PCB placement includes switches, diodes, controller contacts, power, reset, and a battery connector.
+TrackPoint circuitry, schematic, routing, and manufacturing outputs remain incomplete.
 Its inherited mounting holes describe the upstream sandwich assembly.
 No PCB assembly order is ready.
 
@@ -24,6 +27,7 @@ nix develop path:.
 npm ci
 npm run layout
 npm run preview
+npm run pcb
 ```
 
 Outputs appear under `build/layout/`.
@@ -32,6 +36,27 @@ Outputs appear under `build/layout/`.
 The preview command also renders `build/layout/split_preview.png` for visual review.
 Review the generated SVG and DXF files before changing mechanical dimensions.
 Do not send these prototype plates to fabrication.
+
+PCB drafts appear under `build/pcb/` with 21 hotswap sockets and 21 SMD diodes per half.
+Both use dedicated controller footprints without reversible solder jumpers.
+The controller generator adapts upstream 1 mm holes to a nominal 0.85 mm for spring headers.
+Supplier tolerance and physical contact fit still need verification.
+The right PCB mirrors key positions while preserving component pin orientation and assembly sides.
+
+KiCad CLI runs in its official container, pinned in `tools.lock.json`.
+It requires the host Docker service and makes no network connections during checks.
+For example:
+
+```sh
+python3 scripts/kicad.py pcb drc --format json \
+  --output build/pcb/left-drc.json build/pcb/fridakeeb_left.kicad_pcb
+python3 scripts/kicad.py --python scripts/check_placement.py
+```
+
+Read the report: KiCad can exit successfully while reporting violations or unconnected pads.
+The unrouted drafts are expected to have unconnected nets and are not ready for assembly.
+The placement check reads KiCad pads to verify matrix topology, diode polarity, socket assembly sides, mirroring, and controller hole dimensions.
+It does not replace electrical, routing, or physical validation.
 
 ## Accepted requirements
 

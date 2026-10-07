@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "footprints": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1779828930,
+        "narHash": "sha256-n5rkmVLPG8RbiHV2gsnZmX2xlYrVuTDe5rFcdHHM5cU=",
+        "owner": "ceoloide",
+        "repo": "ergogen-footprints",
+        "rev": "48935f54b456ff1503d78d6b17d9d146b54e8ade",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ceoloide",
+        "repo": "ergogen-footprints",
+        "rev": "48935f54b456ff1503d78d6b17d9d146b54e8ade",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1791260994,
@@ -18,6 +35,7 @@
     },
     "root": {
       "inputs": {
+        "footprints": "footprints",
         "nixpkgs": "nixpkgs"
       }
     }

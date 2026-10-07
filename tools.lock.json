@@ -1,0 +1,8 @@
+{
+  "kicad": {
+    "image": "kicad/kicad@sha256:e36e29b5f4a638a1a7238eba3d2fcbc8e061ffed1e99a8f39cb722706c94a58e",
+    "platform": "linux/amd64",
+    "version": "10.0.6",
+    "source": "https://www.kicad.org/download/docker/"
+  }
+}

@@ -2,8 +2,12 @@
   description = "Fridakeeb keyboard design tools";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs.footprints = {
+    url = "github:ceoloide/ergogen-footprints/48935f54b456ff1503d78d6b17d9d146b54e8ade";
+    flake = false;
+  };
 
-  outputs = { nixpkgs, ... }:
+  outputs = { nixpkgs, footprints, ... }:
     let
       systems = [ "aarch64-darwin" "x86_64-darwin" "aarch64-linux" "x86_64-linux" ];
     in {
@@ -12,6 +16,7 @@
         in {
           default = pkgs.mkShell {
             packages = [ pkgs.nodejs_24 pkgs.python3 pkgs.librsvg pkgs.poppler-utils ];
+            ERGOGEN_FOOTPRINTS = footprints;
           };
         });
     };

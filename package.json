@@ -4,9 +4,11 @@
   "version": "0.1.0",
   "scripts": {
     "layout": "ergogen ergogen/layout.yaml --output build/layout --debug",
+    "pcb": "node scripts/generate_pcbs.cjs",
     "preview": "python3 scripts/split_preview.py"
   },
   "devDependencies": {
-    "ergogen": "4.1.0"
+    "ergogen": "4.1.0",
+    "js-yaml": "3.15.2"
   }
 }
