@@ -1,0 +1,23 @@
+scripts/check_tscircuit.py
+  s_df88920dc610de::t_f7149c86151477 26-28
+scripts/check_drc_draft.py
+  s_df88920dc610de::t_f7149c86151477 11-12
+flake.nix
+  s_df88920dc610de::t_ffd35e85314a3f 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "acb369c90e426876aa2e072685d9a71ea1b51caa",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
