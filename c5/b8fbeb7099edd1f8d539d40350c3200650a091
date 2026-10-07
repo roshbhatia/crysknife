@@ -1,0 +1,21 @@
+scripts/generate_tscircuit.py
+  s_df88920dc610de::t_7adf32036dd902 108
+tscircuit/README.md
+  s_df88920dc610de::t_7adf32036dd902 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c5b8fbeb7099edd1f8d539d40350c3200650a091",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
