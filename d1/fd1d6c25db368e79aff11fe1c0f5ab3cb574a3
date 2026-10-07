@@ -1,0 +1,25 @@
+tscircuit/README.md
+  s_df88920dc610de::t_8c1fd0de07811a 26-35,43
+scripts/check_tscircuit_source.py
+  s_df88920dc610de::t_10efb1fabbd81d 34,43-45
+scripts/build_tscircuit.py
+  s_df88920dc610de::t_13e80ea56ac2f2 24-25
+scripts/check_conversion_guards.py
+  s_df88920dc610de::t_13e80ea56ac2f2 1-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d1fd1d6c25db368e79aff11fe1c0f5ab3cb574a3",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
