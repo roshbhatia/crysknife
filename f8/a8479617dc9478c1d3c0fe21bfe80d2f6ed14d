@@ -1,0 +1,23 @@
+scripts/add_artwork.py
+  s_df88920dc610de::t_8e5e7220cba39d 81-82
+experiments/tscircuit/check_geometry.py
+  s_df88920dc610de::t_419e50844a2af3 12
+scripts/check_placement.py
+  s_df88920dc610de::t_8e5e7220cba39d 14-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f8a8479617dc9478c1d3c0fe21bfe80d2f6ed14d",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
