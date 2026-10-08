@@ -75,6 +75,7 @@ Ioskeley Mono Bold supplies all visible PCB text, including controller pin label
 One-word arrows identify power, reset, battery, and the controller brain.
 Back-side lettering reads correctly when the board is flipped.
 It reserves 0.3 mm clearance from conservative pad envelopes.
+It also protects existing socket outlines and diode symbols with 0.25 mm clearance.
 The original artwork remains unchanged; small dots are resampled for printing.
 The PCB workflow checks artwork with KiCad and uploads silkscreen previews.
 These checks allow the known unrouted connections and footprint-library warnings.

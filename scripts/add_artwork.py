@@ -40,6 +40,49 @@ for side in ("left", "right"):
             py = fy - x * math.sin(angle) + y * math.cos(angle)
             size = list(map(float, child(pad, "size")[1:3]))
             keepouts.append((px, py, math.hypot(*size) / 2 + 0.3))
+    silk_segments = []
+    silk_boxes = []
+    for footprint in children(board, "footprint"):
+        at = child(footprint, "at")
+        fx, fy = map(float, at[1:3])
+        angle = math.radians(float(at[3]) if len(at) > 3 else 0)
+
+        def world(point):
+            x, y = map(float, point[1:3])
+            return (fx+x*math.cos(angle)+y*math.sin(angle), fy-x*math.sin(angle)+y*math.cos(angle))
+
+        for graphic in footprint:
+            if not isinstance(graphic, list):
+                continue
+            layer = child(graphic, "layer")
+            if not layer or layer[1] not in ("F.SilkS", "B.SilkS"):
+                continue
+            stroke = child(graphic, "stroke")
+            clearance = 0.25+(float(child(stroke, "width")[1])/2 if stroke else 0)
+            if graphic[0] == "fp_line":
+                a, b = [world(child(graphic, key)) for key in ("start", "end")]
+                silk_segments.append((a, b, clearance))
+            elif graphic[0] == "fp_poly":
+                points = [world(p) for p in children(child(graphic, "pts"), "xy")]
+                silk_boxes.append((min(p[0] for p in points)-clearance, min(p[1] for p in points)-clearance,
+                                   max(p[0] for p in points)+clearance, max(p[1] for p in points)+clearance))
+            elif graphic[0].startswith("fp_") and graphic[0] not in ("fp_text",):
+                raise ValueError((side, "Unsupported native silkscreen graphic", graphic[0]))
+
+    def clear_silk(x, y, radius):
+        if any(x0-radius <= x <= x1+radius and y0-radius <= y <= y1+radius
+               for x0, y0, x1, y1 in silk_boxes):
+            return False
+        for (ax, ay), (bx, by), clearance in silk_segments:
+            margin = clearance+radius
+            if not min(ax, bx)-margin <= x <= max(ax, bx)+margin or not min(ay, by)-margin <= y <= max(ay, by)+margin:
+                continue
+            dx, dy = bx-ax, by-ay
+            t = max(0, min(1, ((x-ax)*dx+(y-ay)*dy)/(dx*dx+dy*dy)))
+            if math.hypot(x-ax-t*dx, y-ay-t*dy) <= margin:
+                return False
+        return True
+
     edges = [edge_points(n) for n in board if isinstance(n, list)
              and n[0] in ("gr_line", "gr_arc") and child(n, "layer")[1] == "Edge.Cuts"]
     outline = edges.pop(0)
@@ -134,6 +177,8 @@ for side in ("left", "right"):
                 radius = size/math.sqrt(2)
                 if size < minimum_feature or not inside(x, y):
                     continue
+                if not clear_silk(x, y, radius):
+                    continue
                 if edge_clearance(x, y) < radius+0.4:
                     continue
                 if any(math.hypot(x-px, y-py) <= clearance+radius for px, py, clearance in keepouts):
@@ -161,7 +206,7 @@ for side in ("left", "right"):
     font = ImageFont.truetype(str(root / "assets/ioskeley-mono-bold.ttf"), 512)
 
     def clear_pixel(x, y, grid):
-        return inside(x, y) and edge_clearance(x, y) > grid/math.sqrt(2)+0.4 and all(
+        return clear_silk(x, y, grid/math.sqrt(2)) and inside(x, y) and edge_clearance(x, y) > grid/math.sqrt(2)+0.4 and all(
             math.hypot(x-px, y-py) > radius+grid/math.sqrt(2) for px, py, radius in keepouts)
 
     def lettering(label, cx, cy, max_width, max_height, rotation=0):
@@ -256,4 +301,4 @@ for side in ("left", "right"):
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{max_x-min_x}mm" height="{max_y-min_y}mm" viewBox="{min_x} {min_y} {max_x-min_x} {max_y-min_y}"><rect x="{min_x}" y="{min_y}" width="{max_x-min_x}" height="{max_y-min_y}" fill="white"/><g fill="black">{svg_rectangles}</g></svg>'
     (root / f"build/pcb/frida-{side}.svg").write_text(svg)
     print(json.dumps({"side": side, "rectangles": len(pixels), "minimum_feature_mm": minimum_feature,
-                      "layers": ["F.SilkS", "B.SilkS"], "pad_clearance_mm": 0.3, "portraits": portraits, "edge_clearance_mm": 0.4}))
+                      "layers": ["F.SilkS", "B.SilkS"], "pad_clearance_mm": 0.3, "native_silk_clearance_mm": 0.25, "portraits": portraits, "edge_clearance_mm": 0.4}))
