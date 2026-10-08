@@ -1,0 +1,20 @@
+scripts/add_artwork.py
+  s_df88920dc610de::t_c4f7d6e92a9308 288-305
+  s_df88920dc610de::t_1dbe765f6d8ad4 16,26-27,150-153,168-169,178,191,196,198,200,202-204
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b5ff9bcd93dc55454dd397b8b07b73788bdfdfc1",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
