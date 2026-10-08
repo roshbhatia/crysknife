@@ -20,6 +20,8 @@ npm run route
 Generated JSX lives in `tscircuit/generated/`.
 Circuit JSON, previews, and check reports live in `build/tscircuit/`.
 `left-appearance.svg` and `right-appearance.svg` show white mask and black Frida artwork and lettering.
+The corresponding `*-bottom-appearance.svg` files show the back faces as viewed after flipping the boards.
+Both faces use Ioskeley Mono lettering and one-word component arrows.
 The React board color properties and KiCad stackup also specify white mask and black silkscreen.
 The editor can retain its layer colors in the 2D routing view.
 Select white mask and black silkscreen when creating the fabrication order.
@@ -43,7 +45,7 @@ It avoids the direct converter's bottom-side mirroring error.
 It retains pad dimensions, rotations, assembly sides, drills, and net membership.
 Outline arcs are sampled with a maximum 0.005 mm chord error for routing.
 KiCad retains the original exact outline and silkscreen.
-Routing uses 0.3 mm clearance to holes and 0.55 mm to the board edge.
+Routing uses 0.3 mm clearance to holes, 0.25 mm between via and pad edges, and 0.55 mm to the board edge.
 These exceed KiCad's default 0.25 mm hole and 0.5 mm edge constraints.
 
 The build first checks every pad and hole against the descriptor.

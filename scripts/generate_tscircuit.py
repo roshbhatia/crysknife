@@ -69,11 +69,11 @@ def descriptor(side):
         at = child(fp, "at")
         fx, fy = map(float, at[1:3])
         for rect in children(fp, "fp_rect"):
-            assert child(rect, "layer")[1] == "F.SilkS"
+            layer = {"F.SilkS": "top", "B.SilkS": "bottom"}[child(rect, "layer")[1]]
             x0, y0 = point(rect, "start")
             x1, y1 = point(rect, "end")
             silkscreen.append({**convert((fx + (x0+x1)/2, fy + (y0+y1)/2)),
-                               "width": x1-x0, "height": y1-y0})
+                               "width": x1-x0, "height": y1-y0, "layer": layer})
     assert silkscreen, "Apply artwork before generating the React model"
     pads = []
     holes = []
@@ -147,7 +147,7 @@ def jsx(data, routing):
     for rect in data["silkscreen"]:
         lines.append(f'<silkscreenrect pcbX={{{rect["x"]}}} pcbY={{{rect["y"]}}} '
                      f'width={{{rect["width"]}}} height={{{rect["height"]}}} '
-                     'layer="top" filled={true} stroke="none" strokeWidth={0} />')
+                     f'layer="{rect["layer"]}" filled={{true}} stroke="none" strokeWidth={{0}} />')
     nets = sorted({p["net"] for p in data["pads"] if p["net"]})
     for index, net in enumerate(nets):
         selectors = [f'.{p["name"]} > .pin1' for p in data["pads"] if p["net"] == net]

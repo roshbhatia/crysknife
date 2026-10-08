@@ -71,7 +71,7 @@ def check(side, stage):
     artwork = [n for n in data if n["type"] == "pcb_silkscreen_rect"]
     assert len(artwork) == len(expected["silkscreen"])
     for source, actual in zip(expected["silkscreen"], artwork):
-        assert actual["layer"] == "top" and actual["is_filled"]
+        assert actual["layer"] == source["layer"] and actual["is_filled"]
         for axis in ("x", "y"):
             close(actual["center"][axis], source[axis])
         for dimension in ("width", "height"):

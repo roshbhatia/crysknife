@@ -1,4 +1,4 @@
-# Fridacorne
+# Fridakeys
 
 A proposed 42-key wireless Corne with MX hotswap sockets and TrackPoint pointing input.
 The user assembles it with plugs and screws, without soldering.
@@ -68,8 +68,12 @@ The unrouted drafts are expected to have unconnected nets and are not ready for 
 The placement check reads KiCad pads to verify matrix topology, diode polarity, socket assembly sides, mirroring, and controller hole dimensions.
 It does not replace electrical, routing, or physical validation.
 
-`scripts/add_artwork.py` converts Frida's halftone into filled front-silkscreen geometry.
-The draft uses 0.6 mm dot spacing and a 0.2 mm minimum dot width.
+`scripts/add_artwork.py` repeats Frida's halftone on the front and back silkscreen.
+The hero portrait uses 0.6 mm dot spacing; the repeated portraits use 1 mm spacing.
+All artwork features measure at least 0.2 mm.
+Ioskeley Mono Bold supplies all visible PCB text, including controller pin labels.
+One-word arrows identify power, reset, battery, and the controller brain.
+Back-side lettering reads correctly when the board is flipped.
 It reserves 0.3 mm clearance from conservative pad envelopes.
 The original artwork remains unchanged; small dots are resampled for printing.
 The PCB workflow checks artwork with KiCad and uploads silkscreen previews.
@@ -117,9 +121,9 @@ These are integration drafts until the builds and physical hardware tests pass.
 - Plug-in batteries, pointing-device cables, and prepared controllers are acceptable.
 - One right-half TrackPoint for index-finger use, retaining all 42 hotswap keys.
 - The TrackPoint module and cable must arrive prepared for plug-in installation without user soldering.
-- White PCB solder mask with black Frida artwork and lettering on the silkscreen.
-- KingjolA title font, recovered from the Terminus Est KiCad source.
-- Draft legend: `Fridacorne v1.0.0 by @fraud`.
+- White PCB solder mask with repeated black Frida portraits and lettering on both silkscreen faces.
+- Ioskeley Mono Bold for all PCB text.
+- Draft legend: `Fridakeys v1.0.0 by @fraud`.
 - JLCPCB assembly and SendCutSend plates.
 - Gasket suspension and anti-slip feet.
 
@@ -146,13 +150,13 @@ The proposed central placement simplifies integration but is not a firmware rest
 The [badjeff PS/2 driver](https://github.com/badjeff/kb_zmk_ps2_mouse_trackpoint_driver/tree/7ab7846a95b233c3ada0e0605b972f36353e7bc4) emits Zephyr input events.
 Compatibility still requires a physical module test.
 
-Both halves and the reset image [passed the pinned firmware build](https://github.com/roshbhatia/corne/actions/runs/37675127728).
+Both halves and the reset image [passed the pinned firmware build](https://github.com/roshbhatia/fridakeys/actions/runs/37675127728).
 The physical module test remains open.
 A [Corne TrackPoint build](https://github.com/joh/crkbd-trackpoint/tree/e7f2f0581cea261c441d9648132b6b4fd5f9d41f) places its stem between Y, U, H, and J.
 It provides a mounting case, stem adapter, and a jig for modifying those four keycaps.
 Its wired QMK electronics and soldered wiring do not satisfy this project's requirements.
 Its mechanical approach is a reference; its files use CC BY-NC-SA 4.0.
-The Fridacorne stem position still needs selection and a fit test.
+The Fridakeys stem position still needs selection and a fit test.
 
 ## Manufacturing gates
 

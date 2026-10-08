@@ -1,7 +1,7 @@
 {
-  "name": "fridakeeb",
+  "name": "fridakeys",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "scripts": {
     "layout": "ergogen ergogen/layout.yaml --output build/layout --debug",
     "pcb": "node scripts/generate_pcbs.cjs",

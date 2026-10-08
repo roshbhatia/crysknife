@@ -2,9 +2,9 @@
 # See THIRD_PARTY.md. This file contains geometry only and is not fabrication-ready.
 meta:
   engine: 4.1.0
-  name: fridacorne-layout-draft
+  name: fridakeys-layout-draft
   version: 1.0.0
-  ref: &kb_ref "Fridacorne v1.0.0 by @fraud"
+  ref: &kb_ref "Fridakeys v1.0.0 by @fraud"
   author: fraud
   url: &kb_url https://github.com/ceoloide/corney-island
   footprint: &switch_footprint "ceoloide/switch_mx"

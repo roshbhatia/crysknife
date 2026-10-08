@@ -17,9 +17,11 @@ The local controller adapter changes only the 24 header drill diameters in gener
 `scripts/add_artwork.py` resamples its halftone for draft PCB silkscreen placement.
 The original source image remains unchanged.
 
-`assets/kingjola.ttf` is copied from the user-installed KingjolA font in `/Users/roshan/Library/Fonts/`.
-It supplies the requested title lettering, rasterized into silkscreen geometry.
-The caption uses Pillow’s bundled default font so digits and the @ symbol remain readable.
+`assets/ioskeley-mono-bold.ttf` comes from [Ioskeley Mono v2.1.0](https://github.com/ahatem/IoskeleyMono/releases/tag/v2.1.0).
+It is the Normal/Unhinted Bold face from the release archive.
+Its SIL Open Font License is preserved in `assets/LICENSE.ioskeley-mono`.
+All PCB lettering uses this font, rasterized into portable silkscreen geometry.
+The previously supplied KingjolA asset remains unused.
 
 Column stagger dimensions are measured from the [Piantor left PCB](https://github.com/beekeeb/piantor/blob/cd847afb4f9a86e8c1c8e36f243140644013afb2/pcb/left/keyboard_pcb.kicad_pcb).
 The source uses 18 mm horizontal and 17 mm vertical pitch; this design uses 20 mm MX pitch.

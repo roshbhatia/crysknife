@@ -21,7 +21,7 @@ preview = ET.Element(f"{{{ns}}}svg", {
     "viewBox": f"0 0 {canvas_width} {canvas_height}",
 })
 ET.SubElement(preview, f"{{{ns}}}title").text = (
-    "Fridacorne: 42 MX keys; TrackPoint mounting remains pending"
+    "Fridakeys: 42 MX keys; TrackPoint mounting remains pending"
 )
 ET.SubElement(preview, f"{{{ns}}}rect", {
     "width": str(canvas_width), "height": str(canvas_height), "fill": "white",
