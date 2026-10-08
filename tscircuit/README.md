@@ -63,6 +63,9 @@ Warnings about generic pad symbols and missing manufacturer metadata remain visi
 
 The KiCad job independently checks every descriptor against `pcbnew`.
 It merges only tracks and vias into the original boards.
+KiCad finishes the right reset GND escape when the autorouter leaves its via too close to the RST pad.
+This step moves the via outside the ground pad, keeps both connected tracks, and records its clearance before and after.
+The final KiCad DRC validates the finished route. React previews remain autorouter drafts.
 It preserves footprint references, solder mask, paste, exact outlines, and Frida artwork.
 The routed board check requires zero unconnected items and no violations except library-resolution warnings.
 Factory acceptance, the complete schematic, TrackPoint electronics, and mechanical fit remain separate gates.

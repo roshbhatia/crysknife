@@ -1,4 +1,5 @@
 import json
+import math
 from pathlib import Path
 
 import pcbnew
@@ -50,6 +51,7 @@ for side in ("left", "right"):
             board.Add(track)
             segments += 1
     vias = [n for n in data if n["type"] == "pcb_via"]
+    created_vias = []
     for source in vias:
         assert set(source["layers"]) == {"top", "bottom"}
         via = pcbnew.PCB_VIA(board)
@@ -60,6 +62,50 @@ for side in ("left", "right"):
         via.SetLayerPair(pcbnew.F_Cu, pcbnew.B_Cu)
         via.SetNetCode(route_codes[source["pcb_trace_id"]])
         board.Add(via)
+        created_vias.append((source, via))
+    finishing = []
+    if side == "right":
+        ground = next(p for p in expected["pads"] if p["ref"] == "RST1" and p["number"] == "3")
+        reset = next(p for p in expected["pads"] if p["ref"] == "RST1" and p["number"] == "4")
+        assert ground["net"] == "GND" and reset["net"] == "RST"
+        assert ground["shape"] == reset["shape"] == "rect"
+        assert ground["rotation"] % 180 == reset["rotation"] % 180 == 0
+
+        def pad_gap(point, pad, diameter):
+            dx = max(0, abs(point["x"]-pad["x"])-pad["width"]/2)
+            dy = max(0, abs(point["y"]-pad["y"])-pad["height"]/2)
+            return math.hypot(dx, dy)-diameter/2
+
+        for source, via in created_vias:
+            if via.GetNetCode() != net_codes["GND"]:
+                continue
+            if math.hypot(source["x"]-ground["x"], source["y"]-ground["y"]) > 1.4:
+                continue
+            before = pad_gap(source, reset, source["outer_diameter"])
+            if before >= 0.25:
+                continue
+            old = via.GetPosition()
+            target = {"x": ground["x"]-ground["width"]/2-source["outer_diameter"]/2-0.1,
+                      "y": ground["y"]-0.7}
+            after = pad_gap(target, reset, source["outer_diameter"])
+            assert after >= 0.25 and pad_gap(target, ground, source["outer_diameter"]) >= 0.1
+            new = position(target)
+            connected = 0
+            for track in board.GetTracks():
+                if isinstance(track, pcbnew.PCB_VIA):
+                    continue
+                for getter, setter in [(track.GetStart, track.SetStart), (track.GetEnd, track.SetEnd)]:
+                    if getter() == old:
+                        assert track.GetNetCode() == net_codes["GND"]
+                        setter(new)
+                        connected += 1
+            assert connected == 2, (side, "Unexpected reset escape connectivity", connected)
+            via.SetPosition(new)
+            finishing.append({"reference": "RST1", "net": "GND", "via": source["pcb_via_id"],
+                              "from": {axis: source[axis] for axis in ("x", "y")}, "to": target,
+                              "reset_pad_clearance_before_mm": before, "reset_pad_clearance_after_mm": after})
+        assert len(finishing) <= 1, "Unexpected extra reset escape vias"
+    (ROOT / f"build/pcb/{side}-route-finishing.json").write_text(json.dumps(finishing, indent=2)+"\n")
     output = ROOT / f"build/pcb/fridakeeb_{side}_routed.kicad_pcb"
     pcbnew.SaveBoard(str(output), board)
     print(f"{side}: merged {segments} copper segments and {len(vias)} vias into original KiCad geometry")
