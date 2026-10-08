@@ -18,9 +18,10 @@
             packages = [
               pkgs.nodejs_24
               pkgs.bun
-              (pkgs.python3.withPackages (ps: [ ps.pillow ]))
+              (pkgs.python3.withPackages (ps: [ ps.pillow ps.shapely ]))
               pkgs.librsvg
               pkgs.poppler-utils
+              pkgs.openscad
             ];
             ERGOGEN_FOOTPRINTS = footprints;
           };

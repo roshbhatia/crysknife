@@ -1,6 +1,6 @@
 # Fridakeys
 
-A proposed 42-key wireless Corne with MX hotswap sockets and TrackPoint pointing input.
+A proposed 42-key wireless split keyboard with MX hotswap sockets and TrackPoint pointing input.
 The user assembles it with plugs and screws, without soldering.
 
 ## Current artifacts
@@ -12,8 +12,8 @@ The user assembles it with plugs and screws, without soldering.
 - `THIRD_PARTY.md`: pinned source attribution and license location.
 
 The layout defines one half, and the split preview mirrors it to show both halves.
-The Piantor-inspired column offsets rise 8 mm from pinky to ring, then 4 mm to middle.
-Index drops 4 mm from middle; the inner column drops another 2 mm.
+The Piantor-inspired column offsets rise 10 mm from pinky to ring, then 5 mm to middle.
+Index drops 5 mm from middle; the inner column drops another 2 mm.
 MX spacing is 20 mm in both directions, 1 mm wider than the initial Corne draft.
 The stagger is milder than Piantor’s 12 mm and 5 mm rises.
 This draft uses the user’s successful Corne and 3x6 Voyager experience as fit context.
@@ -22,11 +22,12 @@ The Piantor Pro aluminum case is the visual reference for a silver surround and 
 MX switches, the battery, and the TrackPoint set this design's final height.
 Touchpad geometry has been removed.
 One TrackPoint belongs on the right half; its module, stem position, and mounting remain open.
-The layout does not yet include TrackPoint mounting or gasket suspension.
+The OpenSCAD case draft includes perimeter gasket suspension.
+TrackPoint mounting remains incomplete.
 PCB placement includes switches, diodes, controller contacts, power, reset, and a battery connector.
 TrackPoint circuitry, the electrical schematic, and manufacturing outputs remain incomplete.
 The tscircuit pipeline routes the existing matrix and power placement drafts.
-Its inherited mounting holes describe the upstream sandwich assembly.
+The PCB has no case mounting holes; the OpenSCAD sandwich uses six external standoffs per half.
 No PCB assembly order is ready.
 
 ## Generate the layout
@@ -69,10 +70,12 @@ The placement check reads KiCad pads to verify matrix topology, diode polarity, 
 It does not replace electrical, routing, or physical validation.
 
 `scripts/add_artwork.py` repeats Frida's halftone on the front and back silkscreen.
-The hero portrait uses 0.6 mm dot spacing; the repeated portraits use 1 mm spacing.
+The 44 mm hero portrait uses 0.3 mm sampling; repeated 26 mm portraits use 0.4 mm sampling.
+The hero sits lower to preserve Frida's open mouth, with its right-half image mirrored.
+Adjacent ink cells merge into rectangular runs without changing their outline.
 All artwork features measure at least 0.2 mm.
 Ioskeley Mono Bold supplies all visible PCB text, including controller pin labels.
-One-word arrows identify power, reset, battery, and the controller brain.
+Arrows use `{PWR}`, `{RST}`, `{BTY}`, and `{CPU}` labels.
 Back-side lettering reads correctly when the board is flipped.
 It reserves 0.3 mm clearance from conservative pad envelopes.
 It also protects existing socket outlines and diode symbols with 0.25 mm clearance.
@@ -88,6 +91,7 @@ npm ci --prefix tscircuit
 npm run route
 python3 scripts/kicad.py --python scripts/check_tscircuit_source.py
 python3 scripts/kicad.py --python scripts/merge_tscircuit_routes.py
+python3 scripts/kicad.py --python scripts/fill_ground.py
 ```
 
 Run these after generating the PCB placement and artwork.
@@ -96,6 +100,10 @@ Generated React files appear under `tscircuit/generated/`.
 Routing evidence appears under `build/tscircuit/`.
 KiCad outputs are `build/pcb/fridakeeb_left_routed.kicad_pcb` and the corresponding right board.
 The GitHub workflow runs this pipeline without a local Docker service.
+KiCad fills GND on both copper faces after merging routes.
+The zones use 0.3 mm clearance, 0.3 mm thermal spokes, and removal of disconnected islands.
+A 28 by 46 mm exclusion around each controller prevents ground pours below the module and antenna.
+This exclusion does not prohibit existing signal traces; RF performance still requires prototype testing.
 Its routed DRC gate requires zero unconnected items and no unexpected violations.
 Read [the pipeline details](tscircuit/README.md) for conversion checks and known upstream limitations.
 These checks do not prove TrackPoint operation, mechanical fit, or factory acceptance.
@@ -113,12 +121,56 @@ The build script uses this lock instead of resolving upstream branches again.
 Artifacts include UF2 files, compiled devicetree, Kconfig, and resolved dependency revisions.
 These are integration drafts until the builds and physical hardware tests pass.
 
+`nix develop . --command python3 scripts/check_electrical.py` checks the PCB against the firmware source.
+It verifies all 42 matrix coordinates, diode direction, nice!nano pin assignments, battery power, and reset wiring.
+Single controller pads for TrackPoint data, clock, and reset do not constitute a completed TrackPoint circuit.
+
+## Sandwich case draft
+
+```sh
+nix develop . --command npm run case
+```
+
+`case/sandwich.scad` uses geometry from the actual generated PCBs.
+It exports left and right bottom plates, spacer rings, switch plates, gaskets, and bezels as DXF and SVG.
+Assembly CSG files and dimension checks appear under `build/case/`.
+No printed parts are required.
+The floating switch plate and PCB sit between compressed perimeter gaskets.
+Six M2 standoffs sit outside each PCB, keeping bolts clear of copper and sockets.
+An open electronics bay provides side access to USB, power, and reset.
+The nominal stack uses a 3 mm acrylic bottom, three 3 mm spacer rings, and a 1.5 mm switch plate.
+The lower and upper gaskets compress to 1 mm and 0.5 mm respectively.
+The bezel is 3 mm thick; nominal standoffs are 12 mm above the bottom plate.
+Use nonconductive bottoms and spacers around the Bluetooth module.
+Anti-slip feet attach below the bottom plate.
+
+Outemu Medium-Low Black switches retain the standard MX socket footprint.
+[ZSA tested the MX-compatible Medium-Low family](https://blog.zsa.io/diy-low-profile-moonlander/).
+The plate has 14 mm openings, with a configurable 3.5 mm gap above the PCB and 1.5 mm thickness.
+These vertical dimensions need measurement on the user's switch batch before plate fabrication.
+The 4.9 mm underside clearance is a reserved envelope, not proof of battery or connector fit.
+The controller and TrackPoint need mechanical clearance checks with their exact supplied parts.
+Supplier material thickness and cut tolerances must match the final dimensions.
+
+## Factory assembly options
+
+[JLCPCB Standard assembly](https://jlcpcb.com/capabilities/pcb-assembly-capabilities) supports both PCB faces and through-hole connectors.
+The factory must install all 42 MX sockets, diodes, power switches, reset buttons, and battery connectors.
+The [Kailh CPG151101S11-1 catalog entry](https://jlcpcb.com/partdetail/Kailh-CPG151101S111/C5184526) is Standard Only.
+Catalog presence does not confirm stock, footprint fit, or an accepted assembly quote.
+[Flying-probe and functional testing](https://jlcpcb.com/help/article/smt-inspection-and-testing-capabilities) can support the acceptance plan.
+Test scope and fixtures need a supplier quote; AOI alone cannot prove wireless operation.
+Prepared nice!nano modules and spring headers remain a plug-in assembly path to verify.
+Each half uses its own rechargeable battery and USB charging port.
+An inter-half USB-C cable is not supported by the current electrical design or firmware.
+
 ## Accepted requirements
 
 - Three rows, six columns, and three thumb keys per half.
 - Wireless connection between halves and to the computer.
 - ZMK firmware, using a supported controller and USB bootloader.
 - Factory-installed MX hotswap sockets.
+- Outemu Medium-Low Black switches with standard MX pin geometry.
 - Plug-in batteries, pointing-device cables, and prepared controllers are acceptable.
 - One right-half TrackPoint for index-finger use, retaining all 42 hotswap keys.
 - The TrackPoint module and cable must arrive prepared for plug-in installation without user soldering.
@@ -127,6 +179,7 @@ These are integration drafts until the builds and physical hardware tests pass.
 - Draft legend: `Fridakeys v1.0.0 by @fraud`.
 - JLCPCB assembly and SendCutSend plates.
 - Gasket suspension and anti-slip feet.
+- A sandwich case with side access to power, reset, and charging.
 
 The revision identifies this project, rather than claiming an upstream Corne release.
 

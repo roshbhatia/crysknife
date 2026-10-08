@@ -6,7 +6,8 @@
     "layout": "ergogen ergogen/layout.yaml --output build/layout --debug",
     "pcb": "node scripts/generate_pcbs.cjs",
     "route": "python3 scripts/build_tscircuit.py",
-    "preview": "python3 scripts/split_preview.py"
+    "preview": "python3 scripts/split_preview.py",
+    "case": "python3 scripts/generate_case.py"
   },
   "devDependencies": {
     "ergogen": "4.1.0",

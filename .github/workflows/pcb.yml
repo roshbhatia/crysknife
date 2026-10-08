@@ -8,6 +8,7 @@ on:
       - scripts/**
       - tscircuit/**
       - flake.*
+      - case/**
       - package*.json
       - .github/workflows/pcb.yml
   workflow_dispatch:
@@ -26,12 +27,15 @@ jobs:
       - run: nix develop . --command python3 scripts/add_artwork.py
       - run: nix develop . --command npm ci --prefix tscircuit
       - run: nix develop . --command python3 scripts/build_tscircuit.py
+      - run: nix develop . --command python3 scripts/check_electrical.py
+      - run: nix develop . --command python3 scripts/generate_case.py
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: pcb-drafts
           path: |
             build/pcb
             build/tscircuit
+            build/case
   check:
     needs: generate
     runs-on: ubuntu-24.04
@@ -47,6 +51,7 @@ jobs:
       - run: python3 scripts/check_placement.py
       - run: python3 scripts/check_tscircuit_source.py
       - run: python3 scripts/merge_tscircuit_routes.py
+      - run: python3 scripts/fill_ground.py
       - run: kicad-cli pcb drc --format json --output build/pcb/left-drc.json build/pcb/fridakeeb_left.kicad_pcb
       - run: kicad-cli pcb drc --format json --output build/pcb/right-drc.json build/pcb/fridakeeb_right.kicad_pcb
       - run: python3 scripts/check_drc_draft.py
