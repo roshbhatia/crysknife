@@ -1,0 +1,27 @@
+ergogen/layout.yaml
+  s_df88920dc610de::t_1dbe765f6d8ad4 73-75
+ergogen/pcb.yaml
+  s_df88920dc610de::t_2379190ec09513 107-109
+scripts/check_placement.py
+  s_df88920dc610de::t_1dbe765f6d8ad4 81,88
+scripts/fill_ground.py
+  s_df88920dc610de::t_cfc19f9cb570a4 1-73
+scripts/check_electrical.py
+  s_df88920dc610de::t_dcb6f0724b162f 1-80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e35e75ebf9c8f9be7fd014306c37577933c6dc69",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
