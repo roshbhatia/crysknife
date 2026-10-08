@@ -1,0 +1,21 @@
+scripts/merge_tscircuit_routes.py
+  s_df88920dc610de::t_2c741b4ce7e486 54,65-79
+tscircuit/README.md
+  s_df88920dc610de::t_0d533f57b187b2 66-68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e93d347b6175704f1f9e67c3207a2dd94dadee51",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
