@@ -1,0 +1,39 @@
+ergogen/layout.yaml
+  s_df88920dc610de::t_e15bfcef1e4eba 7,25-26,73-75
+  s_df88920dc610de::t_dc75c30a03d145 76,145,159,173,187
+  s_df88920dc610de::t_a00b355c1e3b26 5-6
+firmware/boards/shields/fridakeeb/Kconfig.defconfig
+  s_df88920dc610de::t_a00b355c1e3b26 14
+scripts/check_placement.py
+  s_df88920dc610de::t_43d0dde8447472 77-88
+README.md
+  s_df88920dc610de::t_dc75c30a03d145 21-22
+  s_df88920dc610de::t_a00b355c1e3b26 1,155
+  s_df88920dc610de::t_e15bfcef1e4eba 15-20,122
+scripts/add_artwork.py
+  s_df88920dc610de::t_a00b355c1e3b26 59,63
+  s_df88920dc610de::t_43d0dde8447472 27
+  s_df88920dc610de::t_dc75c30a03d145 25-26,28,46,91,96
+  s_df88920dc610de::t_e15bfcef1e4eba 60
+scripts/split_preview.py
+  s_df88920dc610de::t_a00b355c1e3b26 24
+THIRD_PARTY.md
+  s_df88920dc610de::t_e15bfcef1e4eba 25-26
+  s_df88920dc610de::t_dc75c30a03d145 23-24,27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d1d304ca646ef52e1d4f9983f8824a68413eb13a",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
