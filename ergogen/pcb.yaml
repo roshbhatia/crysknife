@@ -104,4 +104,6 @@ pcbs:
         asym: clone
         adjust.rotate: 180
       reset.asym: clone
-      battery.asym: clone
+      battery:
+        asym: clone
+        adjust.rotate: -90

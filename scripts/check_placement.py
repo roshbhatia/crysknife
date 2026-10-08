@@ -78,11 +78,11 @@ print("Placement checks do not prove routing, supplier assembly, or physical fit
 for index, ref in enumerate(("S2", "S5", "S8", "S11", "S14", "S17")):
     position = switches["left"][ref].GetPosition()
     assert position.x == pcbnew.FromMM(100 + 20 * index), (ref, "column spacing")
-    assert position.y == pcbnew.FromMM((80, 80, 72, 68, 72, 74)[index]), (ref, "column stagger")
+    assert position.y == pcbnew.FromMM((80, 80, 70, 65, 70, 72)[index]), (ref, "column stagger")
 for ref in ("S1", "S4", "S7", "S10", "S13", "S16"):
     number = int(ref[1:])
     lower = switches["left"][ref].GetPosition().y
     home = switches["left"][f"S{number+1}"].GetPosition().y
     upper = switches["left"][f"S{number+2}"].GetPosition().y
     assert lower - home == home - upper == pcbnew.FromMM(20)
-print("MX layout: 20 mm pitch and 8/4/-4/-2 mm stagger confirmed")
+print("MX layout: 20 mm pitch and 10/5/-5/-2 mm stagger confirmed")

@@ -70,9 +70,9 @@ units:
   $extends: meta.switch
 
   hand_rotation: 0
-  ring_stagger: 8
-  middle_stagger: 4
-  index_stagger: -4
+  ring_stagger: 10
+  middle_stagger: 5
+  index_stagger: -5
   inner_stagger: -2
 
   # Physical measures
