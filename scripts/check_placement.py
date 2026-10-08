@@ -74,3 +74,15 @@ assert abs(left_box.GetWidth() - right_box.GetWidth()) <= outline_tolerance
 assert abs(left_box.GetHeight() - right_box.GetHeight()) <= outline_tolerance
 print("Mirrored key positions, board dimensions within 0.001 mm, and controller pad-to-net mapping verified.")
 print("Placement checks do not prove routing, supplier assembly, or physical fit.")
+
+for index, ref in enumerate(("S2", "S5", "S8", "S11", "S14", "S17")):
+    position = switches["left"][ref].GetPosition()
+    assert position.x == pcbnew.FromMM(100 + 20 * index), (ref, "column spacing")
+    assert position.y == pcbnew.FromMM((80, 80, 72, 68, 72, 74)[index]), (ref, "column stagger")
+for ref in ("S1", "S4", "S7", "S10", "S13", "S16"):
+    number = int(ref[1:])
+    lower = switches["left"][ref].GetPosition().y
+    home = switches["left"][f"S{number+1}"].GetPosition().y
+    upper = switches["left"][f"S{number+2}"].GetPosition().y
+    assert lower - home == home - upper == pcbnew.FromMM(20)
+print("MX layout: 20 mm pitch and 8/4/-4/-2 mm stagger confirmed")

@@ -2,9 +2,9 @@
 # See THIRD_PARTY.md. This file contains geometry only and is not fabrication-ready.
 meta:
   engine: 4.1.0
-  name: fridakeeb-layout-draft
-  version: 0.1
-  ref: &kb_ref "fridakeeb (corne-derived v0.1) by @fraud"
+  name: fridacorne-layout-draft
+  version: 1.0.0
+  ref: &kb_ref "Fridacorne v1.0.0 by @fraud"
   author: fraud
   url: &kb_url https://github.com/ceoloide/corney-island
   footprint: &switch_footprint "ceoloide/switch_mx"
@@ -22,8 +22,8 @@ presets:
     # Key and keycap measures
     kx: u # spacing between key centers (X-axis)
     ky: u # spacing between key centers (Y-axis)
-    ks: 19 # horizontal space between columns (default: 19)
-    kp: 19 # vertical padding between keys (deafult: 19)
+    ks: 20 # horizontal space between columns (default: 19)
+    kp: 20 # vertical padding between keys (deafult: 19)
     kcow: 14 # key cutout hole width (cherry: 14, choc: 13.8)
     kcoh: 14 # key cutout hole height (cherry: 14, choc: 13.8)
     keycw: 18 # keycap width (cherry: 18, choc: 17.5)
@@ -70,6 +70,10 @@ units:
   $extends: meta.switch
 
   hand_rotation: 0
+  ring_stagger: 8
+  middle_stagger: 4
+  index_stagger: -4
+  inner_stagger: -2
 
   # Physical measures
   screw_radius: 1.1 # M2 screws
@@ -138,7 +142,7 @@ points:
               led_next: LED_16
         ring:
           key:
-            stagger: 0.25 kp
+            stagger: ring_stagger
             column_net: C2
           rows:
             top.key:
@@ -152,7 +156,7 @@ points:
               led_next: LED_15
         middle:
           key:
-            stagger: 0.125 kp
+            stagger: middle_stagger
             column_net: C3
           rows:
             top.key:
@@ -166,7 +170,7 @@ points:
               led_next: LED_10
         index:
           key:
-            stagger: -0.125 kp
+            stagger: index_stagger
             column_net: C4
           rows:
             top.key:
@@ -180,7 +184,7 @@ points:
               led_next: LED_7
         inner:
           key:
-            stagger: -0.125 kp
+            stagger: inner_stagger
             column_net: C5
           rows:
             top.key:

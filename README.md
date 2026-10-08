@@ -1,4 +1,4 @@
-# Fridakeeb
+# Fridacorne
 
 A proposed 42-key wireless Corne with MX hotswap sockets and TrackPoint pointing input.
 The user assembles it with plugs and screws, without soldering.
@@ -12,6 +12,14 @@ The user assembles it with plugs and screws, without soldering.
 - `THIRD_PARTY.md`: pinned source attribution and license location.
 
 The layout defines one half, and the split preview mirrors it to show both halves.
+The Piantor-inspired column offsets rise 8 mm from pinky to ring, then 4 mm to middle.
+Index drops 4 mm from middle; the inner column drops another 2 mm.
+MX spacing is 20 mm in both directions, 1 mm wider than the initial Corne draft.
+The stagger is milder than Piantor’s 12 mm and 5 mm rises.
+This draft uses the user’s successful Corne and 3x6 Voyager experience as fit context.
+Comfort remains unverified until the physical prototype.
+The Piantor Pro aluminum case is the visual reference for a silver surround and covered components.
+MX switches, the battery, and the TrackPoint set this design's final height.
 Touchpad geometry has been removed.
 One TrackPoint belongs on the right half; its module, stem position, and mounting remain open.
 The layout does not yet include TrackPoint mounting or gasket suspension.
@@ -111,7 +119,7 @@ These are integration drafts until the builds and physical hardware tests pass.
 - The TrackPoint module and cable must arrive prepared for plug-in installation without user soldering.
 - White PCB solder mask with black Frida artwork and lettering on the silkscreen.
 - KingjolA title font, recovered from the Terminus Est KiCad source.
-- Draft legend: `fridakeeb (corne-derived v0.1) by @fraud`.
+- Draft legend: `Fridacorne v1.0.0 by @fraud`.
 - JLCPCB assembly and SendCutSend plates.
 - Gasket suspension and anti-slip feet.
 
@@ -144,7 +152,7 @@ A [Corne TrackPoint build](https://github.com/joh/crkbd-trackpoint/tree/e7f2f058
 It provides a mounting case, stem adapter, and a jig for modifying those four keycaps.
 Its wired QMK electronics and soldered wiring do not satisfy this project's requirements.
 Its mechanical approach is a reference; its files use CC BY-NC-SA 4.0.
-The Fridakeeb stem position still needs selection and a fit test.
+The Fridacorne stem position still needs selection and a fit test.
 
 ## Manufacturing gates
 

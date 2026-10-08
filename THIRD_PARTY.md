@@ -20,3 +20,8 @@ The original source image remains unchanged.
 `assets/kingjola.ttf` is copied from the user-installed KingjolA font in `/Users/roshan/Library/Fonts/`.
 It supplies the requested title lettering, rasterized into silkscreen geometry.
 The caption uses Pillow’s bundled default font so digits and the @ symbol remain readable.
+
+Column stagger dimensions are measured from the [Piantor left PCB](https://github.com/beekeeb/piantor/blob/cd847afb4f9a86e8c1c8e36f243140644013afb2/pcb/left/keyboard_pcb.kicad_pcb).
+The source uses 18 mm horizontal and 17 mm vertical pitch; this design uses 20 mm MX pitch.
+Its measured 12, 5, -5, and -2 mm offsets inform a milder 8, 4, -4, and -2 mm adaptation.
+Upstream PCB, circuit, and case files are not included. Its repository uses GPL-3.0.

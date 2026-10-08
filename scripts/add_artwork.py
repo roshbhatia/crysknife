@@ -22,6 +22,10 @@ for side, center in [("left", 159), ("right", 176)]:
     text = board_path.read_text()
     assert "frida-silkscreen" not in text, "Regenerate the PCB before applying artwork."
     board = parse(text)
+    middle_home = next(fp for fp in children(board, "footprint")
+                       if any(p[1:3] == ["Reference", "S11"] for p in children(fp, "property")))
+    center = float(child(middle_home, "at")[1]) + (2 if side == "left" else -2)
+    image_center_y = float(child(middle_home, "at")[2]) + 8.125
     keepouts = []
     for footprint in children(board, "footprint"):
         at = child(footprint, "at")
@@ -39,7 +43,7 @@ for side, center in [("left", 159), ("right", 176)]:
             keepouts.append((px, py, math.hypot(*size) / 2 + 0.3))
     pixels = []
     left = center - image.width * pitch / 2
-    top = 82 - image.height * pitch / 2
+    top = image_center_y - image.height * pitch / 2
     for row in range(image.height):
         for col in range(image.width):
             alpha = image.getpixel((col, row))
@@ -52,11 +56,11 @@ for side, center in [("left", 159), ("right", 176)]:
     font = ImageFont.truetype(str(root / "assets/kingjola.ttf"), 512)
     title_center = 110 if side == "left" else 225
     for label, cy, max_width, max_height in [
-        ("fridakeeb", 72, 34, 4),
-        ("(corne-derived v0.1)", 88, 30, 3.2),
+        ("Fridacorne", 72, 34, 4),
+        ("v1.0.0", 88, 30, 3.2),
         ("by @fraud", 91, 24, 2.6),
     ]:
-        label_font = font if label == "fridakeeb" else ImageFont.load_default(size=512)
+        label_font = font if label == "Fridacorne" else ImageFont.load_default(size=512)
         box = label_font.getbbox(label)
         mask = Image.new("L", (box[2]-box[0], box[3]-box[1]))
         ImageDraw.Draw(mask).text((-box[0], -box[1]), label, font=label_font, fill=255)
@@ -84,12 +88,12 @@ for side, center in [("left", 159), ("right", 176)]:
       (layer "B.SilkS" (type "Bottom Silk Screen") (color "Black")))"""
     text = text.replace('(setup', '(setup\n'+stackup, 1)
     rectangles = "\n".join(
-        f'(fp_rect (start {x0-center:.4f} {y0-82:.4f}) (end {x1-center:.4f} {y1-82:.4f}) '
+        f'(fp_rect (start {x0-center:.4f} {y0-image_center_y:.4f}) (end {x1-center:.4f} {y1-image_center_y:.4f}) '
         '(stroke (width 0) (type default)) (fill solid) (layer "F.SilkS"))'
         for x0, y0, x1, y1 in pixels
     )
     reference = '(property "Reference" "ART1" (at 0 0) (layer "F.SilkS") hide (effects (font (size 1 1) (thickness 0.15))))'
-    footprint = f'\n(footprint "fridakeeb:frida-silkscreen" (layer "F.Cu") (at {center} 82) (attr board_only exclude_from_pos_files exclude_from_bom)\n{reference}\n{rectangles}\n)\n'
+    footprint = f'\n(footprint "fridakeeb:frida-silkscreen" (layer "F.Cu") (at {center} {image_center_y}) (attr board_only exclude_from_pos_files exclude_from_bom)\n{reference}\n{rectangles}\n)\n'
     closing = text.rfind(")")
     board_path.write_text(text[:closing] + footprint + text[closing:])
     svg_rectangles = "".join(
