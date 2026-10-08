@@ -116,7 +116,7 @@ def jsx(data, routing):
              f'<board solderMaskColor="white" silkscreenColor="black" outline={{{json.dumps(data["outline"])}}} layers={{2}} thickness={{1.6}} '
              f'autorouter="auto-local" routingDisabled={{{str(not routing).lower()}}} '
              f'placementDrcChecksDisabled={{{str(routing).lower()}}} '
-             'minTraceWidth={0.25} minTraceToPadEdgeClearance={0.2} '
+             'minTraceWidth={0.25} minTraceToPadEdgeClearance={0.2} minViaEdgeToPadEdgeClearance={0.25} '
              'minTraceToHoleEdgeClearance={0.3} '
              'minBoardEdgeClearance={0.55} minViaHoleDiameter={0.3} minViaPadDiameter={0.6}>']
     for pad in data["pads"]:
