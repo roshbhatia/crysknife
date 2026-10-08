@@ -13,7 +13,7 @@ root = Path(__file__).resolve().parents[1]
 source = root / "assets/frida.png"
 assert hashlib.sha256(source.read_bytes()).hexdigest() == "a7c80525068856ffaabe642369a3466a534b14bf7bf8c164e03b5128d39b1cdf"
 minimum_feature = 0.2
-portrait_alpha = Image.open(source).convert("RGBA").getchannel("A").filter(ImageFilter.GaussianBlur(2))
+portrait_alpha = Image.open(source).convert("RGBA").getchannel("A").filter(ImageFilter.GaussianBlur(0.5))
 
 
 for side in ("left", "right"):
@@ -23,8 +23,8 @@ for side in ("left", "right"):
     board = parse(text)
     middle_home = next(fp for fp in children(board, "footprint")
                        if any(p[1:3] == ["Reference", "S11"] for p in children(fp, "property")))
-    center = float(child(middle_home, "at")[1]) + (2 if side == "left" else -2)
-    image_center_y = float(child(middle_home, "at")[2]) + 8.125
+    center = float(child(middle_home, "at")[1]) + (-16 if side == "left" else 16)
+    image_center_y = float(child(middle_home, "at")[2]) + 18.5
     keepouts = []
     for footprint in children(board, "footprint"):
         at = child(footprint, "at")
@@ -147,10 +147,10 @@ for side in ("left", "right"):
                   for fp in children(board, "footprint")}
     arrows = []
     for name, ref, offset, target_offset in [
-        ("reset", "RST1", (0, 7), (0, 2.8)),
-        ("brain", "MCU1", (0, 1), (0, -5)),
-        ("battery", "JST1", (-6, 6), (-3, 0)),
-        ("power", "PWR1", (-7, 9), (-6, 0)),
+        ("{RST}", "RST1", (0, 7), (0, 2.8)),
+        ("{CPU}", "MCU1", (0, 1), (0, -5)),
+        ("{BTY}", "JST1", (-6, 6), (-3, 0)),
+        ("{PWR}", "PWR1", (-7, 9), (-6, 0)),
     ]:
         x, y = components[ref]
         if side == "right":
@@ -165,6 +165,8 @@ for side in ("left", "right"):
 
     def portrait(cx, cy, portrait_width, dot_pitch, hero=False):
         portrait_image = portrait_alpha.copy()
+        if side == "right":
+            portrait_image = portrait_image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
         portrait_image.thumbnail((round(portrait_width/dot_pitch), round(portrait_width/dot_pitch)), Image.Resampling.BOX)
         before = len(pixels)
         left = cx-portrait_image.width*dot_pitch/2
@@ -173,7 +175,7 @@ for side in ("left", "right"):
             for col in range(portrait_image.width):
                 alpha = portrait_image.getpixel((col, row))
                 x, y = left+(col+0.5)*dot_pitch, top+(row+0.5)*dot_pitch
-                size = dot_pitch*math.sqrt(alpha/255)
+                size = dot_pitch if alpha >= 100 else 0
                 radius = size/math.sqrt(2)
                 if size < minimum_feature or not inside(x, y):
                     continue
@@ -186,20 +188,20 @@ for side in ("left", "right"):
                 if any(abs(x-bx) < w/2+radius and abs(y-by) < h/2+radius
                        for bx, by, w, h in lettering_boxes):
                     continue
-                if not hero and abs(x-center) < 21 and abs(y-image_center_y) < 21:
+                if not hero and abs(x-center) < 23 and abs(y-image_center_y) < 23:
                     continue
                 pixels.append((x-size/2, y-size/2, x+size/2, y+size/2))
         return len(pixels) > before
 
-    portraits += portrait(center, image_center_y, 40, 0.6, hero=True)
+    portraits += portrait(center, image_center_y, 44, 0.3, hero=True)
     row = 0
-    cy = min_y+11
+    cy = min_y+14
     while cy < max_y+5:
-        cx = min_x+11+(11 if row % 2 else 0)
+        cx = min_x+14+(14 if row % 2 else 0)
         while cx < max_x+5:
-            portraits += portrait(cx, cy, 20, 1.0)
-            cx += 22
-        cy += 22
+            portraits += portrait(cx, cy, 26, 0.4)
+            cx += 28
+        cy += 28
         row += 1
     top_pixels = list(pixels)
     bottom_pixels = list(pixels)
@@ -283,6 +285,24 @@ for side in ("left", "right"):
       (layer "B.Mask" (type "Bottom Solder Mask") (color "White"))
       (layer "B.SilkS" (type "Bottom Silk Screen") (color "Black")))"""
     text = text.replace('(setup', '(setup\n'+stackup, 1)
+    def compact(face):
+        rows = {}
+        for x0, y0, x1, y1 in face:
+            rows.setdefault((round(y0, 4), round(y1, 4)), []).append((round(x0, 4), round(x1, 4)))
+        result = []
+        for (y0, y1), spans in rows.items():
+            spans.sort()
+            x0, x1 = spans[0]
+            for start, end in spans[1:]:
+                if start <= x1 + 0.00001:
+                    x1 = max(x1, end)
+                else:
+                    result.append((x0, y0, x1, y1))
+                    x0, x1 = start, end
+            result.append((x0, y0, x1, y1))
+        return result
+
+    top_pixels, bottom_pixels = compact(top_pixels), compact(bottom_pixels)
     rectangles = "\n".join(
         f'(fp_rect (start {x0-center:.4f} {y0-image_center_y:.4f}) (end {x1-center:.4f} {y1-image_center_y:.4f}) '
         f'(stroke (width 0) (type default)) (fill solid) (layer "{layer}"))'
