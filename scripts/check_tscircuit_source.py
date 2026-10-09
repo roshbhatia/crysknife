@@ -16,7 +16,8 @@ for side in ("left", "right"):
     data = json.loads((ROOT / f"build/tscircuit/{side}.json").read_text())
     board = pcbnew.LoadBoard(str(ROOT / f"build/pcb/fridakeeb_{side}.kicad_pcb"))
     pads = {(fp.GetReference(), i): pad for fp in board.GetFootprints() for i, pad in enumerate(fp.Pads())}
-    assert len(pads) == len(data["pads"]) + len(data["holes"]) == 230
+    count = 230 if side == "left" else 250
+    assert len(pads) == len(data["pads"]) + len(data["holes"]) == count
     for expected in data["pads"] + data["holes"]:
         actual = pads[(expected["ref"], expected["index"])]
         close(pcbnew.ToMM(actual.GetPosition().x), expected["x"] + data["origin"][0])
@@ -43,4 +44,4 @@ for side in ("left", "right"):
             copper = pcbnew.B_Cu if expected["layer"] == "bottom" else pcbnew.F_Cu
             opposite = pcbnew.F_Cu if copper == pcbnew.B_Cu else pcbnew.B_Cu
             assert actual.IsOnLayer(copper) and not actual.IsOnLayer(opposite), expected
-    print(f"{side}: KiCad independently confirms all 230 pad/hole descriptors")
+    print(f"{side}: KiCad independently confirms all {count} pad/hole descriptors")

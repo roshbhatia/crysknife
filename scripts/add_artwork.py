@@ -156,6 +156,8 @@ for side in ("left", "right"):
         if side == "right":
             offset = (-offset[0], offset[1])
             target_offset = (-target_offset[0], target_offset[1])
+            if ref == "MCU1":
+                offset, target_offset = (15, 0), (12, 0)
         arrows.append((name, x+offset[0], y+offset[1], x+target_offset[0], y+target_offset[1]))
         lettering_boxes.append((x+offset[0], y+offset[1], 12, 4))
         lettering_boxes.append((x+(offset[0]+target_offset[0])/2, y+(offset[1]+target_offset[1])/2,

@@ -19,7 +19,7 @@ def check(side, stage):
                       for n in data if n["type"] == "pcb_component"}
     pads = {pcb_components[n["pcb_component_id"]]: n for n in data
             if n["type"] in ("pcb_smtpad", "pcb_plated_hole")}
-    assert len(pads) == len(expected["pads"]) == 121
+    assert len(pads) == len(expected["pads"]) == (121 if side == "left" else 141)
     ports = {components[n["source_component_id"]]: n for n in data if n["type"] == "source_port"}
     nets = {n["name"]: n["subcircuit_connectivity_map_key"] for n in data if n["type"] == "source_net"}
     names = sorted({p["net"] for p in expected["pads"] if p["net"]})
@@ -102,7 +102,7 @@ def check(side, stage):
         diagnostics.append({"error_id": error["pcb_error_id"], "exact_clearance_mm": clearance})
     (ROOT / f"build/tscircuit/{side}-{stage}-parity.json").write_text(
         json.dumps({"pads": len(pads), "holes": len(holes), "verified_overlap_diagnostics": diagnostics}, indent=2))
-    print(f"{side} {stage}: all 121 pads, 109 holes, outline, and net memberships match")
+    print(f"{side} {stage}: all {len(pads)} pads, 109 holes, outline, and net memberships match")
 
 
 if __name__ == "__main__":

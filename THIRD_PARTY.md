@@ -9,7 +9,10 @@ The upstream build scripts are not included.
 Upstream updates require explicit review and permission.
 
 PCB generation loads [ceoloide/ergogen-footprints](https://github.com/ceoloide/ergogen-footprints/tree/48935f54b456ff1503d78d6b17d9d146b54e8ade) from the pinned Nix input.
-Revision `48935f54b456ff1503d78d6b17d9d146b54e8ade` and its MIT license remain in the immutable dependency source.
+Revision `48935f54b456ff1503d78d6b17d9d146b54e8ade` remains in the immutable dependency source.
+Its selected footprints use MIT and CC BY-NC-SA 4.0 licenses, as declared in each source file.
+Diode, controller, and power-switch sources use CC BY-NC-SA 4.0.
+MX socket, battery, and reset footprints use MIT.
 No upstream footprint files are edited or vendored.
 The local controller adapter changes only the 24 header drill diameters in generated output.
 
@@ -25,5 +28,11 @@ The previously supplied KingjolA asset remains unused.
 
 Column stagger dimensions are measured from the [Piantor left PCB](https://github.com/beekeeb/piantor/blob/cd847afb4f9a86e8c1c8e36f243140644013afb2/pcb/left/keyboard_pcb.kicad_pcb).
 The source uses 18 mm horizontal and 17 mm vertical pitch; this design uses 20 mm MX pitch.
-Its measured 12, 5, -5, and -2 mm offsets inform a milder 8, 4, -4, and -2 mm adaptation.
+Its measured 12, 5, -5, and -2 mm offsets inform a 10, 5, -5, and -2 mm adaptation.
 Upstream PCB, circuit, and case files are not included. Its repository uses GPL-3.0.
+
+`ergogen/trackpoint.js` is a local land pattern for Hirose FH12-8S-1SH(55).
+It follows the 1 mm bottom-contact land drawing on catalog page 21.
+The [manufacturer catalog](https://www.hirose.com/en/product/document?clcode=CL0586-0555-2-55&documentid=D31648_en&documenttype=Catalog&lang=en&productname=FH12A-24S-0.5SH%2855%29&series=FH12) supplies the dimensions.
+The current engineering drawing and supplier assembly rotation remain verification gates.
+No Hirose document or external footprint is vendored.

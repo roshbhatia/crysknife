@@ -17,7 +17,7 @@ for side in ("left", "right"):
         assert len(list(artwork[0].Pads())) == 0
         assert artwork[0].GetLayer() == pcbnew.F_Cu
     footprints = [fp for fp in board.GetFootprints() if fp.GetReference() != "ART1"]
-    assert len(footprints) == 46, (side, len(footprints))
+    assert len(footprints) == (46 if side == "left" else 52), (side, len(footprints))
     keys = [fp for fp in footprints if fp.GetReference().startswith("S")]
     diodes = [fp for fp in footprints if fp.GetReference().startswith("D")]
     assert len(keys) == len(diodes) == 21

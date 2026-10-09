@@ -24,8 +24,9 @@ Touchpad geometry has been removed.
 One TrackPoint belongs on the right half; its module, stem position, and mounting remain open.
 The OpenSCAD case draft includes perimeter gasket suspension.
 TrackPoint mounting remains incomplete.
-PCB placement includes switches, diodes, controller contacts, power, reset, and a battery connector.
-TrackPoint circuitry, the electrical schematic, and manufacturing outputs remain incomplete.
+PCB placement includes switches, diodes, controller contacts, power, reset, and battery connectors.
+The right PCB includes an eight-pin TrackPoint ribbon connector and its support circuit.
+The electrical schematic and manufacturing outputs remain incomplete.
 The tscircuit pipeline routes the existing matrix and power placement drafts.
 The PCB has no case mounting holes; the OpenSCAD sandwich uses six external standoffs per half.
 No PCB assembly order is ready.
@@ -51,7 +52,11 @@ Do not send these prototype plates to fabrication.
 PCB drafts appear under `build/pcb/` with 21 hotswap sockets and 21 SMD diodes per half.
 Both use dedicated controller footprints without reversible solder jumpers.
 The controller generator adapts upstream 1 mm holes to a nominal 0.85 mm for spring headers.
-Supplier tolerance and physical contact fit still need verification.
+[Typeractive specifies 0.8–0.9 mm finished holes](https://typeractive.xyz/products/no-solder-spring-headers).
+[JLCPCB lists standard PTH tolerance as +0.13/−0.08 mm](https://jlcpcb.com/capabilities/pcb-capabilities/).
+At 0.85 mm nominal, that permits 0.77–0.98 mm and cannot guarantee the contact fit.
+Its ±0.05 mm press-fit option lists multilayer ENIG boards; the current board has two copper layers.
+Supplier acceptance of tighter finished holes or a factory-soldered controller connection remains required.
 The right PCB mirrors key positions while preserving component pin orientation and assembly sides.
 
 KiCad CLI runs in its official container, pinned in `tools.lock.json`.
@@ -124,7 +129,17 @@ These are integration drafts until the builds and physical hardware tests pass.
 
 `nix develop . --command python3 scripts/check_electrical.py` checks the PCB against the firmware source.
 It verifies all 42 matrix coordinates, diode direction, nice!nano pin assignments, battery power, and reset wiring.
-Single controller pads for TrackPoint data, clock, and reset do not constitute a completed TrackPoint circuit.
+The right circuit adds 4.7 kΩ clock/data pull-ups to VCC, a 10 kΩ reset pull-down, and 100 nF reset capacitance.
+Another 100 nF capacitor decouples VCC beside the ribbon interface.
+The connector uses Sprintek method 3: DATA, RST, unused MIDDLE, unused RIGHT, unused LEFT, CLK, GND, VCC.
+Mouse buttons come from the keyboard keymap.
+The Hirose FH12-8S-1SH(55) candidate accepts eight-conductor, 1 mm pitch, 0.3 mm thick ribbon.
+Its [JLCPCB identifier is C596711](https://jlcpcb.com/partdetail/HRS_Hirose-FH12_8S_1SH_55/C596711).
+The local land pattern follows the manufacturer catalog; the current engineering drawing still needs supplier acceptance.
+The connector and passives sit below the raised nice!nano, clear of the switch holes.
+Plug in the prepared ribbon before inserting the controller.
+Cable contact orientation, pin-to-pin continuity, latch access, and module clearance require physical verification.
+The controller bay retains its `{CPU}` arrow but omits hidden pin lettering on the populated right half.
 
 ## Sandwich case draft
 

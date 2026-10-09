@@ -11,6 +11,6 @@ for side in ("left", "right"):
     unexpected = [item for item in report["violations"]
                   if item["type"] != "lib_footprint_issues" or item["severity"] != "warning"]
     assert not unexpected, (side, unexpected)
-    expected = 0 if routed else 72
+    expected = 0 if routed else (72 if side == "left" else 87)
     assert len(report["unconnected_items"]) == expected, (side, len(report["unconnected_items"]))
     print(f"{side}: no unexpected violations; {expected} unrouted connections remain")

@@ -63,12 +63,23 @@ for side in ("left", "right"):
         for name, gpio in [("scl", 3), ("sda", 2), ("rst", 4)]:
             assert re.search(rf"{name}-gpios\s*=\s*<&pro_micro {gpio} GPIO_ACTIVE_HIGH>", overlay)
         assert gpio_nets[2] == "TP_DATA" and gpio_nets[3] == "TP_CLK" and gpio_nets[4] == "TP_RST"
+        assert pads("TP1") == {"1": "TP_DATA", "2": "TP_RST", "3": None, "4": None,
+                               "5": None, "6": "TP_CLK", "7": "GND", "8": "VCC"}
+        for ref, value, mapping in [
+            ("R1", "4.7k", {"1": "VCC", "2": "TP_DATA"}),
+            ("R2", "4.7k", {"1": "VCC", "2": "TP_CLK"}),
+            ("R3", "10k", {"1": "TP_RST", "2": "GND"}),
+            ("C1", "100nF", {"1": "TP_RST", "2": "GND"}),
+            ("C2", "100nF", {"1": "VCC", "2": "GND"}),
+        ]:
+            assert pads(ref) == mapping, (ref, pads(ref))
+            assert next(p[2] for p in children(footprints[ref], "property") if p[1] == "Value") == value
     evidence.append({"side": side, "unique_matrix_positions": len(key_coordinates),
                      "controller_pin_mapping": "matches nice!nano v2 face-up pinout",
                      "diode_direction": "col2row; diode cathode pad 1 to row",
                      "power_path": "JST pin 2 BAT_P through PWR1 to nice!nano RAW; JST pin 1 GND",
                      "reset": "momentary RST to GND", "matrix_positions": sorted(key_coordinates),
-                     "trackpoint": "controller signals assigned; external connector and circuit are incomplete"})
+                     "trackpoint": "8-pin FFC, 4.7k clock/data pull-ups, 10k/100nF reset and 100nF decoupling" if side == "right" else "not fitted"})
 all_positions = {tuple(p) for item in evidence for p in item["matrix_positions"]}
 assert all_positions == transform
 keymap = (ROOT / "firmware/config/fridakeeb.keymap").read_text()
@@ -77,4 +88,4 @@ for bindings in re.findall(r"bindings\s*=\s*<(.*?)>;", keymap, re.S):
 output = ROOT / "build/pcb/electrical-checks.json"
 output.write_text(json.dumps(evidence, indent=2)+"\n")
 print("Electrical source audit: all 42 matrix positions, diode direction, power, reset and firmware GPIOs match")
-print("Not hardware proof: TrackPoint interface, controller contact fit, battery polarity and assembly remain unverified")
+print("Not hardware proof: TrackPoint cable/mount, controller contact fit, battery polarity and assembly remain unverified")
