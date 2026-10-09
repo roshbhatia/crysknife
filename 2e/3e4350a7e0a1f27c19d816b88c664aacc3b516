@@ -1,0 +1,30 @@
+scripts/check_assembly_guards.py
+  s_df88920dc610de::t_5d9e380917f6ce 1-30
+README.md
+  s_df88920dc610de::t_6b7dd039a42f39 29-30,174-176
+  s_df88920dc610de::t_58335adb7a3b2d 177
+manufacturing/parts.json
+  s_df88920dc610de::t_de1ec268946ab3 1-109
+scripts/generate_assembly.py
+  s_df88920dc610de::t_5d9e380917f6ce 1-79
+.github/workflows/pcb.yml
+  s_df88920dc610de::t_a365a0b5f01c64 12,32-33,42
+manufacturing/README.md
+  s_df88920dc610de::t_8a59091387afc3 1-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2e3e4350a7e0a1f27c19d816b88c664aacc3b516",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
