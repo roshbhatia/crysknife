@@ -16,7 +16,7 @@ Record measurements in `prototype-results.json`; an empty result does not pass.
 7. Fit headers without forcing or leaving any contact partly seated. Repeat insertion/removal ten times, then repeat continuity checks.
 8. Fit 21 switches per half. Verify retention, complete travel, keycap clearance, and socket support during insertion.
 9. Fit the battery with removable foam retention and an insulating cover. Verify no cell pressure, pin contact, trapped lead, or rattle.
-10. Compress the gaskets through their full permitted travel. Maintain clearance above the battery and below the switch pins.
+10. Check the rubber floor, battery foam, and washers with the screws seated. Keep clearance above the battery and below switch pins.
 
 ## Electrical and firmware
 

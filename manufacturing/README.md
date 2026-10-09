@@ -2,6 +2,7 @@
 
 The files in this directory describe candidate parts and factory requirements.
 They do not authorize fabrication or establish that the hardware works.
+The [reference comparison](reference-builds.md) shows which circuits match existing keyboards and which mechanics still need testing.
 
 Generate the quote inventory after PCB generation and artwork:
 
