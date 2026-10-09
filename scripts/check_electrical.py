@@ -65,6 +65,16 @@ for side in ("left", "right"):
         assert gpio_nets[2] == "TP_DATA" and gpio_nets[3] == "TP_CLK" and gpio_nets[4] == "TP_RST"
         assert pads("TP1") == {"1": "TP_DATA", "2": "TP_RST", "3": None, "4": None,
                                "5": None, "6": "TP_CLK", "7": "GND", "8": "VCC"}
+        ribbon_pads = children(footprints["TP1"], "pad")
+        assert len(ribbon_pads) == 10
+        for pad in ribbon_pads:
+            assert child(pad, "layers")[1:] == ["F.Cu", "F.Paste", "F.Mask"]
+            size = list(map(float, child(pad, "size")[1:]))
+            position = list(map(float, child(pad, "at")[1:3]))
+            if pad[1]:
+                assert size == [0.6, 1.3] and position == [int(pad[1])-4.5, 0]
+            else:
+                assert size == [1.8, 2.2] and position in [[-5.9, 3.25], [5.9, 3.25]]
         for ref, value, mapping in [
             ("R1", "4.7k", {"1": "VCC", "2": "TP_DATA"}),
             ("R2", "4.7k", {"1": "VCC", "2": "TP_CLK"}),

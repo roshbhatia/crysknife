@@ -16,16 +16,16 @@ module.exports = {
     (footprint "fridakeys:Hirose_FH12-8S-1SH" (layer "F.Cu") ${p.at}
       (property "Reference" "${p.ref}" (at 0 2 ${p.r}) (layer "F.Fab")
         (effects (font (size 1 1) (thickness 0.15))))
-      (property "Value" "FH12-8S-1SH(55)" (at 0 -7 ${p.r}) (layer "F.Fab")
+      (property "Value" "FH12-8S-1SH(55)" (at 0 7 ${p.r}) (layer "F.Fab")
         (effects (font (size 1 1) (thickness 0.15))))
       (attr smd)
-      (fp_rect (start -6.3 -6.4) (end 6.3 -0.8)
+      (fp_rect (start -6.3 -0.65) (end 6.3 5.75)
         (stroke (width 0.1) (type default)) (fill none) (layer "F.Fab"))
-      (fp_rect (start -7.05 -6.65) (end 7.05 0.9)
+      (fp_rect (start -7.05 -0.9) (end 7.05 6)
         (stroke (width 0.05) (type default)) (fill none) (layer "F.CrtYd"))
       ${signals}
-      (pad "" smd rect (at -6.05 -2.6 ${p.r}) (size 1.5 2.2) (layers "F.Cu" "F.Paste" "F.Mask"))
-      (pad "" smd rect (at 6.05 -2.6 ${p.r}) (size 1.5 2.2) (layers "F.Cu" "F.Paste" "F.Mask"))
+      (pad "" smd rect (at -5.9 3.25 ${p.r}) (size 1.8 2.2) (layers "F.Cu" "F.Paste" "F.Mask"))
+      (pad "" smd rect (at 5.9 3.25 ${p.r}) (size 1.8 2.2) (layers "F.Cu" "F.Paste" "F.Mask"))
     )`;
   },
 };
