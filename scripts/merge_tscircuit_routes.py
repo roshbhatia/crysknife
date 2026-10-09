@@ -117,28 +117,30 @@ for side in ("left", "right"):
             if first.GetNetCode() == second.GetNetCode():
                 continue
             a, b = coordinates(first), coordinates(second)
-            radii = pcbnew.ToMM(first.GetWidth()+second.GetWidth())/2
+            radii = pcbnew.ToMM(first.GetWidth(pcbnew.F_Cu)+second.GetWidth(pcbnew.F_Cu))/2
             distance = math.hypot(a["x"]-b["x"], a["y"]-b["y"])
             before = distance-radii
             if before >= 0.25:
                 continue
-            assert {first.GetNetname(), second.GetNetname()} == {"RAW", "GND"}, "Unrecognized via clearance defect"
             if first.GetNetname() == "GND":
                 moving, fixed, moving_source = first, second, source
-            else:
+            elif second.GetNetname() == "GND":
                 moving, fixed, moving_source = second, first, other_source
+            else:
+                moving, fixed, moving_source = first, second, source
             start, anchor = coordinates(moving), coordinates(fixed)
+            assert distance > 0, "Coincident vias require a new route"
             scale = (radii+0.3)/distance
             target = {axis: anchor[axis]+(start[axis]-anchor[axis])*scale for axis in ("x", "y")}
-            move_via(moving, target, net_codes["GND"])
+            move_via(moving, target, moving.GetNetCode())
             after = math.dist(tuple(coordinates(moving).values()), tuple(coordinates(fixed).values()))-radii
             assert after >= 0.29999
-            finishing.append({"net": "GND", "via": moving_source["pcb_via_id"], "from": start, "to": target,
-                              "opposite_net": "RAW", "via_clearance_before_mm": before, "via_clearance_after_mm": after})
+            finishing.append({"net": moving.GetNetname(), "via": moving_source["pcb_via_id"], "from": start, "to": target,
+                              "opposite_net": fixed.GetNetname(), "via_clearance_before_mm": before, "via_clearance_after_mm": after})
     for index, (_, first) in enumerate(created_vias):
         for _, second in created_vias[index+1:]:
             if first.GetNetCode() != second.GetNetCode():
-                gap = math.dist(tuple(coordinates(first).values()), tuple(coordinates(second).values()))-pcbnew.ToMM(first.GetWidth()+second.GetWidth())/2
+                gap = math.dist(tuple(coordinates(first).values()), tuple(coordinates(second).values()))-pcbnew.ToMM(first.GetWidth(pcbnew.F_Cu)+second.GetWidth(pcbnew.F_Cu))/2
                 assert gap >= 0.24999, (side, "Via finishing introduced another clearance defect", gap)
     (ROOT / f"build/pcb/{side}-route-finishing.json").write_text(json.dumps(finishing, indent=2)+"\n")
     output = ROOT / f"build/pcb/fridakeeb_{side}_routed.kicad_pcb"
