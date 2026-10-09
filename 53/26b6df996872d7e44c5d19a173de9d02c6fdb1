@@ -1,0 +1,95 @@
+README.md
+  s_df88920dc610de::t_38cac0c1a33304 3-4,6-25,29,32-34,37-62
+tscircuit/models/left-artwork.ts
+  s_df88920dc610de::t_4bddf52a10b6e0 3-3217,3220-3224,3226-3230,3233-3243,3245-3256,3258-3259,3261-3268,3270-3271,3273-3282,3284-3293,3295-3305,3307-3308,3310,3312-3315,3318-3320,3324-3328,3330-3333,3336-3339,3341-3344,3347-3353,4399-7616,7618-7622,7625-7634,7637-7638,7640-7651,7653-7655,7657-7664,7666-7675,7677-7686,7688-7697,7699-7703,7705,7707-7708,7710-7715,7719-7721,7724-7726,7729-7732,7734-7737,7740-7743,7745-7749
+tscircuit/models/right-artwork.ts
+  s_df88920dc610de::t_d21b899e2eefb5 3-3206,3209-3213,3215-3219,3222-3232,3234-3245,3247-3248,3250-3257,3259-3260,3262-3271,3273-3282,3284-3294,3296-3297,3299,3301-3304,3307-3309,3313-3317,3319-3322,3325-3328,3330-3333,3336-3342,4357-7563,7565-7569,7572-7581,7584-7585,7587-7598,7600-7602,7604-7611,7613-7622,7624-7633,7635-7644,7646-7650,7652,7654-7655,7657-7662,7666-7668,7671-7673,7676-7679,7681-7684,7687-7690,7692-7696
+out/firmware/README.md
+  s_df88920dc610de::t_675265d81be78b 10
+out/README.md
+  s_df88920dc610de::t_675265d81be78b 8
+.github/workflows/firmware.yml
+  s_df88920dc610de::t_8ea255cd8e3fe5 23
+.github/workflows/pcb.yml
+  s_df88920dc610de::t_3f14135084de3b 60-63,65-66,71-72,74-75,78-85
+THIRD_PARTY.md
+  s_df88920dc610de::t_0a628e4958a50e 20-22
+assets/knife.svg
+  s_df88920dc610de::t_80252929dd704e 1-1281
+ergogen/controller_sockets.js
+  s_df88920dc610de::t_b9cc852a8ca00b 36
+ergogen/layout.yaml
+  s_df88920dc610de::t_3075b6eb5faf32 5,7
+ergogen/pcb.yaml
+  s_df88920dc610de::t_fa26c3837056cd 2,32,92-93
+firmware/boards/shields/crysknife/Kconfig.defconfig
+  s_df88920dc610de::t_3316044062a745 1,8,11
+firmware/boards/shields/crysknife/Kconfig.shield
+  s_df88920dc610de::t_2189b3fc679e61 1-5
+firmware/boards/shields/crysknife/crysknife_left.overlay
+  s_df88920dc610de::t_f3b5e9ffa06b40 1
+firmware/boards/shields/crysknife/crysknife_right.overlay
+  s_df88920dc610de::t_7f411ddd182eec 1
+flake.nix
+  s_df88920dc610de::t_38e9b466bf5c27 2
+manufacturing/jlcpcb/README.md
+  s_df88920dc610de::t_06eff6066c6825 18
+manufacturing/jlcpcb/left-bom.csv
+  s_df88920dc610de::t_0afdc1c6d113de 1-7
+manufacturing/jlcpcb/right-bom.csv
+  s_df88920dc610de::t_4d8221390f7494 1-7
+manufacturing/parts.json
+  s_df88920dc610de::t_8354e6447a83e8 57
+package-lock.json
+  s_df88920dc610de::t_84ea11adef93b0 2,8
+package.json
+  s_df88920dc610de::t_d8340e3f6c5089 2
+scripts/add_artwork.py
+  s_df88920dc610de::t_3ac0e0382940c2 5,10,17-21,23-24,28,30,177-183,186,190-195,197,199-200,202-203,205-209,229,235,266,346,355,357
+scripts/build_firmware.py
+  s_df88920dc610de::t_11feac976fa116 8
+scripts/check_assembly_guards.py
+  s_df88920dc610de::t_f4f9379900dd21 11
+scripts/check_electrical.py
+  s_df88920dc610de::t_f557cb4118f353 9-10,24,37,41,76
+scripts/check_placement.py
+  s_df88920dc610de::t_6594130657ad2b 12
+scripts/check_tscircuit_source.py
+  s_df88920dc610de::t_69acbb6fb8ccfb 17
+scripts/fill_ground.py
+  s_df88920dc610de::t_9449277226cbcd 18
+scripts/generate_assembly.py
+  s_df88920dc610de::t_705ef6fe76a02b 58
+scripts/generate_case.py
+  s_df88920dc610de::t_fc4766df901baf 31
+scripts/generate_pcbs.cjs
+  s_df88920dc610de::t_34f176e14025e0 18
+scripts/generate_schematic.py
+  s_df88920dc610de::t_fde9ac9297d25e 20,33,35,57,84-85,94-96,98-100,102,137,139
+scripts/generate_tscircuit.py
+  s_df88920dc610de::t_95fe0d12ebae6b 43
+scripts/merge_tscircuit_routes.py
+  s_df88920dc610de::t_a839880a27609e 15,146
+scripts/save_outputs.py
+  s_df88920dc610de::t_918f8056a149fa 29,33,35,48,50
+scripts/split_preview.py
+  s_df88920dc610de::t_416c7b028f0522 24
+tscircuit/README.md
+  s_df88920dc610de::t_4ab78a69019465 24,73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5326b6df996872d7e44c5d19a173de9d02c6fdb1",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
