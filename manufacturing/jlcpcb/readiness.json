@@ -2,7 +2,7 @@
   "status": "NOT ORDER READY",
   "catalog_checked": "2026-10-09",
   "coordinate_system": "JLC supplier model origins; millimeters; X right, Y up; PCB origin 0,0",
-  "placement_validation": "JLC rendered pad and hole overlays inspected on both halves, 2026-10-09. Supplier production review and physical testing remain pending.",
+  "placement_validation": "JLC rendered body outlines, pads, holes and diode cathodes rechecked on both halves, 2026-10-09. Socket body orientation corrected by 180 degrees. Production review and physical testing remain pending.",
   "digital_evidence": "../../out/validation.json",
   "remaining_gates": [
     "Current manufacturer drawings, footprint fit, pickup origins and rotations accepted by assembler",

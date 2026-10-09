@@ -27,9 +27,23 @@ The outline is approximately 144.862 × 103.224 mm. Two 5 mm rails increase the 
 
 `placement-corrections.json` defines supplier-specific origins and angles. The generator applies them to the unchanged KiCad footprints.
 Socket pickup origins move to the midpoint of the two solder pads. Local translation is −0.6215 mm X, +3.81 mm Y.
-That translation rotates with each native footprint, including the thumb keys. Bottom-side supplier angles reverse the native angle.
+That translation rotates with each native footprint, including the thumb keys. Socket supplier angles are `(180 - native_angle) % 360`. This includes bottom-side mirroring and the corrected body orientation.
 Diodes and receivers also need supplier angle changes. Power switches rotate 90 degrees; reset switches rotate 180 degrees.
 JST connectors retain their native positions. These rules apply only to the selected supplier models.
+
+## Socket orientation recheck
+
+The initial review missed a 180-degree reversal of the socket body. Pads and hole positions alone did not establish the asymmetric body orientation.
+All 42 sockets were corrected, reuploaded, and checked after reload. Translation did not change.
+Regular sockets now use 180 degrees. Left S20/S21 use 200/130 degrees; right S20/S21 use 160/230 degrees.
+The body outlines now match the PCB reference outlines, including the thumb keys.
+See [before](../../previews/jlcpcb/socket-body-before.png) and [after](../../previews/jlcpcb/socket-body-after.png).
+The visible red reference text rotates with the component model; its reading direction is not an alignment test.
+
+The [socket manufacturer drawing](https://datasheet.lcsc.com/datasheet/pdf/d953a8b0b623247f3341ebcfbaa2e88f.pdf?productCode=C41430893) specifies 6.35 mm horizontal and 2.54 mm vertical opening spacing.
+Those dimensions match the native footprint. The [diode drawing](https://datasheet.lcsc.com/datasheet/pdf/8abd7fc00ebe41ffb03ad1383c10753b.pdf?productCode=C81598) identifies the band as cathode/pin 1.
+All 42 native cathode pads connect to rows; anode pads connect to the corresponding switch nets.
+Rendered cathode bands match those pads, including all four angled diodes. Diode rotations remain unchanged.
 
 ## Verification and limits
 

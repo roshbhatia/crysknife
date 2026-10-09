@@ -1,8 +1,17 @@
 {
   "checked": "2026-10-09",
-  "source": "Existing JLCPCB drafts after BOM/CPL upload and page reload",
+  "source": "Existing JLCPCB drafts reloaded after socket body correction",
   "boards": {
     "left": [
+      {
+        "reference": "RST1",
+        "x": 219.704,
+        "y": -45.3,
+        "rotation": 180,
+        "layer": "T",
+        "lcsc": "C79175",
+        "selected": true
+      },
       {
         "reference": "PWR1",
         "x": 229.25,
@@ -13,12 +22,219 @@
         "selected": true
       },
       {
-        "reference": "RST1",
-        "x": 219.704,
-        "y": -45.3,
+        "reference": "S1",
+        "x": 99.379,
+        "y": -96.19,
         "rotation": 180,
-        "layer": "T",
-        "lcsc": "C79175",
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S2",
+        "x": 99.379,
+        "y": -76.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S3",
+        "x": 99.379,
+        "y": -56.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S4",
+        "x": 119.378,
+        "y": -96.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S5",
+        "x": 119.378,
+        "y": -76.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S6",
+        "x": 119.378,
+        "y": -56.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S7",
+        "x": 139.379,
+        "y": -84.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S8",
+        "x": 139.379,
+        "y": -64.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S9",
+        "x": 139.379,
+        "y": -44.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S10",
+        "x": 159.379,
+        "y": -79.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S11",
+        "x": 159.379,
+        "y": -59.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S12",
+        "x": 159.379,
+        "y": -39.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S13",
+        "x": 179.379,
+        "y": -84.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S14",
+        "x": 179.379,
+        "y": -64.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S15",
+        "x": 179.379,
+        "y": -44.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S16",
+        "x": 199.379,
+        "y": -86.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S17",
+        "x": 199.379,
+        "y": -66.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S18",
+        "x": 199.379,
+        "y": -46.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S19",
+        "x": 173.379,
+        "y": -110.19,
+        "rotation": 180,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S20",
+        "x": 196.719,
+        "y": -112.957,
+        "rotation": 200,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S21",
+        "x": 215.456,
+        "y": -120.808,
+        "rotation": 130,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "MCU1A",
+        "x": 212.084,
+        "y": -62.14,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C5156451",
+        "selected": true
+      },
+      {
+        "reference": "MCU1B",
+        "x": 227.324,
+        "y": -62.14,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C5156451",
+        "selected": true
+      },
+      {
+        "reference": "JST1",
+        "x": 217.25,
+        "y": -87.75,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C173752",
         "selected": true
       },
       {
@@ -194,8 +410,8 @@
       },
       {
         "reference": "D20",
-        "x": 203.406902,
-        "y": -118.035856,
+        "x": 203.407,
+        "y": -118.036,
         "rotation": 110,
         "layer": "B",
         "lcsc": "C81598",
@@ -203,227 +419,11 @@
       },
       {
         "reference": "D21",
-        "x": 222.515394,
-        "y": -116.260368,
+        "x": 222.515,
+        "y": -116.26,
         "rotation": 40,
         "layer": "B",
         "lcsc": "C81598",
-        "selected": true
-      },
-      {
-        "reference": "JST1",
-        "x": 217.25,
-        "y": -87.75,
-        "rotation": 90,
-        "layer": "B",
-        "lcsc": "C173752",
-        "selected": true
-      },
-      {
-        "reference": "S1",
-        "x": 99.3785,
-        "y": -96.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S2",
-        "x": 99.3785,
-        "y": -76.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S3",
-        "x": 99.3785,
-        "y": -56.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S4",
-        "x": 119.3785,
-        "y": -96.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S5",
-        "x": 119.3785,
-        "y": -76.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S6",
-        "x": 119.3785,
-        "y": -56.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S7",
-        "x": 139.3785,
-        "y": -84.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S8",
-        "x": 139.3785,
-        "y": -64.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S9",
-        "x": 139.3785,
-        "y": -44.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S10",
-        "x": 159.3785,
-        "y": -79.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S11",
-        "x": 159.3785,
-        "y": -59.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S12",
-        "x": 159.3785,
-        "y": -39.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S13",
-        "x": 179.3785,
-        "y": -84.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S14",
-        "x": 179.3785,
-        "y": -64.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S15",
-        "x": 179.3785,
-        "y": -44.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S16",
-        "x": 199.3785,
-        "y": -86.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S17",
-        "x": 199.3785,
-        "y": -66.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S18",
-        "x": 199.3785,
-        "y": -46.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S19",
-        "x": 173.3785,
-        "y": -110.19,
-        "rotation": 0,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S20",
-        "x": 196.719078,
-        "y": -112.957206,
-        "rotation": 20,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "S21",
-        "x": 215.455653,
-        "y": -120.807867,
-        "rotation": 310,
-        "layer": "B",
-        "lcsc": "C41430893",
-        "selected": true
-      },
-      {
-        "reference": "MCU1A",
-        "x": 212.084,
-        "y": -62.14,
-        "rotation": 90,
-        "layer": "B",
-        "lcsc": "C5156451",
-        "selected": true
-      },
-      {
-        "reference": "MCU1B",
-        "x": 227.324,
-        "y": -62.14,
-        "rotation": 90,
-        "layer": "B",
-        "lcsc": "C5156451",
         "selected": true
       }
     ],
@@ -444,33 +444,6 @@
         "rotation": 180,
         "layer": "T",
         "lcsc": "C79175",
-        "selected": true
-      },
-      {
-        "reference": "JST1",
-        "x": 117.75,
-        "y": -87.75,
-        "rotation": 90,
-        "layer": "B",
-        "lcsc": "C173752",
-        "selected": true
-      },
-      {
-        "reference": "MCU1A",
-        "x": 107.676,
-        "y": -62.14,
-        "rotation": 90,
-        "layer": "B",
-        "lcsc": "C5156451",
-        "selected": true
-      },
-      {
-        "reference": "MCU1B",
-        "x": 122.916,
-        "y": -62.14,
-        "rotation": 90,
-        "layer": "B",
-        "lcsc": "C5156451",
         "selected": true
       },
       {
@@ -646,8 +619,8 @@
       },
       {
         "reference": "D20",
-        "x": 145.500549,
-        "y": -112.973958,
+        "x": 145.501,
+        "y": -112.974,
         "rotation": 70,
         "layer": "B",
         "lcsc": "C81598",
@@ -655,198 +628,225 @@
       },
       {
         "reference": "D21",
-        "x": 121.997863,
-        "y": -127.597826,
+        "x": 121.998,
+        "y": -127.598,
         "rotation": 140,
         "layer": "B",
         "lcsc": "C81598",
         "selected": true
       },
       {
+        "reference": "JST1",
+        "x": 117.75,
+        "y": -87.75,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C173752",
+        "selected": true
+      },
+      {
+        "reference": "MCU1A",
+        "x": 107.676,
+        "y": -62.14,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C5156451",
+        "selected": true
+      },
+      {
+        "reference": "MCU1B",
+        "x": 122.916,
+        "y": -62.14,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C5156451",
+        "selected": true
+      },
+      {
         "reference": "S1",
-        "x": 234.3785,
+        "x": 234.379,
         "y": -96.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S2",
-        "x": 234.3785,
+        "x": 234.379,
         "y": -76.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S3",
-        "x": 234.3785,
+        "x": 234.379,
         "y": -56.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S4",
-        "x": 214.3785,
+        "x": 214.379,
         "y": -96.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S5",
-        "x": 214.3785,
+        "x": 214.379,
         "y": -76.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S6",
-        "x": 214.3785,
+        "x": 214.379,
         "y": -56.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S7",
-        "x": 194.3785,
+        "x": 194.379,
         "y": -84.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S8",
-        "x": 194.3785,
+        "x": 194.379,
         "y": -64.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S9",
-        "x": 194.3785,
+        "x": 194.379,
         "y": -44.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S10",
-        "x": 174.3785,
+        "x": 174.379,
         "y": -79.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S11",
-        "x": 174.3785,
+        "x": 174.379,
         "y": -59.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S12",
-        "x": 174.3785,
+        "x": 174.379,
         "y": -39.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S13",
-        "x": 154.3785,
+        "x": 154.379,
         "y": -84.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S14",
-        "x": 154.3785,
+        "x": 154.379,
         "y": -64.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S15",
-        "x": 154.3785,
+        "x": 154.379,
         "y": -44.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S16",
-        "x": 134.3785,
+        "x": 134.379,
         "y": -86.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S17",
-        "x": 134.3785,
+        "x": 134.379,
         "y": -66.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S18",
-        "x": 134.3785,
+        "x": 134.379,
         "y": -46.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S19",
-        "x": 160.3785,
+        "x": 160.379,
         "y": -110.19,
-        "rotation": 0,
+        "rotation": 180,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S20",
-        "x": 137.112884,
-        "y": -113.382337,
-        "rotation": 340,
+        "x": 137.113,
+        "y": -113.382,
+        "rotation": 160,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
       },
       {
         "reference": "S21",
-        "x": 118.745362,
-        "y": -119.855673,
-        "rotation": 50,
+        "x": 118.745,
+        "y": -119.856,
+        "rotation": 230,
         "layer": "B",
         "lcsc": "C41430893",
         "selected": true
