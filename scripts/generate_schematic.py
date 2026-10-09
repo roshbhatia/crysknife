@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 from uuid import NAMESPACE_URL, uuid5
 
@@ -28,6 +29,8 @@ for side in ('left', 'right'):
     symbols, placed, wires, labels, connections, texts = [], [], [], [], {}, []
 
     def component(ref, value, pins, x, y, footprint='', module=False, flag=False):
+        x, y = (round(v / 1.27) * 1.27 for v in (x, y))
+        footprint = 'fridakeys:'+ref if footprint else ''
         name = ref.replace('#', '')
         identifier = 'fridakeys:'+name
         height = max(2.54, (len(pins)+1)*2.54)
@@ -90,9 +93,30 @@ for side in ('left', 'right'):
     texts.append(f'(text {json.dumps(text)} (at 25 265 0) (effects (font (size 1 1)) (justify left)) (uuid {uid(side+"notes")}))')
     body = f'(kicad_sch (version 20250114) (generator "fridakeys") (uuid {sheet}) (paper "A3") (title_block (title "fridakeys {side}") (rev "1.0.0") (company "by @roshbhatia")) (lib_symbols {" ".join(symbols)}) {" ".join(wires+labels+placed+texts)} (sheet_instances (path "/" (page "1"))))\n'
     (OUT/f'fridakeys_{side}.kicad_sch').write_text(body)
+    (OUT/f'fridakeys_{side}.kicad_pro').write_text(json.dumps({'meta': {'version': 1}})+'\n')
     libdir = OUT
     (libdir/'fridakeys.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "fridakeys") '+' '.join(s.replace('"fridakeys:', '"') for s in symbols)+')\n')
     board = parse((ROOT/f'build/pcb/fridakeeb_{side}.kicad_pcb').read_text())
+    pretty = OUT/'fridakeys.pretty'
+    pretty.mkdir(exist_ok=True)
+    source = (ROOT/f'build/pcb/fridakeeb_{side}.kicad_pcb').read_text()
+    tokens = list(re.finditer(r'\"(?:\\.|[^\"\\])*\"|[()]|[^\s()]+', source))
+    for i, token in enumerate(tokens):
+        if token.group() != 'footprint' or tokens[i-1].group() != '(':
+            continue
+        depth, end = 1, None
+        for following in tokens[i+1:]:
+            depth += (following.group() == '(') - (following.group() == ')')
+            if depth == 0:
+                end = following.end()
+                break
+        text = source[tokens[i-1].start():end]
+        fp = parse(text)
+        ref = next(p[2] for p in children(fp, 'property') if p[1] == 'Reference')
+        if not children(fp, 'pad'):
+            continue
+        text = re.sub(r'^\(footprint\s+\"[^\"]*\"', '(footprint '+json.dumps(ref), text, count=1)
+        (pretty/f'{ref}.kicad_mod').write_text(text+'\n')
     observed = {}
     for fp in children(board,'footprint'):
         ref = next(p[2] for p in children(fp,'property') if p[1]=='Reference')
@@ -111,3 +135,5 @@ for side in ('left', 'right'):
     print(f'{side}: independent schematic design matches {len(connections)} carrier pins; typed controller and explicit unused pins')
 
 (OUT/"sym-lib-table").write_text('(sym_lib_table (version 7) (lib (name "fridakeys") (type "KiCad") (uri "${KIPRJMOD}/fridakeys.kicad_sym") (options "") (descr "Local carrier symbols and typed external module")))\n')
+
+(OUT/'fp-lib-table').write_text('(fp_lib_table (version 7) (lib (name \"fridakeys\") (type \"KiCad\") (uri \"${KIPRJMOD}/fridakeys.pretty\") (options \"\") (descr \"Generated carrier footprints\")))\n')
