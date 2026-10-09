@@ -1,0 +1,50 @@
+scripts/add_artwork.py
+  s_df88920dc610de::t_b69373aa73d1a6 205-214,253
+  s_df88920dc610de::t_349300762ccc80 11,13,27,30-34,148-156,233,254-268,272,298,309,311,319
+THIRD_PARTY.md
+  s_df88920dc610de::t_c7b69dd15aaeeb 24-26
+tscircuit/README.md
+  s_df88920dc610de::t_c7b69dd15aaeeb 26
+manufacturing/physical-tests.md
+  s_df88920dc610de::t_a1c0a27502f52f 19
+assets/LICENSE.ioskeley-mono
+  s_df88920dc610de::t_56bb51c2c92122 1-92
+README.md
+  s_df88920dc610de::t_c7b69dd15aaeeb 22
+case/geometry.scad
+  s_df88920dc610de::t_409e81e7581c46 1-2
+case/parameters.scad
+  s_df88920dc610de::t_4123132b1667dd 3,11-21
+case/sandwich.scad
+  s_df88920dc610de::t_397642ff9cd6db 15,17,46-51,63,65-69
+ergogen/pcb.yaml
+  s_df88920dc610de::t_a2197b5c9e67a1 36-37,45-46,54-55,63-64
+manufacturing/sendcutsend/README.md
+  s_df88920dc610de::t_f3a93324737675 4,18-36
+scripts/generate_case.py
+  s_df88920dc610de::t_15772c2e6d0014 28,30-37,77,81,94,114-116
+tscircuit/generated/left-board.circuit.tsx
+  s_df88920dc610de::t_bcbbf52a8c81ac 230-233
+tscircuit/generated/right-board.circuit.tsx
+  s_df88920dc610de::t_33c078e7895e4b 230-233
+tscircuit/models/left-artwork.ts
+  s_df88920dc610de::t_7e3928bb3be11b 3-3785,3787-3795,3797-3943,3998-4054,4128-4168,4170-4203,4287-4378,4447,4467-8248,8250-8258,8260-8407,8462-8518,8592-8632,8634-8667,8751-8842,8911
+tscircuit/models/right-artwork.ts
+  s_df88920dc610de::t_5247551520313f 3-3922,3924-3932,3934-4080,4135-4167,4169-4191,4214-4254,4256-4289,4373-4464,4542,4571-8489,8491-8499,8501-8648,8703-8726,8728-8735,8737-8759,8782-8822,8824-8857,8941-9032,9110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "131e3a62d09428c9b88cfde2603be3625b20ee33",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
