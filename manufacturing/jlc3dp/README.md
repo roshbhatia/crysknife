@@ -1,42 +1,39 @@
 # TPU sandwich case
 
-Print one sleeve per half. Each sleeve wraps a flat aluminum bottom plate and a flat clear acrylic top plate.
-Four M2 standoffs hold the plates and PCB together. The TPU forms the exterior walls and bottom.
-The rigid plates carry the screw loads. The sleeve adds no screw holes.
+Each half uses a printed resin top, a flat resin bottom, and a TPU sleeve.
+Four M2 standoffs hold the plates and PCB together. The TPU forms the exterior walls and closed bottom.
+The rigid plates carry the screw loads. The sleeve has no screw holes.
 
 ## Files and suppliers
 
-Upload `left-sleeve.stl` and `right-sleeve.stl` to JLC3DP, quantity one each.
-Select FDM, TPU Plastic, Translucent, no surface finish, and no thread inserts.
-The 3MF files contain the same geometry for inspection.
-Buy the flat plates and damping sheets from [SendCutSend](../sendcutsend/README.md).
+The [JLC cart](https://jlc3dp.com/shopcart/cart?source=3D) contains all six parts, quantity one each.
+Both PCB drafts remain in the account cart. No order was submitted.
 
-| Part | Material | Thickness |
-| --- | --- | --- |
-| Top plate | Clear acrylic | 1.6002 mm |
-| Bottom plate | 5052 aluminum | 3.175 mm |
-| Floor damping sheet | Neoprene | 1.6002 mm |
-| Sleeve walls | 95A TPU | 2 mm |
+Upload `left-plate.3mf`, `right-plate.3mf`, `left-bottom.3mf`, and `right-bottom.3mf` for SLA printing.
+Select 8001 Resin, Translucent, Fine Sanding, and No thread.
+Upload `left-sleeve.stl` and `right-sleeve.stl` for FDM printing.
+Select TPU Plastic, Translucent, no surface finish, and no thread inserts.
+The sleeve 3MF files contain the same geometry for inspection.
 
-The printed resin trays and raised resin plates are no longer part of this design.
-The account cart now contains only the two updated TPU cases and the two preserved PCB drafts.
-The four obsolete resin parts and two obsolete sleeves were removed.
+| Part | Geometry | Each | Pair |
+| --- | --- | ---: | ---: |
+| Resin top | 1.6002 mm switch seats, narrow underside rim | $3.72 | $7.44 |
+| Resin bottom | Flat, 3.175 mm thick | $10.15 | $20.30 |
+| TPU sleeve | 2 mm walls, closed bottom and retaining lip | $15.49 | $30.98 |
+| Six parts | Before shipping | | $58.72 |
 
-Live cart checked on 2026-10-09, quantity one case per half:
-
-| Item | Price |
-| --- | ---: |
-| Each TPU case | $15.49 |
-| Both cases | $30.98 |
-| Estimated shipping | $11.44 |
-| Estimated case subtotal | $42.42 |
-
-Build time is three days. The cart estimates shipment on October 12.
-The quote showed 8–13 business days in transit. Shipping address and factory acceptance remain unconfirmed.
-No order was submitted. Checkout, tax, and supplier review can change the final cost.
+Estimated shipping is $15.31. The current estimate totals $74.03, with a four-day build time.
+The cart estimates shipment on October 13, 2026. Tax, shipping, and supplier review can change the final cost.
 Current cart references and uploaded model hashes are in `quotes.json`.
-Earlier prices in that file are historical and do not apply to this design.
-Screenshots: `previews/jlc3dp-flat-case-quote.png` and `previews/jlc3dp-flat-case-cart.png`.
+See [the saved cart](../../previews/jlc3dp-complete-case-cart.png).
+
+JLC rejected the fully flat 1.6002 mm tops. The accepted top models add a 1 mm tall, 1.6 mm wide underside rim.
+The rim stays outside the PCB outline and clears the mounting washers and key openings.
+The top face stays flat. Switch seats remain 1.6002 mm thick; total model height is 2.6002 mm.
+The sleeve fit and mounting stack remain unchanged. There is no rigid resin tray.
+
+SendCutSend remains an alternative for [flat acrylic tops, aluminum bottoms, and damping sheets](../sendcutsend/README.md).
+Do not buy both rigid plate options for the same keyboard.
 
 ## Sleeve
 
@@ -68,7 +65,7 @@ Keep the controller face up underneath the PCB, with USB toward the rear.
 Keep the battery beside it. Retain the dielectric liner and floor damping sheet.
 Leave the controller BOOST bridge open.
 
-Both sleeves and both flat plate pairs export as connected, closed meshes.
+Both sleeves, reinforced tops, and flat bottoms export as connected, closed meshes.
 Checks cover mirror symmetry, screw holes, switch openings, closed sleeve bottoms, and blind screw-head pockets.
 Lip overlap, front and rear retention, keycap clearance, and top screw access pass nominal geometry checks.
 Both flat plates extend 1.5 mm farther around the PCB than the earlier drawings.
@@ -89,8 +86,8 @@ python3 scripts/generate_case.py
 python3 scripts/export_printed_case.py
 ```
 
-Edit `case/printed-sleeve.scad`, `case/sandwich.scad`, and `case/parameters.scad`.
+Edit `case/printed-plate.scad`, `case/printed-sleeve.scad`, `case/sandwich.scad`, and `case/parameters.scad`.
 Shared shapes live in `case/sleeve-geometry.scad` and `case/plate-geometry.scad`.
-Sleeve exports go here. Plate inspection models and sleeve models go into `out/3d/`.
+Supplier plate and sleeve exports go here. Inspection models also go into `out/3d/`.
 Fresh images go into `previews/`.
 Use `part="sleeved-assembly"` in `case/sandwich.scad` to inspect the complete case.

@@ -1,14 +1,16 @@
 {
   "left-plate": {
-    "triangles": 1276,
+    "triangles": 1352,
     "connected": true,
     "closed": true,
     "euler_characteristic": -48,
     "dimensions_mm": [
       153.0578,
       112.02345199999999,
-      1.6002
+      2.600199
     ],
+    "switch_seat_thickness_mm": 1.6002,
+    "underside_rim_height_mm": 1,
     "m2_holes_open": true
   },
   "left-bottom": {
@@ -48,18 +50,20 @@
     "screw_heads_accessible_after_sleeve_removal": true,
     "physical_fit_verified": false,
     "m2_holes_open": false,
-    "stl_sha256": "2f1177ecf474a08f6a08cb397355fe5e0eac133869cf755624a5ca0b60302abf"
+    "stl_sha256": "85b7889938b206159cdcf0bceb299f2344e011e57c50257172d5531d10bff25b"
   },
   "right-plate": {
-    "triangles": 1276,
+    "triangles": 1352,
     "connected": true,
     "closed": true,
     "euler_characteristic": -48,
     "dimensions_mm": [
       153.0578,
       112.02345199999999,
-      1.6002
+      2.600199
     ],
+    "switch_seat_thickness_mm": 1.6002,
+    "underside_rim_height_mm": 1,
     "m2_holes_open": true
   },
   "right-bottom": {
@@ -99,6 +103,6 @@
     "screw_heads_accessible_after_sleeve_removal": true,
     "physical_fit_verified": false,
     "m2_holes_open": false,
-    "stl_sha256": "a6d1707d0bec9b700ca81d043e48966d90079e887efbc1f669f92fca64e1f986"
+    "stl_sha256": "f48ff891a39a5e1ff5e9d353500d87b62d862602838bf5c9d0e18f6826968d5d"
   }
 }

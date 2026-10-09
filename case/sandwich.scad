@@ -52,7 +52,8 @@ module assembly() {
     color([0.7,0.7,0.7]) translate([controller[0]-4.5,controller[1]+10,pcb_z-controller_gap])
         cube([9,7,controller_component_height]);
     color([0.8,0.92,1,0.35]) translate([0,0,plate_z+2*exploded])
-        linear_extrude(plate_thickness) plate();
+        if (part == "sleeved-assembly") reinforced_plate();
+        else linear_extrude(plate_thickness) plate();
     for (p = bolts) color([0.25,0.25,0.25]) translate([p[0],p[1],bottom_thickness])
         spacer(standoff_across_flats/cos(30),standoff_height,6);
     for (p = bolts) color([0.9,0.9,0.9]) translate([p[0],p[1],bottom_thickness+standoff_height])

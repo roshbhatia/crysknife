@@ -61,7 +61,7 @@ def section(mesh, height, all_regions=False):
 for side in ('left', 'right'):
     for part in ('plate', 'bottom', 'sleeve'):
         model_path = (OUTPUT if part == 'sleeve' else ROOT/'out/3d')/f'{side}-{part}.3mf'
-        source = ROOT/'case/printed-sleeve.scad' if part == 'sleeve' else ROOT/'case/sandwich.scad'
+        source = ROOT/f'case/printed-{part}.scad' if part in ('plate', 'sleeve') else ROOT/'case/sandwich.scad'
         extensions = ('stl', '3mf') if part == 'sleeve' else ('3mf',)
         for extension in extensions:
             target = model_path.with_suffix(f'.{extension}')
@@ -75,7 +75,12 @@ for side in ('left', 'right'):
         assert all(not solid.intersects(Point(*p).buffer(1.08)) for p in data[2]), 'Blocked M2 hole'
         if part == 'plate':
             assert report['euler_characteristic'] == -48, (side, 'Expected 21 switch holes and four screw holes')
-            assert abs(report['dimensions_mm'][2]-parameters['plate_thickness']) < 0.00001, (side, 'Plate thickness changed')
+            assert abs(report['dimensions_mm'][2]-(parameters['plate_thickness']+1)) < 0.00001, (side, 'Reinforced plate height changed')
+            underside = section(mesh, -0.5, all_regions=True)
+            assert not underside.intersects(Polygon(data[0])), 'Underside rim intrudes over the PCB'
+            assert all(not underside.intersects(Point(*p).buffer(parameters['washer_diameter']/2)) for p in data[2]), 'Rim blocks mounting spacers'
+            report['switch_seat_thickness_mm'] = parameters['plate_thickness']
+            report['underside_rim_height_mm'] = 1
             assert len(solid.interiors) == 25, 'Expected 21 switch openings and four mounting holes'
             assert all(not solid.intersects(Point(x, y).buffer(6.98)) for x, y, _ in data[1]), 'Blocked switch seat'
         elif part == 'bottom':
@@ -127,6 +132,8 @@ for side in ('left', 'right'):
         if part == 'sleeve':
             report['stl_sha256'] = hashlib.sha256(model_path.with_suffix('.stl').read_bytes()).hexdigest()
             shutil.copy2(model_path, ROOT/f'out/3d/{side}-printed-sleeve.3mf')
+        if part in ('bottom', 'plate'):
+            shutil.copy2(model_path, OUTPUT/model_path.name)
         reports[f'{side}-{part}'] = report
         print(f'{side}-{part}: connected, closed mesh')
 for part in ('plate', 'bottom', 'sleeve'):

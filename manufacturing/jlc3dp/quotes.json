@@ -37,7 +37,7 @@
     "address_confirmed": false
   },
   "quote_url": "https://jlc3dp.com/3d-printing-quote?spm=Jlc3dp.Homepage.1006",
-  "browser_state": "signed-in account cart contains two current TPU sleeves and two preserved PCB drafts",
+  "browser_state": "six current mechanical parts saved in cart; two PCB drafts preserved; no order submitted",
   "order_submitted": false,
   "factory_review_complete": false,
   "sleeves": {
@@ -85,12 +85,15 @@
   "cart_url": "https://jlc3dp.com/shopcart/cart?source=3D",
   "current_required_files": [
     "left-sleeve.stl",
-    "right-sleeve.stl"
+    "right-sleeve.stl",
+    "left-bottom.3mf",
+    "right-bottom.3mf",
+    "left-plate.3mf",
+    "right-plate.3mf"
   ],
-  "current_design": "flat acrylic/aluminum sandwich with TPU walls and bottom; no rigid resin tray",
+  "current_design": "reinforced resin tops, flat resin bottoms, and closed TPU sleeves with retaining lips; no rigid tray",
   "current_cart": {
     "checked_on": "2026-10-09",
-    "design_commit": "b509474",
     "currency": "USD",
     "parts": [
       {
@@ -108,7 +111,8 @@
           10.97,
           3.19
         ],
-        "supplier_volume_cm3": 87.45
+        "supplier_volume_cm3": 87.45,
+        "current_export_sha256": "85b7889938b206159cdcf0bceb299f2344e011e57c50257172d5531d10bff25b"
       },
       {
         "file": "right-sleeve.stl",
@@ -125,21 +129,98 @@
           10.97,
           3.19
         ],
-        "supplier_volume_cm3": 87.45
+        "supplier_volume_cm3": 87.45,
+        "current_export_sha256": "f48ff891a39a5e1ff5e9d353500d87b62d862602838bf5c9d0e18f6826968d5d"
+      },
+      {
+        "file": "left-bottom.3mf",
+        "cart_reference": "D2026101039500012-10845407A",
+        "quantity": 1,
+        "each": 10.15,
+        "sha256": "a0238398dcfc570f9f8cd80c2ab7a52fa55c68bc413b4a1b7b9060c8879676ff",
+        "material": "8001 Resin",
+        "color": "Translucent",
+        "finish": "Fine Sanding",
+        "thread": "No thread",
+        "supplier_dimensions_cm": [
+          15.91,
+          10.45,
+          0.32
+        ],
+        "supplier_volume_cm3": 41.98,
+        "current_export_sha256": "6e2b2ceb8e96610cf05b16391199df6d06340e707fe7107f88c4719bbfdebc68"
+      },
+      {
+        "file": "right-bottom.3mf",
+        "cart_reference": "D2026101039500011-10845407A",
+        "quantity": 1,
+        "each": 10.15,
+        "sha256": "25c35c91336a8773985e8f61249798c247c3fbaef01549daf1a43fb747056e9e",
+        "material": "8001 Resin",
+        "color": "Translucent",
+        "finish": "Fine Sanding",
+        "thread": "No thread",
+        "supplier_dimensions_cm": [
+          15.91,
+          10.45,
+          0.32
+        ],
+        "supplier_volume_cm3": 41.98,
+        "current_export_sha256": "8c957ae8004bc0f8c822591fc1dc426518d3e404d6d3a220cb575f419db56b3e"
+      },
+      {
+        "file": "left-plate.3mf",
+        "cart_reference": "D2026101042500044-10845407A",
+        "quantity": 1,
+        "each": 3.72,
+        "sha256": "26bb7bd39d57fc17abdb7089d60937c74fd5feb553be843cf1b4137002885dea",
+        "material": "8001 Resin",
+        "color": "Translucent",
+        "finish": "Fine Sanding",
+        "thread": "No thread",
+        "supplier_dimensions_cm": [
+          15.91,
+          10.45,
+          0.26
+        ],
+        "supplier_volume_cm3": 15.36,
+        "current_export_sha256": "26bb7bd39d57fc17abdb7089d60937c74fd5feb553be843cf1b4137002885dea"
+      },
+      {
+        "file": "right-plate.3mf",
+        "cart_reference": "D2026101042500041-10845407A",
+        "quantity": 1,
+        "each": 3.72,
+        "sha256": "774a31b590d742b8ea5e7dfbe268235bb2e1092a0b37168761015cefcf16aa74",
+        "material": "8001 Resin",
+        "color": "Translucent",
+        "finish": "Fine Sanding",
+        "thread": "No thread",
+        "supplier_dimensions_cm": [
+          15.91,
+          10.45,
+          0.26
+        ],
+        "supplier_volume_cm3": 15.36,
+        "current_export_sha256": "774a31b590d742b8ea5e7dfbe268235bb2e1092a0b37168761015cefcf16aa74"
       }
     ],
-    "merchandise_total": 30.98,
-    "shipping_estimate": 11.44,
-    "estimated_subtotal": 42.42,
-    "build_days": 3,
-    "estimated_shipping_date": "2026-10-12",
+    "merchandise_total": 58.72,
+    "shipping_estimate": 15.31,
+    "estimated_subtotal": 74.03,
+    "build_days": 4,
     "shipping_address_confirmed": false,
     "removed": "four obsolete resin parts and two obsolete sleeves",
     "pcb_drafts_preserved": 2,
     "order_submitted": false,
-    "quote_screenshot": "previews/jlc3dp-flat-case-quote.png",
-    "cart_screenshot": "previews/jlc3dp-flat-case-cart.png",
-    "quote_matches_current_models": true
+    "cart_screenshot": "previews/jlc3dp-complete-case-cart.png",
+    "quote_matches_current_models": true,
+    "status": "all six mechanical parts saved; supplier review and physical fit pending",
+    "base_design_commit": "b509474",
+    "top_design": "1 mm underside rim; unchanged switch seats and sleeve fit",
+    "estimated_ship_date": "2026-10-13",
+    "weight_kg": 0.69,
+    "regeneration_note": "Sleeve STL and bottom 3MF triangle coordinates are unchanged; serialization and hashes differ after regeneration."
   },
   "historical_quote_fields": [
     "files",
@@ -148,5 +229,13 @@
     "shipping_estimate",
     "sleeves",
     "combined_quote"
-  ]
+  ],
+  "top_plate_resolution": {
+    "switch_seat_thickness_mm": 1.6002,
+    "underside_rim_height_mm": 1,
+    "underside_rim_width_mm": 1.6,
+    "overall_height_mm": 2.6002,
+    "supplier_quote_accepted": true,
+    "factory_review_complete": false
+  }
 }
