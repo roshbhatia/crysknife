@@ -4,8 +4,7 @@ include <parameters.scad>
 include <geometry.scad>
 include <plate-geometry.scad>
 
-rim_width = 1.6;
-rim_height = 1;
+include <printed-parameters.scad>
 data = side == "left" ? left_geometry : right_geometry;
 outline = data[0];
 keys = data[1];

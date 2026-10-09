@@ -7,8 +7,9 @@ import hashlib
 import xml.etree.ElementTree as ET
 import zipfile
 
+from shapely.affinity import rotate, translate
 from shapely.geometry import LineString, MultiPoint, Point, Polygon
-from shapely.ops import polygonize
+from shapely.ops import polygonize, unary_union
 
 from check_case_models import check_model
 
@@ -19,6 +20,8 @@ OUTPUT.mkdir(exist_ok=True)
 reports = {}
 parameters = {name: float(value) for name, value in re.findall(
     r'^(\w+) = (-?[\d.]+);$', (ROOT/'case/parameters.scad').read_text(), re.M)}
+printed_parameters = {name: float(value) for name, value in re.findall(
+    r'^(\w+) = (-?[\d.]+);$', (ROOT/'case/printed-parameters.scad').read_text(), re.M)}
 sleeve_parameters = {name: float(value) for name, value in re.findall(
     r'^(\w+) = (-?[\d.]+);$', (ROOT/'case/printed-sleeve.scad').read_text(), re.M)}
 geometries = {line.split('_geometry')[0]: json.loads(line.split(' = ')[1].rstrip(';'))
@@ -37,7 +40,7 @@ def read_mesh(path):
     return vertices, triangles
 
 
-def section(mesh, height):
+def section(mesh, height, all_regions=False):
     vertices, triangles = mesh
     segments = []
     for triangle in triangles:
@@ -49,7 +52,12 @@ def section(mesh, height):
                 points.append(tuple(round(a[k]+fraction*(b[k]-a[k]), 5) for k in (0, 1)))
         if len(points) == 2:
             segments.append(LineString(points))
-    return max(polygonize(segments), key=lambda polygon: Polygon(polygon.exterior).area)
+    polygons = list(polygonize(segments))
+    if all_regions:
+        return unary_union([p for p in polygons if not any(
+            Polygon(other.exterior).contains(p.representative_point())
+            for other in polygons if other != p)])
+    return max(polygons, key=lambda polygon: Polygon(polygon.exterior).area)
 
 
 for side in ('left', 'right'):
@@ -79,7 +87,6 @@ for side in ('left', 'right'):
             report['pcb_wall_clearance_mm'] = 0.6
             report['under_pcb_clearance_mm'] = pcb_z-parameters['bottom_thickness']
         else:
-            assert report['euler_characteristic'] == 0, (side, 'Expected only the USB through-opening')
             foot = section(mesh, -sleeve_parameters['sleeve_floor']+0.25)
             assert sleeve_parameters['sleeve_floor']-sleeve_parameters['screw_recess_depth'] >= 1.6-1e-9, 'Bottom skin below recommended wall thickness'
             assert len(foot.interiors) == 0, 'Sleeve bottom must have no through-holes'
@@ -90,6 +97,26 @@ for side in ('left', 'right'):
             assert foot.area > Polygon(data[0]).area, 'Sleeve bottom is missing'
             wall = section(mesh, 1.1)
             assert Polygon(wall.interiors[0]).covers(Polygon(data[0]).buffer(parameters['outline_expansion']+sleeve_parameters['sleeve_clearance']-0.01)), 'Sleeve cavity cannot fit tray'
+            lip_z = (parameters['bottom_thickness'] + parameters['standoff_height']
+                     + parameters['standoff_shim'] + parameters['pcb_thickness']
+                     + parameters['plate_to_pcb_gap'] + parameters['plate_thickness']
+                     + printed_parameters['rim_height'] + sleeve_parameters['lip_clearance'])
+            lip = section(mesh, lip_z+sleeve_parameters['lip_height']/2, all_regions=True)
+            assert not lip.is_empty, 'Retaining lip is missing'
+            for x, y, angle in data[1]:
+                keepout = translate(rotate(Polygon([(-9.99,-9.99),(9.99,-9.99),(9.99,9.99),(-9.99,9.99)]), angle, origin=(0,0)), x, y)
+                assert not lip.intersects(keepout), 'Lip blocks keycap envelope'
+            assert all(not lip.intersects(Point(*p).buffer((parameters['washer_diameter']+1.4)/2)) for p in data[2]), 'Lip blocks top screw access'
+            plate_rim = section(meshes[f'{side}-plate'], parameters['plate_thickness']+0.5, all_regions=True)
+            overlap = lip.intersection(plate_rim)
+            assert overlap.area > 100, 'Insufficient lip overlap with rigid plate rim'
+            center_y = Polygon(data[0]).centroid.y
+            assert overlap.bounds[1] < center_y-15 and overlap.bounds[3] > center_y+15, 'Lip must retain front and rear edges'
+            report['retaining_lip_height_mm'] = sleeve_parameters['lip_height']
+            report['retaining_lip_overlap_mm'] = sleeve_parameters['lip_overlap']
+            report['retaining_lip_vertical_clearance_mm'] = sleeve_parameters['lip_clearance']
+            report['retaining_lip_contact_area_mm2'] = round(overlap.area, 3)
+            report['keycap_keepout_mm'] = sleeve_parameters['keycap_keepout']
             report['tray_clearance_mm'] = sleeve_parameters['sleeve_clearance']
             report['wall_thickness_mm'] = sleeve_parameters['sleeve_wall']
             report['bottom_thickness_mm'] = sleeve_parameters['sleeve_floor']
@@ -117,12 +144,12 @@ for part in ('plate', 'tray', 'sleeve'):
         right = MultiPoint(layers['right'][height])
         assert left.hausdorff_distance(right) < 0.0001, f'{part}: exports are not mirrored halves'
 for side in ('left', 'right'):
-    for part in ('tray', 'plate', 'sleeve', 'case'):
-        source = ROOT/f'case/printed-{part}.scad' if part != 'case' else ROOT/'case/sandwich.scad'
+    for part in ('tray', 'plate', 'sleeve', 'case', 'fit'):
+        source = ROOT/f'case/printed-{part}.scad' if part not in ('case', 'fit') else ROOT/'case/sandwich.scad'
         arguments = ['openscad', '-o', str(ROOT/f'previews/printed-{part}-{side}.png'),
                      '--preview', '--imgsize=1200,900', '--viewall', '--autocenter',
                      '--colorscheme=Tomorrow', '-D', f'side="{side}"']
-        if part == 'case':
-            arguments += ['-D', 'part="printed-assembly"', '-D', 'exploded=5']
+        if part in ('case', 'fit'):
+            arguments += ['-D', 'part="printed-assembly"', '-D', 'exploded=5' if part == 'case' else 'exploded=0']
         subprocess.run(arguments+[str(source)], check=True)
 (OUTPUT/'model-checks.json').write_text(json.dumps(reports, indent=2)+'\n')

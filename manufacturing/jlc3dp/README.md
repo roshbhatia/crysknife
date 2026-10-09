@@ -14,15 +14,16 @@ Live JLC3DP quotes checked on 2026-10-09, USD, one of each rigid resin part:
 
 The four resin parts alone had a $10.59 shipping estimate.
 The two full-bottom TPU sleeves cost $13.84 each, $27.68 for the pair, with a three-day build time.
-The current six-part quote is $62.56: two matte resin trays, two matte resin plates, and two translucent TPU sleeves.
+The saved cart uses the previous sleeves without retaining lips. Its six-part quote is $62.56: two matte resin trays, two matte resin plates, and two translucent TPU sleeves.
 Combined build time is four days. Shipping is estimated at $15.48, with 8–13 business days in transit.
 The address was not confirmed. Tax and supplier review can change the final price.
 No coupon was applied. No order was submitted.
 
-The open browser quote selects all six parts, quantity one per file.
+The account cart contains six parts, quantity one per file.
+Replace its two sleeve files with the new lip versions and recalculate before ordering.
 The resin parts use Translucent with Fine Sanding. The sleeves use translucent TPU with no surface finish.
 Thread inserts are disabled. The sleeves use the Plastic Enclosure product category.
-This is a guest quote, not a saved account draft.
+The user saved this quote to the account cart. Current sleeve geometry is newer than that quote.
 
 Fine sanding is the closest available option to a frosted, smooth matte finish.
 8001 is hard resin, not a rubber coating. Oil spraying gives a glossy clear finish.
@@ -40,11 +41,15 @@ The TPU must flex at this band. Retention force and installation effort remain u
 Use bottom screw heads and washers with a combined height no greater than 2.5 mm.
 The recesses leave 1.6 mm of TPU beneath the screw heads, before print tolerance.
 Peel off the sleeve to reach the bottom screws.
-The sleeve stops 0.3 mm below the tray rim. It does not set PCB or switch height.
+A 1.6 mm thick retaining lip extends 1.2 mm over the plate edge.
+Its underside clears the raised plate rim by 0.3 mm. It does not set PCB or switch height.
+The lip and upper sleeve wall clear 20 mm square keycap envelopes and the top screw washers.
+The rigid tray and plate shapes remain unchanged.
 USB, power, and reset openings are enlarged by 1 mm around the tray openings.
 
-Place the tray into the sleeve from above. Support the tray when lifting the keyboard.
-The sleeve has no locking clips. Retention and fit need a prototype test.
+Assemble the rigid keyboard first. Stretch the sleeve around it, then roll the lip over the plate edge.
+Peel the lip away to remove the sleeve. Do not lever against the resin with a metal tool.
+The lip provides geometric retention. Grip force, print tolerance, and installation effort still need a prototype test.
 TPU gives a flexible exterior. FDM leaves print texture, and translucent TPU is not optically clear.
 The 95A hardness is firm rubber, not a foam cushion. See [JLC TPU guidance](https://jlc3dp.com/help/article/tpu).
 
@@ -71,7 +76,8 @@ The tray stops 0.3 mm below the plate; the standoffs set the plate height.
 All six models are connected, closed meshes. Both plates have 21 switch openings and four M2 holes.
 Tray floor holes, PCB cavity clearance, and mirrored geometry pass the export checks.
 Sleeve cavity clearance, mirrored geometry, and closed bottoms and blind screw-head recesses also pass.
-The rigid tray and plate vertices match the previous exports after extracting shared control geometry.
+Lip overlap, front and rear retention, keycap clearance, and top screw access pass nominal geometry checks.
+The rigid tray and plate shapes remain unchanged. Shared parameters define the raised plate rim height.
 The original sandwich generator still passes its existing mechanical checks.
 The previews show nominal component envelopes, not a physical assembly test.
 
@@ -89,7 +95,7 @@ python3 scripts/generate_case.py
 python3 scripts/export_printed_case.py
 ```
 
-The sources are `case/printed-tray.scad`, `case/printed-plate.scad`, `case/printed-sleeve.scad`, and `case/parameters.scad`.
+The sources are `case/printed-tray.scad`, `case/printed-plate.scad`, `case/printed-sleeve.scad`, `case/printed-parameters.scad`, and `case/parameters.scad`.
 Shared shapes live in `case/plate-geometry.scad` and `case/tray-geometry.scad`.
 Exports go here and into `out/3d/`; fresh images go into `previews/`.
 Use `part="printed-assembly"` in `case/sandwich.scad` to inspect the assembled stack.

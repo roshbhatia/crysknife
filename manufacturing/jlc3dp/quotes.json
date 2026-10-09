@@ -37,7 +37,7 @@
     "address_confirmed": false
   },
   "quote_url": "https://jlc3dp.com/3d-printing-quote?spm=Jlc3dp.Homepage.1006",
-  "browser_state": "guest quote, all six parts selected: matte resin plus translucent TPU; not saved to account",
+  "browser_state": "signed-in account cart contains six saved parts; sleeves are previous no-lip revision",
   "order_submitted": false,
   "factory_review_complete": false,
   "sleeves": {
@@ -50,11 +50,13 @@
     "hardness": "95A",
     "color": "Translucent",
     "surface_finish": "None",
-    "design": "closed 4.1 mm bottom; four internal 8 mm diameter, 2.5 mm deep blind screw-head recesses; 0.2 mm grip band interference",
     "each": 13.84,
     "pair_total": 27.68,
     "build_days": 3,
-    "shipping_estimate_alone": 10.59
+    "shipping_estimate_alone": 10.59,
+    "quoted_design": "closed 4.1 mm bottom; four internal 8 mm diameter, 2.5 mm deep blind screw-head recesses; 0.2 mm grip band interference",
+    "current_design": "closed bottom with 1.6 mm retaining lip overlapping plate by 1.2 mm; quote pending",
+    "quote_matches_current_models": false
   },
   "combined_quote": {
     "files": [
@@ -76,6 +78,9 @@
     ],
     "address_confirmed": false,
     "weight_kg": 0.7,
-    "screenshot": "previews/jlc3dp-sleeved-case-quote.png"
-  }
+    "screenshot": "previews/jlc3dp-sleeved-case-quote.png",
+    "quote_matches_current_models": false
+  },
+  "current_models_match_cart": false,
+  "cart_url": "https://jlc3dp.com/shopcart/cart?source=3D"
 }
