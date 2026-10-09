@@ -1,0 +1,12 @@
+{
+  "validation": "JLC rendered pad and hole overlays inspected on both halves, 2026-10-09. Supplier production review and physical testing remain pending.",
+  "coordinates": "Offsets use native CPL X right and Y up, rotated by the native footprint angle. Supplier bottom rotations use the mirrored model convention.",
+  "parts": {
+    "C41430893": {"footprint": "ceoloide:switch_mx", "layer": "Bottom", "local_offset_mm": [-0.6215, 3.81], "angle_sign": -1, "angle_offset_deg": 0},
+    "C81598": {"footprint": "ceoloide:diode_tht_sod123", "layer": "Bottom", "local_offset_mm": [0, 0], "angle_sign": -1, "angle_offset_deg": 180},
+    "C5156451": {"footprint": "crysknife:MillMax_315_1x12", "layer": "Bottom", "local_offset_mm": [0, 0], "angle_sign": -1, "angle_offset_deg": 90},
+    "C173752": {"footprint": "ceoloide:battery_connector_jst_ph_2", "layer": "Bottom", "local_offset_mm": [0, 0], "angle_sign": -1, "angle_offset_deg": 180},
+    "C109335": {"footprint": "ceoloide:power_switch_smd_side", "layer": "Top", "local_offset_mm": [0, 0], "angle_sign": 1, "angle_offset_deg": 90},
+    "C79175": {"footprint": "ceoloide:reset_switch_smd_side", "layer": "Top", "local_offset_mm": [0, 0], "angle_sign": 1, "angle_offset_deg": 180}
+  }
+}

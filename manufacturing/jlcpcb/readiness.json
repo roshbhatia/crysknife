@@ -1,13 +1,14 @@
 {
   "status": "NOT ORDER READY",
-  "catalog_checked": "2026-10-08",
-  "coordinate_system": "KiCad footprint origin; millimeters; X right, Y up; PCB origin 0,0",
-  "placement_validation": "Pickup offsets, polarity and factory rotations require assembler review",
+  "catalog_checked": "2026-10-09",
+  "coordinate_system": "JLC supplier model origins; millimeters; X right, Y up; PCB origin 0,0",
+  "placement_validation": "JLC rendered pad and hole overlays inspected on both halves, 2026-10-09. Supplier production review and physical testing remain pending.",
+  "digital_evidence": "../../out/validation.json",
   "remaining_gates": [
     "Current manufacturer drawings, footprint fit, pickup origins and rotations accepted by assembler",
     "Exact supplier stock and Standard two-face mixed SMT/THT assembly quote accepted",
-    "Factory accepts C5504443 socket sourcing and soldering; matching nice!nano header insertion and assembled height verified",
-    "Adafruit 2011 plug polarity, 500 mA BOOST setting, charging temperature and physical case fit",
+    "Factory accepts C5156451 socket sourcing and soldering; matching nice!nano header insertion and assembled height verified",
+    "Adafruit 2011 plug polarity, BOOST open for nominal 100 mA charging, charging temperature and physical case fit",
     "Physical prototype keyboard, Bluetooth and charging tests"
   ],
   "boards": [
@@ -43,6 +44,5 @@
       },
       "through_hole_battery_connector": "JST1"
     }
-  ],
-  "digital_evidence": "../../out/validation.json"
+  ]
 }

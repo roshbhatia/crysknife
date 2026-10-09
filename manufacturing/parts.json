@@ -1,16 +1,23 @@
 {
-  "status": "quote candidates; not accepted for manufacturing",
-  "catalog_checked": "2026-10-08",
+  "status": "Prototype drafts reviewed in JLCPCB on 2026-10-09; production release and physical tests pending",
+  "catalog_checked": "2026-10-09",
   "parts": [
     {
       "reference_pattern": "S[0-9]+",
       "footprint": "ceoloide:switch_mx",
       "side": "B",
-      "manufacturer": "Kailh",
-      "mpn": "CPG151101S11-1",
-      "lcsc": "C5184526",
+      "manufacturer": "HanElectricity",
+      "mpn": "CPG151101S11-16",
+      "lcsc": "C41430893",
       "description": "MX hotswap socket",
-      "source": "https://jlcpcb.com/partdetail/Kailh-CPG151101S111/C5184526"
+      "source": "https://www.lcsc.com/product-detail/C41430893.html",
+      "previous_selection": {
+        "manufacturer": "Kailh",
+        "mpn": "CPG151101S11-1",
+        "lcsc": "C5184526",
+        "source": "https://jlcpcb.com/partdetail/Kailh-CPG151101S111/C5184526"
+      },
+      "selection_basis": "User supplied drawing checks; JLCPCB rendered pad/hole alignment checked on both halves on 2026-10-09. Physical fit remains untested."
     },
     {
       "reference_pattern": "D[0-9]+",
@@ -37,10 +44,17 @@
       "footprint": "ceoloide:reset_switch_smd_side",
       "side": "F",
       "manufacturer": "Panasonic",
-      "mpn": "EVQPUC02K",
-      "lcsc": "C79174",
+      "mpn": "EVQPUL02K",
+      "lcsc": "C79175",
       "description": "Side reset button",
-      "source": "https://jlcpcb.com/partdetail/Panasonic-EVQPUC02K/C79174"
+      "source": "https://www.lcsc.com/product-detail/C79175.html",
+      "previous_selection": {
+        "manufacturer": "Panasonic",
+        "mpn": "EVQPUC02K",
+        "lcsc": "C79174",
+        "source": "https://jlcpcb.com/partdetail/Panasonic-EVQPUC02K/C79174"
+      },
+      "selection_basis": "User supplied drawing checks; JLCPCB rendered pad/hole alignment checked on both halves on 2026-10-09. Physical fit remains untested."
     },
     {
       "reference_pattern": "JST1",
@@ -56,11 +70,18 @@
       "reference_pattern": "MCU1[AB]",
       "footprint": "crysknife:MillMax_315_1x12",
       "side": "B",
-      "manufacturer": "Mill-Max",
-      "mpn": "315-43-112-41-003000",
-      "lcsc": "C5504443",
+      "manufacturer": "HCTL",
+      "mpn": "PM254-1-12-Z-3.0-C",
+      "lcsc": "C5156451",
       "description": "Factory-soldered 12-pin controller socket",
-      "source": "https://jlcpcb.com/partdetail/6420580-315_43_112_41003000/C5504443"
+      "source": "https://www.lcsc.com/product-detail/C5156451.html",
+      "previous_selection": {
+        "manufacturer": "Mill-Max",
+        "mpn": "315-43-112-41-003000",
+        "lcsc": "C5504443",
+        "source": "https://jlcpcb.com/partdetail/6420580-315_43_112_41003000/C5504443"
+      },
+      "selection_basis": "User supplied drawing checks; JLCPCB rendered pad/hole alignment checked on both halves on 2026-10-09. Physical fit remains untested."
     }
   ],
   "excluded_references": {
@@ -74,8 +95,8 @@
   "remaining_gates": [
     "Current manufacturer drawings, footprint fit, pickup origins and rotations accepted by assembler",
     "Exact supplier stock and Standard two-face mixed SMT/THT assembly quote accepted",
-    "Factory accepts C5504443 socket sourcing and soldering; matching nice!nano header insertion and assembled height verified",
-    "Adafruit 2011 plug polarity, 500 mA BOOST setting, charging temperature and physical case fit",
+    "Factory accepts C5156451 socket sourcing and soldering; matching nice!nano header insertion and assembled height verified",
+    "Adafruit 2011 plug polarity, BOOST open for nominal 100 mA charging, charging temperature and physical case fit",
     "Physical prototype keyboard, Bluetooth and charging tests"
   ]
 }

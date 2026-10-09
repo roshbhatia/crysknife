@@ -25,7 +25,11 @@ reports = []
 physical_checks = {}
 parameters = {name: float(value) for name, value in re.findall(
     r'^(\w+) = (-?[\d.]+);$', (ROOT/'case/parameters.scad').read_text(), re.M)}
+headers = json.loads((ROOT/'manufacturing/header-fit.json').read_text())
+assert parameters['controller_gap'] >= headers['minimum_body_stack_mm'] + 0.5, "Controller gap cannot fit the selected receiver/header stack"
 under_pcb_clearance = parameters['standoff_height'] + parameters['standoff_shim']
+controller_floor_clearance = under_pcb_clearance - parameters['controller_gap'] - parameters['controller_board_thickness'] - parameters['damping_thickness']
+assert controller_floor_clearance >= 1, "Controller needs room for insulation above the metal floor"
 assert under_pcb_clearance >= 13.9 + parameters["damping_thickness"]
 assert abs(parameters["plate_to_pcb_gap"]-parameters["upper_spacer_height"]-parameters["upper_spacer_shim"]) < 1e-6
 thread_engagement = {}
@@ -116,7 +120,9 @@ for side in ("left", "right"):
                     "nominal_thread_engagement_mm": thread_engagement,
                     "damping_thickness_mm": parameters["damping_thickness"], "bends": False,
                     "controller": {"mount": "face up beneath carrier", "covered_by_plate": True,
-                                   "reserved_gap_mm": parameters["controller_gap"], "height_requires_samples": True},
+                                   "reserved_gap_mm": parameters["controller_gap"], "minimum_header_stack_mm": headers['minimum_body_stack_mm'],
+                                   "floor_clearance_above_damping_mm": controller_floor_clearance,
+                                   "height_requires_samples": True, "usb_cable_fit_requires_samples": True},
                     "battery": {"sku": "Adafruit 2011", "capacity_mAh": 2000,
                                 "nominal_mm": [60, 36, 7], "reserved_mm": [64, 40, 8.5],
                                 "center_mm": battery_center, "rf_clearance_mm": battery_envelope.distance(rf_exclusion),

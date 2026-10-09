@@ -1,5 +1,6 @@
 import csv
 import json
+import math
 from pathlib import Path
 import re
 
@@ -41,22 +42,38 @@ def inventory(board, side, manifest):
 
 def write_csv(path, header, rows):
     with path.open('w', newline='') as stream:
-        writer = csv.writer(stream)
+        writer = csv.writer(stream, lineterminator='\n')
         writer.writerow(header)
         writer.writerows(rows)
 
 
+def supplier_placement(part, corrections):
+    rule = corrections['parts'][part['lcsc']]
+    assert part['footprint'] == rule['footprint'], part['reference']
+    assert part['layer'] == rule['layer'], part['reference']
+    angle = part['rotation_deg']
+    radians = math.radians(angle)
+    dx, dy = rule['local_offset_mm']
+    return {**part,
+            'x_mm': part['x_mm'] + dx*math.cos(radians) - dy*math.sin(radians),
+            'y_mm': part['y_mm'] + dx*math.sin(radians) + dy*math.cos(radians),
+            'rotation_deg': (rule['angle_sign']*angle + rule['angle_offset_deg']) % 360}
+
+
 def main():
     manifest = json.loads((ROOT/'manufacturing/parts.json').read_text())
+    corrections = json.loads((ROOT/'manufacturing/jlcpcb/placement-corrections.json').read_text())
     output = ROOT/'build/manufacturing/quote-only'
     output.mkdir(parents=True, exist_ok=True)
     report = {'status': 'NOT ORDER READY', 'catalog_checked': manifest['catalog_checked'],
-              'coordinate_system': 'KiCad footprint origin; millimeters; X right, Y up; PCB origin 0,0',
-              'placement_validation': 'Pickup offsets, polarity and factory rotations require assembler review',
+              'coordinate_system': 'JLC supplier model origins; millimeters; X right, Y up; PCB origin 0,0',
+              'placement_validation': corrections['validation'],
+              'digital_evidence': '../../out/validation.json',
               'remaining_gates': manifest['remaining_gates'], 'boards': []}
     for side in ('left', 'right'):
         source = ROOT/f'build/pcb/crysknife_{side}.kicad_pcb'
         parts, excluded = inventory(parse(source.read_text()), side, manifest)
+        placements = [supplier_placement(p, corrections) for p in parts]
         groups = {}
         for p in parts:
             groups.setdefault(p['lcsc'], []).append(p)
@@ -65,7 +82,7 @@ def main():
                    for code, p in sorted(groups.items())])
         write_csv(output/f'{side}-quote-cpl.csv', ['Designator', 'Mid X', 'Mid Y', 'Layer', 'Rotation'],
                   [[p['reference'], f"{p['x_mm']:.6f}", f"{p['y_mm']:.6f}", p['layer'],
-                    f"{p['rotation_deg']:.6f}"] for p in parts])
+                    f"{p['rotation_deg']:.6f}"] for p in placements])
         write_csv(output/f'{side}-part-evidence.csv', ['Designator', 'Manufacturer', 'MPN', 'LCSC Part #', 'Source'],
                   [[p['reference'], p['manufacturer'], p['mpn'], p['lcsc'], p['source']] for p in parts])
         report['boards'].append({'side': side, 'factory_parts': len(parts),

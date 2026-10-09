@@ -1,13 +1,13 @@
 {
   "status": "drawing checks passed; insertion and assembled height require sample verification",
-  "receiver": "Mill-Max 315-43-112-41-003000",
+  "receiver": "HCTL PM254-1-12-Z-3.0-C",
   "male_header": "Mill-Max 350-10-112-00-006000",
   "pitch_mm": 2.54,
   "contacts_per_strip": 12,
   "carrier_row_spacing_mm": 15.24,
   "receiver_accepts_round_pin_mm": [
-    0.381,
-    0.5588
+    0.4,
+    0.56
   ],
   "male_pin_nominal_mm": 0.4572,
   "male_pin_tolerance_mm": 0.0508,
@@ -15,15 +15,19 @@
     0.4064,
     0.508
   ],
-  "receiver_tail_max_mm": 0.8128,
   "carrier_finished_hole_min_mm": 0.92,
-  "diameter_clearance_min_mm": 0.1072,
   "male_exposed_mating_length_mm": 3.6068,
   "male_insulator_height_mm": 2.794,
-  "receiver_insulator_height_mm": 1.8034,
-  "minimum_body_stack_mm": 4.5974,
-  "stack_note": "Insulator sum is a lower bound, not the assembled height. Socket cavity depth and seating can increase the gap.",
+  "receiver_insulator_height_mm": 3.0,
+  "minimum_body_stack_mm": 7.434,
+  "stack_note": "Effective receiver opening height plus male insulator is a lower bound, not measured full seating. Reserve 8 mm below the carrier; verify insertion, USB access, and insulation on a first article.",
   "header_source": "https://datasheet.lcsc.com/datasheet/pdf/d41800ad247bbaad9500b089f454c804.pdf?productCode=C3331090",
-  "receiver_source": "https://datasheet.lcsc.com/datasheet/pdf/4b0894809f586c2f6beee55a2ba47e90.pdf?productCode=C5504443",
-  "physical_results": null
+  "receiver_source": "https://www.lcsc.com/product-detail/C5156451.html",
+  "physical_results": null,
+  "previous_receiver": "Mill-Max 315-43-112-41-003000",
+  "receiver_lcsc": "C5156451",
+  "receiver_opening_height_mm": 4.64,
+  "receiver_check_basis": "User-provided manufacturer drawing check on 2026-10-09; tail fits existing 1 mm plated holes. Dimensions not independently measured.",
+  "seating": "Seat evenly on metal shoulders. Do not force plastic flush or force shoulders into plated holes.",
+  "soldering_limit": "260 C for 10 seconds"
 }

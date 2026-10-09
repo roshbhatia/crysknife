@@ -20,7 +20,7 @@ Record measurements in `prototype-results.json`; an empty result does not pass.
 
 ## Electrical and firmware
 
-1. Start from a current-limited bench supply instead of the battery. Set 3.7 V and 100 mA limit; record boot current and RAW/VCC voltages.
+1. Start from a current-limited bench supply instead of the battery. Set 3.7 V and 100 mA limit; record boot current and RAW/VCC voltages. Bring up the firmware and matrix over USB before connecting the battery.
 2. Flash the exact left/right UF2 files. Check USB recovery and physical reset, including double-tap bootloader entry.
 3. Press every key 100 times. Accept zero missed events, repeated events, or wrong coordinates across all 42 keys.
 4. Check simultaneous keys across shared rows and columns, modifiers, layers, and six-key combinations. Accept zero phantom keys.
@@ -31,7 +31,7 @@ Record measurements in `prototype-results.json`; an empty result does not pass.
 
 ## Charging and battery life
 
-1. Confirm both nice!nano BOOST bridges are configured for approximately 500 mA charging; do not infer this from LED activity.
+1. Confirm both nice!nano BOOST bridges are OPEN for nominal 100 mA charging. The ALPS power switch is rated 300 mA maximum.
 2. Measure charging current, battery voltage, and temperature on each half at low, middle, and near-full charge.
 3. Charge only within the battery's documented temperature range. Stop on overheating, cell damage, swelling, or unexpected current.
 4. Verify charge termination and battery voltage at completion against the supplied cell specification.

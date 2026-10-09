@@ -1,0 +1,856 @@
+{
+  "checked": "2026-10-09",
+  "source": "Existing JLCPCB drafts after BOM/CPL upload and page reload",
+  "boards": {
+    "left": [
+      {
+        "reference": "PWR1",
+        "x": 229.25,
+        "y": -89,
+        "rotation": 90,
+        "layer": "T",
+        "lcsc": "C109335",
+        "selected": true
+      },
+      {
+        "reference": "RST1",
+        "x": 219.704,
+        "y": -45.3,
+        "rotation": 180,
+        "layer": "T",
+        "lcsc": "C79175",
+        "selected": true
+      },
+      {
+        "reference": "D1",
+        "x": 107.4,
+        "y": -98.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D2",
+        "x": 107.4,
+        "y": -78.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D3",
+        "x": 107.4,
+        "y": -58.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D4",
+        "x": 127.4,
+        "y": -98.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D5",
+        "x": 127.4,
+        "y": -78.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D6",
+        "x": 127.4,
+        "y": -58.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D7",
+        "x": 147.4,
+        "y": -86.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D8",
+        "x": 147.4,
+        "y": -66.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D9",
+        "x": 147.4,
+        "y": -46.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D10",
+        "x": 167.4,
+        "y": -81.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D11",
+        "x": 167.4,
+        "y": -61.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D12",
+        "x": 167.4,
+        "y": -41.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D13",
+        "x": 187.4,
+        "y": -86.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D14",
+        "x": 187.4,
+        "y": -66.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D15",
+        "x": 187.4,
+        "y": -46.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D16",
+        "x": 207.4,
+        "y": -88.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D17",
+        "x": 207.4,
+        "y": -68.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D18",
+        "x": 207.4,
+        "y": -48.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D19",
+        "x": 181.4,
+        "y": -112.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D20",
+        "x": 203.406902,
+        "y": -118.035856,
+        "rotation": 110,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D21",
+        "x": 222.515394,
+        "y": -116.260368,
+        "rotation": 40,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "JST1",
+        "x": 217.25,
+        "y": -87.75,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C173752",
+        "selected": true
+      },
+      {
+        "reference": "S1",
+        "x": 99.3785,
+        "y": -96.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S2",
+        "x": 99.3785,
+        "y": -76.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S3",
+        "x": 99.3785,
+        "y": -56.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S4",
+        "x": 119.3785,
+        "y": -96.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S5",
+        "x": 119.3785,
+        "y": -76.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S6",
+        "x": 119.3785,
+        "y": -56.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S7",
+        "x": 139.3785,
+        "y": -84.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S8",
+        "x": 139.3785,
+        "y": -64.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S9",
+        "x": 139.3785,
+        "y": -44.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S10",
+        "x": 159.3785,
+        "y": -79.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S11",
+        "x": 159.3785,
+        "y": -59.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S12",
+        "x": 159.3785,
+        "y": -39.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S13",
+        "x": 179.3785,
+        "y": -84.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S14",
+        "x": 179.3785,
+        "y": -64.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S15",
+        "x": 179.3785,
+        "y": -44.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S16",
+        "x": 199.3785,
+        "y": -86.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S17",
+        "x": 199.3785,
+        "y": -66.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S18",
+        "x": 199.3785,
+        "y": -46.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S19",
+        "x": 173.3785,
+        "y": -110.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S20",
+        "x": 196.719078,
+        "y": -112.957206,
+        "rotation": 20,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S21",
+        "x": 215.455653,
+        "y": -120.807867,
+        "rotation": 310,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "MCU1A",
+        "x": 212.084,
+        "y": -62.14,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C5156451",
+        "selected": true
+      },
+      {
+        "reference": "MCU1B",
+        "x": 227.324,
+        "y": -62.14,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C5156451",
+        "selected": true
+      }
+    ],
+    "right": [
+      {
+        "reference": "PWR1",
+        "x": 105.75,
+        "y": -89,
+        "rotation": 270,
+        "layer": "T",
+        "lcsc": "C109335",
+        "selected": true
+      },
+      {
+        "reference": "RST1",
+        "x": 115.296,
+        "y": -45.3,
+        "rotation": 180,
+        "layer": "T",
+        "lcsc": "C79175",
+        "selected": true
+      },
+      {
+        "reference": "JST1",
+        "x": 117.75,
+        "y": -87.75,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C173752",
+        "selected": true
+      },
+      {
+        "reference": "MCU1A",
+        "x": 107.676,
+        "y": -62.14,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C5156451",
+        "selected": true
+      },
+      {
+        "reference": "MCU1B",
+        "x": 122.916,
+        "y": -62.14,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C5156451",
+        "selected": true
+      },
+      {
+        "reference": "D1",
+        "x": 242.4,
+        "y": -98.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D2",
+        "x": 242.4,
+        "y": -78.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D3",
+        "x": 242.4,
+        "y": -58.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D4",
+        "x": 222.4,
+        "y": -98.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D5",
+        "x": 222.4,
+        "y": -78.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D6",
+        "x": 222.4,
+        "y": -58.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D7",
+        "x": 202.4,
+        "y": -86.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D8",
+        "x": 202.4,
+        "y": -66.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D9",
+        "x": 202.4,
+        "y": -46.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D10",
+        "x": 182.4,
+        "y": -81.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D11",
+        "x": 182.4,
+        "y": -61.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D12",
+        "x": 182.4,
+        "y": -41.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D13",
+        "x": 162.4,
+        "y": -86.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D14",
+        "x": 162.4,
+        "y": -66.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D15",
+        "x": 162.4,
+        "y": -46.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D16",
+        "x": 142.4,
+        "y": -88.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D17",
+        "x": 142.4,
+        "y": -68.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D18",
+        "x": 142.4,
+        "y": -48.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D19",
+        "x": 168.4,
+        "y": -112.675,
+        "rotation": 90,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D20",
+        "x": 145.500549,
+        "y": -112.973958,
+        "rotation": 70,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "D21",
+        "x": 121.997863,
+        "y": -127.597826,
+        "rotation": 140,
+        "layer": "B",
+        "lcsc": "C81598",
+        "selected": true
+      },
+      {
+        "reference": "S1",
+        "x": 234.3785,
+        "y": -96.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S2",
+        "x": 234.3785,
+        "y": -76.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S3",
+        "x": 234.3785,
+        "y": -56.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S4",
+        "x": 214.3785,
+        "y": -96.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S5",
+        "x": 214.3785,
+        "y": -76.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S6",
+        "x": 214.3785,
+        "y": -56.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S7",
+        "x": 194.3785,
+        "y": -84.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S8",
+        "x": 194.3785,
+        "y": -64.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S9",
+        "x": 194.3785,
+        "y": -44.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S10",
+        "x": 174.3785,
+        "y": -79.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S11",
+        "x": 174.3785,
+        "y": -59.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S12",
+        "x": 174.3785,
+        "y": -39.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S13",
+        "x": 154.3785,
+        "y": -84.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S14",
+        "x": 154.3785,
+        "y": -64.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S15",
+        "x": 154.3785,
+        "y": -44.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S16",
+        "x": 134.3785,
+        "y": -86.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S17",
+        "x": 134.3785,
+        "y": -66.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S18",
+        "x": 134.3785,
+        "y": -46.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S19",
+        "x": 160.3785,
+        "y": -110.19,
+        "rotation": 0,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S20",
+        "x": 137.112884,
+        "y": -113.382337,
+        "rotation": 340,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      },
+      {
+        "reference": "S21",
+        "x": 118.745362,
+        "y": -119.855673,
+        "rotation": 50,
+        "layer": "B",
+        "lcsc": "C41430893",
+        "selected": true
+      }
+    ]
+  }
+}
