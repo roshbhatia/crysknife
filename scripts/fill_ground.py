@@ -48,6 +48,9 @@ for side in ("left", "right"):
         zone.SetThermalReliefSpokeWidth(pcbnew.FromMM(0.3))
         zone.SetIslandRemovalMode(pcbnew.ISLAND_REMOVAL_MODE_ALWAYS)
         polygon(zone, points)
+        zone.Outline().Deflate(pcbnew.FromMM(0.65), pcbnew.CORNER_STRATEGY_ROUND_ALL_CORNERS,
+                               pcbnew.FromMM(0.005))
+        assert zone.Outline().OutlineCount() == 1
         board.Add(zone)
     board.BuildConnectivity()
     assert pcbnew.ZONE_FILLER(board).Fill(board.Zones()), "Ground fill failed"
@@ -68,6 +71,7 @@ for side in ("left", "right"):
         assert polys.OutlineCount() > 0
         evidence.append({"layer": saved.GetLayerName(layer), "net": zone.GetNetname(),
                          "filled_polygons": polys.OutlineCount(), "clearance_mm": 0.3,
+                         "board_outline_inset_mm": 0.65,
                          "island_removal": "always", "controller_exclusion_mm": exclusion})
     (ROOT / f"build/pcb/{side}-ground-fill.json").write_text(json.dumps(evidence, indent=2)+"\n")
     print(f"{side}: filled GND on both faces; saved fill and controller exclusion verified")

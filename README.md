@@ -102,6 +102,7 @@ KiCad outputs are `build/pcb/fridakeeb_left_routed.kicad_pcb` and the correspond
 The GitHub workflow runs this pipeline without a local Docker service.
 KiCad fills GND on both copper faces after merging routes.
 The zones use 0.3 mm clearance, 0.3 mm thermal spokes, and removal of disconnected islands.
+Their outlines sit 0.65 mm inside the PCB boundary, preserving the 0.55 mm copper-edge requirement.
 A 28 by 46 mm exclusion around each controller prevents ground pours below the module and antenna.
 This exclusion does not prohibit existing signal traces; RF performance still requires prototype testing.
 Its routed DRC gate requires zero unconnected items and no unexpected violations.

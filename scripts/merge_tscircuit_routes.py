@@ -63,13 +63,32 @@ for side in ("left", "right"):
         via.SetNetCode(route_codes[source["pcb_trace_id"]])
         board.Add(via)
         created_vias.append((source, via))
+
+    def move_via(via, target, code):
+        old, new = via.GetPosition(), position(target)
+        connected = 0
+        for track in board.GetTracks():
+            if isinstance(track, pcbnew.PCB_VIA):
+                continue
+            for getter, setter in [(track.GetStart, track.SetStart), (track.GetEnd, track.SetEnd)]:
+                if getter() == old:
+                    assert track.GetNetCode() == code
+                    setter(new)
+                    connected += 1
+        assert connected == 2, (side, "Unexpected via escape connectivity", connected)
+        via.SetPosition(new)
+
+    def coordinates(via):
+        p = via.GetPosition()
+        return {"x": pcbnew.ToMM(p.x)-expected["origin"][0], "y": expected["origin"][1]-pcbnew.ToMM(p.y)}
+
     finishing = []
-    if side == "right":
-        ground = next(p for p in expected["pads"] if p["ref"] == "RST1" and p["number"] == "3")
-        reset = next(p for p in expected["pads"] if p["ref"] == "RST1" and p["number"] == "4")
-        assert ground["net"] == "GND" and reset["net"] == "RST"
-        assert ground["shape"] == reset["shape"] == "rect"
-        assert ground["rotation"] % 180 == reset["rotation"] % 180 == 0
+    for net, own_number, other_number, delta_y in [("GND", "3", "4", -0.7), ("RST", "4", "3", 0.7)]:
+        own = next(p for p in expected["pads"] if p["ref"] == "RST1" and p["number"] == own_number)
+        other = next(p for p in expected["pads"] if p["ref"] == "RST1" and p["number"] == other_number)
+        assert own["net"] == net and other["net"] != net
+        assert own["shape"] == other["shape"] == "rect"
+        assert own["rotation"] % 180 == other["rotation"] % 180 == 0
 
         def pad_gap(point, pad, diameter):
             dx = max(0, abs(point["x"]-pad["x"])-pad["width"]/2)
@@ -77,34 +96,50 @@ for side in ("left", "right"):
             return math.hypot(dx, dy)-diameter/2
 
         for source, via in created_vias:
-            if via.GetNetCode() != net_codes["GND"]:
+            if via.GetNetCode() != net_codes[net]:
                 continue
-            if math.hypot(source["x"]-ground["x"], source["y"]-ground["y"]) > 1.4:
+            if math.hypot(source["x"]-own["x"], source["y"]-own["y"]) > 1.4:
                 continue
-            before = pad_gap(source, reset, source["outer_diameter"])
+            before = pad_gap(source, other, source["outer_diameter"])
             if before >= 0.25:
                 continue
-            old = via.GetPosition()
-            target = {"x": ground["x"]-ground["width"]/2-source["outer_diameter"]/2-0.1,
-                      "y": ground["y"]-0.7}
-            after = pad_gap(target, reset, source["outer_diameter"])
-            assert after >= 0.25 and pad_gap(target, ground, source["outer_diameter"]) >= 0.1
-            new = position(target)
-            connected = 0
-            for track in board.GetTracks():
-                if isinstance(track, pcbnew.PCB_VIA):
-                    continue
-                for getter, setter in [(track.GetStart, track.SetStart), (track.GetEnd, track.SetEnd)]:
-                    if getter() == old:
-                        assert track.GetNetCode() == net_codes["GND"]
-                        setter(new)
-                        connected += 1
-            assert connected == 2, (side, "Unexpected reset escape connectivity", connected)
-            via.SetPosition(new)
-            finishing.append({"reference": "RST1", "net": "GND", "via": source["pcb_via_id"],
+            target = {"x": own["x"]-own["width"]/2-source["outer_diameter"]/2-0.1,
+                      "y": own["y"]+delta_y}
+            after = pad_gap(target, other, source["outer_diameter"])
+            assert after >= 0.25 and pad_gap(target, own, source["outer_diameter"]) >= 0.1
+            move_via(via, target, net_codes[net])
+            finishing.append({"reference": "RST1", "net": net, "via": source["pcb_via_id"],
                               "from": {axis: source[axis] for axis in ("x", "y")}, "to": target,
-                              "reset_pad_clearance_before_mm": before, "reset_pad_clearance_after_mm": after})
-        assert len(finishing) <= 1, "Unexpected extra reset escape vias"
+                              "opposite_pad_clearance_before_mm": before, "opposite_pad_clearance_after_mm": after})
+        assert len(finishing) <= 2, "Unexpected extra reset escape vias"
+    for index, (source, first) in enumerate(created_vias):
+        for other_source, second in created_vias[index+1:]:
+            if first.GetNetCode() == second.GetNetCode():
+                continue
+            a, b = coordinates(first), coordinates(second)
+            radii = pcbnew.ToMM(first.GetWidth()+second.GetWidth())/2
+            distance = math.hypot(a["x"]-b["x"], a["y"]-b["y"])
+            before = distance-radii
+            if before >= 0.25:
+                continue
+            assert {first.GetNetname(), second.GetNetname()} == {"RAW", "GND"}, "Unrecognized via clearance defect"
+            if first.GetNetname() == "GND":
+                moving, fixed, moving_source = first, second, source
+            else:
+                moving, fixed, moving_source = second, first, other_source
+            start, anchor = coordinates(moving), coordinates(fixed)
+            scale = (radii+0.3)/distance
+            target = {axis: anchor[axis]+(start[axis]-anchor[axis])*scale for axis in ("x", "y")}
+            move_via(moving, target, net_codes["GND"])
+            after = math.dist(tuple(coordinates(moving).values()), tuple(coordinates(fixed).values()))-radii
+            assert after >= 0.29999
+            finishing.append({"net": "GND", "via": moving_source["pcb_via_id"], "from": start, "to": target,
+                              "opposite_net": "RAW", "via_clearance_before_mm": before, "via_clearance_after_mm": after})
+    for index, (_, first) in enumerate(created_vias):
+        for _, second in created_vias[index+1:]:
+            if first.GetNetCode() != second.GetNetCode():
+                gap = math.dist(tuple(coordinates(first).values()), tuple(coordinates(second).values()))-pcbnew.ToMM(first.GetWidth()+second.GetWidth())/2
+                assert gap >= 0.24999, (side, "Via finishing introduced another clearance defect", gap)
     (ROOT / f"build/pcb/{side}-route-finishing.json").write_text(json.dumps(finishing, indent=2)+"\n")
     output = ROOT / f"build/pcb/fridakeeb_{side}_routed.kicad_pcb"
     pcbnew.SaveBoard(str(output), board)
