@@ -23,7 +23,7 @@ A clean checkout can open either board without regenerating it.
 Circuit JSON, previews, and check reports live in `build/tscircuit/`.
 `left-appearance.svg` and `right-appearance.svg` show white mask and black knife artwork and lettering.
 The corresponding `*-bottom-appearance.svg` files show the back faces as viewed after flipping the boards.
-Both faces use IBM Plex Mono Bold lettering and one-word component arrows.
+Both faces use Kingjola poems and component arrows, with an IBM Plex Mono Bold signature.
 The React board color properties and KiCad stackup also specify white mask and black silkscreen.
 The editor can retain its layer colors in the 2D routing view.
 Select white mask and black silkscreen when creating the fabrication order.
