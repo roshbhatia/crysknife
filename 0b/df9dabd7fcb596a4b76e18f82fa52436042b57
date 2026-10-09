@@ -1,0 +1,45 @@
+scripts/save_previews.py
+  s_df88920dc610de::t_1d27bd3e0e7513 1-14,19
+tscircuit/README.md
+  s_df88920dc610de::t_1d27bd3e0e7513 20-22,26,75-76,82-101
+manufacturing/battery.json
+  s_df88920dc610de::t_1d27bd3e0e7513 25-26
+README.md
+  s_df88920dc610de::t_1d27bd3e0e7513 109-119
+case/sandwich.scad
+  s_df88920dc610de::t_85b16c0df2c889 20
+scripts/generate_case.py
+  s_df88920dc610de::t_8531259d944159 103
+scripts/generate_tscircuit.py
+  s_df88920dc610de::t_412b00efb9d9c9 11,116,148-150,162,166-170
+tscircuit/generated/left-placement.circuit.tsx
+  s_df88920dc610de::t_37446b9b98b02e 1-271
+tscircuit/generated/left-routed.circuit.tsx
+  s_df88920dc610de::t_027d55d272fd99 1-271
+tscircuit/generated/right-placement.circuit.tsx
+  s_df88920dc610de::t_9d8004a54c59ac 1-271
+tscircuit/generated/right-routed.circuit.tsx
+  s_df88920dc610de::t_9b441ba8384f8a 1-271
+tscircuit/models/left-artwork.ts
+  s_df88920dc610de::t_f64fc0a5265197 1-9768
+tscircuit/models/right-artwork.ts
+  s_df88920dc610de::t_ea08b63da8d183 1-11104
+case/geometry.scad
+  s_df88920dc610de::t_ff6c4537c64af8 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0bdf9dabd7fcb596a4b76e18f82fa52436042b57",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
