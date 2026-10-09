@@ -1,5 +1,5 @@
 pcbs:
-  fridakeeb_left:
+  crysknife_left:
     template: kicad8
     outlines:
       board:
@@ -29,7 +29,7 @@ pcbs:
           shift: [horizontal_diode_shift, vertical_diode_shift]
           rotate: 90
       controller:
-        what: fridakeys/nice_nano_socketed
+        what: crysknife/nice_nano_socketed
         where:
           ref: matrix_inner_top
         params:
@@ -89,8 +89,8 @@ pcbs:
         adjust:
           shift: ["0.5 ks + 7.25", "0.375 kp - 45.25"]
           rotate: 90
-  fridakeeb_right:
-    $extends: pcbs.fridakeeb_left
+  crysknife_right:
+    $extends: pcbs.crysknife_left
     outlines.board.outline: right__pcb_outline
     footprints:
       switches.asym: clone

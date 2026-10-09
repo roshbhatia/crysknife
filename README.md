@@ -1,125 +1,62 @@
-# fridakeys
+# crysknife
 
-42-key Bluetooth split keyboard with standard MX hotswap sockets, ZMK, and one protected 2000 mAh battery per half.
-The layout uses 20 mm pitch and 12/5/-5/-2 mm stagger for Outemu Medium-Low Black switches.
-No pointing device is fitted.
+A 42-key wireless split keyboard with MX hotswap sockets, ZMK firmware, and a 2000 mAh battery in each half.
+It uses nice!nano V2 controllers, white PCBs, and black knife artwork on both sides.
 
-The design remains a prototype candidate. Supplier acceptance and physical tests remain open.
+![Left PCB](previews/left.png)
+![Right PCB](previews/right.png)
+
+## Case
+
+A clear acrylic top plate sits above a bent aluminum bottom plate.
+Six standoffs hold each half together. A flat rubber layer reduces vibration above the metal floor.
+USB, power, and reset remain accessible from the side.
+
+![Case](previews/case-left.png)
+
+## Edit the design
+
+- [Layout](ergogen/layout.yaml): key spacing and column stagger.
+- [PCB models](tscircuit/README.md#edit-the-models): open either half in the tscircuit editor.
+- [Case model](case/sandwich.scad): open in OpenSCAD; dimensions live in [parameters.scad](case/parameters.scad).
+- [Artwork](assets/knife.svg): the original knife illustration. PCB text uses IBM Plex Mono Bold.
+
+[previews/](previews/) contains images of both PCB faces and the case.
+[out/](out/README.md) contains checked KiCad projects, schematics, firmware, and 3D models.
 
 ## Build
 
-Use the repository shell. `nix develop .` excludes ignored Node dependencies from its source snapshot.
-Do not use `nix develop path:.`.
+Enter the Nix shell, then install the locked dependencies:
 
 ```sh
-nix develop . --command npm ci
-nix develop . --command npm run pcb
-nix develop . --command python3 scripts/add_artwork.py
-nix develop . --command npm ci --prefix tscircuit
-nix develop . --command npm run route
-nix develop . --command python3 scripts/check_electrical.py
-nix develop . --command python3 scripts/generate_schematic.py
-nix develop . --command python3 scripts/generate_assembly.py
-nix develop . --command python3 scripts/check_assembly_guards.py
-nix develop . --command npm run case
+nix develop .
+npm ci
+npm ci --prefix tscircuit
 ```
 
-Ergogen supplies geometry and pinned footprints. Generated React models use tscircuit for routing.
-KiCad merges copper into the original footprints, fills ground pours, and checks final DRC.
-GitHub Actions runs the pinned KiCad container and builds all three ZMK images.
-Local KiCad container commands need a running Docker service; generation does not.
+Generate the boards, artwork, routing, schematics, and case:
 
-Build caches and intermediate evidence stay under `build/`:
+```sh
+npm run pcb
+python3 scripts/add_artwork.py
+npm run route
+python3 scripts/check_electrical.py
+python3 scripts/generate_schematic.py
+python3 scripts/generate_assembly.py
+python3 scripts/check_assembly_guards.py
+npm run case
+python3 scripts/check_case_models.py
+python3 scripts/save_previews.py
+```
 
-- `pcb/`: placement PCBs, routed PCBs, DRC reports, and silkscreen previews.
-- `tscircuit/`: React routing evidence and white PCB appearance previews for both faces.
-- `schematic/`: separate KiCad schematics, independent pin mapping, ERC reports, netlists, and PDFs.
-- `manufacturing/quote-only/`: BOM/CPL candidates with explicit unresolved supplier requirements.
-- `case/`: bent bottom flat patterns, damping sheets, top plates, and 3D assemblies.
+Ergogen generates the layout. tscircuit routes the boards. KiCad checks the finished copper and schematic in GitHub Actions.
+A separate workflow builds the left, right, and settings-reset firmware.
 
-## Electronics and assembly
+## Assembly and ordering
 
-Each carrier has 21 Kailh MX hotswap sockets, 21 diodes, side power/reset switches, one JST-PH battery connector, and two controller receiver sockets.
-All 47 carrier components per half are specified for factory assembly.
-Two-face SMT and through-hole assembly are required; a pick-and-place-only quote is insufficient.
-The controller uses genuine nice!nano V2, face up, with matching round-pin headers.
-The factory may prepare the controllers if it accepts supplied modules; this remains a quote option.
-The fallback user work is 48 controller header joints and two BOOST solder bridges across the complete keyboard.
-The controller's built-in charge/status LEDs remain available through the open electronics bay.
-No additional RGB lighting is fitted.
+JLCPCB files are in [manufacturing/jlcpcb/](manufacturing/jlcpcb/README.md).
+SendCutSend files are in [manufacturing/sendcutsend/](manufacturing/sendcutsend/README.md).
+The [assembly guide](manufacturing/README.md) lists parts, controller headers, battery connections, and soldering work.
 
-The battery selection is [Adafruit 2011](https://www.adafruit.com/product/2011): protected 1S 3.7 V, 2000 mAh, JST-PH plug.
-The 500 mA charging option requires the BOOST bridge on each nice!nano.
-Check plug polarity: JST1 pin 1 is GND; pin 2 is battery positive.
-The power switch must be ON for charging. USB can power a controller with its battery switch OFF.
-See [assembly requirements](manufacturing/README.md), [battery selection](manufacturing/battery.json), and [prototype tests](manufacturing/physical-tests.md).
-
-## Schematic and firmware checks
-
-The independent schematic design defines all 21 switch/diode paths, both 12-pin sockets, battery, power, and reset connections.
-The external nice!nano symbol uses power and GPIO electrical types; unused pins have explicit no-connect markers.
-The generation check compares all 117 carrier pin connections with each PCB.
-CI runs KiCad ERC and compares the exported schematic netlist with those connections.
-ERC and DRC cannot prove assembly quality, switch fit, charging temperature, or Bluetooth operation.
-
-The right half remains ZMK central. The keymap provides QWERTY, symbols, navigation, function keys, and five Bluetooth profiles.
-ZMK and its dependencies remain pinned in `firmware/config/west.lock.yml`.
-The firmware workflow builds left, right, and settings-reset images, with compiled devicetree and Kconfig evidence.
-
-## PCB artwork
-
-White solder mask and black Frida silkscreen cover both faces.
-Each face repeats 31 portraits; a larger portrait is positioned around its open mouth rather than a switch hole.
-The generator checks its sampled mouth region against pad, drill, title, and edge exclusions.
-Artwork features are at least 0.2 mm, with 0.3 mm pad and 0.25 mm native silkscreen clearances.
-The original transparent image remains unchanged.
-
-All visible PCB lettering uses IBM Plex Mono Bold, including native controller labels.
-The legend reads `fridakeys v1.0.0 by @roshbhatia`.
-Arrows identify `{CPU}`, `{RST}`, `{PWR}`, and `{BTY}`.
-Back lettering reads correctly when the board is flipped.
-Installed keycaps and components can cover artwork; the PCB previews show bare boards.
-
-## Sandwich case
-
-Each half uses a bent aluminum bottom, flat neoprene liner, and clear acrylic top.
-Six M2 standoffs join the plates through matching holes.
-The controller side stays open for USB, power, reset, and Bluetooth.
-No printed parts are needed.
-
-Edit [case/parameters.scad](case/parameters.scad), then regenerate the case and its previews.
-The current stock is 1.6002 mm aluminum, acrylic, and neoprene.
-Use 20 mm standoffs with 1 mm nylon shims. The two bottom flanges bend upward 90 degrees.
-The battery reservation is 64 × 40 × 8.5 mm beneath each PCB.
-Secure it with foam and an insulating cover. Add a dielectric liner above the metal floor.
-Use the exported switch-fit coupon to test the acrylic and actual Outemu switches before final plate cutting.
-
-[SendCutSend instructions](manufacturing/sendcutsend/README.md) list the materials, bend directions, and remaining fit checks.
-
-## Release gates
-
-- Matched header insertion and assembled controller height verified.
-- Fresh KiCad ERC/DRC and all firmware builds passed for the proposed revision.
-- JLCPCB approves sourcing, footprint geometry, pickup positions, rotations, and mixed assembly.
-- SendCutSend approves actual materials, thicknesses, bolt holes, and cut tolerances.
-- Physical prototype passes all 42 keys, wireless pairing/reconnect, charging, controls, and mechanical travel tests.
-
-There is no accepted supplier quote or physical prototype result yet.
-No production order is authorized by these files.
-
-## Editable models and previews
-
-The [React editing guide](tscircuit/README.md#edit-the-models) covers both halves and regeneration.
-The committed [OpenSCAD assembly](case/sandwich.scad) includes local geometry and editable thickness, clearance, and exploded-view settings.
-These files open from a clean checkout. Build caches and dependencies stay ignored.
-
-![Left front](previews/left.png)
-![Right front](previews/right.png)
-![Left back](previews/left-bottom.png)
-![Right back](previews/right-bottom.png)
-
-Engineering exports live in [out/](out/README.md).
-Vendor review files live in [manufacturing/jlcpcb/](manufacturing/jlcpcb/README.md) and [manufacturing/sendcutsend/](manufacturing/sendcutsend/README.md).
-
-![Left case](previews/case-left.png)
-![Right case](previews/case-right.png)
+The design still needs supplier approval and a physical prototype test before ordering a production batch.
+The remaining checks cover controller fit, charging, wireless operation, and plate fit.

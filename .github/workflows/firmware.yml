@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shield: [fridakeeb_left, fridakeeb_right, settings_reset]
+        shield: [crysknife_left, crysknife_right, settings_reset]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Build and record resolved dependencies

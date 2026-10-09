@@ -1,5 +1,5 @@
 {
-  description = "Fridakeys keyboard design tools";
+  description = "crysknife keyboard design tools";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.footprints = {

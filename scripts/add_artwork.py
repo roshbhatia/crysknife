@@ -2,27 +2,32 @@ import hashlib
 import json
 import math
 import re
+import subprocess
 from pathlib import Path
 from kicad_sexp import parse, children, child
 from generate_tscircuit import edge_points
 
-from PIL import Image, ImageFilter, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 from shapely.geometry import Point, Polygon, box
 from shapely.ops import unary_union
 from shapely.prepared import prep
 
 
 root = Path(__file__).resolve().parents[1]
-source = root / "assets/frida.png"
-assert hashlib.sha256(source.read_bytes()).hexdigest() == "a7c80525068856ffaabe642369a3466a534b14bf7bf8c164e03b5128d39b1cdf"
+source = root / "assets/knife.svg"
+source_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+raster = root / "build/knife-source.png"
+raster.parent.mkdir(parents=True, exist_ok=True)
+subprocess.run(["rsvg-convert", str(source), "-o", str(raster)], check=True)
 minimum_feature = 0.2
-portrait_alpha = Image.open(source).convert("RGBA").getchannel("A").filter(ImageFilter.GaussianBlur(0.5))
+artwork_alpha = Image.open(raster).convert("RGBA").getchannel("A")
+artwork_alpha = artwork_alpha.crop(artwork_alpha.getbbox())
 
 
 for side in ("left", "right"):
-    board_path = root / f"build/pcb/fridakeeb_{side}.kicad_pcb"
+    board_path = root / f"build/pcb/crysknife_{side}.kicad_pcb"
     text = board_path.read_text()
-    assert "frida-silkscreen" not in text, "Regenerate the PCB before applying artwork."
+    assert "knife-silkscreen" not in text, "Regenerate the PCB before applying artwork."
     board = parse(text)
     middle_home = next(fp for fp in children(board, "footprint")
                        if any(p[1:3] == ["Reference", "S11"] for p in children(fp, "property")))
@@ -169,36 +174,39 @@ for side in ("left", "right"):
     blocked += [box(x-w/2-0.22, y-h/2-0.22, x+w/2+0.22, y+h/2+0.22)
                 for x, y, w, h in lettering_boxes]
     safe = prep(Polygon(outline).buffer(-0.65).difference(unary_union(blocked)))
-    sampled = portrait_alpha.resize((30, 30), Image.Resampling.BOX)
-    mouth_samples = [(x/30-0.5, y/30-0.5) for y in range(21, 28) for x in range(3, 17)
-                     if sampled.getpixel((x, y)) >= 100]
-    face_samples = [(x/30-0.5, y/30-0.5) for y in range(30) for x in range(30)
-                    if sampled.getpixel((x, y)) >= 100]
+    sample_width = 40
+    sample_height = round(sample_width*artwork_alpha.height/artwork_alpha.width)
+    sampled = artwork_alpha.resize((sample_width, sample_height), Image.Resampling.BOX)
+    figure_samples = [(x/sample_width-0.5, (y-sample_height/2)/sample_width)
+                      for y in range(sample_height) for x in range(sample_width)
+                      if sampled.getpixel((x, y)) >= 100]
+    blade_samples = [(x, y) for x, y in figure_samples if x > -0.05 and -0.2 < y < 0.32]
     mirror = -1 if side == "right" else 1
     candidates = []
-    for width in (44, 36, 30):
+    for width in (44, 36, 30, 26):
         for dx in range(-16, 17, 2):
             for dy in range(-14, 17, 2):
                 cx, cy = center+dx, image_center_y+dy
-                mouth = sum(safe.contains(Point(cx+mirror*x*width, cy+y*width)) for x, y in mouth_samples)/len(mouth_samples)
-                face = sum(safe.contains(Point(cx+mirror*x*width, cy+y*width)) for x, y in face_samples)/len(face_samples)
-                candidates.append((mouth, face, width, cx, cy))
-    mouth_visibility, face_visibility, hero_width, center, image_center_y = max(candidates)
-    assert mouth_visibility >= 0.98, (side, "Hero mouth is obstructed", mouth_visibility)
+                blade = sum(safe.contains(Point(cx+mirror*x*width, cy+y*width))
+                            for x, y in blade_samples)/len(blade_samples)
+                figure = sum(safe.contains(Point(cx+mirror*x*width, cy+y*width))
+                             for x, y in figure_samples)/len(figure_samples)
+                candidates.append((blade*0.6+figure*0.4, figure, blade, width, cx, cy))
+    _, figure_visibility, blade_visibility, hero_width, center, image_center_y = max(candidates)
     pixels = []
-    portraits = 0
+    stamps = 0
 
-    def portrait(cx, cy, portrait_width, dot_pitch, hero=False):
-        portrait_image = portrait_alpha.copy()
+    def stamp(cx, cy, artwork_width, dot_pitch, hero=False):
+        artwork_image = artwork_alpha.copy()
         if side == "right":
-            portrait_image = portrait_image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
-        portrait_image.thumbnail((round(portrait_width/dot_pitch), round(portrait_width/dot_pitch)), Image.Resampling.BOX)
+            artwork_image = artwork_image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+        artwork_image.thumbnail((round(artwork_width/dot_pitch), round(artwork_width/dot_pitch)), Image.Resampling.BOX)
         before = len(pixels)
-        left = cx-portrait_image.width*dot_pitch/2
-        top = cy-portrait_image.height*dot_pitch/2
-        for row in range(portrait_image.height):
-            for col in range(portrait_image.width):
-                alpha = portrait_image.getpixel((col, row))
+        left = cx-artwork_image.width*dot_pitch/2
+        top = cy-artwork_image.height*dot_pitch/2
+        for row in range(artwork_image.height):
+            for col in range(artwork_image.width):
+                alpha = artwork_image.getpixel((col, row))
                 x, y = left+(col+0.5)*dot_pitch, top+(row+0.5)*dot_pitch
                 size = dot_pitch if alpha >= 100 else 0
                 radius = size/math.sqrt(2)
@@ -218,13 +226,13 @@ for side in ("left", "right"):
                 pixels.append((x-size/2, y-size/2, x+size/2, y+size/2))
         return len(pixels) > before
 
-    portraits += portrait(center, image_center_y, hero_width, 0.3, hero=True)
+    stamps += stamp(center, image_center_y, hero_width, 0.3, hero=True)
     row = 0
     cy = min_y+9
     while cy < max_y+5:
         cx = min_x+9+(10 if row % 2 else 0)
         while cx < max_x+5:
-            portraits += portrait(cx, cy, 18, 0.3)
+            stamps += stamp(cx, cy, 18, 0.3)
             cx += 20
         cy += 20
         row += 1
@@ -255,7 +263,7 @@ for side in ("left", "right"):
                     face.append((x-grid/2, y-grid/2, x+grid/2, y+grid/2))
 
     for label, cy, max_width, max_height in [
-        ("fridakeys", 69.5, 34, 4), ("v1.0.0", 88, 30, 3.2), ("by @roshbhatia", 91, 34, 2.6),
+        ("crysknife", 69.5, 34, 4), ("v1.0.0", 88, 30, 3.2), ("by @roshbhatia", 91, 34, 2.6),
     ]:
         lettering(label, title_center, cy, max_width, max_height)
     for label, x, y, width, height, angle in original_labels:
@@ -335,7 +343,7 @@ for side in ("left", "right"):
         for x0, y0, x1, y1 in face
     )
     reference = '(property "Reference" "ART1" (at 0 0) (layer "F.SilkS") hide (effects (font (size 1 1) (thickness 0.15))))'
-    footprint = f'\n(footprint "fridakeeb:frida-silkscreen" (layer "F.Cu") (at {center} {image_center_y}) (attr board_only exclude_from_pos_files exclude_from_bom)\n{reference}\n{rectangles}\n)\n'
+    footprint = f'\n(footprint "crysknife:knife-silkscreen" (layer "F.Cu") (at {center} {image_center_y}) (attr board_only exclude_from_pos_files exclude_from_bom)\n{reference}\n{rectangles}\n)\n'
     closing = text.rfind(")")
     board_path.write_text(text[:closing] + footprint + text[closing:])
     pixels = top_pixels
@@ -344,7 +352,7 @@ for side in ("left", "right"):
         for x0, y0, x1, y1 in pixels
     )
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{max_x-min_x}mm" height="{max_y-min_y}mm" viewBox="{min_x} {min_y} {max_x-min_x} {max_y-min_y}"><rect x="{min_x}" y="{min_y}" width="{max_x-min_x}" height="{max_y-min_y}" fill="white"/><g fill="black">{svg_rectangles}</g></svg>'
-    (root / f"build/pcb/frida-{side}.svg").write_text(svg)
+    (root / f"build/pcb/knife-{side}.svg").write_text(svg)
     print(json.dumps({"side": side, "rectangles": len(pixels), "minimum_feature_mm": minimum_feature,
-                      "layers": ["F.SilkS", "B.SilkS"], "pad_clearance_mm": 0.3, "native_silk_clearance_mm": 0.25, "portraits": portraits, "edge_clearance_mm": 0.4, "hero_mouth_visibility": mouth_visibility,
+                      "layers": ["F.SilkS", "B.SilkS"], "pad_clearance_mm": 0.3, "native_silk_clearance_mm": 0.25, "stamps": stamps, "edge_clearance_mm": 0.4, "hero_blade_visibility": blade_visibility, "hero_figure_visibility": figure_visibility, "source_sha256": source_hash,
                       "hero_center_mm": [center, image_center_y], "hero_width_mm": hero_width}))

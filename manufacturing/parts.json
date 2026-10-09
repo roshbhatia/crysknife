@@ -54,7 +54,7 @@
     },
     {
       "reference_pattern": "MCU1[AB]",
-      "footprint": "fridakeys:MillMax_315_1x12",
+      "footprint": "crysknife:MillMax_315_1x12",
       "side": "F",
       "manufacturer": "Mill-Max",
       "mpn": "315-43-112-41-003000",

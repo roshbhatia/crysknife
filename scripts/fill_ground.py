@@ -15,7 +15,7 @@ def polygon(zone, points):
 
 
 for side in ("left", "right"):
-    path = ROOT / f"build/pcb/fridakeeb_{side}_routed.kicad_pcb"
+    path = ROOT / f"build/pcb/crysknife_{side}_routed.kicad_pcb"
     board = pcbnew.LoadBoard(str(path))
     assert not list(board.Zones()), "Regenerate routes before adding ground zones"
     data = json.loads((ROOT / f"build/tscircuit/{side}.json").read_text())

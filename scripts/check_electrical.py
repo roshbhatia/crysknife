@@ -6,8 +6,8 @@ from kicad_sexp import child, children, parse
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FIRMWARE = ROOT / "firmware/boards/shields/fridakeeb"
-common = (FIRMWARE / "fridakeeb.dtsi").read_text()
+FIRMWARE = ROOT / "firmware/boards/shields/crysknife"
+common = (FIRMWARE / "crysknife.dtsi").read_text()
 assert 'diode-direction = "col2row"' in common
 rows = re.search(r"row-gpios\s*=\s*(.*?);", common, re.S)[1]
 assert re.findall(r"&pro_micro (\d+) \(GPIO_ACTIVE_HIGH \| GPIO_PULL_DOWN\)", rows) == ["5", "6", "7", "8"]
@@ -21,7 +21,7 @@ expected_pins = {"1": "RAW", "2": "GND", "3": "RST", "4": "VCC",
                  "19": "P3", "20": "P2", "21": "GND", "22": "GND"}
 evidence = []
 for side in ("left", "right"):
-    board = parse((ROOT / f"build/pcb/fridakeeb_{side}.kicad_pcb").read_text())
+    board = parse((ROOT / f"build/pcb/crysknife_{side}.kicad_pcb").read_text())
     footprints = {next(p[2] for p in children(fp, "property") if p[1] == "Reference"): fp
                   for fp in children(board, "footprint")}
 
@@ -34,11 +34,11 @@ for side in ("left", "right"):
     assert set(pads("MCU1A")).isdisjoint(pads("MCU1B"))
     controller = {**pads("MCU1A"), **pads("MCU1B")}
     for ref in ("MCU1A", "MCU1B"):
-        assert footprints[ref][1] == "fridakeys:MillMax_315_1x12"
+        assert footprints[ref][1] == "crysknife:MillMax_315_1x12"
         assert all(child(pad, "drill")[1] == "1" for pad in children(footprints[ref], "pad"))
     assert all(controller[pin] == net for pin, net in expected_pins.items()), (side, controller)
     gpio_nets = {gpio: controller[str(pin)] for pin, gpio in gpio_by_pin.items()}
-    overlay = (FIRMWARE / f"fridakeeb_{side}.overlay").read_text()
+    overlay = (FIRMWARE / f"crysknife_{side}.overlay").read_text()
     columns = list(map(int, re.findall(r"&pro_micro (\d+) GPIO_ACTIVE_HIGH",
                        re.search(r"col-gpios\s*=\s*(.*?);", overlay, re.S)[1])))
     assert len(columns) == 6
@@ -73,7 +73,7 @@ for side in ("left", "right"):
                      "reset": "momentary RST to GND", "matrix_positions": sorted(key_coordinates)})
 all_positions = {tuple(p) for item in evidence for p in item["matrix_positions"]}
 assert all_positions == transform
-keymap = (ROOT / "firmware/config/fridakeeb.keymap").read_text()
+keymap = (ROOT / "firmware/config/crysknife.keymap").read_text()
 for bindings in re.findall(r"bindings\s*=\s*<(.*?)>;", keymap, re.S):
     assert len(re.findall(r"&\w+", bindings)) == 42, "Keymap layer does not cover all 42 switches"
 output = ROOT / "build/pcb/electrical-checks.json"

@@ -5,7 +5,7 @@
 - `firmware/`: verified UF2 builds for each half and settings reset.
 - `validation.json`: PCB check revision, reports, and board hashes.
 
-Open `kicad/fridakeys_left.kicad_pro` or `kicad/fridakeys_right.kicad_pro` in KiCad.
+Open `kicad/crysknife_left.kicad_pro` or `kicad/crysknife_right.kicad_pro` in KiCad.
 Open `case/sandwich.scad` from the repository root for the parameter-based mechanical source.
 The 3MF files are exported geometry. Edit the OpenSCAD source to change the case.
 Read `tscircuit/README.md` for live React editing.

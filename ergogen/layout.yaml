@@ -2,9 +2,9 @@
 # See THIRD_PARTY.md. This file contains geometry only and is not fabrication-ready.
 meta:
   engine: 4.1.0
-  name: fridakeys-layout-draft
+  name: crysknife-layout-draft
   version: 1.0.0
-  ref: &kb_ref "fridakeys v1.0.0 by @roshbhatia"
+  ref: &kb_ref "crysknife v1.0.0 by @roshbhatia"
   author: roshbhatia
   url: &kb_url https://github.com/ceoloide/corney-island
   footprint: &switch_footprint "ceoloide/switch_mx"

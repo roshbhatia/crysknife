@@ -1,0 +1,5 @@
+config SHIELD_CRYSKNIFE_LEFT
+    def_bool $(shields_list_contains,crysknife_left)
+
+config SHIELD_CRYSKNIFE_RIGHT
+    def_bool $(shields_list_contains,crysknife_right)

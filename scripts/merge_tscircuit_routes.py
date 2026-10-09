@@ -12,7 +12,7 @@ LAYERS = {"top": pcbnew.F_Cu, "bottom": pcbnew.B_Cu}
 for side in ("left", "right"):
     expected = json.loads((ROOT / f"build/tscircuit/{side}.json").read_text())
     data = json.loads((ROOT / f"build/tscircuit/{side}-routed.circuit.json").read_text())
-    board = pcbnew.LoadBoard(str(ROOT / f"build/pcb/fridakeeb_{side}.kicad_pcb"))
+    board = pcbnew.LoadBoard(str(ROOT / f"build/pcb/crysknife_{side}.kicad_pcb"))
     assert len(list(board.GetTracks())) == 0, "Regenerate the placement before merging routes"
     names = sorted({p["net"] for p in expected["pads"] if p["net"]})
     net_codes = {p["net"]: p["netCode"] for p in expected["pads"] if p["net"]}
@@ -143,6 +143,6 @@ for side in ("left", "right"):
                 gap = math.dist(tuple(coordinates(first).values()), tuple(coordinates(second).values()))-pcbnew.ToMM(first.GetWidth(pcbnew.F_Cu)+second.GetWidth(pcbnew.F_Cu))/2
                 assert gap >= 0.24999, (side, "Via finishing introduced another clearance defect", gap)
     (ROOT / f"build/pcb/{side}-route-finishing.json").write_text(json.dumps(finishing, indent=2)+"\n")
-    output = ROOT / f"build/pcb/fridakeeb_{side}_routed.kicad_pcb"
+    output = ROOT / f"build/pcb/crysknife_{side}_routed.kicad_pcb"
     pcbnew.SaveBoard(str(output), board)
     print(f"{side}: merged {segments} copper segments and {len(vias)} vias into original KiCad geometry")

@@ -5,7 +5,7 @@ import subprocess
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("shield", choices=["fridakeeb_left", "fridakeeb_right", "settings_reset"])
+parser.add_argument("shield", choices=["crysknife_left", "crysknife_right", "settings_reset"])
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
 workspace = root / "build/firmware/workspace"

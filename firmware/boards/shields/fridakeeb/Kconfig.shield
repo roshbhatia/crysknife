@@ -1,5 +1,0 @@
-config SHIELD_FRIDAKEEB_LEFT
-    def_bool $(shields_list_contains,fridakeeb_left)
-
-config SHIELD_FRIDAKEEB_RIGHT
-    def_bool $(shields_list_contains,fridakeeb_right)

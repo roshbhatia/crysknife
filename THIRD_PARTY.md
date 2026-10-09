@@ -17,9 +17,9 @@ No upstream footprint source files are edited or vendored.
 The `out/` snapshots embed generated KiCad footprint geometry for editing.
 The local controller adapter preserves pin positions and nets, sets 1 mm drills, and splits contacts into two factory socket footprints.
 
-`assets/frida.png` is an unchanged copy of `/Users/roshan/Desktop/frida.png`, supplied by the user.
-`scripts/add_artwork.py` resamples its halftone for draft PCB silkscreen placement.
-The original source image remains unchanged.
+`assets/knife.svg` is an unchanged copy of the user's `bike-decals/assets/blade.svg`.
+It depicts a hand holding a knife and was supplied through the user's sticker project.
+`scripts/add_artwork.py` converts it to solid black silkscreen geometry on both PCB faces.
 
 `assets/ibm-plex-mono-bold.ttf` comes from [Google Fonts](https://github.com/google/fonts/tree/2eb0b48d5f760f62e286216f0859a8c540dbc1bd/ofl/ibmplexmono).
 The selected face is IBM Plex Mono Bold. Its OFL is preserved in `assets/LICENSE.ibm-plex-mono`.

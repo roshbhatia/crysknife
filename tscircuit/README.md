@@ -21,7 +21,7 @@ Editable JSX is committed in `tscircuit/generated/`.
 Artwork arrays are committed once per half in `tscircuit/models/`.
 A clean checkout can open either board without regenerating it.
 Circuit JSON, previews, and check reports live in `build/tscircuit/`.
-`left-appearance.svg` and `right-appearance.svg` show white mask and black Frida artwork and lettering.
+`left-appearance.svg` and `right-appearance.svg` show white mask and black knife artwork and lettering.
 The corresponding `*-bottom-appearance.svg` files show the back faces as viewed after flipping the boards.
 Both faces use IBM Plex Mono Bold lettering and one-word component arrows.
 The React board color properties and KiCad stackup also specify white mask and black silkscreen.
@@ -70,7 +70,7 @@ This step moves the via outside its own pad, keeps both connected tracks, and re
 It also separates conflicting vias on different nets to a 0.3 mm copper-edge gap, retaining both connected trace endpoints.
 The router's drill-spacing setting checks these gaps but does not change the offending routes.
 The final KiCad DRC validates the finished route. React previews remain autorouter drafts.
-It preserves footprint references, solder mask, paste, exact outlines, and Frida artwork.
+It preserves footprint references, solder mask, paste, exact outlines, and knife artwork.
 The routed board check requires zero unconnected items and no violations except library-resolution warnings.
 KiCad independently checks the complete schematic and its exported netlist against all carrier pins.
 Factory acceptance and physical fit remain separate gates.

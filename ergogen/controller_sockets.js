@@ -33,7 +33,7 @@ module.exports = controller => ({
       assert.equal(contacts.length, 12);
       const relocated = contacts.map(pad => pad.replace(/\(at [\d.e+-]+ ([\d.e+-]+) 0\)/,
         (_, y) => `(at 0 ${(Number(y)-1.27).toFixed(6)} 0)`)).join('\n');
-      return `(footprint "fridakeys:MillMax_315_1x12" (layer "F.Cu")
+      return `(footprint "crysknife:MillMax_315_1x12" (layer "F.Cu")
         (at ${Number(at[1])+x} ${Number(at[2])+1.27} 0)
         (property "Reference" "${p.ref}${index === 0 ? 'A' : 'B'}" (at 0 -16 0) (layer "F.Fab")
           (effects (font (size 1 1) (thickness 0.15))))

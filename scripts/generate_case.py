@@ -28,7 +28,7 @@ under_pcb_clearance = parameters['standoff_height'] + parameters['standoff_shim'
 assert under_pcb_clearance >= 13.9 + parameters["damping_thickness"]
 expansion = parameters['outline_expansion']
 for side in ("left", "right"):
-    board = parse((ROOT / f"build/pcb/fridakeeb_{side}.kicad_pcb").read_text())
+    board = parse((ROOT / f"build/pcb/crysknife_{side}.kicad_pcb").read_text())
     data = descriptor(side)
     outline = [[p["x"], p["y"]] for p in data["outline"]]
     shape = Polygon(outline)

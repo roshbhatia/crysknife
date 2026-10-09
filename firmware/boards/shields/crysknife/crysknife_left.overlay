@@ -1,4 +1,4 @@
-#include "fridakeeb.dtsi"
+#include "crysknife.dtsi"
 
 &kscan0 {
     col-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>,

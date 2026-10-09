@@ -55,7 +55,7 @@ def main():
               'placement_validation': 'Pickup offsets, polarity and factory rotations require assembler review',
               'remaining_gates': manifest['remaining_gates'], 'boards': []}
     for side in ('left', 'right'):
-        source = ROOT/f'build/pcb/fridakeeb_{side}.kicad_pcb'
+        source = ROOT/f'build/pcb/crysknife_{side}.kicad_pcb'
         parts, excluded = inventory(parse(source.read_text()), side, manifest)
         groups = {}
         for p in parts:

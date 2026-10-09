@@ -40,7 +40,7 @@ def edge_points(node):
 
 
 def descriptor(side):
-    source = ROOT / f"build/pcb/fridakeeb_{side}.kicad_pcb"
+    source = ROOT / f"build/pcb/crysknife_{side}.kicad_pcb"
     board = parse(source.read_text())
     edges = [edge_points(n) for n in board if isinstance(n, list)
              and n[0] in ("gr_line", "gr_arc") and child(n, "layer")[1] == "Edge.Cuts"]

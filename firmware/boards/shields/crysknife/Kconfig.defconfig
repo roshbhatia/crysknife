@@ -1,14 +1,14 @@
-if SHIELD_FRIDAKEEB_LEFT || SHIELD_FRIDAKEEB_RIGHT
+if SHIELD_CRYSKNIFE_LEFT || SHIELD_CRYSKNIFE_RIGHT
 
 config ZMK_SPLIT
     default y
 
 endif
 
-if SHIELD_FRIDAKEEB_RIGHT
+if SHIELD_CRYSKNIFE_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "fridakeys"
+    default "crysknife"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y

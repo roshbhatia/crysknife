@@ -26,13 +26,13 @@ for side in ('left', 'right'):
     drc = json.loads((evidence/f'pcb/{side}-routed-drc.json').read_text())
     assert not drc['unconnected_items'], (side, 'Unconnected copper')
     assert all(v['severity']=='warning' and v['type']=='lib_footprint_issues' for v in drc['violations']), (side, 'DRC issues')
-    board = evidence/f'pcb/fridakeeb_{side}_routed.kicad_pcb'
+    board = evidence/f'pcb/crysknife_{side}_routed.kicad_pcb'
     verification['boards'][side] = {'erc_issues':0, 'drc_errors':0, 'unconnected':0,
                                   'library_warnings':len(drc['violations']),
                                   'sha256':hashlib.sha256(board.read_bytes()).hexdigest()}
-    shutil.copyfile(board, kicad/f'fridakeys_{side}.kicad_pcb')
+    shutil.copyfile(board, kicad/f'crysknife_{side}.kicad_pcb')
     for extension in ('kicad_sch', 'kicad_pro'):
-        shutil.copyfile(evidence/f'schematic/fridakeys_{side}.{extension}', kicad/f'fridakeys_{side}.{extension}')
+        shutil.copyfile(evidence/f'schematic/crysknife_{side}.{extension}', kicad/f'crysknife_{side}.{extension}')
     for extension in ('pdf', 'net'):
         shutil.copyfile(evidence/f'schematic/{side}.{extension}', kicad/f'{side}.{extension}')
     quote = evidence/'manufacturing/quote-only'
@@ -45,9 +45,9 @@ for side in ('left', 'right'):
         shutil.copyfile(ROOT/f'build/case/{side}-{part}.dxf', scs/f'{side}-{part}.dxf')
     for name in ('bends.json','bend-lines.svg'):
         shutil.copyfile(ROOT/f'build/case/{side}-{name}', scs/f'{side}-{name}')
-for name in ('fridakeys.kicad_sym','sym-lib-table','fp-lib-table'):
+for name in ('crysknife.kicad_sym','sym-lib-table','fp-lib-table'):
     shutil.copyfile(evidence/f'schematic/{name}', kicad/name)
-shutil.copytree(evidence/'schematic/fridakeys.pretty', kicad/'fridakeys.pretty', dirs_exist_ok=True)
+shutil.copytree(evidence/'schematic/crysknife.pretty', kicad/'crysknife.pretty', dirs_exist_ok=True)
 readiness = json.loads((evidence/'manufacturing/quote-only/readiness.json').read_text())
 readiness['remaining_gates'] = [gate.replace('Complete schematic/ERC and physical prototype', 'Physical prototype') for gate in readiness['remaining_gates']]
 readiness['digital_evidence'] = '../../out/validation.json'

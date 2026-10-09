@@ -8,7 +8,7 @@ from kicad_sexp import child, children, parse
 
 root = Path(__file__).resolve().parents[1]
 manifest = json.loads((root/'manufacturing/parts.json').read_text())
-original = parse((root/'build/pcb/fridakeeb_right.kicad_pcb').read_text())
+original = parse((root/'build/pcb/crysknife_right.kicad_pcb').read_text())
 inventory(original, 'right', manifest)
 for case in ('missing socket', 'unmapped part', 'wrong face', 'wrong footprint'):
     board = copy.deepcopy(original)

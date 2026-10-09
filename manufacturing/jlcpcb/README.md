@@ -15,7 +15,7 @@ Confirm C5504443 Mill-Max receiver sourcing and its solder process before accept
 The [part manifest](../parts.json) contains exact parts and catalog evidence.
 The [header record](../header-fit.json) covers drawing fit; actual insertion and controller height remain untested.
 
-Request acceptance of the 0.2 mm black artwork features without removing Frida's mouth or the title.
+Request acceptance of the 0.2 mm black artwork features without removing the knife illustration or the title.
 Request bare-board electrical testing, AOI, and assembly inspection.
 Confirm stock, MOQ, consignment, pickup positions, rotations, and any substitutions for both halves.
 

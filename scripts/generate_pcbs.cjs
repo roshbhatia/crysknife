@@ -15,7 +15,7 @@ for (const name of footprintNames) {
   ergogen.inject(`ceoloide/${name}`, require(path.join(library, `${name}.js`)));
 }
 const controller = require(path.join(library, 'mcu_nice_nano.js'));
-ergogen.inject('fridakeys/nice_nano_socketed', require('../ergogen/controller_sockets.js')(controller));
+ergogen.inject('crysknife/nice_nano_socketed', require('../ergogen/controller_sockets.js')(controller));
 
 async function main() {
   const config = yaml.load(fs.readFileSync(path.join(root, 'ergogen/layout.yaml'), 'utf8'));
