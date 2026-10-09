@@ -83,7 +83,7 @@ for side in ("left", "right"):
         return {"x": pcbnew.ToMM(p.x)-expected["origin"][0], "y": expected["origin"][1]-pcbnew.ToMM(p.y)}
 
     finishing = []
-    for net, own_number, other_number, delta_y in [("GND", "3", "4", -0.7), ("RST", "4", "3", 0.7)]:
+    for net, own_number, other_number, delta_y, direction in [("GND", "3", "4", -0.7, -1), ("RST", "4", "3", -0.7, 1)]:
         own = next(p for p in expected["pads"] if p["ref"] == "RST1" and p["number"] == own_number)
         other = next(p for p in expected["pads"] if p["ref"] == "RST1" and p["number"] == other_number)
         assert own["net"] == net and other["net"] != net
@@ -103,7 +103,7 @@ for side in ("left", "right"):
             before = pad_gap(source, other, source["outer_diameter"])
             if before >= 0.25:
                 continue
-            target = {"x": own["x"]-own["width"]/2-source["outer_diameter"]/2-0.1,
+            target = {"x": own["x"]+direction*(own["width"]/2+source["outer_diameter"]/2+0.1),
                       "y": own["y"]+delta_y}
             after = pad_gap(target, other, source["outer_diameter"])
             assert after >= 0.25 and pad_gap(target, own, source["outer_diameter"]) >= 0.1
