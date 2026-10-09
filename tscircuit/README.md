@@ -17,11 +17,13 @@ python3 scripts/add_artwork.py
 npm run route
 ```
 
-Generated JSX lives in `tscircuit/generated/`.
+Editable JSX is committed in `tscircuit/generated/`.
+Artwork arrays are committed once per half in `tscircuit/models/`.
+A clean checkout can open either board without regenerating it.
 Circuit JSON, previews, and check reports live in `build/tscircuit/`.
 `left-appearance.svg` and `right-appearance.svg` show white mask and black Frida artwork and lettering.
 The corresponding `*-bottom-appearance.svg` files show the back faces as viewed after flipping the boards.
-Both faces use Ioskeley Mono lettering and one-word component arrows.
+Both faces use IBM Plex Mono Bold lettering and one-word component arrows.
 The React board color properties and KiCad stackup also specify white mask and black silkscreen.
 The editor can retain its layer colors in the 2D routing view.
 Select white mask and black silkscreen when creating the fabrication order.
@@ -70,9 +72,30 @@ The router's drill-spacing setting checks these gaps but does not change the off
 The final KiCad DRC validates the finished route. React previews remain autorouter drafts.
 It preserves footprint references, solder mask, paste, exact outlines, and Frida artwork.
 The routed board check requires zero unconnected items and no violations except library-resolution warnings.
-Factory acceptance, the complete schematic, TrackPoint electronics, and mechanical fit remain separate gates.
+KiCad independently checks the complete schematic and its exported netlist against all carrier pins.
+Factory acceptance and physical fit remain separate gates.
 
 References: [board and autorouter](https://docs.tscircuit.com/elements/board),
 [CLI export](https://docs.tscircuit.com/command-line/tsci-export),
 [AI skill](https://github.com/tscircuit/skill),
 [KiCad exporter silk issue](https://github.com/tscircuit/circuit-json-to-kicad/issues/362).
+
+## Edit the models
+
+Enter `nix develop .` and run `npm ci --prefix tscircuit` once.
+Start `tsci dev` with the command above, then select the left or right entry.
+Edit the corresponding `generated/*-routed.circuit.tsx` to experiment with board geometry, pad placement, colors, or routing constraints.
+The `models/*-artwork.ts` arrays contain `[x, y, width, height, layer]` rectangles in millimeters.
+Both placement and routed entries share those artwork arrays.
+
+The generated files are editable snapshots. `npm run route` replaces them from the Ergogen sources and artwork generator.
+For lasting changes, edit `ergogen/layout.yaml`, `ergogen/pcb.yaml`, `scripts/add_artwork.py`, or `scripts/generate_tscircuit.py`.
+Copy an entry before experimenting if you want to keep changes outside regeneration.
+Changes made only in React do not alter the original KiCad footprints or manufacturing BOM.
+Run the full pipeline and its independent KiCad checks before treating an experiment as fabrication input.
+
+Fresh front and back PNGs are committed in [`../previews/`](../previews/).
+Run `nix develop . --command python3 scripts/save_previews.py` after routing to refresh them.
+Open [`../case/sandwich.scad`](../case/sandwich.scad) in OpenSCAD for the editable mechanical assembly.
+Its geometry is committed beside it, so no ignored build directory is needed.
+The 3D case model shows reserved envelopes; controller, socket, switch, and battery fit still need physical checks.

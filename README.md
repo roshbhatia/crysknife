@@ -106,3 +106,14 @@ Cutting exports are dimensional drafts until SendCutSend accepts the selected ma
 
 There is no accepted supplier quote or physical prototype result yet.
 No production order is authorized by these files.
+
+## Editable models and previews
+
+The [React editing guide](tscircuit/README.md#edit-the-models) covers both halves and regeneration.
+The committed [OpenSCAD assembly](case/sandwich.scad) includes local geometry and editable thickness, clearance, and exploded-view settings.
+These files open from a clean checkout. Build caches and dependencies stay ignored.
+
+![Left front](previews/left.png)
+![Right front](previews/right.png)
+![Left back](previews/left-bottom.png)
+![Right back](previews/right-bottom.png)

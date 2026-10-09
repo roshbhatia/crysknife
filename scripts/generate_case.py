@@ -100,6 +100,7 @@ for side in ("left", "right"):
                                 "insulating_cover_and_air_mm": 0.5},
                     "status": "mechanical draft; switch height, battery, controller fit require physical verification"})
 (OUTPUT / "geometry.scad").write_text("\n".join(geometries)+"\n")
+(ROOT / "case/geometry.scad").write_text("\n".join(geometries)+"\n")
 
 
 def exported_shape(path):

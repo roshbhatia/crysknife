@@ -8,6 +8,7 @@ from kicad_sexp import child, children, parse
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "build/tscircuit"
 GENERATED = ROOT / "tscircuit/generated"
+MODELS = ROOT / "tscircuit/models"
 
 
 def point(node, name):
@@ -112,7 +113,7 @@ def descriptor(side):
 
 
 def jsx(data, routing):
-    lines = ['export default () => (',
+    lines = [f'import artwork from "../models/{data["side"]}-artwork"', 'export default () => (',
              f'<board solderMaskColor="white" silkscreenColor="black" outline={{{json.dumps(data["outline"])}}} layers={{2}} thickness={{1.6}} '
              f'autorouter="auto-local" routingDisabled={{{str(not routing).lower()}}} '
              f'placementDrcChecksDisabled={{{str(routing).lower()}}} '
@@ -144,10 +145,9 @@ def jsx(data, routing):
                      f'footprint={{<footprint>{primitive}</footprint>}} />')
     for hole in data["holes"]:
         lines.append(f'<hole pcbX={{{hole["x"]}}} pcbY={{{hole["y"]}}} diameter={{{hole["diameter"]}}} />')
-    for rect in data["silkscreen"]:
-        lines.append(f'<silkscreenrect pcbX={{{rect["x"]}}} pcbY={{{rect["y"]}}} '
-                     f'width={{{rect["width"]}}} height={{{rect["height"]}}} '
-                     f'layer="{rect["layer"]}" filled={{true}} stroke="none" strokeWidth={{0}} />')
+    lines.append('{artwork.map(([x, y, width, height, layer], index) => <silkscreenrect key={index} '
+                 'pcbX={x} pcbY={y} width={width} height={height} layer={layer} '
+                 'filled={true} stroke="none" strokeWidth={0} />)}')
     nets = sorted({p["net"] for p in data["pads"] if p["net"]})
     for index, net in enumerate(nets):
         selectors = [f'.{p["name"]} > .pin1' for p in data["pads"] if p["net"] == net]
@@ -159,9 +159,15 @@ def jsx(data, routing):
 if __name__ == "__main__":
     OUTPUT.mkdir(parents=True, exist_ok=True)
     GENERATED.mkdir(parents=True, exist_ok=True)
+    MODELS.mkdir(parents=True, exist_ok=True)
     for side in ("left", "right"):
         data = descriptor(side)
         (OUTPUT / f"{side}.json").write_text(json.dumps(data, indent=2) + '\n')
+        rectangles = [[round(rect[k], 6) for k in ('x', 'y', 'width', 'height')] + [rect['layer']]
+                      for rect in data['silkscreen']]
+        module = 'type Rectangle = [number, number, number, number, "top" | "bottom"]\nconst artwork: Rectangle[] = [\n'
+        module += ',\n'.join(json.dumps(rect, separators=(',', ':')) for rect in rectangles)
+        (MODELS/f'{side}-artwork.ts').write_text(module+'\n]\nexport default artwork\n')
         for routing, suffix in ((False, "placement"), (True, "routed")):
             (GENERATED / f"{side}-{suffix}.circuit.tsx").write_text(jsx(data, routing))
         print(f'{side}: {len(data["pads"])} copper pads, {len(data["holes"])} holes')

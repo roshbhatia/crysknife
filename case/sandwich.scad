@@ -17,7 +17,7 @@ wall_expansion = 12.5;
 bolt_diameter = 2.2;
 $fn = 48;
 
-include <../build/case/geometry.scad>
+include <geometry.scad>
 
 data = side == "left" ? left_geometry : right_geometry;
 outline = data[0];
