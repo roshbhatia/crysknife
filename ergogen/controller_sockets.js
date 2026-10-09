@@ -28,6 +28,7 @@ module.exports = controller => ({
     for (const pad of pads) outline = outline.replace(pad, '');
     const at = p.at.match(/\(at ([\d.e+-]+) ([\d.e+-]+) -?0\)/);
     assert(at);
+    const textJustify = p.socket_side === 'B' ? '(justify mirror)' : '';
     const sockets = [-7.62, 7.62].map((x, index) => {
       const contacts = pads.filter(pad => Number(pad.match(/\(at ([\d.e+-]+)/)[1]) === x);
       assert.equal(contacts.length, 12);
@@ -36,9 +37,9 @@ module.exports = controller => ({
       return `(footprint "crysknife:MillMax_315_1x12" (layer "${p.socket_side}.Cu")
         (at ${Number(at[1])+x} ${Number(at[2])+1.27} 0)
         (property "Reference" "${p.ref}${index === 0 ? 'A' : 'B'}" (at 0 -16 0) (layer "${p.socket_side}.Fab")
-          (effects (font (size 1 1) (thickness 0.15))))
+          (effects (font (size 1 1) (thickness 0.15)) ${textJustify}))
         (property "Value" "315-43-112-41-003000" (at 0 16 0) (layer "${p.socket_side}.Fab")
-          (effects (font (size 1 1) (thickness 0.15))))
+          (effects (font (size 1 1) (thickness 0.15)) ${textJustify}))
         (attr through_hole)
         (fp_rect (start -1.27 -15.24) (end 1.27 15.24)
           (stroke (width 0.1) (type default)) (fill none) (layer "${p.socket_side}.Fab"))
