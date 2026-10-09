@@ -1,0 +1,33 @@
+manufacturing/sendcutsend/README.md
+  s_df88920dc610de::t_d3476b0969341e 8,45-46,53,61-62
+  s_df88920dc610de::t_c890000dcbf39f 36-44,47-52,54-60,63-73
+README.md
+  s_df88920dc610de::t_c890000dcbf39f 12
+case/sandwich.scad
+  s_df88920dc610de::t_b290149cb48d65 46
+manufacturing/README.md
+  s_df88920dc610de::t_682217fb316929 49-51
+manufacturing/controller-reference.json
+  s_df88920dc610de::t_446b07925dbb53 207-216
+  s_df88920dc610de::t_13bf64127277f8 1-206,217
+case/parameters.scad
+  s_df88920dc610de::t_d3476b0969341e 1
+manufacturing/sendcutsend/mechanical-checks.json
+  s_df88920dc610de::t_0132ec8cdd97a5 33,113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7ca77596378b648d5d5f84871982e34187211380",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
