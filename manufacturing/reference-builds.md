@@ -21,6 +21,19 @@ Rows use 5, 6, 7, and 8. Our Ergogen parameters use the same ten assignments.
 Our ZMK row/column configuration and compiled nice!nano GPIO map match those assignments.
 The [controller comparison](controller-reference.json) records all 24 contact positions and pin functions.
 
+| Carrier net | Pro Micro GPIO label |
+| --- | --- |
+| C0, C1, C2, C3, C4, C5 | 21, 20, 19, 18, 15, 14 |
+| R0, R1, R2, R3 | 5, 6, 7, 8 |
+
+The right ZMK overlay reverses column scan order and adds a six-column offset.
+This maps the mirrored board to the correct key positions. Each firmware layer contains all 42 bindings.
+Use our left/right firmware files; a stock Corne shield can assign different GPIOs.
+
+The pinned wireless Corney Island YAML was fetched again and compared with our current parameters.
+Its SHA-256 is `e34803e8275f70fe0089129523e149a12f667e97664d6c479095e28163a3eed0`.
+The controller audit also checked the compiled ZMK GPIO mapping against the pinned nice!nano library.
+
 Both Corney Island and our board switch battery positive to RAW and connect battery negative to GND.
 Both reset switches connect RST to GND. Charging and regulation remain on the genuine nice!nano V2 module.
 The [published Aurora schematic](https://docs.splitkb.com/doc/aurora_corne_rev1.pdf) independently shows the same battery-switch-to-RAW and reset-to-ground arrangement.
@@ -28,6 +41,17 @@ It uses different row/column pins on its two halves, so its firmware cannot repl
 
 Our schematic/netlist check covers every carrier contact, including the diode matrix, battery path, and reset.
 KiCad checks the actual routed copper and ground pours. A source match does not replace those checks.
+The checks compare all 117 carrier pins per half with the exported schematic netlist, including intentionally unused pins.
+Each key has its own diode, with the cathode connected to its row. The firmware scans column to row.
+Routing preserves the original footprint pads, holes, layers, and net assignments.
+Trace paths differ because our spacing, outline, and controller mounting differ from the reference boards.
+
+The final [KiCad run](https://github.com/roshbhatia/crysknife/actions/runs/37887225267) passed at source `8644c1a3f2dc836ab49acee8cc40efbe70545180`.
+Both halves have zero ERC issues, DRC errors, and unconnected copper items.
+Each has 53 footprint-library warnings. These reflect local library identifiers, not waived copper violations.
+The audit found and fixed a 0.22 mm gap between reset via drills; the corrected gap is 0.30 mm.
+Both ground pours are filled, with disconnected islands removed and a controller exclusion on both copper faces.
+The checked board hashes and export revision are recorded in [validation.json](../out/validation.json).
 
 ## Controller, battery, and case
 

@@ -18,7 +18,11 @@
       "factory_diodes": 21,
       "factory_controller_sockets": 2,
       "excluded": {
-        "MCU1": "Controller outline only; purchase nice!nano v2 separately and solder its two matching header strips",
+        "MH1": "Mechanical hole for a case standoff; no assembly part",
+        "MH2": "Mechanical hole for a case standoff; no assembly part",
+        "MH3": "Mechanical hole for a case standoff; no assembly part",
+        "MH4": "Mechanical hole for a case standoff; no assembly part",
+        "MCU1": "Controller projection only; nice!nano V2 mounts face up below the carrier",
         "ART1": "Silkscreen geometry; no physical component"
       },
       "through_hole_battery_connector": "JST1"
@@ -30,7 +34,11 @@
       "factory_diodes": 21,
       "factory_controller_sockets": 2,
       "excluded": {
-        "MCU1": "Controller outline only; purchase nice!nano v2 separately and solder its two matching header strips",
+        "MH1": "Mechanical hole for a case standoff; no assembly part",
+        "MH2": "Mechanical hole for a case standoff; no assembly part",
+        "MH3": "Mechanical hole for a case standoff; no assembly part",
+        "MH4": "Mechanical hole for a case standoff; no assembly part",
+        "MCU1": "Controller projection only; nice!nano V2 mounts face up below the carrier",
         "ART1": "Silkscreen geometry; no physical component"
       },
       "through_hole_battery_connector": "JST1"

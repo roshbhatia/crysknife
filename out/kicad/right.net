@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/__w/fridakeys/fridakeys/build/schematic/fridakeys_right.kicad_sch</source>
-    <date>2026-10-09T02:37:37</date>
+    <source>/__w/crysknife/crysknife/build/schematic/crysknife_right.kicad_sch</source>
+    <date>2026-10-09T05:18:07</date>
     <tool>Eeschema 10.0.6</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
-        <title>fridakeys right</title>
+        <title>crysknife right</title>
         <company>by @roshbhatia</company>
         <rev>1.0.0</rev>
         <date/>
-        <source>fridakeys_right.kicad_sch</source>
+        <source>crysknife_right.kicad_sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
         <comment number="3" value=""/>
@@ -26,17 +26,17 @@
   <components>
     <comp ref="D1">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D1</footprint>
+      <footprint>crysknife:D1</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D1</field>
+        <field name="Footprint">crysknife:D1</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D1" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D1" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9f03ea78-da92-55b6-a397-d4c3e4693208</tstamps>
+      <tstamps>a009fd17-e51a-5bd4-8e79-d1a42036e21c</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -48,17 +48,17 @@
     </comp>
     <comp ref="D2">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D2</footprint>
+      <footprint>crysknife:D2</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D2</field>
+        <field name="Footprint">crysknife:D2</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D2" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D2" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>5bd8d3dd-8feb-5a56-8ee4-9738724e0947</tstamps>
+      <tstamps>6696a758-0247-5614-8405-097a5a13bdf2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -70,17 +70,17 @@
     </comp>
     <comp ref="D3">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D3</footprint>
+      <footprint>crysknife:D3</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D3</field>
+        <field name="Footprint">crysknife:D3</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D3" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D3" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8dfd5636-f88b-53e4-82dc-1f2cb3dd4e6a</tstamps>
+      <tstamps>bacb6ef4-6268-5d0c-b54c-f3e2ed6612d5</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -92,17 +92,17 @@
     </comp>
     <comp ref="D4">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D4</footprint>
+      <footprint>crysknife:D4</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D4</field>
+        <field name="Footprint">crysknife:D4</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D4" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D4" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>fad62541-b520-5365-bb03-2b2e07b004e7</tstamps>
+      <tstamps>fbfb8439-0f2b-5a78-b771-557e3120f403</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -114,17 +114,17 @@
     </comp>
     <comp ref="D5">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D5</footprint>
+      <footprint>crysknife:D5</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D5</field>
+        <field name="Footprint">crysknife:D5</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D5" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D5" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>60bf1e22-e9f9-5a19-b71b-958f1b718af0</tstamps>
+      <tstamps>1a7a1f98-f817-5c93-a596-5319a78d0411</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -136,17 +136,17 @@
     </comp>
     <comp ref="D6">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D6</footprint>
+      <footprint>crysknife:D6</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D6</field>
+        <field name="Footprint">crysknife:D6</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D6" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D6" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8ea9d958-5c42-58d8-9e3a-67066dbb3ba1</tstamps>
+      <tstamps>f66ed9cc-928e-57e5-badd-1f41d4f69a87</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -158,17 +158,17 @@
     </comp>
     <comp ref="D7">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D7</footprint>
+      <footprint>crysknife:D7</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D7</field>
+        <field name="Footprint">crysknife:D7</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D7" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D7" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>68f5d707-38ad-5142-b8c2-19789cf95725</tstamps>
+      <tstamps>0322d1cc-2083-55bd-bd47-6bf797b27b02</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -180,17 +180,17 @@
     </comp>
     <comp ref="D8">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D8</footprint>
+      <footprint>crysknife:D8</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D8</field>
+        <field name="Footprint">crysknife:D8</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D8" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D8" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>bb628dab-832a-535c-bd1f-a9c4176894f7</tstamps>
+      <tstamps>e2291123-ac6a-572f-b5c4-09cfb4e6ebb8</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -202,17 +202,17 @@
     </comp>
     <comp ref="D9">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D9</footprint>
+      <footprint>crysknife:D9</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D9</field>
+        <field name="Footprint">crysknife:D9</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D9" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D9" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>aceb7cd4-4fb3-5c51-b3ba-ca39f637c4a3</tstamps>
+      <tstamps>085c3449-2558-5ec2-b1b0-3a115d6a4773</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -224,17 +224,17 @@
     </comp>
     <comp ref="D10">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D10</footprint>
+      <footprint>crysknife:D10</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D10</field>
+        <field name="Footprint">crysknife:D10</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D10" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D10" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f214fc1e-e780-5254-a0b7-f0562aca0c56</tstamps>
+      <tstamps>6f9e594f-601c-5d1d-915a-7c657c67a638</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -246,17 +246,17 @@
     </comp>
     <comp ref="D11">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D11</footprint>
+      <footprint>crysknife:D11</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D11</field>
+        <field name="Footprint">crysknife:D11</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D11" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D11" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>99c62dff-e9d0-5ef3-8ab1-b3c884a2da17</tstamps>
+      <tstamps>5ccea5d5-a02b-529a-aa5a-7887a1017883</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -268,17 +268,17 @@
     </comp>
     <comp ref="D12">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D12</footprint>
+      <footprint>crysknife:D12</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D12</field>
+        <field name="Footprint">crysknife:D12</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D12" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D12" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9c7442d3-c6ed-53ba-9f2a-5d4c4ddcb8ac</tstamps>
+      <tstamps>c07cc0d0-81fa-55b5-846e-19172b286e24</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -290,17 +290,17 @@
     </comp>
     <comp ref="D13">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D13</footprint>
+      <footprint>crysknife:D13</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D13</field>
+        <field name="Footprint">crysknife:D13</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D13" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D13" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f8d7d376-28f4-5b6c-9ce5-c36d28dc3abc</tstamps>
+      <tstamps>686c09e0-4af8-55a1-a9ff-d4bd5c5d1648</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -312,17 +312,17 @@
     </comp>
     <comp ref="D14">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D14</footprint>
+      <footprint>crysknife:D14</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D14</field>
+        <field name="Footprint">crysknife:D14</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D14" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D14" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ace02b40-3d47-587d-aac4-f74dcceae0eb</tstamps>
+      <tstamps>0f305871-e5af-5d8d-bc7f-670d35a3152d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -334,17 +334,17 @@
     </comp>
     <comp ref="D15">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D15</footprint>
+      <footprint>crysknife:D15</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D15</field>
+        <field name="Footprint">crysknife:D15</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D15" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D15" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>02b87a55-d832-57a2-8920-b74c3e2314fd</tstamps>
+      <tstamps>9d5447de-4843-5477-8e48-f03d594d7198</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -356,17 +356,17 @@
     </comp>
     <comp ref="D16">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D16</footprint>
+      <footprint>crysknife:D16</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D16</field>
+        <field name="Footprint">crysknife:D16</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D16" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D16" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7a706d97-ab97-5113-a6fe-1ed19a3f7b7a</tstamps>
+      <tstamps>c0354c23-378d-59c9-a30f-df26803d0eac</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -378,17 +378,17 @@
     </comp>
     <comp ref="D17">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D17</footprint>
+      <footprint>crysknife:D17</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D17</field>
+        <field name="Footprint">crysknife:D17</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D17" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D17" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>76838a29-8f2c-58c9-820e-b63db13525a7</tstamps>
+      <tstamps>376052ee-87cb-5c07-a7af-879bde070bca</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -400,17 +400,17 @@
     </comp>
     <comp ref="D18">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D18</footprint>
+      <footprint>crysknife:D18</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D18</field>
+        <field name="Footprint">crysknife:D18</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D18" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D18" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c25bf746-ab2f-50c1-8dd0-6e5cff38e845</tstamps>
+      <tstamps>23d4e847-5197-52f1-85d6-10a0d54d9103</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -422,17 +422,17 @@
     </comp>
     <comp ref="D19">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D19</footprint>
+      <footprint>crysknife:D19</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D19</field>
+        <field name="Footprint">crysknife:D19</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D19" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D19" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>62124ed3-d099-5324-b7bf-bb094bb3ff87</tstamps>
+      <tstamps>9e43c9c1-1701-550b-bdc0-60d2c029652e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -444,17 +444,17 @@
     </comp>
     <comp ref="D20">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D20</footprint>
+      <footprint>crysknife:D20</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D20</field>
+        <field name="Footprint">crysknife:D20</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D20" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D20" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1713caa6-918c-5b7c-9265-cf5fda8794c5</tstamps>
+      <tstamps>3beddb72-15d8-590c-849d-262a2da0bc4e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -466,17 +466,17 @@
     </comp>
     <comp ref="D21">
       <value>1N4148W (1=K, 2=A)</value>
-      <footprint>fridakeys:D21</footprint>
+      <footprint>crysknife:D21</footprint>
       <fields>
-        <field name="Footprint">fridakeys:D21</field>
+        <field name="Footprint">crysknife:D21</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="D21" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="D21" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b26144a9-fcb6-5583-ade0-9986a66a57d7</tstamps>
+      <tstamps>5348409c-2eaf-5f71-8512-1aab1857ffcd</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -488,17 +488,17 @@
     </comp>
     <comp ref="JST1">
       <value>PH2: 1=GND, 2=BAT+</value>
-      <footprint>fridakeys:JST1</footprint>
+      <footprint>crysknife:JST1</footprint>
       <fields>
-        <field name="Footprint">fridakeys:JST1</field>
+        <field name="Footprint">crysknife:JST1</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="JST1" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="JST1" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>51aa0a36-1771-5f3f-b075-6a6f71e92144</tstamps>
+      <tstamps>3d7c1908-f083-5adb-8d57-868853b2fa69</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -510,17 +510,17 @@
     </comp>
     <comp ref="MCU1A">
       <value>315-43-112-41-003000</value>
-      <footprint>fridakeys:MCU1A</footprint>
+      <footprint>crysknife:MCU1A</footprint>
       <fields>
-        <field name="Footprint">fridakeys:MCU1A</field>
+        <field name="Footprint">crysknife:MCU1A</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="MCU1A" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="MCU1A" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e84f6c0b-eea9-5e86-85d1-cf4c6b68e819</tstamps>
+      <tstamps>49a96fb3-e142-5cab-b91b-bb499271fd37</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -542,17 +542,17 @@
     </comp>
     <comp ref="MCU1B">
       <value>315-43-112-41-003000</value>
-      <footprint>fridakeys:MCU1B</footprint>
+      <footprint>crysknife:MCU1B</footprint>
       <fields>
-        <field name="Footprint">fridakeys:MCU1B</field>
+        <field name="Footprint">crysknife:MCU1B</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="MCU1B" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="MCU1B" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a7412a2f-5bd6-5e66-bc81-4f0fe5487eee</tstamps>
+      <tstamps>cb3e4917-4b5c-5bdd-b51e-15bca0c4600b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -574,17 +574,17 @@
     </comp>
     <comp ref="PWR1">
       <value>SSSS811101</value>
-      <footprint>fridakeys:PWR1</footprint>
+      <footprint>crysknife:PWR1</footprint>
       <fields>
-        <field name="Footprint">fridakeys:PWR1</field>
+        <field name="Footprint">crysknife:PWR1</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="PWR1" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="PWR1" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9101b380-4ba0-5bf6-a6fc-f655f7ed8744</tstamps>
+      <tstamps>00b2eff9-9aea-528a-b6d2-7efb6ddaa22a</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -597,17 +597,17 @@
     </comp>
     <comp ref="RST1">
       <value>EVQPUC02K</value>
-      <footprint>fridakeys:RST1</footprint>
+      <footprint>crysknife:RST1</footprint>
       <fields>
-        <field name="Footprint">fridakeys:RST1</field>
+        <field name="Footprint">crysknife:RST1</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="RST1" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="RST1" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9a6b772d-d21a-566b-ac7b-7e2825b2e09c</tstamps>
+      <tstamps>072e9ccf-3cce-5ab0-83af-23d8de361760</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -621,17 +621,17 @@
     </comp>
     <comp ref="S1">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S1</footprint>
+      <footprint>crysknife:S1</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S1</field>
+        <field name="Footprint">crysknife:S1</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S1" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S1" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f4f7ee53-1211-52dc-9cef-f36f89068c33</tstamps>
+      <tstamps>51625c19-e06d-5d4c-b680-87f08d153b94</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -643,17 +643,17 @@
     </comp>
     <comp ref="S2">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S2</footprint>
+      <footprint>crysknife:S2</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S2</field>
+        <field name="Footprint">crysknife:S2</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S2" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S2" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>346e3394-f0b5-52f0-9ffa-3b73c3e9339d</tstamps>
+      <tstamps>a12f603f-133c-5be8-8231-245fa9a1562e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -665,17 +665,17 @@
     </comp>
     <comp ref="S3">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S3</footprint>
+      <footprint>crysknife:S3</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S3</field>
+        <field name="Footprint">crysknife:S3</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S3" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S3" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ab9248f7-27c6-5e37-9e8d-1696991b121a</tstamps>
+      <tstamps>566bd3d2-efe4-5bcd-a8bb-bbf9b63f4189</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -687,17 +687,17 @@
     </comp>
     <comp ref="S4">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S4</footprint>
+      <footprint>crysknife:S4</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S4</field>
+        <field name="Footprint">crysknife:S4</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S4" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S4" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>2196aaac-9f28-59a5-b6bd-9ecb0c6cfa36</tstamps>
+      <tstamps>34e49a18-2f48-5453-adad-534542bbaf1e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -709,17 +709,17 @@
     </comp>
     <comp ref="S5">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S5</footprint>
+      <footprint>crysknife:S5</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S5</field>
+        <field name="Footprint">crysknife:S5</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S5" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S5" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7cc5efa8-6c25-530d-80a6-264c8daf37c6</tstamps>
+      <tstamps>4358c713-a516-557c-8e35-3aeed181e008</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -731,17 +731,17 @@
     </comp>
     <comp ref="S6">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S6</footprint>
+      <footprint>crysknife:S6</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S6</field>
+        <field name="Footprint">crysknife:S6</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S6" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S6" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>5b922777-f10d-5ddb-8b27-1941fd4a344b</tstamps>
+      <tstamps>75f63540-5a2c-5d9e-a6bb-83e8e47e3f01</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -753,17 +753,17 @@
     </comp>
     <comp ref="S7">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S7</footprint>
+      <footprint>crysknife:S7</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S7</field>
+        <field name="Footprint">crysknife:S7</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S7" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S7" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cd942a2c-98b8-5e6c-9fba-bf47a8d8388c</tstamps>
+      <tstamps>d6e32172-bc53-5742-8419-9d8b224d7392</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -775,17 +775,17 @@
     </comp>
     <comp ref="S8">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S8</footprint>
+      <footprint>crysknife:S8</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S8</field>
+        <field name="Footprint">crysknife:S8</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S8" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S8" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ef2f22f3-f007-5c70-b619-f4af069ad330</tstamps>
+      <tstamps>7061265a-4ef2-5cef-92a1-514b5ac2c9c6</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -797,17 +797,17 @@
     </comp>
     <comp ref="S9">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S9</footprint>
+      <footprint>crysknife:S9</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S9</field>
+        <field name="Footprint">crysknife:S9</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S9" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S9" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>2ab5ce5b-cb61-577f-afdf-6f16ba11d1af</tstamps>
+      <tstamps>5c049f74-b2a5-5303-af0f-a313777a6800</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -819,17 +819,17 @@
     </comp>
     <comp ref="S10">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S10</footprint>
+      <footprint>crysknife:S10</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S10</field>
+        <field name="Footprint">crysknife:S10</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S10" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S10" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>26374113-9278-556d-9f58-d4850538624c</tstamps>
+      <tstamps>5bf7ebad-c58a-530e-bd36-02b0b695a09e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -841,17 +841,17 @@
     </comp>
     <comp ref="S11">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S11</footprint>
+      <footprint>crysknife:S11</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S11</field>
+        <field name="Footprint">crysknife:S11</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S11" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S11" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b8e59c75-9ad8-579d-be05-e9d135260281</tstamps>
+      <tstamps>0d5b5046-056f-5c36-ae92-acf67f960188</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -863,17 +863,17 @@
     </comp>
     <comp ref="S12">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S12</footprint>
+      <footprint>crysknife:S12</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S12</field>
+        <field name="Footprint">crysknife:S12</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S12" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S12" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c5145af2-c435-5cce-bd1c-80eabb560ca5</tstamps>
+      <tstamps>b5003ae8-2c6c-5835-903d-467a045aab48</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -885,17 +885,17 @@
     </comp>
     <comp ref="S13">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S13</footprint>
+      <footprint>crysknife:S13</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S13</field>
+        <field name="Footprint">crysknife:S13</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S13" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S13" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>820f9655-ea62-55ee-93e6-f24b57d2c79b</tstamps>
+      <tstamps>e2653e46-44ec-5936-b702-9eba88e21864</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -907,17 +907,17 @@
     </comp>
     <comp ref="S14">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S14</footprint>
+      <footprint>crysknife:S14</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S14</field>
+        <field name="Footprint">crysknife:S14</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S14" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S14" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a7b686c3-456f-526b-b4db-15b070c966bd</tstamps>
+      <tstamps>49b646e7-e657-598f-9dde-ba554066ed16</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -929,17 +929,17 @@
     </comp>
     <comp ref="S15">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S15</footprint>
+      <footprint>crysknife:S15</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S15</field>
+        <field name="Footprint">crysknife:S15</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S15" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S15" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d5133b12-8826-54a5-a0ad-ad9243161d98</tstamps>
+      <tstamps>9aab730e-a051-5648-86dc-f760cc746255</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -951,17 +951,17 @@
     </comp>
     <comp ref="S16">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S16</footprint>
+      <footprint>crysknife:S16</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S16</field>
+        <field name="Footprint">crysknife:S16</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S16" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S16" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9ed79ea2-83b6-52a2-b745-014918d68fa6</tstamps>
+      <tstamps>3aa621bc-051c-5860-a6d5-879c10c58e3d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -973,17 +973,17 @@
     </comp>
     <comp ref="S17">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S17</footprint>
+      <footprint>crysknife:S17</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S17</field>
+        <field name="Footprint">crysknife:S17</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S17" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S17" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8e85f044-1863-5cf9-b44c-d504ee792d0c</tstamps>
+      <tstamps>b325d658-2a28-5630-b1dd-051f94aa8c2b</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -995,17 +995,17 @@
     </comp>
     <comp ref="S18">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S18</footprint>
+      <footprint>crysknife:S18</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S18</field>
+        <field name="Footprint">crysknife:S18</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S18" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S18" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>32c14dbe-a897-5ba6-ae9a-f21b0b8a668d</tstamps>
+      <tstamps>3c1e4e6e-9c10-56a8-9408-9eb2a0dbf016</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1017,17 +1017,17 @@
     </comp>
     <comp ref="S19">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S19</footprint>
+      <footprint>crysknife:S19</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S19</field>
+        <field name="Footprint">crysknife:S19</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S19" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S19" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d7dd98e6-64ef-552f-9ff2-1f7922cd597e</tstamps>
+      <tstamps>aa356909-0b67-520f-8941-369ca9e571e2</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1039,17 +1039,17 @@
     </comp>
     <comp ref="S20">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S20</footprint>
+      <footprint>crysknife:S20</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S20</field>
+        <field name="Footprint">crysknife:S20</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S20" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S20" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>02c73325-e6e9-5fcf-89fb-9dabeb508e18</tstamps>
+      <tstamps>1c4ebc56-5fde-5fd7-8353-e57fd62e3230</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1061,17 +1061,17 @@
     </comp>
     <comp ref="S21">
       <value>MX hotswap</value>
-      <footprint>fridakeys:S21</footprint>
+      <footprint>crysknife:S21</footprint>
       <fields>
-        <field name="Footprint">fridakeys:S21</field>
+        <field name="Footprint">crysknife:S21</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="S21" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="S21" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cbaca060-f58c-524b-a765-3f833a728bc1</tstamps>
+      <tstamps>90a1271a-1272-5699-ba30-589c319fc8ed</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1088,13 +1088,13 @@
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="fridakeys" part="U1" description=""/>
-      <property name="Sheetname" value="fridakeys_right"/>
-      <property name="Sheetfile" value="fridakeys_right.kicad_sch"/>
+      <libsource lib="crysknife" part="U1" description=""/>
+      <property name="Sheetname" value="crysknife_right"/>
+      <property name="Sheetfile" value="crysknife_right.kicad_sch"/>
       <property name="exclude_from_bom"/>
       <property name="exclude_from_board"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>986ab6d3-e3ee-5cfc-8d11-673f4a6af4e0</tstamps>
+      <tstamps>6a424922-e3d7-5f71-bcf4-247e5d302a3d</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1128,7 +1128,7 @@
     </comp>
   </components>
   <libparts>
-    <libpart lib="fridakeys" part="D1">
+    <libpart lib="crysknife" part="D1">
       <fields>
         <field name="Reference">D1</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1141,7 +1141,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D10">
+    <libpart lib="crysknife" part="D10">
       <fields>
         <field name="Reference">D10</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1154,7 +1154,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D11">
+    <libpart lib="crysknife" part="D11">
       <fields>
         <field name="Reference">D11</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1167,7 +1167,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D12">
+    <libpart lib="crysknife" part="D12">
       <fields>
         <field name="Reference">D12</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1180,7 +1180,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D13">
+    <libpart lib="crysknife" part="D13">
       <fields>
         <field name="Reference">D13</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1193,7 +1193,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D14">
+    <libpart lib="crysknife" part="D14">
       <fields>
         <field name="Reference">D14</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1206,7 +1206,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D15">
+    <libpart lib="crysknife" part="D15">
       <fields>
         <field name="Reference">D15</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1219,7 +1219,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D16">
+    <libpart lib="crysknife" part="D16">
       <fields>
         <field name="Reference">D16</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1232,7 +1232,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D17">
+    <libpart lib="crysknife" part="D17">
       <fields>
         <field name="Reference">D17</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1245,7 +1245,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D18">
+    <libpart lib="crysknife" part="D18">
       <fields>
         <field name="Reference">D18</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1258,7 +1258,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D19">
+    <libpart lib="crysknife" part="D19">
       <fields>
         <field name="Reference">D19</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1271,7 +1271,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D2">
+    <libpart lib="crysknife" part="D2">
       <fields>
         <field name="Reference">D2</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1284,7 +1284,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D20">
+    <libpart lib="crysknife" part="D20">
       <fields>
         <field name="Reference">D20</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1297,7 +1297,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D21">
+    <libpart lib="crysknife" part="D21">
       <fields>
         <field name="Reference">D21</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1310,7 +1310,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D3">
+    <libpart lib="crysknife" part="D3">
       <fields>
         <field name="Reference">D3</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1323,7 +1323,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D4">
+    <libpart lib="crysknife" part="D4">
       <fields>
         <field name="Reference">D4</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1336,7 +1336,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D5">
+    <libpart lib="crysknife" part="D5">
       <fields>
         <field name="Reference">D5</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1349,7 +1349,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D6">
+    <libpart lib="crysknife" part="D6">
       <fields>
         <field name="Reference">D6</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1362,7 +1362,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D7">
+    <libpart lib="crysknife" part="D7">
       <fields>
         <field name="Reference">D7</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1375,7 +1375,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D8">
+    <libpart lib="crysknife" part="D8">
       <fields>
         <field name="Reference">D8</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1388,7 +1388,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="D9">
+    <libpart lib="crysknife" part="D9">
       <fields>
         <field name="Reference">D9</field>
         <field name="Value">1N4148W (1=K, 2=A)</field>
@@ -1401,7 +1401,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="JST1">
+    <libpart lib="crysknife" part="JST1">
       <fields>
         <field name="Reference">JST1</field>
         <field name="Value">PH2: 1=GND, 2=BAT+</field>
@@ -1414,7 +1414,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="MCU1A">
+    <libpart lib="crysknife" part="MCU1A">
       <fields>
         <field name="Reference">MCU1A</field>
         <field name="Value">315-43-112-41-003000</field>
@@ -1437,7 +1437,7 @@
         <pin num="24" name="24" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="MCU1B">
+    <libpart lib="crysknife" part="MCU1B">
       <fields>
         <field name="Reference">MCU1B</field>
         <field name="Value">315-43-112-41-003000</field>
@@ -1460,7 +1460,7 @@
         <pin num="12" name="12" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="PWR1">
+    <libpart lib="crysknife" part="PWR1">
       <fields>
         <field name="Reference">PWR1</field>
         <field name="Value">SSSS811101</field>
@@ -1474,7 +1474,7 @@
         <pin num="3" name="3" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="RST1">
+    <libpart lib="crysknife" part="RST1">
       <fields>
         <field name="Reference">RST1</field>
         <field name="Value">EVQPUC02K</field>
@@ -1489,7 +1489,7 @@
         <pin num="4" name="4" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S1">
+    <libpart lib="crysknife" part="S1">
       <fields>
         <field name="Reference">S1</field>
         <field name="Value">MX hotswap</field>
@@ -1502,7 +1502,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S10">
+    <libpart lib="crysknife" part="S10">
       <fields>
         <field name="Reference">S10</field>
         <field name="Value">MX hotswap</field>
@@ -1515,7 +1515,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S11">
+    <libpart lib="crysknife" part="S11">
       <fields>
         <field name="Reference">S11</field>
         <field name="Value">MX hotswap</field>
@@ -1528,7 +1528,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S12">
+    <libpart lib="crysknife" part="S12">
       <fields>
         <field name="Reference">S12</field>
         <field name="Value">MX hotswap</field>
@@ -1541,7 +1541,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S13">
+    <libpart lib="crysknife" part="S13">
       <fields>
         <field name="Reference">S13</field>
         <field name="Value">MX hotswap</field>
@@ -1554,7 +1554,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S14">
+    <libpart lib="crysknife" part="S14">
       <fields>
         <field name="Reference">S14</field>
         <field name="Value">MX hotswap</field>
@@ -1567,7 +1567,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S15">
+    <libpart lib="crysknife" part="S15">
       <fields>
         <field name="Reference">S15</field>
         <field name="Value">MX hotswap</field>
@@ -1580,7 +1580,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S16">
+    <libpart lib="crysknife" part="S16">
       <fields>
         <field name="Reference">S16</field>
         <field name="Value">MX hotswap</field>
@@ -1593,7 +1593,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S17">
+    <libpart lib="crysknife" part="S17">
       <fields>
         <field name="Reference">S17</field>
         <field name="Value">MX hotswap</field>
@@ -1606,7 +1606,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S18">
+    <libpart lib="crysknife" part="S18">
       <fields>
         <field name="Reference">S18</field>
         <field name="Value">MX hotswap</field>
@@ -1619,7 +1619,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S19">
+    <libpart lib="crysknife" part="S19">
       <fields>
         <field name="Reference">S19</field>
         <field name="Value">MX hotswap</field>
@@ -1632,7 +1632,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S2">
+    <libpart lib="crysknife" part="S2">
       <fields>
         <field name="Reference">S2</field>
         <field name="Value">MX hotswap</field>
@@ -1645,7 +1645,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S20">
+    <libpart lib="crysknife" part="S20">
       <fields>
         <field name="Reference">S20</field>
         <field name="Value">MX hotswap</field>
@@ -1658,7 +1658,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S21">
+    <libpart lib="crysknife" part="S21">
       <fields>
         <field name="Reference">S21</field>
         <field name="Value">MX hotswap</field>
@@ -1671,7 +1671,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S3">
+    <libpart lib="crysknife" part="S3">
       <fields>
         <field name="Reference">S3</field>
         <field name="Value">MX hotswap</field>
@@ -1684,7 +1684,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S4">
+    <libpart lib="crysknife" part="S4">
       <fields>
         <field name="Reference">S4</field>
         <field name="Value">MX hotswap</field>
@@ -1697,7 +1697,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S5">
+    <libpart lib="crysknife" part="S5">
       <fields>
         <field name="Reference">S5</field>
         <field name="Value">MX hotswap</field>
@@ -1710,7 +1710,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S6">
+    <libpart lib="crysknife" part="S6">
       <fields>
         <field name="Reference">S6</field>
         <field name="Value">MX hotswap</field>
@@ -1723,7 +1723,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S7">
+    <libpart lib="crysknife" part="S7">
       <fields>
         <field name="Reference">S7</field>
         <field name="Value">MX hotswap</field>
@@ -1736,7 +1736,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S8">
+    <libpart lib="crysknife" part="S8">
       <fields>
         <field name="Reference">S8</field>
         <field name="Value">MX hotswap</field>
@@ -1749,7 +1749,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="S9">
+    <libpart lib="crysknife" part="S9">
       <fields>
         <field name="Reference">S9</field>
         <field name="Value">MX hotswap</field>
@@ -1762,7 +1762,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="fridakeys" part="U1">
+    <libpart lib="crysknife" part="U1">
       <fields>
         <field name="Reference">U1</field>
         <field name="Value">nice!nano V2 external module</field>
@@ -1799,8 +1799,8 @@
     </libpart>
   </libparts>
   <libraries>
-    <library logical="fridakeys">
-      <uri>${KIPRJMOD}/fridakeys.kicad_sym</uri>
+    <library logical="crysknife">
+      <uri>${KIPRJMOD}/crysknife.kicad_sym</uri>
     </library>
   </libraries>
   <nets>

@@ -1,21 +1,21 @@
 {
-  "pcb_revision": "cd6cefb1198ccc791e95e00e276830f096db2a71",
-  "pcb_ci": "https://github.com/roshbhatia/fridakeys/actions/runs/37874961792",
+  "pcb_revision": "8644c1a3f2dc836ab49acee8cc40efbe70545180",
+  "pcb_ci": "https://github.com/roshbhatia/crysknife/actions/runs/37887225267",
   "status": "digital checks passed; supplier and physical approval pending",
   "boards": {
     "left": {
       "erc_issues": 0,
       "drc_errors": 0,
       "unconnected": 0,
-      "library_warnings": 49,
-      "sha256": "730c1b8b35902ab451832bbb11cf0d518a7f00dc8afd3e0cb062109da0d19ba9"
+      "library_warnings": 53,
+      "sha256": "79fce149cd0a6a487be76384ad13f565017819445c2022291d711943a73e105b"
     },
     "right": {
       "erc_issues": 0,
       "drc_errors": 0,
       "unconnected": 0,
-      "library_warnings": 49,
-      "sha256": "2757b07913f93082dda9d8d2ca1d4ce32e7a7d750b0ae832d19efeccfc60ddbd"
+      "library_warnings": 53,
+      "sha256": "30908812ecf5d72d7c759bca9398f28ea4d31218802947e0db3804175c97c200"
     }
   }
 }
