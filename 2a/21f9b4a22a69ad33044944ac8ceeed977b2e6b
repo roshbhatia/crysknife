@@ -1,0 +1,23 @@
+manufacturing/reference-builds.md
+  s_df88920dc610de::t_29a6d263d2b2c9 1-53
+manufacturing/README.md
+  s_df88920dc610de::t_29a6d263d2b2c9 5
+manufacturing/physical-tests.md
+  s_df88920dc610de::t_26c086a94999e5 19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2a21f9b4a22a69ad33044944ac8ceeed977b2e6b",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
