@@ -1,0 +1,22 @@
+manufacturing/jlc3dp/quotes.json
+  s_df88920dc610de::t_83014ab5087b73 40,58,84,91-142
+  s_df88920dc610de::t_543fea279c0323 143-151
+manufacturing/jlc3dp/README.md
+  s_df88920dc610de::t_83014ab5087b73 22-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "546b2060862ab274e08ab7a566b889e61528ddf9",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
