@@ -34,6 +34,7 @@ The side power switch is ALPS SSSS811101, C109335.
 The side reset button is Panasonic EVQPUC02K, C79174, including its two locating bosses.
 The JST PH connector is a through-hole part, not a pick-and-place-only SMT part.
 Standard assembly must cover both faces and the through-hole connector.
+The right JST1 ground pad connects directly to the ground pour; its soldering heat profile needs assembler review.
 
 ## Controller contact requirements
 

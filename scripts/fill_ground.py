@@ -24,6 +24,11 @@ for side in ("left", "right"):
     cx, cy = [pcbnew.ToMM(v) for v in (controller.GetPosition().x, controller.GetPosition().y)]
     exclusion = [(cx-14, cy-23), (cx+14, cy-23), (cx+14, cy+23), (cx-14, cy+23)]
     ground_code = next(p.GetNetCode() for p in controller.Pads() if p.GetNetname() == "GND")
+    if side == "right":
+        battery = next(fp for fp in board.GetFootprints() if fp.GetReference() == "JST1")
+        ground_pad = next(p for p in battery.Pads() if p.GetNumber() == "1")
+        assert ground_pad.GetNetname() == "GND"
+        ground_pad.SetLocalZoneConnection(pcbnew.ZONE_CONNECTION_FULL)
     board.GetDesignSettings().m_CopperEdgeClearance = pcbnew.FromMM(0.55)
     for layer in (pcbnew.F_Cu, pcbnew.B_Cu):
         keepout = pcbnew.ZONE(board)
@@ -56,6 +61,9 @@ for side in ("left", "right"):
     assert pcbnew.ZONE_FILLER(board).Fill(board.Zones()), "Ground fill failed"
     pcbnew.SaveBoard(str(path), board)
     saved = pcbnew.LoadBoard(str(path))
+    if side == "right":
+        battery = next(fp for fp in saved.GetFootprints() if fp.GetReference() == "JST1")
+        assert next(p for p in battery.Pads() if p.GetNumber() == "1").GetLocalZoneConnection() == pcbnew.ZONE_CONNECTION_FULL
     zones = [z for z in saved.Zones() if not z.GetIsRuleArea()]
     assert len(zones) == 2 and {z.GetLayer() for z in zones} == {pcbnew.F_Cu, pcbnew.B_Cu}
     evidence = []
@@ -72,6 +80,7 @@ for side in ("left", "right"):
         evidence.append({"layer": saved.GetLayerName(layer), "net": zone.GetNetname(),
                          "filled_polygons": polys.OutlineCount(), "clearance_mm": 0.3,
                          "board_outline_inset_mm": 0.65,
+                         "battery_ground_connection": "solid" if side == "right" else "thermal",
                          "island_removal": "always", "controller_exclusion_mm": exclusion})
     (ROOT / f"build/pcb/{side}-ground-fill.json").write_text(json.dumps(evidence, indent=2)+"\n")
     print(f"{side}: filled GND on both faces; saved fill and controller exclusion verified")
