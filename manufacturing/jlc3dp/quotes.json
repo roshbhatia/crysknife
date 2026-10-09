@@ -37,7 +37,7 @@
     "address_confirmed": false
   },
   "quote_url": "https://jlc3dp.com/3d-printing-quote?spm=Jlc3dp.Homepage.1006",
-  "browser_state": "signed-in account cart contains six saved parts; sleeves are previous no-lip revision",
+  "browser_state": "signed-in account cart contains two current TPU sleeves and two preserved PCB drafts",
   "order_submitted": false,
   "factory_review_complete": false,
   "sleeves": {
@@ -55,7 +55,7 @@
     "build_days": 3,
     "shipping_estimate_alone": 10.59,
     "quoted_design": "closed 4.1 mm bottom; four internal 8 mm diameter, 2.5 mm deep blind screw-head recesses; 0.2 mm grip band interference",
-    "current_design": "closed bottom with 1.6 mm lip overlapping flat top plate by 1.8 mm; quote pending",
+    "current_design": "closed bottom with 1.6 mm lip overlapping flat top plate by 1.8 mm",
     "quote_matches_current_models": false
   },
   "combined_quote": {
@@ -81,12 +81,72 @@
     "screenshot": "previews/jlc3dp-sleeved-case-quote.png",
     "quote_matches_current_models": false
   },
-  "current_models_match_cart": false,
+  "current_models_match_cart": true,
   "cart_url": "https://jlc3dp.com/shopcart/cart?source=3D",
   "current_required_files": [
     "left-sleeve.stl",
     "right-sleeve.stl"
   ],
   "current_design": "flat acrylic/aluminum sandwich with TPU walls and bottom; no rigid resin tray",
-  "cart_needs_revision": "Remove four obsolete resin parts and replace both sleeves before ordering this version."
+  "current_cart": {
+    "checked_on": "2026-10-09",
+    "design_commit": "b509474",
+    "currency": "USD",
+    "parts": [
+      {
+        "file": "left-sleeve.stl",
+        "cart_reference": "D2026101034500039-10845407A",
+        "quantity": 1,
+        "each": 15.49,
+        "sha256": "2f1177ecf474a08f6a08cb397355fe5e0eac133869cf755624a5ca0b60302abf",
+        "material": "TPU Plastic",
+        "color": "Translucent",
+        "finish": "None",
+        "thread": "No thread",
+        "supplier_dimensions_cm": [
+          16.48,
+          10.97,
+          3.19
+        ],
+        "supplier_volume_cm3": 87.45
+      },
+      {
+        "file": "right-sleeve.stl",
+        "cart_reference": "D2026101034500048-10845407A",
+        "quantity": 1,
+        "each": 15.49,
+        "sha256": "a6d1707d0bec9b700ca81d043e48966d90079e887efbc1f669f92fca64e1f986",
+        "material": "TPU Plastic",
+        "color": "Translucent",
+        "finish": "None",
+        "thread": "No thread",
+        "supplier_dimensions_cm": [
+          16.48,
+          10.97,
+          3.19
+        ],
+        "supplier_volume_cm3": 87.45
+      }
+    ],
+    "merchandise_total": 30.98,
+    "shipping_estimate": 11.44,
+    "estimated_subtotal": 42.42,
+    "build_days": 3,
+    "estimated_shipping_date": "2026-10-12",
+    "shipping_address_confirmed": false,
+    "removed": "four obsolete resin parts and two obsolete sleeves",
+    "pcb_drafts_preserved": 2,
+    "order_submitted": false,
+    "quote_screenshot": "previews/jlc3dp-flat-case-quote.png",
+    "cart_screenshot": "previews/jlc3dp-flat-case-cart.png",
+    "quote_matches_current_models": true
+  },
+  "historical_quote_fields": [
+    "files",
+    "material",
+    "finishes",
+    "shipping_estimate",
+    "sleeves",
+    "combined_quote"
+  ]
 }

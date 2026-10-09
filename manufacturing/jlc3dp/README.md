@@ -19,11 +19,24 @@ Buy the flat plates and damping sheets from [SendCutSend](../sendcutsend/README.
 | Sleeve walls | 95A TPU | 2 mm |
 
 The printed resin trays and raised resin plates are no longer part of this design.
-The saved account cart still contains the previous six-part resin-and-TPU set.
-Do not order that set for this version. It needs only two replacement TPU sleeves from JLC3DP.
-The previous sleeve price was $13.84 each. That price does not cover the current model.
-A new quote and supplier review remain pending. No order was submitted.
-Historical quotes remain in `quotes.json` and the quote screenshots.
+The account cart now contains only the two updated TPU cases and the two preserved PCB drafts.
+The four obsolete resin parts and two obsolete sleeves were removed.
+
+Live cart checked on 2026-10-09, quantity one case per half:
+
+| Item | Price |
+| --- | ---: |
+| Each TPU case | $15.49 |
+| Both cases | $30.98 |
+| Estimated shipping | $11.44 |
+| Estimated case subtotal | $42.42 |
+
+Build time is three days. The cart estimates shipment on October 12.
+The quote showed 8–13 business days in transit. Shipping address and factory acceptance remain unconfirmed.
+No order was submitted. Checkout, tax, and supplier review can change the final cost.
+Current cart references and uploaded model hashes are in `quotes.json`.
+Earlier prices in that file are historical and do not apply to this design.
+Screenshots: `previews/jlc3dp-flat-case-quote.png` and `previews/jlc3dp-flat-case-cart.png`.
 
 ## Sleeve
 
