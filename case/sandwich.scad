@@ -43,7 +43,7 @@ module plate() {
     }
 }
 module assembly() {
-    color([0.65,0.67,0.7]) bottom();
+    color([0.12,0.12,0.12]) bottom();
     color([0.1,0.1,0.1]) translate([0,0,bottom_thickness]) linear_extrude(damping_thickness) damping();
     color([0.25,0.3,0.4]) translate([battery[0]-30,battery[1]-18,bottom_thickness+damping_thickness+0.5]) cube([60,36,7]);
     color([0.97,0.97,0.97]) translate([0,0,pcb_z+exploded]) linear_extrude(pcb_thickness) pcb_shape();

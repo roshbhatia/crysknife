@@ -1,4 +1,4 @@
-bottom_thickness = 1.6002;
+bottom_thickness = 3.175;
 plate_thickness = 1.6002;
 standoff_height = 20;
 standoff_shim = 1;

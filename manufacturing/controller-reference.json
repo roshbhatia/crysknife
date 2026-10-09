@@ -1,0 +1,217 @@
+{
+  "reference": "https://github.com/bstiq/nice-nano-kicad/tree/ed8024e06ae650d82da933fc80054e4faf4f170a",
+  "checked": "2026-10-08",
+  "status": "24 positions and power/GPIO mappings match on both halves",
+  "geometry_transform": "reference (x,y) -> carrier local (-y,x); carrier pad = 25 - reference pad",
+  "row_spacing_mm": 15.24,
+  "pitch_mm": 2.54,
+  "reference_drill_mm": 1.0922,
+  "carrier_drill_mm": 1.0,
+  "drill_note": "Carrier holes fit the selected receiver tails, not a generic controller header. Keep the receiver footprint.",
+  "model_note": "Upstream uses a recolored SparkFun Pro Micro X3D model. It does not verify nice!nano V2 component height or socket insertion.",
+  "library_note": "The legacy symbol types every pin as input. Keep the existing typed module symbol for ERC.",
+  "physical_fit": "Sample verification pending",
+  "pins": [
+    {
+      "carrier_pad": 1,
+      "reference_pad": 24,
+      "reference_label": "BATIN/P0.04",
+      "pro_micro_gpio": null,
+      "nrf_gpio": null,
+      "carrier_net": "RAW"
+    },
+    {
+      "carrier_pad": 2,
+      "reference_pad": 23,
+      "reference_label": "GND",
+      "pro_micro_gpio": null,
+      "nrf_gpio": null,
+      "carrier_net": "GND"
+    },
+    {
+      "carrier_pad": 3,
+      "reference_pad": 22,
+      "reference_label": "RST",
+      "pro_micro_gpio": null,
+      "nrf_gpio": null,
+      "carrier_net": "RST"
+    },
+    {
+      "carrier_pad": 4,
+      "reference_pad": 21,
+      "reference_label": "VCC",
+      "pro_micro_gpio": null,
+      "nrf_gpio": null,
+      "carrier_net": "VCC"
+    },
+    {
+      "carrier_pad": 5,
+      "reference_pad": 20,
+      "reference_label": "AIN7/P0.31",
+      "pro_micro_gpio": 21,
+      "nrf_gpio": "P0.31",
+      "carrier_net": "C0"
+    },
+    {
+      "carrier_pad": 6,
+      "reference_pad": 19,
+      "reference_label": "AIN5/P0.29",
+      "pro_micro_gpio": 20,
+      "nrf_gpio": "P0.29",
+      "carrier_net": "C1"
+    },
+    {
+      "carrier_pad": 7,
+      "reference_pad": 18,
+      "reference_label": "AIN0/P0.02",
+      "pro_micro_gpio": 19,
+      "nrf_gpio": "P0.02",
+      "carrier_net": "C2"
+    },
+    {
+      "carrier_pad": 8,
+      "reference_pad": 17,
+      "reference_label": "P1.15",
+      "pro_micro_gpio": 18,
+      "nrf_gpio": "P1.15",
+      "carrier_net": "C3"
+    },
+    {
+      "carrier_pad": 9,
+      "reference_pad": 16,
+      "reference_label": "P1.13",
+      "pro_micro_gpio": 15,
+      "nrf_gpio": "P1.13",
+      "carrier_net": "C4"
+    },
+    {
+      "carrier_pad": 10,
+      "reference_pad": 15,
+      "reference_label": "P1.11",
+      "pro_micro_gpio": 14,
+      "nrf_gpio": "P1.11",
+      "carrier_net": "C5"
+    },
+    {
+      "carrier_pad": 11,
+      "reference_pad": 14,
+      "reference_label": "NFC2/P0.10",
+      "pro_micro_gpio": 16,
+      "nrf_gpio": "P0.10",
+      "carrier_net": "P16"
+    },
+    {
+      "carrier_pad": 12,
+      "reference_pad": 13,
+      "reference_label": "NFC1/P0.09",
+      "pro_micro_gpio": 10,
+      "nrf_gpio": "P0.09",
+      "carrier_net": "P10"
+    },
+    {
+      "carrier_pad": 13,
+      "reference_pad": 12,
+      "reference_label": "P1.06",
+      "pro_micro_gpio": 9,
+      "nrf_gpio": "P1.06",
+      "carrier_net": "P9"
+    },
+    {
+      "carrier_pad": 14,
+      "reference_pad": 11,
+      "reference_label": "P1.04",
+      "pro_micro_gpio": 8,
+      "nrf_gpio": "P1.04",
+      "carrier_net": "R3"
+    },
+    {
+      "carrier_pad": 15,
+      "reference_pad": 10,
+      "reference_label": "P0.11",
+      "pro_micro_gpio": 7,
+      "nrf_gpio": "P0.11",
+      "carrier_net": "R2"
+    },
+    {
+      "carrier_pad": 16,
+      "reference_pad": 9,
+      "reference_label": "P1.00",
+      "pro_micro_gpio": 6,
+      "nrf_gpio": "P1.00",
+      "carrier_net": "R1"
+    },
+    {
+      "carrier_pad": 17,
+      "reference_pad": 8,
+      "reference_label": "P0.24",
+      "pro_micro_gpio": 5,
+      "nrf_gpio": "P0.24",
+      "carrier_net": "R0"
+    },
+    {
+      "carrier_pad": 18,
+      "reference_pad": 7,
+      "reference_label": "P0.22",
+      "pro_micro_gpio": 4,
+      "nrf_gpio": "P0.22",
+      "carrier_net": "P4"
+    },
+    {
+      "carrier_pad": 19,
+      "reference_pad": 6,
+      "reference_label": "P0.20",
+      "pro_micro_gpio": 3,
+      "nrf_gpio": "P0.20",
+      "carrier_net": "P3"
+    },
+    {
+      "carrier_pad": 20,
+      "reference_pad": 5,
+      "reference_label": "P0.17",
+      "pro_micro_gpio": 2,
+      "nrf_gpio": "P0.17",
+      "carrier_net": "P2"
+    },
+    {
+      "carrier_pad": 21,
+      "reference_pad": 4,
+      "reference_label": "GND",
+      "pro_micro_gpio": null,
+      "nrf_gpio": null,
+      "carrier_net": "GND"
+    },
+    {
+      "carrier_pad": 22,
+      "reference_pad": 3,
+      "reference_label": "GND",
+      "pro_micro_gpio": null,
+      "nrf_gpio": null,
+      "carrier_net": "GND"
+    },
+    {
+      "carrier_pad": 23,
+      "reference_pad": 2,
+      "reference_label": "RX1/P0.08",
+      "pro_micro_gpio": 0,
+      "nrf_gpio": "P0.08",
+      "carrier_net": "P0"
+    },
+    {
+      "carrier_pad": 24,
+      "reference_pad": 1,
+      "reference_label": "TX0/P0.06",
+      "pro_micro_gpio": 1,
+      "nrf_gpio": "P0.06",
+      "carrier_net": "P1"
+    }
+  ],
+  "firmware_evidence": {
+    "revision": "5326b6df996872d7e44c5d19a173de9d02c6fdb1",
+    "run": "https://github.com/roshbhatia/crysknife/actions/runs/37878071100",
+    "zephyr_dts_sha256": "385b3ed98fcd9a4b60563434dbe5a43561459e87246a4223c15c28d248e65914"
+  },
+  "source_hashes": {
+    "nice_nano.lib": "583a1021a294e9582c68553997d6460099772f317a3c5d3369e629337f0a5c83",
+    "nice_nano.kicad_mod": "fe56d2d532864b6007587932f50a929c74ea41999788fe31ef5f74b5766111a0"
+  }
+}

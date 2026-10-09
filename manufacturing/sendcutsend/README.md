@@ -5,7 +5,7 @@ The corners are square. Four M2 standoffs pass through the carrier and join matc
 
 | File | Material | Thickness | Process |
 | --- | --- | --- | --- |
-| `*-bottom-flat.dxf` | 5052 H32 aluminum | .063 in / 1.6002 mm | Cut |
+| `*-bottom-flat.dxf` | 5052 H32 aluminum | .125 in / 3.175 mm | Laser cut, deburr, black anodize |
 | `*-plate.dxf` | Clear acrylic | .063 in / 1.6002 mm | Laser cut |
 | `*-damping.dxf` | Neoprene | .063 in / 1.6002 mm | Waterjet cut |
 | `switch-fit-coupon.dxf` | Same clear acrylic | Same stock as top plates | Test switch fit first |
@@ -33,3 +33,41 @@ The default is 14 mm. [Acrylic cutting tolerance](https://sendcutsend.com/materi
 
 Test plate flex, corner stability, controller clearance, and battery fit on the assembled prototype.
 These are review files. No supplier quote or production order has been accepted.
+
+## Material and finish choices
+
+Checked against the supplier catalog on October 8, 2026.
+The suggested finish is black anodizing over deburred aluminum, with clear acrylic above it.
+This keeps the PCB artwork visible and gives the base a finished surface.
+
+| Choice | Result for this design |
+| --- | --- |
+| Current .125 in aluminum base | About 103 g per half. Roughly 7.8 times the base bending stiffness of .063 in stock at the same outline and alloy. |
+| Optional .063 in aluminum base | Light; about 52 g per half before finishing and hardware. Regenerate models before changing stock. |
+| .063 in clear acrylic top | Matches the modeled switch latch thickness. Cut the fit coupon first. |
+| .063 in plain neoprene floor | A removable damping layer. It does not suspend the switch plate. |
+| .118 in polycarbonate top | Requires redesigned switch retention, screw holes, and routed internal corners. It cannot replace the current plate directly. |
+
+Mass estimates use the exported bottom area and a nominal aluminum density of 2.7 g/cm³.
+Stiffness is a thickness-cubed estimate, not a load test or a typing-feel prediction.
+The model uses `bottom_thickness = 3.175` for the thicker base.
+Keep the acrylic at 1.6002 mm; thicker stock can prevent switch latches from engaging.
+
+[Anodizing](https://sendcutsend.com/services/anodizing/) supports this aluminum stock.
+Its minimum hanging hole is 1.6 mm; the four 2.2 mm mounting holes exceed that value before coating.
+The supplier must confirm the rack location and finished hole clearance.
+[Deburring](https://sendcutsend.com/services/deburring-services/) is preselected for anodized sheet parts.
+It can leave tabs, scratches, and sharp edges. Check exposed edges when the parts arrive.
+[Tumbling](https://sendcutsend.com/services/tumbling/) can soften edges on .125 in stock, but cannot guarantee an edge radius.
+Combining tumbling and anodizing requires a custom quote. The standard finish choice uses deburring and anodizing.
+
+[Clear acrylic](https://sendcutsend.com/materials/acrylic/) is available at .063 in, with a published cutting tolerance of ±.009 in.
+[Neoprene](https://sendcutsend.com/materials/neoprene/) is waterjet cut at .063 in with the same published cutting tolerance.
+[Polycarbonate](https://sendcutsend.com/materials/polycarbonate/) starts at .118 in and uses CNC routing.
+Catalog availability does not mean these uploaded parts have been accepted.
+
+Use four small silicone desk feet per half and metal M2 standoffs with protective washers.
+Source these separately unless the supplier confirms the exact hardware.
+Do not use foam compression or screw torque to adjust battery clearance.
+The floor rubber can reduce vibration, but the rigid standoffs make this a sandwich mount, not a floating gasket mount.
+Compare sound, flex, grip, and keycap removal on the prototype before choosing the final material stack.

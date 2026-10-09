@@ -46,6 +46,9 @@ Keep the module face up; turning it over changes the pin mapping.
 Each socket is Mill-Max 315-43-112-41-003000, [JLCPCB C5504443](https://jlcpcb.com/partdetail/6420580-315_43_112_41003000/C5504443).
 Catalog presence does not guarantee stock; pre-order or consignment acceptance remains required.
 The socket footprint retains the original controller contact positions and net numbers.
+The [independent controller comparison](controller-reference.json) checks all 24 positions against the pinned bstiq library and compiled ZMK GPIO map.
+The libraries use different pad numbers; the comparison uses physical positions and pin functions.
+The upstream 3D model represents a Pro Micro and does not establish nice!nano V2 fit.
 MCU1 is the controller outline; MCU1A and MCU1B are the physical socket references.
 The CPL uses the center of each 12-pin strip, rather than the controller center.
 

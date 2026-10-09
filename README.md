@@ -9,7 +9,7 @@ It uses nice!nano V2 controllers, white PCBs, and black knife artwork on both si
 ## Case
 
 A clear acrylic top plate sits above a flat aluminum bottom plate.
-Four standoffs hold each half together. A flat rubber layer reduces vibration above the metal floor.
+Four standoffs hold each half together. A flat rubber layer is intended to damp vibration above the metal floor.
 The top plate covers the controllers. USB, power, and reset remain accessible from the side.
 
 ![Case](previews/case-left.png)
