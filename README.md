@@ -1,7 +1,7 @@
 # Fridakeys
 
 A proposed 42-key wireless split keyboard with MX hotswap sockets and TrackPoint pointing input.
-The user assembles it with plugs and screws, without soldering.
+The user assembles it with plugs and screws, with soldering limited to the two controller headers per half.
 
 ## Current artifacts
 
@@ -52,12 +52,15 @@ Do not send these prototype plates to fabrication.
 
 PCB drafts appear under `build/pcb/` with 21 hotswap sockets and 21 SMD diodes per half.
 Both use dedicated controller footprints without reversible solder jumpers.
-The controller generator adapts upstream 1 mm holes to a nominal 0.85 mm for spring headers.
-[Typeractive specifies 0.8–0.9 mm finished holes](https://typeractive.xyz/products/no-solder-spring-headers).
-[JLCPCB lists standard PTH tolerance as +0.13/−0.08 mm](https://jlcpcb.com/capabilities/pcb-capabilities/).
-At 0.85 mm nominal, that permits 0.77–0.98 mm and cannot guarantee the contact fit.
-Its ±0.05 mm press-fit option lists multilayer ENIG boards; the current board has two copper layers.
-Supplier acceptance of tighter finished holes or a factory-soldered controller connection remains required.
+Each half has two factory-soldered Mill-Max 315-43-112-41-003000 socket strips, identified as MCU1A and MCU1B.
+The original controller outline remains MCU1, without duplicate electrical pads.
+Controller sockets use 1 mm nominal plated holes and soldered tails, rather than press-fit spring contacts.
+Standard PCB hole tolerance therefore does not establish the removable controller contact.
+The manufacturer socket drawing specifies a 0.762 mm tail diameter, with standard ±0.051 mm diameter tolerance.
+Its maximum diameter remains below the minimum 0.92 mm finished hole.
+The user solders four matching 12-pin header strips onto two nice!nano V2 boards: 48 joints total.
+The exact mating-header drawing, insertion depth, stack height, and factory socket sourcing remain acceptance checks.
+[Controller assembly details](manufacturing/README.md) define this limited-soldering path.
 The right PCB mirrors key positions while preserving component pin orientation and assembly sides.
 
 KiCad CLI runs in its official container, pinned in `tools.lock.json`.
@@ -182,7 +185,7 @@ The [Kailh CPG151101S11-1 catalog entry](https://jlcpcb.com/partdetail/Kailh-CPG
 Catalog presence does not confirm stock, footprint fit, or an accepted assembly quote.
 [Flying-probe and functional testing](https://jlcpcb.com/help/article/smt-inspection-and-testing-capabilities) can support the acceptance plan.
 Test scope and fixtures need a supplier quote; AOI alone cannot prove wireless operation.
-Prepared nice!nano modules and spring headers remain a plug-in assembly path to verify.
+Buy two nice!nano V2 modules and four matching round-pin header strips; the factory installs their receiver sockets.
 Each half uses its own rechargeable battery and USB charging port.
 An inter-half USB-C cable is not supported by the current electrical design or firmware.
 
@@ -193,7 +196,7 @@ An inter-half USB-C cable is not supported by the current electrical design or f
 - ZMK firmware, using a supported controller and USB bootloader.
 - Factory-installed MX hotswap sockets.
 - Outemu Medium-Low Black switches with standard MX pin geometry.
-- Plug-in batteries, pointing-device cables, and prepared controllers are acceptable.
+- Plug-in batteries and pointing-device cables are required; soldering the two controller header strips per half is acceptable.
 - One right-half TrackPoint for index-finger use, retaining all 42 hotswap keys.
 - The TrackPoint module and cable must arrive prepared for plug-in installation without user soldering.
 - White PCB solder mask with repeated black Frida portraits and lettering on both silkscreen faces.
@@ -237,7 +240,7 @@ The Fridakeys stem position still needs selection and a fit test.
 ## Manufacturing gates
 
 - Confirm the exact prepared TrackPoint module, cable, stem, and mounting hardware.
-- Prove controller spring-header fit, finished-hole tolerance, battery polarity, and charging behavior.
+- Prove soldered controller socket and mating-header fit, battery polarity, and charging behavior.
 - Generate separate left and right PCBs with every MX socket installed by the factory.
 - Complete the schematic, routing, and KiCad electrical and board checks.
 - Build firmware for both halves and test all keys, wireless pairing, and pointing input.

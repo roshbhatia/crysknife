@@ -65,7 +65,7 @@ The KiCad job independently checks every descriptor against `pcbnew`.
 It merges only tracks and vias into the original boards.
 KiCad finishes reset-button escapes when the autorouter leaves a GND or RST via too close to the opposite pad.
 This step moves the via outside its own pad, keeps both connected tracks, and records its clearance before and after.
-It also separates GND and RAW via escapes to a 0.3 mm copper-edge gap.
+It also separates conflicting vias on different nets to a 0.3 mm copper-edge gap, retaining both connected trace endpoints.
 The router's drill-spacing setting checks these gaps but does not change the offending routes.
 The final KiCad DRC validates the finished route. React previews remain autorouter drafts.
 It preserves footprint references, solder mask, paste, exact outlines, and Frida artwork.

@@ -91,16 +91,26 @@
       "lcsc": "C14663",
       "description": "100nF X7R 50V capacitor",
       "source": "https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663"
+    },
+    {
+      "reference_pattern": "MCU1[AB]",
+      "footprint": "fridakeys:MillMax_315_1x12",
+      "side": "F",
+      "manufacturer": "Mill-Max",
+      "mpn": "315-43-112-41-003000",
+      "lcsc": "C5504443",
+      "description": "Factory-soldered 12-pin controller socket",
+      "source": "https://jlcpcb.com/partdetail/6420580-315_43_112_41003000/C5504443"
     }
   ],
   "excluded_references": {
-    "MCU1": "Plug-in nice!nano v2; carrier contact method and prepared supply remain unaccepted",
+    "MCU1": "Controller outline only; purchase nice!nano v2 separately and solder its two matching header strips",
     "ART1": "Silkscreen geometry; no physical component"
   },
   "remaining_gates": [
     "Current manufacturer drawings, footprint fit, pickup origins and rotations accepted by assembler",
     "Exact supplier stock and Standard two-face mixed SMT/THT assembly quote accepted",
-    "Solder-free controller connection with guaranteed finished-hole fit or factory-prepared alternative",
+    "Factory accepts C5504443 socket sourcing and soldering; matching nice!nano header insertion and assembled height verified",
     "Supplier-prepared SK8707-01-005 with connector and continuity-verified matching ribbon",
     "TrackPoint stem position, mount and full switch/keycap/gasket travel clearance",
     "Exact battery SKU, plug polarity, charging rating and case fit",

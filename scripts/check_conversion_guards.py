@@ -17,7 +17,7 @@ with tempfile.TemporaryDirectory() as directory:
     for label, kind, field, value in [
         ("mirrored socket", "pcb_smtpad", "x", 0),
         ("wrong assembly side", "pcb_smtpad", "layer", "top"),
-        ("wrong controller drill", "pcb_plated_hole", "hole_diameter", 1.0),
+        ("wrong controller drill", "pcb_plated_hole", "hole_diameter", 0.6),
     ]:
         data = copy.deepcopy(original)
         next(n for n in data if n["type"] == kind)[field] = value

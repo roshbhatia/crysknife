@@ -30,7 +30,7 @@ pcbs:
           shift: [horizontal_diode_shift, vertical_diode_shift]
           rotate: 90
       controller:
-        what: fridakeeb/nice_nano_spring
+        what: fridakeys/nice_nano_socketed
         where:
           ref: matrix_inner_top
         params:

@@ -36,3 +36,6 @@ It follows the 1 mm bottom-contact land drawing on catalog page 21.
 The [manufacturer catalog](https://www.hirose.com/en/product/document?clcode=CL0586-0555-2-55&documentid=D31648_en&documenttype=Catalog&lang=en&productname=FH12A-24S-0.5SH%2855%29&series=FH12) supplies the dimensions.
 The current engineering drawing and supplier assembly rotation remain verification gates.
 No Hirose document or external footprint is vendored.
+
+The controller socket adapter retains the pinned nice!nano net mapping and splits its pads into two factory assembly footprints.
+Socket dimensions reference the [Mill-Max 315-43-112-41-003000 manufacturer drawing](https://static6.arrow.com/aropdfconversion/2e225be7d9212620894362dafa7ce735623fe9ca/315-43-112-41-003000.pdf).

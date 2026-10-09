@@ -17,16 +17,7 @@ for (const name of footprintNames) {
 ergogen.inject('fridakeys/trackpoint', require('../ergogen/trackpoint.js'));
 ergogen.inject('fridakeys/passive_0603', require('../ergogen/passive_0603.js'));
 const controller = require(path.join(library, 'mcu_nice_nano.js'));
-ergogen.inject('fridakeeb/nice_nano_spring', {
-  params: controller.params,
-  body: params => {
-    assert.equal(params.reversible, false);
-    assert.equal(params.include_extra_pins, false);
-    const body = controller.body(params);
-    assert.equal((body.match(/\(drill 1\)/g) || []).length, 24);
-    return body.replaceAll('(drill 1)', '(drill 0.85)');
-  },
-});
+ergogen.inject('fridakeys/nice_nano_socketed', require('../ergogen/controller_sockets.js')(controller));
 
 async function main() {
   const config = yaml.load(fs.readFileSync(path.join(root, 'ergogen/layout.yaml'), 'utf8'));

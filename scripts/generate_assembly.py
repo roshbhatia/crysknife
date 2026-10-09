@@ -31,7 +31,8 @@ def inventory(board, side, manifest):
                       'rotation_deg': float(at[3]) % 360 if len(at) > 3 else 0,
                       'layer': 'Top' if part['side'] == 'F' else 'Bottom'})
     assert set(excluded) == {'MCU1', 'ART1'}, excluded
-    assert len(items) == (45 if side == 'left' else 51), (side, len(items))
+    assert len(items) == (47 if side == 'left' else 53), (side, len(items))
+    assert {'MCU1A', 'MCU1B'} <= {p['reference'] for p in items}
     for prefix in ('S', 'D'):
         assert {p['reference'] for p in items if re.fullmatch(prefix+r'\d+', p['reference'])} == {
             f'{prefix}{n}' for n in range(1, 22)}
@@ -69,6 +70,7 @@ def main():
                   [[p['reference'], p['manufacturer'], p['mpn'], p['lcsc'], p['source']] for p in parts])
         report['boards'].append({'side': side, 'factory_parts': len(parts),
                                  'factory_sockets': 21, 'factory_diodes': 21,
+                                 'factory_controller_sockets': 2,
                                  'excluded': excluded, 'through_hole_battery_connector': 'JST1'})
         print(f'{side}: quote BOM/CPL covers {len(parts)} factory parts; controller stays an explicit supply gate')
     (output/'readiness.json').write_text(json.dumps(report, indent=2)+'\n')

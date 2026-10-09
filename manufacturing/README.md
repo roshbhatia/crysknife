@@ -12,10 +12,11 @@ nix develop . --command python3 scripts/check_assembly_guards.py
 
 Outputs appear under `build/manufacturing/quote-only/`.
 Each half has a quote BOM, a quote CPL, and catalog evidence for every factory part.
-The left inventory has 45 parts; the right has 51.
+The left inventory has 47 parts; the right has 53.
 Each contains 21 bottom-face MX hotswap sockets and 21 bottom-face diodes.
 The right adds a ribbon connector, three resistors, and two capacitors.
-The two controllers remain explicit external assembly requirements.
+Both inventories include two factory-soldered controller sockets, MCU1A and MCU1B.
+The two nice!nano V2 modules and their four male header strips are purchased separately.
 
 The CPL uses KiCad footprint origins, millimeters, X right, and Y up.
 The PCB origin is 0,0, without a bottom-face coordinate mirror.
@@ -36,23 +37,40 @@ The JST PH connector is a through-hole part, not a pick-and-place-only SMT part.
 Standard assembly must cover both faces and the through-hole connector.
 The right JST1 ground pad connects directly to the ground pour; its soldering heat profile needs assembler review.
 
-## Controller contact requirements
+## Controller assembly requirements
 
-Both carrier footprints specify 24 plated holes at 0.85 mm nominal.
-[Typeractive spring headers](https://typeractive.xyz/products/no-solder-spring-headers) require 0.8–0.9 mm finished holes and provide 5 mm height.
-[JLCPCB standard PTH tolerance](https://jlcpcb.com/capabilities/pcb-capabilities/) permits 0.77–0.98 mm at this nominal diameter.
-That range does not guarantee spring contact.
-The listed ±0.05 mm press-fit option applies to multilayer ENIG boards.
-The current two-layer board has no accepted precision-hole quote.
+Use one genuine nice!nano V2 per half, mounted face up.
+The user permits limited soldering on these two modules.
+JLCPCB must solder all four receiver socket strips onto the carrier PCBs.
+Each socket is Mill-Max 315-43-112-41-003000, [JLCPCB C5504443](https://jlcpcb.com/partdetail/6420580-315_43_112_41003000/C5504443).
+Catalog presence does not guarantee stock; pre-order or consignment acceptance remains required.
+The socket footprint retains the original controller contact positions and net numbers.
+MCU1 is the controller outline; MCU1A and MCU1B are the physical socket references.
+The CPL uses the center of each 12-pin strip, rather than the controller center.
 
-The assembly supplier needs to confirm one of these paths:
+The [manufacturer socket drawing](https://static6.arrow.com/aropdfconversion/2e225be7d9212620894362dafa7ce735623fe9ca/315-43-112-41-003000.pdf) specifies 2.54 mm pitch and a 0.762 mm solder tail.
+Its standard ±0.051 mm diameter tolerance gives a maximum 0.813 mm tail.
+[JLCPCB standard PTH tolerance](https://jlcpcb.com/capabilities/pcb-capabilities/) gives a minimum 0.92 mm hole at the selected 1 mm nominal diameter.
+The socket tail can enter that hole; solder establishes electrical contact.
+The removable contact is inside the manufactured socket, so it does not depend on a spring pin gripping the carrier hole.
+Supplier land-pattern approval, soldering, alignment, and insertion tests remain required.
 
-- Guarantee 0.80–0.90 mm finished diameter for the named MCU1 holes, with inspection evidence.
-- Factory-install a verified controller connection and supply any separately prepared controller pins.
+Purchase two nice!nano V2 modules and four complete 12-pin round-pin header strips.
+Mill-Max 350-10-112-00-006000 is the mating-header candidate; compare its current drawing and insertion depth before purchase.
+The socket accepts 0.381–0.559 mm diameter mating pins.
+The ordinary square headers supplied with nice!nano are unsuitable for these machine sockets.
+The [controller manufacturer explicitly documents this restriction](https://nicekeyboards.com/docs/nice-nano/getting-started/).
+Do not substitute a header based only on 2.54 mm pitch.
+Do not populate the extra B+ or B- holes beside USB; the carrier uses RAW and GND.
 
-The second path can require footprint and case changes.
-A bare nice!nano with loose ordinary headers does not meet the no-solder requirement.
-The user must not need to solder pins or bridges.
+The user solders two complete strips to each module: 24 joints per half, 48 total.
+A builder can prepare the modules instead; [beekeeb advertises custom soldering](https://shop.beekeeb.com/), but no quote is accepted.
+Switch sockets, diodes, side power/reset controls, battery connectors, and TrackPoint support components remain factory-installed.
+The TrackPoint must still arrive with its connector prepared; user soldering is limited to the controller headers.
+Confirm the matched header orientation and use a fixture that prevents solder entering the receiver contacts.
+Verify continuity, absence of shorts, and face-up pin mapping before fitting the modules.
+Measure the resulting underside gap, USB height, and connector-latch access before cutting the case.
+The current 5 mm controller gap is a mechanical reservation, not a verified mating-stack dimension.
 
 ## Prepared TrackPoint requirements
 

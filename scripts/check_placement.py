@@ -17,7 +17,7 @@ for side in ("left", "right"):
         assert len(list(artwork[0].Pads())) == 0
         assert artwork[0].GetLayer() == pcbnew.F_Cu
     footprints = [fp for fp in board.GetFootprints() if fp.GetReference() != "ART1"]
-    assert len(footprints) == (46 if side == "left" else 52), (side, len(footprints))
+    assert len(footprints) == (48 if side == "left" else 54), (side, len(footprints))
     keys = [fp for fp in footprints if fp.GetReference().startswith("S")]
     diodes = [fp for fp in footprints if fp.GetReference().startswith("D")]
     assert len(keys) == len(diodes) == 21
@@ -45,18 +45,28 @@ for side in ("left", "right"):
     assert column_nets == {"C0": 3, "C1": 3, "C2": 3, "C3": 4, "C4": 4, "C5": 4}
     assert row_nets == {"R0": 6, "R1": 6, "R2": 6, "R3": 3}
     controller = next(fp for fp in footprints if fp.GetReference() == "MCU1")
-    controllers[side] = controller
+    sockets = [next(fp for fp in footprints if fp.GetReference() == ref) for ref in ("MCU1A", "MCU1B")]
+    controllers[side] = sockets
     assert controller.GetLayer() == pcbnew.F_Cu
-    pads = list(controller.Pads())
+    assert not list(controller.Pads())
+    assert all(fp.GetLayer() == pcbnew.F_Cu and len(list(fp.Pads())) == 12 for fp in sockets)
+    pads = [pad for socket in sockets for pad in socket.Pads()]
     assert len(pads) == 24
     assert {p.GetNumber() for p in pads} == {str(n) for n in range(1, 25)}
     assert all(p.GetAttribute() == pcbnew.PAD_ATTRIB_PTH for p in pads)
-    assert all(p.GetDrillSize().x == pcbnew.FromMM(0.85) for p in pads)
+    assert all(p.GetDrillSize().x == pcbnew.FromMM(1) for p in pads)
+    center = controller.GetPosition()
+    for pad in pads:
+        number = int(pad.GetNumber())
+        column = 7.62 if number <= 12 else -7.62
+        row = number-1 if number <= 12 else 24-number
+        assert abs(pad.GetPosition().x-center.x-pcbnew.FromMM(column)) <= 1
+        assert abs(pad.GetPosition().y-center.y-pcbnew.FromMM(-12.7+2.54*row)) <= 1
     switches[side] = {fp.GetReference(): fp for fp in keys}
-    print(f"{side}: 21 bottom-side MX sockets, 21 polarized diodes, 24 spring-header contacts")
+    print(f"{side}: 21 bottom-side MX sockets, 21 polarized diodes, two factory-soldered controller sockets")
 
-left_pins = {p.GetNumber(): p.GetNetname() for p in controllers["left"].Pads()}
-right_pins = {p.GetNumber(): p.GetNetname() for p in controllers["right"].Pads()}
+left_pins = {p.GetNumber(): p.GetNetname() for fp in controllers["left"] for p in fp.Pads()}
+right_pins = {p.GetNumber(): p.GetNetname() for fp in controllers["right"] for p in fp.Pads()}
 assert left_pins == right_pins
 assert set(left_pins.values()) >= {
     "C0", "C1", "C2", "C3", "C4", "C5", "R0", "R1", "R2", "R3",

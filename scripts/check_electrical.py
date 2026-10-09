@@ -29,7 +29,13 @@ for side in ("left", "right"):
         return {pad[1]: child(pad, "net")[2] if child(pad, "net") else None
                 for pad in children(footprints[ref], "pad") if pad[1]}
 
-    controller = pads("MCU1")
+    assert not children(footprints["MCU1"], "pad")
+    assert len(pads("MCU1A")) == len(pads("MCU1B")) == 12
+    assert set(pads("MCU1A")).isdisjoint(pads("MCU1B"))
+    controller = {**pads("MCU1A"), **pads("MCU1B")}
+    for ref in ("MCU1A", "MCU1B"):
+        assert footprints[ref][1] == "fridakeys:MillMax_315_1x12"
+        assert all(child(pad, "drill")[1] == "1" for pad in children(footprints[ref], "pad"))
     assert all(controller[pin] == net for pin, net in expected_pins.items()), (side, controller)
     gpio_nets = {gpio: controller[str(pin)] for pin, gpio in gpio_by_pin.items()}
     overlay = (FIRMWARE / f"fridakeeb_{side}.overlay").read_text()
