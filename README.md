@@ -26,7 +26,8 @@ The OpenSCAD case draft includes perimeter gasket suspension.
 TrackPoint mounting remains incomplete.
 PCB placement includes switches, diodes, controller contacts, power, reset, and battery connectors.
 The right PCB includes an eight-pin TrackPoint ribbon connector and its support circuit.
-The electrical schematic and manufacturing outputs remain incomplete.
+The electrical schematic remains incomplete.
+Quote-only BOM and placement inventories are generated under `build/manufacturing/quote-only/`.
 The tscircuit pipeline routes the existing matrix and power placement drafts.
 The PCB has no case mounting holes; the OpenSCAD sandwich uses six external standoffs per half.
 No PCB assembly order is ready.
@@ -169,6 +170,10 @@ The controller and TrackPoint need mechanical clearance checks with their exact 
 Supplier material thickness and cut tolerances must match the final dimensions.
 
 ## Factory assembly options
+
+[Assembly quote requirements](manufacturing/README.md) define the candidate BOM, prepared parts, and acceptance tests.
+`nix develop . --command python3 scripts/generate_assembly.py` exports separate quote BOM/CPL files.
+These include every factory socket and diode, but require pickup-origin and rotation review.
 
 [JLCPCB Standard assembly](https://jlcpcb.com/capabilities/pcb-assembly-capabilities) supports both PCB faces and through-hole connectors.
 The factory must install all 42 MX sockets, diodes, power switches, reset buttons, and battery connectors.

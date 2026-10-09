@@ -1,0 +1,109 @@
+{
+  "status": "quote candidates; not accepted for manufacturing",
+  "catalog_checked": "2026-10-08",
+  "parts": [
+    {
+      "reference_pattern": "S[0-9]+",
+      "footprint": "ceoloide:switch_mx",
+      "side": "B",
+      "manufacturer": "Kailh",
+      "mpn": "CPG151101S11-1",
+      "lcsc": "C5184526",
+      "description": "MX hotswap socket",
+      "source": "https://jlcpcb.com/partdetail/Kailh-CPG151101S111/C5184526"
+    },
+    {
+      "reference_pattern": "D[0-9]+",
+      "footprint": "ceoloide:diode_tht_sod123",
+      "side": "B",
+      "manufacturer": "ST(Semtech)",
+      "mpn": "1N4148W",
+      "lcsc": "C81598",
+      "description": "Matrix diode",
+      "source": "https://jlcpcb.com/partdetail/ST_Semtech-1N4148W/C81598"
+    },
+    {
+      "reference_pattern": "PWR1",
+      "footprint": "ceoloide:power_switch_smd_side",
+      "side": "F",
+      "manufacturer": "ALPSALPINE",
+      "mpn": "SSSS811101",
+      "lcsc": "C109335",
+      "description": "Side power switch",
+      "source": "https://jlcpcb.com/partdetail/ALPSALPINE-SSSS811101/C109335"
+    },
+    {
+      "reference_pattern": "RST1",
+      "footprint": "ceoloide:reset_switch_smd_side",
+      "side": "F",
+      "manufacturer": "Panasonic",
+      "mpn": "EVQPUC02K",
+      "lcsc": "C79174",
+      "description": "Side reset button",
+      "source": "https://jlcpcb.com/partdetail/Panasonic-EVQPUC02K/C79174"
+    },
+    {
+      "reference_pattern": "JST1",
+      "footprint": "ceoloide:battery_connector_jst_ph_2",
+      "side": "B",
+      "manufacturer": "JST",
+      "mpn": "S2B-PH-K-S(LF)(SN)",
+      "lcsc": "C173752",
+      "description": "Battery connector",
+      "source": "https://jlcpcb.com/partdetail/S2B-PH-K-S%28LF%29%28SN%29/C173752"
+    },
+    {
+      "reference_pattern": "TP1",
+      "footprint": "fridakeys:Hirose_FH12-8S-1SH",
+      "side": "F",
+      "manufacturer": "Hirose",
+      "mpn": "FH12-8S-1SH(55)",
+      "lcsc": "C596711",
+      "description": "TrackPoint ribbon connector",
+      "source": "https://jlcpcb.com/partdetail/HRS_Hirose-FH12_8S_1SH_55/C596711"
+    },
+    {
+      "reference_pattern": "R[12]",
+      "footprint": "fridakeys:Passive_0603",
+      "side": "F",
+      "manufacturer": "UNI-ROYAL",
+      "mpn": "0603WAF4701T5E",
+      "lcsc": "C23162",
+      "description": "4.7k 1% pull-up",
+      "source": "https://jlcpcb.com/partdetail/C23162"
+    },
+    {
+      "reference_pattern": "R3",
+      "footprint": "fridakeys:Passive_0603",
+      "side": "F",
+      "manufacturer": "UNI-ROYAL",
+      "mpn": "0603WAF1002T5E",
+      "lcsc": "C25804",
+      "description": "10k 1% pull-down",
+      "source": "https://jlcpcb.com/partdetail/C25804"
+    },
+    {
+      "reference_pattern": "C[12]",
+      "footprint": "fridakeys:Passive_0603",
+      "side": "F",
+      "manufacturer": "YAGEO",
+      "mpn": "CC0603KRX7R9BB104",
+      "lcsc": "C14663",
+      "description": "100nF X7R 50V capacitor",
+      "source": "https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663"
+    }
+  ],
+  "excluded_references": {
+    "MCU1": "Plug-in nice!nano v2; carrier contact method and prepared supply remain unaccepted",
+    "ART1": "Silkscreen geometry; no physical component"
+  },
+  "remaining_gates": [
+    "Current manufacturer drawings, footprint fit, pickup origins and rotations accepted by assembler",
+    "Exact supplier stock and Standard two-face mixed SMT/THT assembly quote accepted",
+    "Solder-free controller connection with guaranteed finished-hole fit or factory-prepared alternative",
+    "Supplier-prepared SK8707-01-005 with connector and continuity-verified matching ribbon",
+    "TrackPoint stem position, mount and full switch/keycap/gasket travel clearance",
+    "Exact battery SKU, plug polarity, charging rating and case fit",
+    "Complete schematic/ERC and physical prototype keyboard, Bluetooth, pointing and charging tests"
+  ]
+}
