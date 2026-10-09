@@ -23,7 +23,11 @@ for side in ("left", "right"):
     controller = next(fp for fp in board.GetFootprints() if fp.GetReference() == "MCU1")
     cx, cy = [pcbnew.ToMM(v) for v in (controller.GetPosition().x, controller.GetPosition().y)]
     exclusion = [(cx-14, cy-23), (cx+14, cy-23), (cx+14, cy+23), (cx-14, cy+23)]
-    ground_code = next(p.GetNetCode() for p in controller.Pads() if p.GetNetname() == "GND")
+    ground_codes = {p.GetNetCode() for fp in board.GetFootprints()
+                    if fp.GetReference() in ("MCU1A", "MCU1B")
+                    for p in fp.Pads() if p.GetNetname() == "GND"}
+    assert len(ground_codes) == 1, "Controller sockets must share the GND net"
+    ground_code = ground_codes.pop()
     if side == "right":
         battery = next(fp for fp in board.GetFootprints() if fp.GetReference() == "JST1")
         ground_pad = next(p for p in battery.Pads() if p.GetNumber() == "1")
