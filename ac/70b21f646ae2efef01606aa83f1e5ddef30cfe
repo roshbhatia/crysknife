@@ -1,0 +1,74 @@
+scripts/check_drc_draft.py
+  s_df88920dc610de::t_c996ae700e2707 14
+scripts/check_electrical.py
+  s_df88920dc610de::t_c996ae700e2707 20-21,68,73,82
+scripts/generate_case.py
+  s_df88920dc610de::t_2a72640c802e24 71,83,85,93-94,96-100
+  s_df88920dc610de::t_c996ae700e2707 101
+  s_df88920dc610de::t_7d5e876e9f4ba5 52,54,56,59,69-70,72-82
+.github/workflows/pcb.yml
+  s_df88920dc610de::t_6a3dd9a43d8829 32,42,57-63,74-78,90
+ergogen/layout.yaml
+  s_df88920dc610de::t_c996ae700e2707 7-8
+firmware/boards/shields/fridakeeb/Kconfig.defconfig
+  s_df88920dc610de::t_c996ae700e2707 11
+scripts/check_tscircuit_source.py
+  s_df88920dc610de::t_c996ae700e2707 19
+manufacturing/parts.json
+  s_df88920dc610de::t_2a72640c802e24 74
+  s_df88920dc610de::t_c996ae700e2707 75
+scripts/generate_schematic.py
+  s_df88920dc610de::t_748d55039cb6cc 1-71,73-76,78-92,94-111
+  s_df88920dc610de::t_6a3dd9a43d8829 72,77,93,112-113
+case/sandwich.scad
+  s_df88920dc610de::t_2a72640c802e24 5,9,30,124
+  s_df88920dc610de::t_7d5e876e9f4ba5 16
+assets/LICENSE.ibm-plex-mono
+  s_df88920dc610de::t_c40e8d245c9269 1-93
+scripts/check_schematic.py
+  s_df88920dc610de::t_6a3dd9a43d8829 1-26
+firmware/config/fridakeeb.keymap
+  s_df88920dc610de::t_c996ae700e2707 27
+README.md
+  s_df88920dc610de::t_5f129feef134fb 1,3,5,7,9,11-12,15-23,27-108
+THIRD_PARTY.md
+  s_df88920dc610de::t_5f129feef134fb 17,23-26
+scripts/add_artwork.py
+  s_df88920dc610de::t_c996ae700e2707 125,168-187,221,223,225,227-229,233,258
+manufacturing/README.md
+  s_df88920dc610de::t_5f129feef134fb 15,58-63,72-73,82-87,95
+manufacturing/battery.json
+  s_df88920dc610de::t_2a72640c802e24 1-26
+scripts/generate_assembly.py
+  s_df88920dc610de::t_c996ae700e2707 34
+scripts/check_placement.py
+  s_df88920dc610de::t_c996ae700e2707 20,73
+scripts/check_tscircuit.py
+  s_df88920dc610de::t_c996ae700e2707 22
+scripts/split_preview.py
+  s_df88920dc610de::t_c996ae700e2707 24
+manufacturing/header-fit.json
+  s_df88920dc610de::t_977480d1c70790 1-29
+manufacturing/physical-tests.md
+  s_df88920dc610de::t_f3637454b41eed 1-48
+manufacturing/prototype-results.json
+  s_df88920dc610de::t_971edde4eb6ff7 1-12
+manufacturing/supplier-review.md
+  s_df88920dc610de::t_f45551967e2ec9 1-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ac70b21f646ae2efef01606aa83f1e5ddef30cfe",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
