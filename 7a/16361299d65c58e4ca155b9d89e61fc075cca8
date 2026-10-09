@@ -1,0 +1,23 @@
+scripts/fill_ground.py
+  s_df88920dc610de::t_1f9b7d33cae7d0 27-31,64-66,83
+README.md
+  s_df88920dc610de::t_a4d5ee16899ca1 111
+manufacturing/README.md
+  s_df88920dc610de::t_738249d13da67f 37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7a16361299d65c58e4ca155b9d89e61fc075cca8",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
