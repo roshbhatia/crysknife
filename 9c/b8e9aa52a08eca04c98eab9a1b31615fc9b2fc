@@ -1,0 +1,238 @@
+manufacturing/jlcpcb/readiness.json
+  s_df88920dc610de::t_a6e3278eb2246a 11-39
+.github/workflows/pcb.yml
+  s_df88920dc610de::t_b6ce8b2ce17ba2 12-14,38,86,96-99
+scripts/save_previews.py
+  s_df88920dc610de::t_3c51488f8fb19a 20
+scripts/save_outputs.py
+  s_df88920dc610de::t_b6ce8b2ce17ba2 60
+  s_df88920dc610de::t_549f3622bf4978 51-54
+  s_df88920dc610de::t_a6e3278eb2246a 43
+  s_df88920dc610de::t_654fa83ff4682a 1-42,44-50,55-59,61-64
+manufacturing/sendcutsend/README.md
+  s_df88920dc610de::t_0d300cc718590d 1-40
+out/firmware/validation.json
+  s_df88920dc610de::t_0d300cc718590d 1-11
+manufacturing/parts.json
+  s_df88920dc610de::t_549f3622bf4978 75
+scripts/generate_case.py
+  s_df88920dc610de::t_d08a5eb3ca625f 10,28,88,92-98,103,106-114,116-118,126,164,171,173
+  s_df88920dc610de::t_b6ce8b2ce17ba2 195-201
+  s_df88920dc610de::t_3c51488f8fb19a 27,46,99-102,115,125,180-188,191-194
+  s_df88920dc610de::t_654fa83ff4682a 105,161
+manufacturing/supplier-review.md
+  s_df88920dc610de::t_0d300cc718590d 1,3,5-7,9
+README.md
+  s_df88920dc610de::t_549f3622bf4978 32
+  s_df88920dc610de::t_0d300cc718590d 38,85-88,90-97,120-125
+case/parameters.scad
+  s_df88920dc610de::t_3c51488f8fb19a 4-10
+  s_df88920dc610de::t_d08a5eb3ca625f 1-2,11-16
+manufacturing/jlcpcb/README.md
+  s_df88920dc610de::t_0d300cc718590d 1-29
+out/firmware/README.md
+  s_df88920dc610de::t_549f3622bf4978 1-13
+case/sandwich.scad
+  s_df88920dc610de::t_3c51488f8fb19a 17,91-92,98-101
+  s_df88920dc610de::t_d08a5eb3ca625f 19-25,29-30,32-33,35-44,47-48,50-51,65,69,84-88,95-96,103
+manufacturing/physical-tests.md
+  s_df88920dc610de::t_0d300cc718590d 46
+.gitignore
+  s_df88920dc610de::t_b6ce8b2ce17ba2 6-8
+  s_df88920dc610de::t_0d300cc718590d 9
+out/README.md
+  s_df88920dc610de::t_0d300cc718590d 1-15
+tscircuit/README.md
+  s_df88920dc610de::t_0d300cc718590d 102-104
+  s_df88920dc610de::t_549f3622bf4978 101
+scripts/check_case_models.py
+  s_df88920dc610de::t_9d3008a0fc7ecc 1-35
+THIRD_PARTY.md
+  s_df88920dc610de::t_6f4fe72ff69180 16-17
+case/geometry.scad
+  s_df88920dc610de::t_5e19ae7b9ff2f9 1-2
+manufacturing/jlcpcb/DO-NOT-ORDER.txt
+  s_df88920dc610de::t_b08c141654889e 1
+manufacturing/jlcpcb/left-bom.csv
+  s_df88920dc610de::t_56f5db80cc19d1 1-7
+manufacturing/jlcpcb/left-cpl.csv
+  s_df88920dc610de::t_265fa8ae6ce6f0 1-48
+manufacturing/jlcpcb/right-bom.csv
+  s_df88920dc610de::t_07a72dd55447ee 1-7
+manufacturing/jlcpcb/right-cpl.csv
+  s_df88920dc610de::t_8658849888587e 1-48
+manufacturing/sendcutsend/DO-NOT-ORDER.txt
+  s_df88920dc610de::t_b2b73aedef147c 1
+manufacturing/sendcutsend/left-bend-lines.svg
+  s_df88920dc610de::t_46971c1bc4c907 1-4
+manufacturing/sendcutsend/left-bends.json
+  s_df88920dc610de::t_8e29f3db23ebb0 1-35
+manufacturing/sendcutsend/left-bottom-bent.dxf
+  s_df88920dc610de::t_be3f887187a2f6 1-5382
+manufacturing/sendcutsend/left-damping.dxf
+  s_df88920dc610de::t_54e787d7429d2c 1-5278
+manufacturing/sendcutsend/left-plate.dxf
+  s_df88920dc610de::t_2a2dd7a0b52570 1-5986
+manufacturing/sendcutsend/mechanical-checks.json
+  s_df88920dc610de::t_da2f05cf8bf174 1-236
+manufacturing/sendcutsend/right-bend-lines.svg
+  s_df88920dc610de::t_99ef28de4132bc 1-4
+manufacturing/sendcutsend/right-bends.json
+  s_df88920dc610de::t_ae0002818e0ce8 1-35
+manufacturing/sendcutsend/right-bottom-bent.dxf
+  s_df88920dc610de::t_7b069df83f5952 1-5382
+manufacturing/sendcutsend/right-damping.dxf
+  s_df88920dc610de::t_69ca069fc3b863 1-5278
+manufacturing/sendcutsend/right-plate.dxf
+  s_df88920dc610de::t_d52f327e8b3f69 1-5986
+manufacturing/sendcutsend/switch-fit-coupon.dxf
+  s_df88920dc610de::t_0e595688aa8fde 1-262
+manufacturing/sendcutsend/switch-fit-coupon.svg
+  s_df88920dc610de::t_66f59aa5301a60 1-12
+out/kicad/fp-lib-table
+  s_df88920dc610de::t_0dd8607e1c2cd2 1
+out/kicad/fridakeys.kicad_sym
+  s_df88920dc610de::t_8932a29a8a7df3 1
+out/kicad/fridakeys.pretty/D1.kicad_mod
+  s_df88920dc610de::t_6db0a250ca806c 1-22
+out/kicad/fridakeys.pretty/D10.kicad_mod
+  s_df88920dc610de::t_174f589b95aad4 1-22
+out/kicad/fridakeys.pretty/D11.kicad_mod
+  s_df88920dc610de::t_8d5d9725a0340e 1-22
+out/kicad/fridakeys.pretty/D12.kicad_mod
+  s_df88920dc610de::t_cbb963f877cd42 1-22
+out/kicad/fridakeys.pretty/D13.kicad_mod
+  s_df88920dc610de::t_5a90fdb8aa2431 1-22
+out/kicad/fridakeys.pretty/D14.kicad_mod
+  s_df88920dc610de::t_b834fc8a2b5ffa 1-22
+out/kicad/fridakeys.pretty/D15.kicad_mod
+  s_df88920dc610de::t_2a51d6185ca5a2 1-22
+out/kicad/fridakeys.pretty/D16.kicad_mod
+  s_df88920dc610de::t_cd6c8d264f9536 1-22
+out/kicad/fridakeys.pretty/D17.kicad_mod
+  s_df88920dc610de::t_cf0c67fd3dbd90 1-22
+out/kicad/fridakeys.pretty/D18.kicad_mod
+  s_df88920dc610de::t_afc656815d58af 1-22
+out/kicad/fridakeys.pretty/D19.kicad_mod
+  s_df88920dc610de::t_db0795747ff216 1-22
+out/kicad/fridakeys.pretty/D2.kicad_mod
+  s_df88920dc610de::t_b2cc362adbbd40 1-22
+out/kicad/fridakeys.pretty/D20.kicad_mod
+  s_df88920dc610de::t_86280a5ae48e42 1-22
+out/kicad/fridakeys.pretty/D21.kicad_mod
+  s_df88920dc610de::t_b9e676cc514f36 1-22
+out/kicad/fridakeys.pretty/D3.kicad_mod
+  s_df88920dc610de::t_bb29a2c523cbf1 1-22
+out/kicad/fridakeys.pretty/D4.kicad_mod
+  s_df88920dc610de::t_ecef1c905ef42a 1-22
+out/kicad/fridakeys.pretty/D5.kicad_mod
+  s_df88920dc610de::t_92a4ac44a817c2 1-22
+out/kicad/fridakeys.pretty/D6.kicad_mod
+  s_df88920dc610de::t_47b0d3276dfca6 1-22
+out/kicad/fridakeys.pretty/D7.kicad_mod
+  s_df88920dc610de::t_aa7642ebeaa147 1-22
+out/kicad/fridakeys.pretty/D8.kicad_mod
+  s_df88920dc610de::t_8ec21befae6c5f 1-22
+out/kicad/fridakeys.pretty/D9.kicad_mod
+  s_df88920dc610de::t_e2d09f5e83e511 1-22
+out/kicad/fridakeys.pretty/JST1.kicad_mod
+  s_df88920dc610de::t_6330a12054d05a 1-40
+out/kicad/fridakeys.pretty/MCU1A.kicad_mod
+  s_df88920dc610de::t_b352ad244343f8 1-23
+out/kicad/fridakeys.pretty/MCU1B.kicad_mod
+  s_df88920dc610de::t_41ae1ee9a86073 1-23
+out/kicad/fridakeys.pretty/PWR1.kicad_mod
+  s_df88920dc610de::t_ec35ff25b95400 1-44
+out/kicad/fridakeys.pretty/RST1.kicad_mod
+  s_df88920dc610de::t_b34fbfae65bdb7 1-36
+out/kicad/fridakeys.pretty/S1.kicad_mod
+  s_df88920dc610de::t_db16a6ddd30354 1-62
+out/kicad/fridakeys.pretty/S10.kicad_mod
+  s_df88920dc610de::t_cd774537b66d2c 1-62
+out/kicad/fridakeys.pretty/S11.kicad_mod
+  s_df88920dc610de::t_abba3b322019ce 1-62
+out/kicad/fridakeys.pretty/S12.kicad_mod
+  s_df88920dc610de::t_8dc703736331a6 1-62
+out/kicad/fridakeys.pretty/S13.kicad_mod
+  s_df88920dc610de::t_ac1690a99ac665 1-62
+out/kicad/fridakeys.pretty/S14.kicad_mod
+  s_df88920dc610de::t_70a5d5f9594daf 1-62
+out/kicad/fridakeys.pretty/S15.kicad_mod
+  s_df88920dc610de::t_ca2758f78eacfe 1-62
+out/kicad/fridakeys.pretty/S16.kicad_mod
+  s_df88920dc610de::t_e2187f37c0710e 1-62
+out/kicad/fridakeys.pretty/S17.kicad_mod
+  s_df88920dc610de::t_9f5d2e66ef310c 1-62
+out/kicad/fridakeys.pretty/S18.kicad_mod
+  s_df88920dc610de::t_790d4eea6113da 1-62
+out/kicad/fridakeys.pretty/S19.kicad_mod
+  s_df88920dc610de::t_f5c0e71a6d0085 1-62
+out/kicad/fridakeys.pretty/S2.kicad_mod
+  s_df88920dc610de::t_f570866a096945 1-62
+out/kicad/fridakeys.pretty/S20.kicad_mod
+  s_df88920dc610de::t_fc6dcbb6002b8d 1-62
+out/kicad/fridakeys.pretty/S21.kicad_mod
+  s_df88920dc610de::t_bdbd6c98c284f6 1-62
+out/kicad/fridakeys.pretty/S3.kicad_mod
+  s_df88920dc610de::t_5f9ff4bfc7f28c 1-62
+out/kicad/fridakeys.pretty/S4.kicad_mod
+  s_df88920dc610de::t_28ed53faa6da52 1-62
+out/kicad/fridakeys.pretty/S5.kicad_mod
+  s_df88920dc610de::t_5cfcfbeb18f6ac 1-62
+out/kicad/fridakeys.pretty/S6.kicad_mod
+  s_df88920dc610de::t_bca0ca2dd33fe8 1-62
+out/kicad/fridakeys.pretty/S7.kicad_mod
+  s_df88920dc610de::t_47b14183f15cb2 1-62
+out/kicad/fridakeys.pretty/S8.kicad_mod
+  s_df88920dc610de::t_b4a879a5a685ac 1-62
+out/kicad/fridakeys.pretty/S9.kicad_mod
+  s_df88920dc610de::t_f10a62ad30e989 1-62
+out/kicad/fridakeys_left.kicad_pro
+  s_df88920dc610de::t_e684effbffe534 1
+out/kicad/fridakeys_left.kicad_sch
+  s_df88920dc610de::t_aade1ff6325dcb 1
+out/kicad/fridakeys_right.kicad_pcb
+  s_df88920dc610de::t_b6f0b16f9c4425 1-139165
+out/kicad/fridakeys_right.kicad_pro
+  s_df88920dc610de::t_842c6d3c3e8a86 1
+out/kicad/fridakeys_right.kicad_sch
+  s_df88920dc610de::t_e46e161e4810a9 1
+out/kicad/left.net
+  s_df88920dc610de::t_44cba5bb32c6d9 1-2055
+out/kicad/right.net
+  s_df88920dc610de::t_56449216678406 1-2055
+out/kicad/sym-lib-table
+  s_df88920dc610de::t_ed854bb89a4583 1
+out/validation.json
+  s_df88920dc610de::t_04d12caa6031a0 1-21
+scripts/generate_tscircuit.py
+  s_df88920dc610de::t_e9f07b7d58a63d 115-116,118-119,171,173-174
+tscircuit/generated/left-board.circuit.tsx
+  s_df88920dc610de::t_78b5e4ac7ad726 1-271
+tscircuit/generated/left-placement.circuit.tsx
+  s_df88920dc610de::t_2ccc106a3910bf 1-2
+tscircuit/generated/left-routed.circuit.tsx
+  s_df88920dc610de::t_072461a1f70918 1-2
+tscircuit/generated/right-board.circuit.tsx
+  s_df88920dc610de::t_86123d9471c7f6 1-271
+tscircuit/generated/right-placement.circuit.tsx
+  s_df88920dc610de::t_475efebca3773d 1-2
+tscircuit/generated/right-routed.circuit.tsx
+  s_df88920dc610de::t_e21a082a7c230b 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9cb8e9aa52a08eca04c98eab9a1b31615fc9b2fc",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
