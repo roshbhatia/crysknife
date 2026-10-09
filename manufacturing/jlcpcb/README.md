@@ -5,7 +5,7 @@ Use two separate board designs. Do not mirror or combine their assembly files.
 Select 2-layer, 1.6 mm FR4, white solder mask, and black silkscreen on both faces.
 
 Each carrier has 47 factory parts: 21 MX sockets, 21 diodes, two controller receiver strips, power/reset switches, and a battery connector.
-This requires two-face SMT and through-hole assembly.
+Use [Standard PCB Assembly](https://jlcpcb.com/help/article/pcb-assembly-faqs) for two-face SMT and through-hole assembly.
 The nice!nano modules, batteries, and matching male headers are separate purchases.
 
 The CSV positions use footprint origins. Pickup offsets and rotations still need assembler review.
@@ -16,6 +16,7 @@ The [part manifest](../parts.json) contains exact parts and catalog evidence.
 The [header record](../header-fit.json) covers drawing fit; actual insertion and controller height remain untested.
 
 Request acceptance of the 0.2 mm black artwork features without removing the knife illustration or the title.
+Confirm tooling and fiducial placement with JLCPCB. Keep the four finished M2 mounting holes unchanged.
 Request bare-board electrical testing, AOI, and assembly inspection.
 Confirm stock, MOQ, consignment, pickup positions, rotations, and any substitutions for both halves.
 

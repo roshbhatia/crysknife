@@ -46,8 +46,8 @@ for side in ("left", "right"):
     board = parse(text)
     middle_home = next(fp for fp in children(board, "footprint")
                        if any(p[1:3] == ["Reference", "S11"] for p in children(fp, "property")))
-    center = float(child(middle_home, "at")[1]) + (-16 if side == "left" else 16)
-    image_center_y = float(child(middle_home, "at")[2]) + 18.5
+    center = float(child(middle_home, "at")[1]) + (6 if side == "left" else -6)
+    image_center_y = float(child(middle_home, "at")[2]) + (16.5 if side == "left" else 14.5)
     keepouts = []
     for footprint in children(board, "footprint"):
         at = child(footprint, "at")
@@ -256,24 +256,16 @@ for side in ("left", "right"):
                       for y in range(sampled.height) for x in range(sampled.width)
                       if sampled.getpixel((x, y)) >= 100]
     blade_samples = [(x, y) for x, y in figure_samples if x > -0.05 and -0.2 < y < 0.32]
-    mirror = -1 if side == "right" else 1
+    mirror = -1 if side == "left" else 1
     hero_width = 88
-    candidates = []
-    for dx in range(-22, 23, 2):
-        for dy in range(-18, 19, 2):
-            cx, cy = center+dx, image_center_y+dy
-            blade = sum(art_safe.contains(Point(cx+mirror*x*hero_width, cy+y*hero_width))
-                        for x, y in blade_samples)/len(blade_samples)
-            figure = sum(art_safe.contains(Point(cx+mirror*x*hero_width, cy+y*hero_width))
-                         for x, y in figure_samples)/len(figure_samples)
-            if figure >= 0.64:
-                candidates.append((figure*0.8+blade*0.2, figure, blade, cx, cy))
-    assert candidates, (side, "No sufficiently visible knife placement")
-    _, figure_visibility, blade_visibility, center, image_center_y = max(candidates)
+    blade_visibility = sum(art_safe.contains(Point(center+mirror*x*hero_width, image_center_y+y*hero_width))
+                           for x, y in blade_samples)/len(blade_samples)
+    figure_visibility = sum(art_safe.contains(Point(center+mirror*x*hero_width, image_center_y+y*hero_width))
+                            for x, y in figure_samples)/len(figure_samples)
     pixels = []
     def stamp(cx, cy, artwork_width, dot_pitch):
         artwork_image = artwork_alpha.copy()
-        if side == "right":
+        if side == "left":
             artwork_image = artwork_image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
         artwork_image = artwork_image.resize((round(artwork_width/dot_pitch),
             round(artwork_width/dot_pitch*artwork_image.height/artwork_image.width)), Image.Resampling.BOX)
