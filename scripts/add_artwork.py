@@ -321,15 +321,22 @@ for side in ("left", "right"):
         lettering(label, cx, cy, max_width, max_height)
     for label, x, y, width, height, angle in original_labels:
         lettering(label, x, y, width, height, angle)
+    pin_label_height = next(height for label, x, y, width, height, angle in original_labels if label == "RAW")
     for name, cx, cy, tx, ty in arrows:
-        lettering(name, cx, cy, 12, 3.0)
+        max_width = len(name)*pin_label_height*0.8
+        lettering(name, cx, cy, max_width, pin_label_height)
         dx, dy = tx-cx, ty-cy
         length = math.hypot(dx, dy)
         ux, uy = dx/length, dy/length
-        start_distance = 4.5 if abs(ux) > 0.8 else 1.4
+        samples = glyph_pixels(name, max_width, pin_label_height)
+        half_width = max(abs(x) for x, y in samples)+minimum_feature/2
+        half_height = max(abs(y) for x, y in samples)+minimum_feature/2
+        start_distance = min(half_width/abs(ux) if ux else math.inf,
+                             half_height/abs(uy) if uy else math.inf)+0.35
+        head = min(1.1, max(0.2, (length-start_distance)/2))
         start = (cx+ux*start_distance, cy+uy*start_distance)
-        for a, b in [(start, (tx, ty)), ((tx, ty), (tx-ux*1.1-uy*0.7, ty-uy*1.1+ux*0.7)),
-                     ((tx, ty), (tx-ux*1.1+uy*0.7, ty-uy*1.1-ux*0.7))]:
+        for a, b in [(start, (tx, ty)), ((tx, ty), (tx-ux*head-uy*head*0.64, ty-uy*head+ux*head*0.64)),
+                     ((tx, ty), (tx-ux*head+uy*head*0.64, ty-uy*head-ux*head*0.64))]:
             steps = math.ceil(math.dist(a, b)/0.1)
             for step in range(steps+1):
                 x, y = [a[i]+(b[i]-a[i])*step/steps for i in (0, 1)]
