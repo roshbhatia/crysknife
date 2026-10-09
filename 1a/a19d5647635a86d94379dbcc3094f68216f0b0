@@ -1,0 +1,27 @@
+tscircuit/README.md
+  s_df88920dc610de::t_9a1bb8b44e4a68 68-69
+  s_df88920dc610de::t_a7534edfa86ff5 66-67
+README.md
+  s_df88920dc610de::t_a7534edfa86ff5 105
+scripts/merge_tscircuit_routes.py
+  s_df88920dc610de::t_18406ec0a51eed 66-84,110,115-142
+  s_df88920dc610de::t_696f73cd6615fe 86-91,99,101,103,106-109,111,113-114
+scripts/fill_ground.py
+  s_df88920dc610de::t_15e9ccf418eabc 51-53,74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1aa19d5647635a86d94379dbcc3094f68216f0b0",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
