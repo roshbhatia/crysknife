@@ -25,7 +25,30 @@
     "pcb_wall_clearance_mm": 0.6,
     "under_pcb_clearance_mm": 16.0,
     "m2_holes_open": true,
-    "stl_sha256": "9d238a2c9f5a288715ed19cc7f8e7b24118f51dd1ec6ef752d88c6f0422f50a3"
+    "stl_sha256": "9176c18c42524b0e8f0a12baf6a274f9212569d76620ce5906e84d893425cd57"
+  },
+  "left-sleeve": {
+    "triangles": 1332,
+    "connected": true,
+    "closed": true,
+    "euler_characteristic": 0,
+    "dimensions_mm": [
+      155.10672,
+      114.223296,
+      27.774999
+    ],
+    "tray_clearance_mm": 0.5,
+    "wall_thickness_mm": 2.0,
+    "bottom_thickness_mm": 4.1,
+    "bottom_closed": true,
+    "screw_recess_diameter_mm": 8.0,
+    "screw_recess_depth_mm": 2.5,
+    "maximum_screw_head_and_washer_height_mm": 2.5,
+    "grip_band_interference_mm": 0.2,
+    "screw_heads_accessible_after_sleeve_removal": true,
+    "physical_fit_verified": false,
+    "m2_holes_open": false,
+    "stl_sha256": "3ae964721cccbc3a7ad4bf874f65bc840b514c0716ff672abf6740bec0f2a343"
   },
   "right-plate": {
     "triangles": 1352,
@@ -53,6 +76,29 @@
     "pcb_wall_clearance_mm": 0.6,
     "under_pcb_clearance_mm": 16.0,
     "m2_holes_open": true,
-    "stl_sha256": "bbedcce9dc4ef437a8b886110f8509b17cf127bf21a5921b7d1cc6ff1a0be07d"
+    "stl_sha256": "dcdca6c319d66f74eee0f37914ed92b97fc971b8a3e237828bc9be8ef057b1e4"
+  },
+  "right-sleeve": {
+    "triangles": 1332,
+    "connected": true,
+    "closed": true,
+    "euler_characteristic": 0,
+    "dimensions_mm": [
+      155.10672,
+      114.223296,
+      27.774999
+    ],
+    "tray_clearance_mm": 0.5,
+    "wall_thickness_mm": 2.0,
+    "bottom_thickness_mm": 4.1,
+    "bottom_closed": true,
+    "screw_recess_diameter_mm": 8.0,
+    "screw_recess_depth_mm": 2.5,
+    "maximum_screw_head_and_washer_height_mm": 2.5,
+    "grip_band_interference_mm": 0.2,
+    "screw_heads_accessible_after_sleeve_removal": true,
+    "physical_fit_verified": false,
+    "m2_holes_open": false,
+    "stl_sha256": "2af5821ef150c510b7a12cb880553da485a651d801da4ed9c7a67042c699763f"
   }
 }

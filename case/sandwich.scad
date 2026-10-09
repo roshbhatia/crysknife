@@ -41,6 +41,8 @@ module spacer(d, h, faces = 48) {
     }
 }
 module assembly() {
+    if (part == "printed-assembly") color([0.65,0.8,0.9,0.6])
+        import(str("../manufacturing/jlc3dp/",side,"-sleeve.stl"));
     if (part == "printed-assembly") color([0.8,0.92,1,0.3])
         import(str("../manufacturing/jlc3dp/",side,"-tray.stl"));
     else color([0.12,0.12,0.12]) bottom();
