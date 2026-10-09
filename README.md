@@ -19,7 +19,7 @@ The top plate covers the controllers. USB, power, and reset remain accessible fr
 - [Layout](ergogen/layout.yaml): key spacing and column stagger.
 - [PCB models](tscircuit/README.md#edit-the-models): open either half in the tscircuit editor.
 - [Case model](case/sandwich.scad): open in OpenSCAD; dimensions live in [parameters.scad](case/parameters.scad).
-- [Artwork](assets/knife.svg): the original knife illustration. Poems and component labels use Kingjola. The stepped signature uses IBM Plex Mono Bold.
+- [Artwork](assets/knife.svg): the original knife illustration. All PCB text uses Ioskeley Mono Bold.
 
 [previews/](previews/) contains images of both PCB faces and the case.
 [out/](out/README.md) contains checked KiCad projects, schematics, firmware, and 3D models.

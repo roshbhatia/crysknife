@@ -25,8 +25,16 @@ reports = []
 physical_checks = {}
 parameters = {name: float(value) for name, value in re.findall(
     r'^(\w+) = (-?[\d.]+);$', (ROOT/'case/parameters.scad').read_text(), re.M)}
-under_pcb_clearance = parameters['standoff_height'] + parameters['standoff_shim'] - parameters['plate_to_pcb_gap'] - parameters['pcb_thickness']
+under_pcb_clearance = parameters['standoff_height'] + parameters['standoff_shim']
 assert under_pcb_clearance >= 13.9 + parameters["damping_thickness"]
+assert abs(parameters["plate_to_pcb_gap"]-parameters["upper_spacer_height"]-parameters["upper_spacer_shim"]) < 1e-6
+thread_engagement = {}
+for name, stack in (("top", parameters["plate_thickness"]+parameters["screw_head_washer"]+parameters["plate_to_pcb_gap"]+parameters["pcb_thickness"]+parameters["standoff_shim"]),
+                    ("bottom", parameters["bottom_thickness"]+parameters["screw_head_washer"])):
+    engagement = parameters[f"{name}_screw_length"]-stack
+    thread_engagement[name] = engagement
+    assert 2 <= engagement <= parameters["standoff_thread_depth"]-0.5, (name, "Unsafe screw engagement", engagement)
+hardware_radius = max(parameters["standoff_diameter"], parameters["washer_diameter"])/2
 expansion = parameters['outline_expansion']
 for side in ("left", "right"):
     board = parse((ROOT / f"build/pcb/crysknife_{side}.kicad_pcb").read_text())
@@ -66,11 +74,11 @@ for side in ("left", "right"):
     assert len(mounts) == len(bolts) == 4
     mount_diameter = mounts[0]["diameter"]
     assert all(hole["diameter"] == mount_diameter for hole in mounts)
-    assert mount_diameter >= parameters["standoff_diameter"]+0.5
+    assert abs(mount_diameter-parameters["bolt_diameter"]) < 1e-6, "PCB and plates must use matching M2 screw holes"
     plate_material = shape.buffer(expansion, join_style="mitre").difference(unary_union(cutouts))
     bolt_margin = parameters["bolt_diameter"]/2 + 1.5*parameters["plate_thickness"]
     for p in bolts:
-        assert shape.covers(p.buffer(mount_diameter/2+0.5)), "Mounting hole crosses PCB edge"
+        assert shape.covers(p.buffer(hardware_radius+0.5)), "Mounting hole crosses PCB edge"
         assert plate_material.covers(p.buffer(bolt_margin)), "Insufficient material around plate screw"
     keycaps = [affinity.translate(affinity.rotate(box(-9,-9,9,9), a), x,y) for x,y,a in keys]
     minimum_keycap_gap = min(a.distance(b) for i,a in enumerate(keycaps) for b in keycaps[i+1:])
@@ -83,7 +91,7 @@ for side in ("left", "right"):
             bx, by = desired_battery_center[0]+dx, desired_battery_center[1]+dy
             envelope = box(bx-32, by-20, bx+32, by+20)
             if (shape.buffer(-2).covers(envelope) and envelope.distance(rf_exclusion) >= 10
-                    and all(envelope.distance(p) >= parameters["standoff_diameter"]/2+0.5 for p in bolts)):
+                    and all(envelope.distance(p) >= hardware_radius+0.5 for p in bolts)):
                 battery_candidates.append((dx*dx+dy*dy, bx, by))
     assert battery_candidates, "No protected large-battery envelope fits clear of RF"
     _, bx, by = min(battery_candidates)
@@ -103,6 +111,9 @@ for side in ("left", "right"):
                     "pcb_to_plate_gap_mm": parameters["plate_to_pcb_gap"], "plate_thickness_mm": parameters["plate_thickness"],
                     "under_pcb_clearance_mm": under_pcb_clearance, "bottom_thickness_mm": parameters["bottom_thickness"],
                     "standoff_height_mm": parameters["standoff_height"], "standoff_shim_mm": parameters["standoff_shim"],
+                    "upper_spacer_mm": parameters["upper_spacer_height"], "upper_spacer_shim_mm": parameters["upper_spacer_shim"],
+                    "top_screw_mm": parameters["top_screw_length"], "bottom_screw_mm": parameters["bottom_screw_length"],
+                    "nominal_thread_engagement_mm": thread_engagement,
                     "damping_thickness_mm": parameters["damping_thickness"], "bends": False,
                     "controller": {"mount": "face up beneath carrier", "covered_by_plate": True,
                                    "reserved_gap_mm": parameters["controller_gap"], "height_requires_samples": True},

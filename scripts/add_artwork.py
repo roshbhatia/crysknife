@@ -8,9 +8,9 @@ from kicad_sexp import parse, children, child
 from generate_tscircuit import edge_points
 
 from PIL import Image, ImageDraw, ImageFont
-from shapely.geometry import LineString, MultiPoint, Point, Polygon, box
+from shapely.geometry import LineString, Point, Polygon, box
 from shapely.ops import unary_union
-from shapely.affinity import rotate, scale, translate
+from shapely.affinity import rotate
 from shapely.prepared import prep
 
 
@@ -24,30 +24,14 @@ minimum_feature = 0.2
 artwork_alpha = Image.open(raster).convert("RGBA").getchannel("A")
 artwork_alpha = artwork_alpha.crop(artwork_alpha.getbbox())
 
-font = ImageFont.truetype(str(root / "assets/kingjola.ttf"), 512)
+font = ImageFont.truetype(str(root / "assets/ioskeley-mono-bold.ttf"), 512)
 
 
-branding_font = ImageFont.truetype(str(root / "assets/ibm-plex-mono-bold.ttf"), 512)
-
-
-def glyph_pixels(label, max_width, max_height, typeface=font):
-    parts = []
-    pen = 0
-    for character in label:
-        selected = typeface
-        if not character.isspace() and typeface.getmask(character).getbbox() is None:
-            selected = branding_font
-        bounds = selected.getbbox(character)
-        parts.append((character, selected, pen, bounds))
-        pen += typeface.getlength(character)
-    left = min(pen+bounds[0] for _, _, pen, bounds in parts)
-    top = min(bounds[1] for _, _, _, bounds in parts)
-    right = max(pen+bounds[2] for _, _, pen, bounds in parts)
-    bottom = max(bounds[3] for _, _, _, bounds in parts)
-    mask = Image.new("L", (math.ceil(right-left), bottom-top))
-    for character, selected, pen, _ in parts:
-        ImageDraw.Draw(mask).text((pen-left, -top), character, font=selected, fill=255)
-    assert mask.getbbox(), (label, "No printable lettering")
+def glyph_pixels(label, max_width, max_height):
+    assert all(character.isspace() or font.getmask(character).getbbox() for character in label), label
+    bounds = font.getbbox(label)
+    mask = Image.new("L", (bounds[2]-bounds[0], bounds[3]-bounds[1]))
+    ImageDraw.Draw(mask).text((-bounds[0], -bounds[1]), label, font=font, fill=255)
     mask = mask.crop(mask.getbbox())
     grid = minimum_feature
     mask.thumbnail((round(max_width/grid), round(max_height/grid)), Image.Resampling.LANCZOS)
@@ -161,11 +145,21 @@ for side in ("left", "right"):
         return clear_silk(x, y, grid/math.sqrt(2)) and inside(x, y) and edge_clearance(x, y) > grid/math.sqrt(2)+0.4 and all(
             math.hypot(x-px, y-py) > radius+grid/math.sqrt(2) for px, py, radius in keepouts)
 
-    title_center = 110 if side == "left" else 225
-    legends = [("crys.knife", title_center, 108.8, 32, 2.0),
-               ("v1.0.0-alpha", title_center+2, 110.9, 30, 1.6),
-               ("by @roshbhatia", title_center+4, 112.7, 26, 1.4)]
-    lettering_boxes = [(cx,cy,width+2,height+2) for _,cx,cy,width,height in legends]
+    legends = []
+    for label, cy, height in [("crys.knife", 108.6, 2.0),
+                              ("v1.0.0-alpha", 110.8, 1.6),
+                              ("by @roshbhatia", 112.7, 1.4)]:
+        samples = glyph_pixels(label, 32, height)
+        left = min(x for x, y in samples)-minimum_feature/2
+        right = max(x for x, y in samples)+minimum_feature/2
+        cx = min_x+1.6-left if side == "left" else max_x-1.6-right
+        legends.append((label, cx, cy, 32, height))
+    lettering_boxes = []
+    for label, cx, cy, width, height in legends:
+        samples = glyph_pixels(label, width, height)
+        actual_width = max(x for x, y in samples)-min(x for x, y in samples)+minimum_feature
+        actual_height = max(y for x, y in samples)-min(y for x, y in samples)+minimum_feature
+        lettering_boxes.append((cx, cy, actual_width+1, actual_height+1))
     original_labels = []
     for footprint in children(board, "footprint"):
         placement = child(footprint, "at")
@@ -208,9 +202,16 @@ for side in ("left", "right"):
         lettering_boxes.append((x+offset[0], y+offset[1], 12, 4))
         lettering_boxes.append((x+(offset[0]+target_offset[0])/2, y+(offset[1]+target_offset[1])/2,
                                 abs(offset[0]-target_offset[0])+1.5, abs(offset[1]-target_offset[1])+1.5))
-    blocked = [Point(x, y).buffer(r+0.22) for x, y, r in keepouts]
-    blocked += [box(x-w/2-0.22, y-h/2-0.22, x+w/2+0.22, y+h/2+0.22)
-                for x, y, w, h in lettering_boxes]
+    fixed_blocked = [Point(x, y).buffer(r+0.22) for x, y, r in keepouts]
+    fixed_blocked += [LineString((a, b)).buffer(clearance+0.22)
+                      for a, b, clearance in silk_segments]
+    fixed_blocked += [box(*bounds).buffer(0.22) for bounds in silk_boxes]
+
+    def artwork_exclusions():
+        return fixed_blocked + [box(x-w/2-0.22, y-h/2-0.22, x+w/2+0.22, y+h/2+0.22)
+                                for x, y, w, h in lettering_boxes]
+
+    blocked = artwork_exclusions()
     for ref, (x, y) in components.items():
         if re.fullmatch(r"S\d+", ref):
             footprint = next(fp for fp in children(board, "footprint")
@@ -218,30 +219,7 @@ for side in ("left", "right"):
             at = child(footprint, "at")
             angle = float(at[3]) if len(at) > 3 else 0
             blocked.append(rotate(box(x-7.5, y-7.5, x+7.5, y+7.5), -angle, origin=(x, y)))
-    blocked += [LineString((a, b)).buffer(clearance+0.22)
-                for a, b, clearance in silk_segments]
-    blocked += [box(*bounds).buffer(0.22) for bounds in silk_boxes]
     safe_polygon = Polygon(outline).buffer(-0.65).difference(unary_union(blocked))
-    safe = prep(safe_polygon)
-    sampled = artwork_alpha.resize((64, round(64*artwork_alpha.height/artwork_alpha.width)), Image.Resampling.BOX)
-    silhouette = MultiPoint([(x/64-0.5, (y-sampled.height/2)/64)
-                             for y in range(sampled.height) for x in range(sampled.width)
-                             if sampled.getpixel((x, y)) >= 50]).convex_hull
-    candidates = []
-    for width in (30, 26, 22, 18, 14):
-        shape = scale(silhouette, xfact=width*(-1 if side == "right" else 1), yfact=width, origin=(0, 0)).buffer(0.3)
-        for cx in range(math.ceil(min_x), math.floor(max_x), 1):
-            for cy in range(math.ceil(min_y), math.floor(max_y), 1):
-                if safe.contains(translate(shape, xoff=cx, yoff=cy)):
-                    distance = (cx-center)**2+(cy-image_center_y-18)**2
-                    candidates.append((width, -distance, cx, cy))
-        if candidates:
-            break
-    assert candidates, (side, "No unobstructed gap for knife")
-    hero_width, _, center, image_center_y = max(candidates)
-    blade_visibility = figure_visibility = 1.0
-    hero_height = hero_width*artwork_alpha.height/artwork_alpha.width
-    lettering_boxes.append((center, image_center_y, hero_width+0.5, hero_height+0.5))
     poem = [
         "Do you wrestle with dreams?",
         "Do you contend with shadows?",
@@ -252,10 +230,9 @@ for side in ("left", "right"):
         "Victim of your folly.",
     ]
     poem_placements = []
-    poem_safe = safe_polygon.difference(box(center-hero_width/2-0.5, image_center_y-hero_height/2-0.5,
-                                            center+hero_width/2+0.5, image_center_y+hero_height/2+0.5))
+    poem_safe = safe_polygon
     for index, line in enumerate(poem):
-        samples = glyph_pixels(line, 46, 4.2)
+        samples = glyph_pixels(line, 38, 1.6)
         width = max(x for x, y in samples)-min(x for x, y in samples)+minimum_feature
         height = max(y for x, y in samples)-min(y for x, y in samples)+minimum_feature
         choices = []
@@ -270,9 +247,29 @@ for side in ("left", "right"):
                     choices.append(((cx-target_x)**2+(cy-target_y)**2, cx, cy, bounds))
         assert choices, (side, "No clear position for poem", line)
         _, cx, cy, bounds = min(choices, key=lambda candidate: candidate[0])
-        poem_placements.append((line, cx, cy, 46, 4.2))
+        poem_placements.append((line, cx, cy, 38, 1.6))
         lettering_boxes.append((cx, cy, width+0.6, height+0.6))
         poem_safe = poem_safe.difference(bounds.buffer(0.7))
+    art_safe = prep(Polygon(outline).buffer(-0.65).difference(unary_union(artwork_exclusions())))
+    sampled = artwork_alpha.resize((40, round(40*artwork_alpha.height/artwork_alpha.width)), Image.Resampling.BOX)
+    figure_samples = [(x/40-0.5, (y-sampled.height/2)/40)
+                      for y in range(sampled.height) for x in range(sampled.width)
+                      if sampled.getpixel((x, y)) >= 100]
+    blade_samples = [(x, y) for x, y in figure_samples if x > -0.05 and -0.2 < y < 0.32]
+    mirror = -1 if side == "right" else 1
+    hero_width = 88
+    candidates = []
+    for dx in range(-22, 23, 2):
+        for dy in range(-18, 19, 2):
+            cx, cy = center+dx, image_center_y+dy
+            blade = sum(art_safe.contains(Point(cx+mirror*x*hero_width, cy+y*hero_width))
+                        for x, y in blade_samples)/len(blade_samples)
+            figure = sum(art_safe.contains(Point(cx+mirror*x*hero_width, cy+y*hero_width))
+                         for x, y in figure_samples)/len(figure_samples)
+            if figure >= 0.64:
+                candidates.append((figure*0.8+blade*0.2, figure, blade, cx, cy))
+    assert candidates, (side, "No sufficiently visible knife placement")
+    _, figure_visibility, blade_visibility, center, image_center_y = max(candidates)
     pixels = []
     def stamp(cx, cy, artwork_width, dot_pitch):
         artwork_image = artwork_alpha.copy()
@@ -298,20 +295,20 @@ for side in ("left", "right"):
                 if any(math.hypot(x-px, y-py) <= clearance+radius for px, py, clearance in keepouts):
                     continue
                 if any(abs(x-bx) < w/2+radius and abs(y-by) < h/2+radius
-                       for bx, by, w, h in lettering_boxes if (bx, by) != (center, image_center_y)):
+                       for bx, by, w, h in lettering_boxes):
                     continue
                 pixels.append((x-size/2, y-size/2, x+size/2, y+size/2))
         expected = sum(alpha >= 100 for alpha in artwork_image.get_flattened_data())
-        assert len(pixels)-before == expected, (side, "Knife graphic was clipped", len(pixels)-before, expected)
+        assert (len(pixels)-before)/expected >= 0.6, (side, "Too little knife graphic is visible", (len(pixels)-before)/expected)
         return len(pixels) > before
 
     assert stamp(center, image_center_y, hero_width, minimum_feature), 'Single knife graphic has no printable pixels'
     stamps = 1
     top_pixels = list(pixels)
     bottom_pixels = list(pixels)
-    def lettering(label, cx, cy, max_width, max_height, rotation=0, typeface=font):
+    def lettering(label, cx, cy, max_width, max_height, rotation=0):
         grid = minimum_feature
-        for lx, ly in glyph_pixels(label, max_width, max_height, typeface):
+        for lx, ly in glyph_pixels(label, max_width, max_height):
             for face, direction in [(top_pixels, 1), (bottom_pixels, -1)]:
                 x = cx+direction*lx*math.cos(rotation)+ly*math.sin(rotation)
                 y = cy-direction*lx*math.sin(rotation)+ly*math.cos(rotation)
@@ -319,7 +316,7 @@ for side in ("left", "right"):
                 face.append((x-grid/2, y-grid/2, x+grid/2, y+grid/2))
 
     for label, cx, cy, max_width, max_height in legends:
-        lettering(label, cx, cy, max_width, max_height, typeface=branding_font)
+        lettering(label, cx, cy, max_width, max_height)
     for label, cx, cy, max_width, max_height in poem_placements:
         lettering(label, cx, cy, max_width, max_height)
     for label, x, y, width, height, angle in original_labels:

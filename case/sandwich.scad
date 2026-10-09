@@ -12,8 +12,9 @@ keys = data[1];
 bolts = data[2];
 controller = data[3];
 battery = data[7];
-plate_z = bottom_thickness + standoff_height + standoff_shim;
+plate_z = bottom_thickness + standoff_height + standoff_shim + pcb_thickness + plate_to_pcb_gap;
 pcb_z = plate_z - plate_to_pcb_gap - pcb_thickness;
+assert(plate_to_pcb_gap == upper_spacer_height + upper_spacer_shim, "Upper spacer height differs from plate gap");
 assert(controller_gap > controller_component_height, "Controller components intersect carrier");
 assert(pcb_z - controller_gap - controller_board_thickness > bottom_thickness + damping_thickness + 0.5, "Controller intersects the floor");
 assert(pcb_z - bottom_thickness >= 13.9 + damping_thickness, "Insufficient battery and component clearance");
@@ -42,6 +43,12 @@ module plate() {
         perimeter(); bolt_holes(); key_holes();
     }
 }
+module spacer(d, h, faces = 48) {
+    difference() {
+        cylinder(d=d,h=h,$fn=faces);
+        translate([0,0,-0.01]) cylinder(d=bolt_diameter,h=h+0.02);
+    }
+}
 module assembly() {
     color([0.12,0.12,0.12]) bottom();
     color([0.1,0.1,0.1]) translate([0,0,bottom_thickness]) linear_extrude(damping_thickness) damping();
@@ -53,9 +60,13 @@ module assembly() {
         cube([9,7,controller_component_height]);
     color([0.8,0.92,1,0.35]) translate([0,0,plate_z+2*exploded]) linear_extrude(plate_thickness) plate();
     for (p = bolts) color([0.25,0.25,0.25]) translate([p[0],p[1],bottom_thickness])
-        cylinder(d=standoff_diameter,h=standoff_height);
+        spacer(standoff_across_flats/cos(30),standoff_height,6);
     for (p = bolts) color([0.9,0.9,0.9]) translate([p[0],p[1],bottom_thickness+standoff_height])
-        cylinder(d=standoff_diameter,h=standoff_shim);
+        spacer(washer_diameter,standoff_shim);
+    for (p = bolts) color([0.9,0.9,0.9]) translate([p[0],p[1],pcb_z+pcb_thickness])
+        spacer(washer_diameter,upper_spacer_shim);
+    for (p = bolts) color([0.9,0.9,0.9]) translate([p[0],p[1],pcb_z+pcb_thickness+upper_spacer_shim])
+        spacer(upper_spacer_diameter,upper_spacer_height);
 }
 if (part == "bottom") bottom();
 else if (part == "bottom-flat") bottom_flat();

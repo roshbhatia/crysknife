@@ -1,7 +1,7 @@
 # SendCutSend review files
 
 Each half uses a flat metal bottom plate, rubber sheet, and clear acrylic top plate.
-The corners are square. Four M2 standoffs pass through the carrier and join matching holes in the plates.
+The corners are square. Four M2 screws pass through the top plate and carrier, then thread into standoffs below the PCB.
 
 | File | Material | Thickness | Process |
 | --- | --- | --- | --- |
@@ -15,13 +15,25 @@ The top plate covers the electronics area. Controllers sit face up beneath the c
 USB, power, and reset remain accessible through the open sides.
 The two outer bottom key cutouts have at least 4 mm of PCB clearance and 6.5 mm of acrylic edge clearance.
 
-Use four round 20 mm M2 standoffs, with a maximum 4 mm body diameter, and four 1 mm nylon shims per half.
-The shims sit between the standoffs and the top plate.
-Both plates have four matching 2.2 mm holes. The rubber sheet has 4.5 mm clearance holes.
-The carrier has 5 mm holes around the standoff bodies.
-Use small washers and light screw torque to protect the acrylic.
-Check that the screw heads and washers clear the adjacent switch openings.
-Choose screw length after measuring the plate, washers, and standoff thread depth.
+Use this stack at each of the four mounting positions:
+
+| Part, from bottom to top | Dimension | Quantity per half |
+| --- | --- | --- |
+| Female/female metal M2 standoff | 15 mm length, 4 mm across flats, 5 mm thread depth | 4 |
+| Nylon M2 washer below PCB | 0.5 mm thick, 5.5 mm outer diameter | 8, stacked in pairs |
+| Carrier PCB | 1.6 mm thick, 2.2 mm hole | 1 |
+| Nylon M2 washer above PCB | 0.5 mm thick, 5.5 mm outer diameter | 4 |
+| Unthreaded nylon M2 spacer | 3 mm long, 4 mm outer diameter, 2.2 mm bore | 4 |
+| Clear top plate | 1.6002 mm thick, 2.2 mm hole | 1 |
+
+[RS PRO 224-0440](https://uk.rs-online.com/web/p/standoffs/2240440) provides the specified metal standoff dimensions.
+[Würth 960030010](https://www.we-online.com/components/products/datasheet/960030010.pdf) provides the nylon spacer dimensions.
+[Vital Parts WASH028](https://www.vital-parts.co.uk/nylon-washers/29530-wash028) provides the 0.5 mm nylon washers.
+Use M2 × 12 mm screws from the top and M2 × 6 mm screws from the bottom, with one 0.5 mm protective washer under each head.
+Nominal thread engagement is 3.8 mm above and 2.325 mm below. Confirm the supplied thread depths and lengths before assembly.
+Both plates and the PCB have 2.2 mm screw holes. The floor rubber has 5.2 mm body-clearance holes.
+The lower standoffs stop beneath the PCB; their bodies no longer pass through it.
+Use light screw torque to protect the acrylic. Check that washers clear nearby switches.
 
 The rubber lines the metal floor. Add a separate dielectric liner between the metal and electronics.
 Secure each battery with foam and an insulating cover. Keep wires clear of screws and edges.

@@ -227,10 +227,10 @@ export default ({ routing = true }: { routing?: boolean }) => (
 <hole pcbX={-61.608088157207604} pcbY={-33.6322294289556} diameter={1.9} />
 <hole pcbX={-52.81854080035177} pcbY={-36.2041270283146} diameter={3.0} />
 <hole pcbX={-58.84599500738349} pcbY={-32.97242534311289} diameter={3.0} />
-<hole pcbX={50.4310476} pcbY={15.257055699999995} diameter={5.0} />
-<hole pcbX={50.4310476} pcbY={-4.742944300000005} diameter={5.0} />
-<hole pcbX={-29.5689524} pcbY={26.257055699999995} diameter={5.0} />
-<hole pcbX={-29.5689524} pcbY={-13.742944300000005} diameter={5.0} />
+<hole pcbX={50.4310476} pcbY={15.257055699999995} diameter={2.2} />
+<hole pcbX={50.4310476} pcbY={-4.742944300000005} diameter={2.2} />
+<hole pcbX={-29.5689524} pcbY={26.257055699999995} diameter={2.2} />
+<hole pcbX={-29.5689524} pcbY={-13.742944300000005} diameter={2.2} />
 <hole pcbX={-68.8439524} pcbY={-5.242944300000005} diameter={0.9} />
 <hole pcbX={-68.8439524} pcbY={-2.242944300000005} diameter={0.9} />
 <hole pcbX={-59.27295240000001} pcbY={41.3320557} diameter={0.75} />
