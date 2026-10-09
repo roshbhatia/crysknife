@@ -1,0 +1,44 @@
+scripts/check_drc_draft.py
+  s_df88920dc610de::t_af2469896c114b 14
+ergogen/passive_0603.js
+  s_df88920dc610de::t_98961779c98e63 1-22
+scripts/check_placement.py
+  s_df88920dc610de::t_af2469896c114b 20
+scripts/check_tscircuit_source.py
+  s_df88920dc610de::t_af2469896c114b 19-20,47
+scripts/check_tscircuit.py
+  s_df88920dc610de::t_e1d0f4a659e5b4 22,105
+scripts/add_artwork.py
+  s_df88920dc610de::t_b19e2afc88b0ab 159-160
+scripts/generate_pcbs.cjs
+  s_df88920dc610de::t_a8fd9cb0bfa4ea 17-18
+ergogen/pcb.yaml
+  s_df88920dc610de::t_a8fd9cb0bfa4ea 1,112-114,118-124,127-133,136-142,145-152,155-162
+  s_df88920dc610de::t_c99a768eb5d1f0 115,125,134,143,153,163
+  s_df88920dc610de::t_b19e2afc88b0ab 102-104
+  s_df88920dc610de::t_f8c4ff76bedf52 116-117,126,135,144,154,164
+ergogen/trackpoint.js
+  s_df88920dc610de::t_98961779c98e63 1-31
+scripts/check_electrical.py
+  s_df88920dc610de::t_af2469896c114b 66-76,82,91
+README.md
+  s_df88920dc610de::t_acf45479442193 27-29,55-59,132-142
+THIRD_PARTY.md
+  s_df88920dc610de::t_28275fb65edd25 12-15,31,33-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b19a803f60ec9900c81d27ba5e95669163423cf8",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
