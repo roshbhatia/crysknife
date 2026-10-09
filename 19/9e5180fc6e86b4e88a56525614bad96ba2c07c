@@ -1,0 +1,30 @@
+manufacturing/jlcpcb/left-cpl.csv
+  s_df88920dc610de::t_fd43f42948c0ef 2-22
+manufacturing/jlcpcb/placement-corrections.json
+  s_df88920dc610de::t_e9f72ac3460f7e 2,5-64
+manufacturing/jlcpcb/readiness.json
+  s_df88920dc610de::t_fd43f42948c0ef 5
+manufacturing/jlcpcb/placement-readback.json
+  s_df88920dc610de::t_4472f3fcd861ee 3,6-14,25-27,29-237,413-414,422-423,622-623,631-632,638-664,667,669,676,678,685,687,694,696,703,705,712,714,721,723,730,732,739,741,748,750,757,759,766,768,775,777,784,786,793,795,802,804,811,813,820,822,829,831,838-840,847-849
+manufacturing/jlcpcb/prototype-changes.md
+  s_df88920dc610de::t_fd43f42948c0ef 30,34-46
+  s_df88920dc610de::t_30400f5a432c68 47
+manufacturing/jlcpcb/right-cpl.csv
+  s_df88920dc610de::t_fd43f42948c0ef 2-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "199e5180fc6e86b4e88a56525614bad96ba2c07c",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
