@@ -1,0 +1,41 @@
+THIRD_PARTY.md
+  s_df88920dc610de::t_56920639d644de 26
+  s_df88920dc610de::t_738a83bf7db3b1 25,28,30
+  s_df88920dc610de::t_c9ed6a562c344e 24,27
+tscircuit/models/right-artwork.ts
+  s_df88920dc610de::t_be15021b6fdab2 1663-1678,1680-1684,1686-1690,1692-1743,1880,1883,1886,3773-3788,3790-3794,3796-3800,3802-3853,3991,3994,3997
+  s_df88920dc610de::t_5f08456200948c 3-1662,1744-1783,1839-1864,1866,1869,1872,1875,1877,1887-1924,2113-3772,3854-3893,3949-3975,3977,3980,3983,3986,3988,3998-4035
+scripts/add_artwork.py
+  s_df88920dc610de::t_738a83bf7db3b1 30-33,166-167,214-220,312,314,322-323
+  s_df88920dc610de::t_56920639d644de 34-51
+  s_df88920dc610de::t_eda47e5db1f1bc 165
+  s_df88920dc610de::t_7176f39df2e856 258-273,308
+  s_df88920dc610de::t_7a96c7526dfed3 304
+  s_df88920dc610de::t_92c52e70c1f402 11,13,226-229,231-235
+  s_df88920dc610de::t_5ffab8fec52991 27,277,281-282,309
+  s_df88920dc610de::t_a437dbd2a46bc8 221-225,236-257,274-275,301,305,328,414
+tscircuit/models/left-artwork.ts
+  s_df88920dc610de::t_be15021b6fdab2 1662-1736,3799-3873
+  s_df88920dc610de::t_b50a49271c3a68 3-1661,1737-1777,1833-1858,1932-1969,2140-3798,3874-3914,3970-3995,4069-4106
+README.md
+  s_df88920dc610de::t_738a83bf7db3b1 22
+  s_df88920dc610de::t_c9ed6a562c344e 4
+tscircuit/README.md
+  s_df88920dc610de::t_738a83bf7db3b1 26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e94cb3330e21931b706f1a3c0d03967e9606b7c4",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
