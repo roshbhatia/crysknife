@@ -29,6 +29,7 @@ jobs:
       - run: nix develop . --command npm ci --prefix tscircuit
       - run: nix develop . --command python3 scripts/build_tscircuit.py
       - run: nix develop . --command python3 scripts/check_electrical.py
+      - run: nix develop . --command python3 scripts/generate_schematic.py
       - run: nix develop . --command python3 scripts/generate_assembly.py
       - run: nix develop . --command python3 scripts/check_assembly_guards.py
       - run: nix develop . --command python3 scripts/generate_case.py
@@ -38,6 +39,7 @@ jobs:
           path: |
             build/pcb
             build/tscircuit
+            build/schematic
             build/case
             build/manufacturing
   check:
@@ -52,6 +54,13 @@ jobs:
         with:
           name: pcb-drafts
           path: build
+      - run: kicad-cli sch erc --format json --output build/schematic/left-erc.json build/schematic/fridakeys_left.kicad_sch
+      - run: kicad-cli sch erc --format json --output build/schematic/right-erc.json build/schematic/fridakeys_right.kicad_sch
+      - run: kicad-cli sch export netlist --format kicadxml --output build/schematic/left.net build/schematic/fridakeys_left.kicad_sch
+      - run: kicad-cli sch export netlist --format kicadxml --output build/schematic/right.net build/schematic/fridakeys_right.kicad_sch
+      - run: python3 scripts/check_schematic.py
+      - run: kicad-cli sch export pdf --output build/schematic/left.pdf build/schematic/fridakeys_left.kicad_sch
+      - run: kicad-cli sch export pdf --output build/schematic/right.pdf build/schematic/fridakeys_right.kicad_sch
       - run: python3 scripts/check_placement.py
       - run: python3 scripts/check_tscircuit_source.py
       - run: python3 scripts/merge_tscircuit_routes.py
@@ -62,6 +71,11 @@ jobs:
       - run: kicad-cli pcb drc --format json --output build/pcb/left-routed-drc.json build/pcb/fridakeeb_left_routed.kicad_pcb
       - run: kicad-cli pcb drc --format json --output build/pcb/right-routed-drc.json build/pcb/fridakeeb_right_routed.kicad_pcb
       - run: python3 scripts/check_drc_draft.py --routed
+      - run: mkdir -p build/manufacturing/quote-only/gerbers/left build/manufacturing/quote-only/gerbers/right
+      - run: kicad-cli pcb export gerbers --layers F.Cu,B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts --output build/manufacturing/quote-only/gerbers/left/ build/pcb/fridakeeb_left_routed.kicad_pcb
+      - run: kicad-cli pcb export gerbers --layers F.Cu,B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts --output build/manufacturing/quote-only/gerbers/right/ build/pcb/fridakeeb_right_routed.kicad_pcb
+      - run: kicad-cli pcb export drill --output build/manufacturing/quote-only/gerbers/left/ build/pcb/fridakeeb_left_routed.kicad_pcb
+      - run: kicad-cli pcb export drill --output build/manufacturing/quote-only/gerbers/right/ build/pcb/fridakeeb_right_routed.kicad_pcb
       - run: kicad-cli pcb export svg --mode-single --black-and-white --fit-page-to-board --exclude-drawing-sheet --layers F.SilkS,Edge.Cuts --output build/pcb/left-silkscreen.svg build/pcb/fridakeeb_left_routed.kicad_pcb
       - run: kicad-cli pcb export svg --mode-single --black-and-white --fit-page-to-board --exclude-drawing-sheet --layers F.SilkS,Edge.Cuts --output build/pcb/right-silkscreen.svg build/pcb/fridakeeb_right_routed.kicad_pcb
       - run: kicad-cli pcb export svg --mode-single --black-and-white --fit-page-to-board --exclude-drawing-sheet --layers B.SilkS,Edge.Cuts --output build/pcb/left-bottom-silkscreen.svg build/pcb/fridakeeb_left_routed.kicad_pcb
@@ -73,3 +87,5 @@ jobs:
           path: |
             build/pcb
             build/tscircuit
+            build/schematic
+            build/manufacturing

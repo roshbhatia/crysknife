@@ -17,7 +17,7 @@ for side in ("left", "right"):
         assert len(list(artwork[0].Pads())) == 0
         assert artwork[0].GetLayer() == pcbnew.F_Cu
     footprints = [fp for fp in board.GetFootprints() if fp.GetReference() != "ART1"]
-    assert len(footprints) == (48 if side == "left" else 54), (side, len(footprints))
+    assert len(footprints) == 48, (side, len(footprints))
     keys = [fp for fp in footprints if fp.GetReference().startswith("S")]
     diodes = [fp for fp in footprints if fp.GetReference().startswith("D")]
     assert len(keys) == len(diodes) == 21
@@ -70,7 +70,7 @@ right_pins = {p.GetNumber(): p.GetNetname() for fp in controllers["right"] for p
 assert left_pins == right_pins
 assert set(left_pins.values()) >= {
     "C0", "C1", "C2", "C3", "C4", "C5", "R0", "R1", "R2", "R3",
-    "TP_DATA", "TP_CLK", "TP_RST", "RAW", "GND", "VCC", "RST",
+    "P2", "P3", "P4", "RAW", "GND", "VCC", "RST",
 }
 for ref, left in switches["left"].items():
     right = switches["right"][ref]
@@ -88,11 +88,11 @@ print("Placement checks do not prove routing, supplier assembly, or physical fit
 for index, ref in enumerate(("S2", "S5", "S8", "S11", "S14", "S17")):
     position = switches["left"][ref].GetPosition()
     assert position.x == pcbnew.FromMM(100 + 20 * index), (ref, "column spacing")
-    assert position.y == pcbnew.FromMM((80, 80, 70, 65, 70, 72)[index]), (ref, "column stagger")
+    assert position.y == pcbnew.FromMM((80, 80, 68, 63, 68, 70)[index]), (ref, "column stagger")
 for ref in ("S1", "S4", "S7", "S10", "S13", "S16"):
     number = int(ref[1:])
     lower = switches["left"][ref].GetPosition().y
     home = switches["left"][f"S{number+1}"].GetPosition().y
     upper = switches["left"][f"S{number+2}"].GetPosition().y
     assert lower - home == home - upper == pcbnew.FromMM(20)
-print("MX layout: 20 mm pitch and 10/5/-5/-2 mm stagger confirmed")
+print("MX layout: 20 mm pitch and 12/5/-5/-2 mm stagger confirmed")

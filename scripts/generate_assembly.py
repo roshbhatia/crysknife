@@ -31,7 +31,7 @@ def inventory(board, side, manifest):
                       'rotation_deg': float(at[3]) % 360 if len(at) > 3 else 0,
                       'layer': 'Top' if part['side'] == 'F' else 'Bottom'})
     assert set(excluded) == {'MCU1', 'ART1'}, excluded
-    assert len(items) == (47 if side == 'left' else 53), (side, len(items))
+    assert len(items) == 47, (side, len(items))
     assert {'MCU1A', 'MCU1B'} <= {p['reference'] for p in items}
     for prefix in ('S', 'D'):
         assert {p['reference'] for p in items if re.fullmatch(prefix+r'\d+', p['reference'])} == {

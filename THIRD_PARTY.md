@@ -14,28 +14,21 @@ Its selected footprints use MIT and CC BY-NC-SA 4.0 licenses, as declared in eac
 Diode, controller, and power-switch sources use CC BY-NC-SA 4.0.
 MX socket, battery, and reset footprints use MIT.
 No upstream footprint files are edited or vendored.
-The local controller adapter changes only the 24 header drill diameters in generated output.
+The local controller adapter preserves pin positions and nets, sets 1 mm drills, and splits contacts into two factory socket footprints.
 
 `assets/frida.png` is an unchanged copy of `/Users/roshan/Desktop/frida.png`, supplied by the user.
 `scripts/add_artwork.py` resamples its halftone for draft PCB silkscreen placement.
 The original source image remains unchanged.
 
-`assets/ioskeley-mono-bold.ttf` comes from [Ioskeley Mono v2.1.0](https://github.com/ahatem/IoskeleyMono/releases/tag/v2.1.0).
-It is the Normal/Unhinted Bold face from the release archive.
-Its SIL Open Font License is preserved in `assets/LICENSE.ioskeley-mono`.
-All PCB lettering uses this font, rasterized into portable silkscreen geometry.
-The previously supplied KingjolA asset remains unused.
+`assets/ibm-plex-mono-bold.ttf` comes from [Google Fonts](https://github.com/google/fonts/tree/2eb0b48d5f760f62e286216f0859a8c540dbc1bd/ofl/ibmplexmono).
+The selected face is IBM Plex Mono Bold. Its OFL is preserved in `assets/LICENSE.ibm-plex-mono`.
+All visible PCB text uses this face as portable silkscreen geometry.
+The older Ioskeley Mono and KingjolA assets remain unused.
 
 Column stagger dimensions are measured from the [Piantor left PCB](https://github.com/beekeeb/piantor/blob/cd847afb4f9a86e8c1c8e36f243140644013afb2/pcb/left/keyboard_pcb.kicad_pcb).
 The source uses 18 mm horizontal and 17 mm vertical pitch; this design uses 20 mm MX pitch.
-Its measured 12, 5, -5, and -2 mm offsets inform a 10, 5, -5, and -2 mm adaptation.
+Its measured 12, 5, -5, and -2 mm offsets inform a 12, 5, -5, and -2 mm adaptation.
 Upstream PCB, circuit, and case files are not included. Its repository uses GPL-3.0.
-
-`ergogen/trackpoint.js` is a local land pattern for Hirose FH12-8S-1SH(55).
-It follows the 1 mm bottom-contact land drawing on catalog page 21.
-The [manufacturer catalog](https://www.hirose.com/en/product/document?clcode=CL0586-0555-2-55&documentid=D31648_en&documenttype=Catalog&lang=en&productname=FH12A-24S-0.5SH%2855%29&series=FH12) supplies the dimensions.
-The current engineering drawing and supplier assembly rotation remain verification gates.
-No Hirose document or external footprint is vendored.
 
 The controller socket adapter retains the pinned nice!nano net mapping and splits its pads into two factory assembly footprints.
 Socket dimensions reference the [Mill-Max 315-43-112-41-003000 manufacturer drawing](https://static6.arrow.com/aropdfconversion/2e225be7d9212620894362dafa7ce735623fe9ca/315-43-112-41-003000.pdf).

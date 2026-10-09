@@ -1,0 +1,26 @@
+{
+  "status": "selected for prototype; dimensional and charging tests pending",
+  "sku": "Adafruit 2011",
+  "quantity": 2,
+  "voltage_V": 3.7,
+  "capacity_mAh": 2000,
+  "protected": true,
+  "connector": "2-pin JST-PH; verify red wire to carrier JST1 pin 2",
+  "nominal_dimensions_mm": [
+    60,
+    36,
+    7
+  ],
+  "case_reservation_mm": [
+    64,
+    40,
+    8.5
+  ],
+  "charge_current_mA": 500,
+  "controller": "genuine nice!nano V2 with BOOST solder bridge closed on each module",
+  "extra_user_solder_joints": 2,
+  "source": "https://www.adafruit.com/product/2011",
+  "controller_guidance": "https://nicekeyboards.com/docs/nice-nano/",
+  "charging_requires_power_switch_on": true,
+  "physical_results": null
+}

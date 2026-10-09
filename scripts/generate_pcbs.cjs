@@ -14,8 +14,6 @@ const footprintNames = [
 for (const name of footprintNames) {
   ergogen.inject(`ceoloide/${name}`, require(path.join(library, `${name}.js`)));
 }
-ergogen.inject('fridakeys/trackpoint', require('../ergogen/trackpoint.js'));
-ergogen.inject('fridakeys/passive_0603', require('../ergogen/passive_0603.js'));
 const controller = require(path.join(library, 'mcu_nice_nano.js'));
 ergogen.inject('fridakeys/nice_nano_socketed', require('../ergogen/controller_sockets.js')(controller));
 

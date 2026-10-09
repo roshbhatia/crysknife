@@ -1,4 +1,3 @@
-# TrackPoint cable continuity and physical mounting require supplier verification.
 pcbs:
   fridakeeb_left:
     template: kicad8
@@ -50,9 +49,6 @@ pcbs:
           P6: R1
           P7: R2
           P8: R3
-          P2: TP_DATA
-          P3: TP_CLK
-          P4: TP_RST
           P2_label: D2
           P3_label: D3
           P4_label: D4
@@ -101,7 +97,6 @@ pcbs:
       diodes.asym: clone
       controller:
         asym: clone
-        params.show_silk_labels: false
       power:
         asym: clone
         adjust.rotate: 180
@@ -109,56 +104,3 @@ pcbs:
       battery:
         asym: clone
         adjust.rotate: -90
-      trackpoint:
-        what: fridakeys/trackpoint
-        where: mirror_matrix_inner_top
-        adjust.resist: true
-        adjust.shift: [-20, -12]
-        adjust.rotate: 90
-      data_pullup:
-        what: fridakeys/passive_0603
-        where: mirror_matrix_inner_top
-        params:
-          value: 4.7k
-          from: VCC
-          to: TP_DATA
-        adjust.resist: true
-        adjust.shift: [-15.5, -22]
-      clock_pullup:
-        what: fridakeys/passive_0603
-        where: mirror_matrix_inner_top
-        params:
-          value: 4.7k
-          from: VCC
-          to: TP_CLK
-        adjust.resist: true
-        adjust.shift: [-15.5, -25]
-      reset_pulldown:
-        what: fridakeys/passive_0603
-        where: mirror_matrix_inner_top
-        params:
-          value: 10k
-          from: TP_RST
-          to: GND
-        adjust.resist: true
-        adjust.shift: [-15.5, -28]
-      reset_capacitor:
-        what: fridakeys/passive_0603
-        where: mirror_matrix_inner_top
-        params:
-          designator: C
-          value: 100nF
-          from: TP_RST
-          to: GND
-        adjust.resist: true
-        adjust.shift: [-15.5, -31]
-      decoupling:
-        what: fridakeys/passive_0603
-        where: mirror_matrix_inner_top
-        params:
-          designator: C
-          value: 100nF
-          from: VCC
-          to: GND
-        adjust.resist: true
-        adjust.shift: [-20, -33]

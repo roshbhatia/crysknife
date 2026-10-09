@@ -4,8 +4,8 @@ meta:
   engine: 4.1.0
   name: fridakeys-layout-draft
   version: 1.0.0
-  ref: &kb_ref "Fridakeys v1.0.0 by @fraud"
-  author: fraud
+  ref: &kb_ref "fridakeys v1.0.0 by @roshbhatia"
+  author: roshbhatia
   url: &kb_url https://github.com/ceoloide/corney-island
   footprint: &switch_footprint "ceoloide/switch_mx"
   # footprint: &switch_footprint "ceoloide/switch_choc_v1_v2"
@@ -70,7 +70,7 @@ units:
   $extends: meta.switch
 
   hand_rotation: 0
-  ring_stagger: 10
+  ring_stagger: 12
   middle_stagger: 5
   index_stagger: -5
   inner_stagger: -2

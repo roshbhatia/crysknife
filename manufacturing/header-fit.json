@@ -1,0 +1,29 @@
+{
+  "status": "drawing checks passed; insertion and assembled height require sample verification",
+  "receiver": "Mill-Max 315-43-112-41-003000",
+  "male_header": "Mill-Max 350-10-112-00-006000",
+  "pitch_mm": 2.54,
+  "contacts_per_strip": 12,
+  "carrier_row_spacing_mm": 15.24,
+  "receiver_accepts_round_pin_mm": [
+    0.381,
+    0.5588
+  ],
+  "male_pin_nominal_mm": 0.4572,
+  "male_pin_tolerance_mm": 0.0508,
+  "male_pin_range_mm": [
+    0.4064,
+    0.508
+  ],
+  "receiver_tail_max_mm": 0.8128,
+  "carrier_finished_hole_min_mm": 0.92,
+  "diameter_clearance_min_mm": 0.1072,
+  "male_exposed_mating_length_mm": 3.6068,
+  "male_insulator_height_mm": 2.794,
+  "receiver_insulator_height_mm": 1.8034,
+  "minimum_body_stack_mm": 4.5974,
+  "stack_note": "Insulator sum is a lower bound, not the assembled height. Socket cavity depth and seating can increase the gap.",
+  "header_source": "https://datasheet.lcsc.com/datasheet/pdf/d41800ad247bbaad9500b089f454c804.pdf?productCode=C3331090",
+  "receiver_source": "https://datasheet.lcsc.com/datasheet/pdf/4b0894809f586c2f6beee55a2ba47e90.pdf?productCode=C5504443",
+  "physical_results": null
+}

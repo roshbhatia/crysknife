@@ -7,6 +7,9 @@ from kicad_sexp import parse, children, child
 from generate_tscircuit import edge_points
 
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
+from shapely.geometry import Point, Polygon, box
+from shapely.ops import unary_union
+from shapely.prepared import prep
 
 
 root = Path(__file__).resolve().parents[1]
@@ -119,7 +122,7 @@ for side in ("left", "right"):
     max_x, max_y = [max(p[i] for p in outline) for i in (0, 1)]
     title_center = 110 if side == "left" else 225
     lettering_boxes = [(title_center, 69.5, 36, 6), (title_center, 88, 32, 5.2),
-                       (title_center, 91, 26, 4.6)]
+                       (title_center, 91, 36, 4.6)]
     original_labels = []
     for footprint in children(board, "footprint"):
         placement = child(footprint, "at")
@@ -162,6 +165,26 @@ for side in ("left", "right"):
         lettering_boxes.append((x+offset[0], y+offset[1], 12, 4))
         lettering_boxes.append((x+(offset[0]+target_offset[0])/2, y+(offset[1]+target_offset[1])/2,
                                 abs(offset[0]-target_offset[0])+1.5, abs(offset[1]-target_offset[1])+1.5))
+    blocked = [Point(x, y).buffer(r+0.22) for x, y, r in keepouts]
+    blocked += [box(x-w/2-0.22, y-h/2-0.22, x+w/2+0.22, y+h/2+0.22)
+                for x, y, w, h in lettering_boxes]
+    safe = prep(Polygon(outline).buffer(-0.65).difference(unary_union(blocked)))
+    sampled = portrait_alpha.resize((30, 30), Image.Resampling.BOX)
+    mouth_samples = [(x/30-0.5, y/30-0.5) for y in range(21, 28) for x in range(3, 17)
+                     if sampled.getpixel((x, y)) >= 100]
+    face_samples = [(x/30-0.5, y/30-0.5) for y in range(30) for x in range(30)
+                    if sampled.getpixel((x, y)) >= 100]
+    mirror = -1 if side == "right" else 1
+    candidates = []
+    for width in (44, 36, 30):
+        for dx in range(-16, 17, 2):
+            for dy in range(-14, 17, 2):
+                cx, cy = center+dx, image_center_y+dy
+                mouth = sum(safe.contains(Point(cx+mirror*x*width, cy+y*width)) for x, y in mouth_samples)/len(mouth_samples)
+                face = sum(safe.contains(Point(cx+mirror*x*width, cy+y*width)) for x, y in face_samples)/len(face_samples)
+                candidates.append((mouth, face, width, cx, cy))
+    mouth_visibility, face_visibility, hero_width, center, image_center_y = max(candidates)
+    assert mouth_visibility >= 0.98, (side, "Hero mouth is obstructed", mouth_visibility)
     pixels = []
     portraits = 0
 
@@ -195,19 +218,19 @@ for side in ("left", "right"):
                 pixels.append((x-size/2, y-size/2, x+size/2, y+size/2))
         return len(pixels) > before
 
-    portraits += portrait(center, image_center_y, 44, 0.3, hero=True)
+    portraits += portrait(center, image_center_y, hero_width, 0.3, hero=True)
     row = 0
-    cy = min_y+14
+    cy = min_y+9
     while cy < max_y+5:
-        cx = min_x+14+(14 if row % 2 else 0)
+        cx = min_x+9+(10 if row % 2 else 0)
         while cx < max_x+5:
-            portraits += portrait(cx, cy, 26, 0.4)
-            cx += 28
-        cy += 28
+            portraits += portrait(cx, cy, 18, 0.3)
+            cx += 20
+        cy += 20
         row += 1
     top_pixels = list(pixels)
     bottom_pixels = list(pixels)
-    font = ImageFont.truetype(str(root / "assets/ioskeley-mono-bold.ttf"), 512)
+    font = ImageFont.truetype(str(root / "assets/ibm-plex-mono-bold.ttf"), 512)
 
     def clear_pixel(x, y, grid):
         return clear_silk(x, y, grid/math.sqrt(2)) and inside(x, y) and edge_clearance(x, y) > grid/math.sqrt(2)+0.4 and all(
@@ -232,7 +255,7 @@ for side in ("left", "right"):
                     face.append((x-grid/2, y-grid/2, x+grid/2, y+grid/2))
 
     for label, cy, max_width, max_height in [
-        ("Fridakeys", 69.5, 34, 4), ("v1.0.0", 88, 30, 3.2), ("by @fraud", 91, 24, 2.6),
+        ("fridakeys", 69.5, 34, 4), ("v1.0.0", 88, 30, 3.2), ("by @roshbhatia", 91, 34, 2.6),
     ]:
         lettering(label, title_center, cy, max_width, max_height)
     for label, x, y, width, height, angle in original_labels:
@@ -323,4 +346,5 @@ for side in ("left", "right"):
     svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{max_x-min_x}mm" height="{max_y-min_y}mm" viewBox="{min_x} {min_y} {max_x-min_x} {max_y-min_y}"><rect x="{min_x}" y="{min_y}" width="{max_x-min_x}" height="{max_y-min_y}" fill="white"/><g fill="black">{svg_rectangles}</g></svg>'
     (root / f"build/pcb/frida-{side}.svg").write_text(svg)
     print(json.dumps({"side": side, "rectangles": len(pixels), "minimum_feature_mm": minimum_feature,
-                      "layers": ["F.SilkS", "B.SilkS"], "pad_clearance_mm": 0.3, "native_silk_clearance_mm": 0.25, "portraits": portraits, "edge_clearance_mm": 0.4}))
+                      "layers": ["F.SilkS", "B.SilkS"], "pad_clearance_mm": 0.3, "native_silk_clearance_mm": 0.25, "portraits": portraits, "edge_clearance_mm": 0.4, "hero_mouth_visibility": mouth_visibility,
+                      "hero_center_mm": [center, image_center_y], "hero_width_mm": hero_width}))

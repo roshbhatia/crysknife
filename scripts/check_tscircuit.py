@@ -19,7 +19,7 @@ def check(side, stage):
                       for n in data if n["type"] == "pcb_component"}
     pads = {pcb_components[n["pcb_component_id"]]: n for n in data
             if n["type"] in ("pcb_smtpad", "pcb_plated_hole")}
-    assert len(pads) == len(expected["pads"]) == (121 if side == "left" else 141)
+    assert len(pads) == len(expected["pads"]) == 121
     ports = {components[n["source_component_id"]]: n for n in data if n["type"] == "source_port"}
     nets = {n["name"]: n["subcircuit_connectivity_map_key"] for n in data if n["type"] == "source_net"}
     names = sorted({p["net"] for p in expected["pads"] if p["net"]})

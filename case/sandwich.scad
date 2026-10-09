@@ -2,18 +2,18 @@ side = "left";
 part = "assembly";
 exploded = 0;
 bottom_thickness = 3;
-spacer_height = 9;
+spacer_height = 18;
 plate_thickness = 1.5;
 bezel_thickness = 3;
 pcb_thickness = 1.6;
-under_pcb_clearance = 4.9;
+under_pcb_clearance = 13.9;
 plate_to_pcb_gap = 3.5;
 upper_gasket_height = 0.5;
 switch_cutout = 14;
 keycap_clearance = 18.8;
 pcb_clearance = 0.8;
 plate_expansion = 2.5;
-wall_expansion = 9;
+wall_expansion = 12.5;
 bolt_diameter = 2.2;
 $fn = 48;
 
@@ -27,6 +27,7 @@ controller = data[3];
 reset = data[4];
 power = data[5];
 limits = data[6];
+battery = data[7];
 pcb_z = bottom_thickness + under_pcb_clearance;
 plate_z = pcb_z + pcb_thickness + plate_to_pcb_gap;
 lower_gasket_height = plate_z - bottom_thickness - spacer_height;
@@ -120,6 +121,7 @@ module layer(z, thickness, shade, index) {
 module assembly() {
     layer(0, bottom_thickness, [0.2, 0.2, 0.2, 0.65], 0) bottom();
     layer(bottom_thickness, spacer_height, [0.7, 0.7, 0.7, 0.45], 1) spacer();
+    color([0.3, 0.4, 0.5, 0.8]) translate([battery[0]-30, battery[1]-18, bottom_thickness+0.5]) cube([60, 36, 7]);
     layer(pcb_z, pcb_thickness, [0.97, 0.97, 0.97], 2) pcb_shape();
     layer(bottom_thickness + spacer_height, lower_gasket_height, [0.15, 0.15, 0.15], 3) gasket();
     layer(plate_z, plate_thickness, [0.75, 0.77, 0.8], 4) plate();

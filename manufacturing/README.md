@@ -12,9 +12,8 @@ nix develop . --command python3 scripts/check_assembly_guards.py
 
 Outputs appear under `build/manufacturing/quote-only/`.
 Each half has a quote BOM, a quote CPL, and catalog evidence for every factory part.
-The left inventory has 47 parts; the right has 53.
+Each half has 47 factory parts.
 Each contains 21 bottom-face MX hotswap sockets and 21 bottom-face diodes.
-The right adds a ribbon connector, three resistors, and two capacitors.
 Both inventories include two factory-soldered controller sockets, MCU1A and MCU1B.
 The two nice!nano V2 modules and their four male header strips are purchased separately.
 
@@ -56,7 +55,12 @@ The removable contact is inside the manufactured socket, so it does not depend o
 Supplier land-pattern approval, soldering, alignment, and insertion tests remain required.
 
 Purchase two nice!nano V2 modules and four complete 12-pin round-pin header strips.
-Mill-Max 350-10-112-00-006000 is the mating-header candidate; compare its current drawing and insertion depth before purchase.
+Mill-Max 350-10-112-00-006000 is the selected prototype mating header.
+Its exact manufacturer drawing specifies 0.018 inch round pins on both ends.
+With ±0.002 inch diameter tolerance, the 0.4064–0.508 mm pin range fits the receiver's 0.381–0.5588 mm range.
+The 2.54 mm pitch and 12-contact count match. See `header-fit.json` for drawing sources and arithmetic.
+The 4.5974 mm insulator sum is only a lower bound on the assembled controller gap.
+Confirm insertion depth and full seating using sample parts before ordering the complete build.
 The socket accepts 0.381–0.559 mm diameter mating pins.
 The ordinary square headers supplied with nice!nano are unsuitable for these machine sockets.
 The [controller manufacturer explicitly documents this restriction](https://nicekeyboards.com/docs/nice-nano/getting-started/).
@@ -65,45 +69,22 @@ Do not populate the extra B+ or B- holes beside USB; the carrier uses RAW and GN
 
 The user solders two complete strips to each module: 24 joints per half, 48 total.
 A builder can prepare the modules instead; [beekeeb advertises custom soldering](https://shop.beekeeb.com/), but no quote is accepted.
-Switch sockets, diodes, side power/reset controls, battery connectors, and TrackPoint support components remain factory-installed.
-The TrackPoint must still arrive with its connector prepared; user soldering is limited to the controller headers.
+Switch sockets, diodes, side power/reset controls, battery connectors, and receiver sockets remain factory-installed.
+Ask the assembler to prepare supplied nice!nano modules and their BOOST bridges where it supports this service.
 Confirm the matched header orientation and use a fixture that prevents solder entering the receiver contacts.
 Verify continuity, absence of shorts, and face-up pin mapping before fitting the modules.
 Measure the resulting underside gap, USB height, and connector-latch access before cutting the case.
 The current 5 mm controller gap is a mechanical reservation, not a verified mating-stack dimension.
 
-## Prepared TrackPoint requirements
-
-The candidate is Sprintek SK8707-01-005 at 3.3 V, with the method-3 bottom ribbon connector installed by the supplier.
-The [manufacturer datasheet](https://docs.holykeebs.com/datasheets/SK8707-01.pdf) says the connector is optional and not installed by default.
-The module must arrive with its matching cable and connector already prepared.
-The cable must map pin 1 to pin 1 through pin 8 to pin 8.
-Contact-side orientation and latch fit must be confirmed for both installed connectors.
-The keyboard connector is Hirose FH12-8S-1SH(55): eight contacts, 1 mm pitch, 0.3 mm ribbon thickness.
-The current engineering drawing and the assembled connector orientation remain supplier review items.
-
-| Pin | Signal | Carrier connection |
-| --- | --- | --- |
-| 1 | DATA | nice!nano P2; 4.7 kΩ pull-up to VCC |
-| 2 | RST | nice!nano P4; active high; 10 kΩ and 100 nF to GND |
-| 3 | MIDDLE | Unconnected; mouse buttons use the keyboard keymap |
-| 4 | RIGHT | Unconnected |
-| 5 | LEFT | Unconnected |
-| 6 | CLK | nice!nano P3; 4.7 kΩ pull-up to VCC |
-| 7 | GND | GND |
-| 8 | VCC | nice!nano switched 3.3 V output; 100 nF local decoupling |
-
-The socketed nice!nano sits above the interface components.
-The user plugs in the ribbon before seating the controller.
-The proposed pinout is checked against generated PCB pads and firmware source.
-The cable and module must pass a physical continuity and powered communication test.
-Stem placement, mount, keycap travel, and gasket travel remain open.
-
 ## Battery and factory acceptance
 
 Each half needs a protected, single-cell 3.7 V rechargeable battery with the correct PH plug polarity.
-The exact SKU, charging rating, lead length, and retention remain unselected.
-A 301230 cell reserves 3 × 12 × 30 mm; this is a fit candidate, not an approved battery specification.
+The selected prototype SKU is Adafruit 2011: 2000 mAh, nominal 60 × 36 × 7 mm, with protection and a JST-PH plug.
+The case reserves 64 × 40 × 8.5 mm below the key field.
+Use the nice!nano 500 mA BOOST setting, within its published 2000 mAh guidance.
+This requires one additional solder bridge per module unless a supplier prepares it.
+Verify actual lead length, cell dimensions, plug polarity, charging current, and retention before approval.
+See `battery.json` and `physical-tests.md`.
 The carrier's JST1 pin 1 is GND; pin 2 is BAT_P.
 Confirm polarity with a meter before connecting a battery.
 The power switch connects BAT_P to nice!nano RAW.
@@ -111,7 +92,7 @@ This arrangement requires the power switch on for battery charging through the c
 USB can power the controller even when its battery switch is off.
 
 Factory acceptance needs all 42 key positions tested without ghosting, both Bluetooth halves paired, and firmware reset/USB recovery checked.
-It also needs TrackPoint motion, click/scroll layers, battery charging, power-off behavior, and current measurements.
+It also needs battery charging, power-off behavior, and current measurements.
 AOI and bare-PCB flying-probe tests alone cannot prove these behaviors.
 Record the actual firmware revision, fixture, results, and serial identification for each supplied half.
 

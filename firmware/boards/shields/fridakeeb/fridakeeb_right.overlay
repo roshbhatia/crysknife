@@ -12,29 +12,3 @@
                 <&pro_micro 20 GPIO_ACTIVE_HIGH>,
                 <&pro_micro 21 GPIO_ACTIVE_HIGH>;
 };
-
-&gpiote {
-    interrupts = <6 0>;
-};
-
-/ {
-    trackpoint_bus: trackpoint_bus {
-        compatible = "gpio-ps2";
-        scl-gpios = <&pro_micro 3 GPIO_ACTIVE_HIGH>;
-        sda-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>;
-        status = "okay";
-    };
-
-    trackpoint: trackpoint {
-        compatible = "zmk,input-mouse-ps2";
-        ps2-device = <&trackpoint_bus>;
-        rst-gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;
-        sampling-rate = <100>;
-        status = "okay";
-    };
-
-    trackpoint_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackpoint>;
-    };
-};

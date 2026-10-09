@@ -53,46 +53,6 @@
       "source": "https://jlcpcb.com/partdetail/S2B-PH-K-S%28LF%29%28SN%29/C173752"
     },
     {
-      "reference_pattern": "TP1",
-      "footprint": "fridakeys:Hirose_FH12-8S-1SH",
-      "side": "F",
-      "manufacturer": "Hirose",
-      "mpn": "FH12-8S-1SH(55)",
-      "lcsc": "C596711",
-      "description": "TrackPoint ribbon connector",
-      "source": "https://jlcpcb.com/partdetail/HRS_Hirose-FH12_8S_1SH_55/C596711"
-    },
-    {
-      "reference_pattern": "R[12]",
-      "footprint": "fridakeys:Passive_0603",
-      "side": "F",
-      "manufacturer": "UNI-ROYAL",
-      "mpn": "0603WAF4701T5E",
-      "lcsc": "C23162",
-      "description": "4.7k 1% pull-up",
-      "source": "https://jlcpcb.com/partdetail/C23162"
-    },
-    {
-      "reference_pattern": "R3",
-      "footprint": "fridakeys:Passive_0603",
-      "side": "F",
-      "manufacturer": "UNI-ROYAL",
-      "mpn": "0603WAF1002T5E",
-      "lcsc": "C25804",
-      "description": "10k 1% pull-down",
-      "source": "https://jlcpcb.com/partdetail/C25804"
-    },
-    {
-      "reference_pattern": "C[12]",
-      "footprint": "fridakeys:Passive_0603",
-      "side": "F",
-      "manufacturer": "YAGEO",
-      "mpn": "CC0603KRX7R9BB104",
-      "lcsc": "C14663",
-      "description": "100nF X7R 50V capacitor",
-      "source": "https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663"
-    },
-    {
       "reference_pattern": "MCU1[AB]",
       "footprint": "fridakeys:MillMax_315_1x12",
       "side": "F",
@@ -111,9 +71,7 @@
     "Current manufacturer drawings, footprint fit, pickup origins and rotations accepted by assembler",
     "Exact supplier stock and Standard two-face mixed SMT/THT assembly quote accepted",
     "Factory accepts C5504443 socket sourcing and soldering; matching nice!nano header insertion and assembled height verified",
-    "Supplier-prepared SK8707-01-005 with connector and continuity-verified matching ribbon",
-    "TrackPoint stem position, mount and full switch/keycap/gasket travel clearance",
-    "Exact battery SKU, plug polarity, charging rating and case fit",
-    "Complete schematic/ERC and physical prototype keyboard, Bluetooth, pointing and charging tests"
+    "Adafruit 2011 plug polarity, 500 mA BOOST setting, charging temperature and physical case fit",
+    "Complete schematic/ERC and physical prototype keyboard, Bluetooth and charging tests"
   ]
 }

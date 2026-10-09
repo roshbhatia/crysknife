@@ -49,14 +49,14 @@ for side in ("left", "right"):
     px, py = components["PWR1"]
     openings = box(cx-10 if side == "left" else x0-10, py-4,
                    x1+10 if side == "left" else cx+10, y1+10)
-    wall = shape.buffer(9).difference(shape.buffer(0.8)).difference(openings)
+    wall = shape.buffer(12.5).difference(shape.buffer(0.8)).difference(openings)
     assert wall.is_valid and wall.geom_type == "Polygon", "Side apertures split the spacer ring"
-    bolt_region = shape.buffer(8).difference(shape.buffer(3.5)).difference(openings.buffer(3))
+    bolt_region = wall.buffer(-5.6)
     candidates = []
-    boundary = shape.buffer(5.8).exterior
+    boundary = shape.buffer(6.7).exterior
     for index in range(180):
         p = boundary.interpolate(boundary.length*index/180)
-        if bolt_region.covers(p.buffer(2)):
+        if bolt_region.covers(p):
             candidates.append(p)
     assert len(candidates) >= 6
     bolts = [min(candidates, key=lambda p: p.x)]
@@ -66,9 +66,23 @@ for side in ("left", "right"):
         bolts.append(p)
     for p in bolts:
         assert p.distance(shape) >= 4.6
-        assert wall.covers(p.buffer(2)), "Standoff crosses side aperture"
+        assert wall.covers(p.buffer(5.6)), "Standoff crosses side aperture"
+    desired_battery_center = [(components["S8"][i]+components["S11"][i])/2 for i in (0, 1)]
+    rf_exclusion = box(cx-14, cy-23, cx+14, cy+23)
+    battery_candidates = []
+    for dx in range(-20, 21):
+        for dy in range(-15, 16):
+            bx, by = desired_battery_center[0]+dx, desired_battery_center[1]+dy
+            envelope = box(bx-32, by-20, bx+32, by+20)
+            if shape.buffer(-2).covers(envelope) and envelope.distance(rf_exclusion) >= 10:
+                battery_candidates.append((dx*dx+dy*dy, bx, by))
+    assert battery_candidates, "No protected large-battery envelope fits clear of RF"
+    _, bx, by = min(battery_candidates)
+    battery_center = [bx, by]
+    battery_envelope = box(bx-32, by-20, bx+32, by+20)
+    assert 13.9-0.5-8.5-0.5 >= 4.4, "Battery collides with underside component reservation"
     values = [outline, keys, [[p.x, p.y] for p in bolts], components["MCU1"],
-              components["RST1"], components["PWR1"], list(shape.bounds)]
+              components["RST1"], components["PWR1"], list(shape.bounds), battery_center]
     geometries.append(f"{side}_geometry = {json.dumps(values)};")
     physical_checks[side] = (cutouts, bolts, openings)
     reports.append({"side": side, "keys": len(keys), "pcb_area_mm2": shape.area,
@@ -76,10 +90,15 @@ for side in ("left", "right"):
                     "bolts": values[2], "side_apertures": ["USB", "RST", "PWR"],
                     "switch": "Outemu Medium-Low Black; standard MX socket footprint",
                     "pcb_to_plate_gap_mm": 3.5, "plate_thickness_mm": 1.5,
-                    "under_pcb_clearance_mm": 4.9, "bottom_thickness_mm": 3,
-                    "spacer_stack_mm": [3, 3, 3], "lower_gasket_compressed_mm": 1,
+                    "under_pcb_clearance_mm": 13.9, "bottom_thickness_mm": 3,
+                    "spacer_stack_mm": [3]*6, "lower_gasket_compressed_mm": 1,
                     "upper_gasket_compressed_mm": 0.5, "bezel_thickness_mm": 3,
-                    "status": "mechanical draft; switch height, battery, controller and TrackPoint fit require physical verification"})
+                    "battery": {"sku": "Adafruit 2011", "capacity_mAh": 2000,
+                                "nominal_mm": [60, 36, 7], "reserved_mm": [64, 40, 8.5],
+                                "center_mm": battery_center, "rf_clearance_mm": battery_envelope.distance(rf_exclusion),
+                                "underside_component_reservation_mm": 4.4, "foam_mm": 0.5,
+                                "insulating_cover_and_air_mm": 0.5},
+                    "status": "mechanical draft; switch height, battery, controller fit require physical verification"})
 (OUTPUT / "geometry.scad").write_text("\n".join(geometries)+"\n")
 
 
