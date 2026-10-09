@@ -1,0 +1,17 @@
+bottom_thickness = 1.6002;
+plate_thickness = 1.6002;
+standoff_height = 20;
+standoff_shim = 1;
+pcb_thickness = 1.6;
+plate_to_pcb_gap = 3.5;
+outline_expansion = 9.5;
+bolt_diameter = 2.2;
+switch_cutout = 14;
+damping_thickness = 1.6002;
+damping_bolt_diameter = 4.5;
+bend_radius = 0.889;
+bend_deduction = 2.4384;
+flange_height = 10;
+flange_y_min = -26;
+flange_y_max = 26;
+flange_clearance = 3.5;

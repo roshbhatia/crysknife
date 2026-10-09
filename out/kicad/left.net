@@ -1,0 +1,2055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/__w/fridakeys/fridakeys/build/schematic/fridakeys_left.kicad_sch</source>
+    <date>2026-10-09T02:37:36</date>
+    <tool>Eeschema 10.0.6</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>fridakeys left</title>
+        <company>by @roshbhatia</company>
+        <rev>1.0.0</rev>
+        <date/>
+        <source>fridakeys_left.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="D1">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D1</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D1</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D1" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0f2a1675-7929-51eb-9354-0bb8d2851c70</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D2</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D2" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9b85adb5-e771-5166-8fff-b23a1a6ef053</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D3">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D3</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D3" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>420302a2-812e-5ae5-8571-b38863ee2f88</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D4">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D4</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D4</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D4" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0445603d-5fe9-50eb-a69a-abbded87e238</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D5">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D5</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D5" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9465588c-855e-59ae-984b-c8474eb4f8fc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D6">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D6</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D6" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eec2959d-7cd4-504f-aa1e-6541eefb9185</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D7">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D7</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D7</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D7" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aad933d9-f669-51f2-996d-dbc1aaf8b2c7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D8">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D8</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D8</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D8" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>948befa8-7910-5ba5-8203-89ee3fd839ae</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D9">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D9</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D9</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D9" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c13ee3a7-5c27-5041-a60b-25a94cbb0b81</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D10">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D10</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D10</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D10" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dc21965e-033b-511a-b64c-f018a45c94f2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D11">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D11</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D11</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D11" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>32d52b48-55a0-5b1d-a519-e48856a9b28d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D12">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D12</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D12</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D12" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eee65d23-29e1-5d09-a221-833bf1dc7152</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D13">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D13</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D13</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D13" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9df873b1-dde1-590f-918c-1116f7fe9407</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D14">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D14</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D14</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D14" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d2ca5bc9-9f9f-58a7-856e-fb0d21be6e51</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D15">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D15</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D15</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D15" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>652d13a8-40d1-5d4c-9be7-99854ded70ce</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D16">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D16</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D16</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D16" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>da6bbf6c-44c6-55a9-9d37-30854e3e15ff</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D17">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D17</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D17</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D17" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e79fc64b-6b9d-5b15-beed-ff872b4c4f58</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D18">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D18</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D18</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D18" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aa9881b8-2f03-5c3c-b3b3-927b97c35a12</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D19">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D19</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D19</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D19" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>68f9e09a-cd0e-5375-bd7f-41a08875fcc5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D20">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D20</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D20</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D20" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b168f668-55aa-5a0b-8e35-d8ce4253404e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D21">
+      <value>1N4148W (1=K, 2=A)</value>
+      <footprint>fridakeys:D21</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:D21</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="D21" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b5a39e4f-4373-5bae-bd12-b4e91bfde82f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="JST1">
+      <value>PH2: 1=GND, 2=BAT+</value>
+      <footprint>fridakeys:JST1</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:JST1</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="JST1" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d976de17-6e23-534e-8fe5-4954e1bb4451</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="MCU1A">
+      <value>315-43-112-41-003000</value>
+      <footprint>fridakeys:MCU1A</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:MCU1A</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="MCU1A" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0c27911a-34ac-5bf5-b140-30761be5a1ae</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="24"/>
+            <pin num="23"/>
+            <pin num="22"/>
+            <pin num="21"/>
+            <pin num="20"/>
+            <pin num="19"/>
+            <pin num="18"/>
+            <pin num="17"/>
+            <pin num="16"/>
+            <pin num="15"/>
+            <pin num="14"/>
+            <pin num="13"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="MCU1B">
+      <value>315-43-112-41-003000</value>
+      <footprint>fridakeys:MCU1B</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:MCU1B</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="MCU1B" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>50648a13-c095-577c-a093-fd3d968ecc4c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="PWR1">
+      <value>SSSS811101</value>
+      <footprint>fridakeys:PWR1</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:PWR1</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="PWR1" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4db7516c-7cb1-5e55-9ad1-0173bef941e4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RST1">
+      <value>EVQPUC02K</value>
+      <footprint>fridakeys:RST1</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:RST1</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="RST1" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>deeb8637-cca0-5281-9563-a00c02ddbb24</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S1">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S1</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S1</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S1" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>94ec41d7-0410-5b71-9ebd-fd6796dd90d9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S2">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S2</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S2" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>23349de3-3703-546e-a2d3-05e5135f35fe</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S3">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S3</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S3</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S3" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8f2dced3-13ab-51e2-b8e6-db9cd26ddac2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S4">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S4</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S4</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S4" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4b51ad44-321c-5d95-af83-e33d1e5d1490</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S5">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S5</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S5" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8ec37dea-8714-5611-8c57-c41b5bac146e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S6">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S6</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S6" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>27b71885-e7fb-5e46-8d84-b470852cb0e0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S7">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S7</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S7</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S7" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b8d3fca3-df32-5c20-b64a-c93c457f2e1b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S8">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S8</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S8</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S8" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4e1eacc3-4e8c-5028-be7d-d7b85a1e5190</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S9">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S9</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S9</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S9" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5577c100-0f9c-5569-ae93-d0dfb9aadb75</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S10">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S10</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S10</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S10" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>afb3c5da-6a95-5244-b548-e57fd85a73ec</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S11">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S11</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S11</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S11" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9e4c720c-e291-54f5-8212-4a4de027044d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S12">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S12</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S12</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S12" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6a566947-5fed-5f70-a9a9-d3c4bb4e9d13</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S13">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S13</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S13</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S13" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>abdad393-917a-54bd-bdf9-7a3b590dd3a1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S14">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S14</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S14</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S14" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>845090e4-c80d-5f4d-bf6d-0928f492827d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S15">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S15</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S15</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S15" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aff705a3-c81f-512d-877a-65e0a7d53416</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S16">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S16</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S16</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S16" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>01040a49-c392-5b01-b724-67e21c45a793</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S17">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S17</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S17</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S17" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a75d0f87-d658-581e-81ca-5599a68f7f77</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S18">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S18</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S18</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S18" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c63ddab2-dcd7-58fa-9b1e-2b30e5fdaa62</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S19">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S19</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S19</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S19" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cc76b841-dcc0-5ae4-84e6-a6e101007768</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S20">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S20</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S20</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S20" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fe57703d-9bdc-55b8-923e-8dfcc559aaf9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="S21">
+      <value>MX hotswap</value>
+      <footprint>fridakeys:S21</footprint>
+      <fields>
+        <field name="Footprint">fridakeys:S21</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="S21" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>542ba7ab-858b-5ad8-a28d-13f6f146463a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>nice!nano V2 external module</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="fridakeys" part="U1" description=""/>
+      <property name="Sheetname" value="fridakeys_left"/>
+      <property name="Sheetfile" value="fridakeys_left.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a33e483a-bcdf-5c9e-9aaa-8538ebc8fd81</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="16"/>
+            <pin num="17"/>
+            <pin num="18"/>
+            <pin num="19"/>
+            <pin num="20"/>
+            <pin num="23"/>
+            <pin num="24"/>
+            <pin num="21"/>
+            <pin num="22"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="fridakeys" part="D1">
+      <fields>
+        <field name="Reference">D1</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D10">
+      <fields>
+        <field name="Reference">D10</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D11">
+      <fields>
+        <field name="Reference">D11</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D12">
+      <fields>
+        <field name="Reference">D12</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D13">
+      <fields>
+        <field name="Reference">D13</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D14">
+      <fields>
+        <field name="Reference">D14</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D15">
+      <fields>
+        <field name="Reference">D15</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D16">
+      <fields>
+        <field name="Reference">D16</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D17">
+      <fields>
+        <field name="Reference">D17</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D18">
+      <fields>
+        <field name="Reference">D18</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D19">
+      <fields>
+        <field name="Reference">D19</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D2">
+      <fields>
+        <field name="Reference">D2</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D20">
+      <fields>
+        <field name="Reference">D20</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D21">
+      <fields>
+        <field name="Reference">D21</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D3">
+      <fields>
+        <field name="Reference">D3</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D4">
+      <fields>
+        <field name="Reference">D4</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D5">
+      <fields>
+        <field name="Reference">D5</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D6">
+      <fields>
+        <field name="Reference">D6</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D7">
+      <fields>
+        <field name="Reference">D7</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D8">
+      <fields>
+        <field name="Reference">D8</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="D9">
+      <fields>
+        <field name="Reference">D9</field>
+        <field name="Value">1N4148W (1=K, 2=A)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="JST1">
+      <fields>
+        <field name="Reference">JST1</field>
+        <field name="Value">PH2: 1=GND, 2=BAT+</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="MCU1A">
+      <fields>
+        <field name="Reference">MCU1A</field>
+        <field name="Value">315-43-112-41-003000</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="13" name="13" type="passive"/>
+        <pin num="14" name="14" type="passive"/>
+        <pin num="15" name="15" type="passive"/>
+        <pin num="16" name="16" type="passive"/>
+        <pin num="17" name="17" type="passive"/>
+        <pin num="18" name="18" type="passive"/>
+        <pin num="19" name="19" type="passive"/>
+        <pin num="20" name="20" type="passive"/>
+        <pin num="21" name="21" type="passive"/>
+        <pin num="22" name="22" type="passive"/>
+        <pin num="23" name="23" type="passive"/>
+        <pin num="24" name="24" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="MCU1B">
+      <fields>
+        <field name="Reference">MCU1B</field>
+        <field name="Value">315-43-112-41-003000</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+        <pin num="7" name="7" type="passive"/>
+        <pin num="8" name="8" type="passive"/>
+        <pin num="9" name="9" type="passive"/>
+        <pin num="10" name="10" type="passive"/>
+        <pin num="11" name="11" type="passive"/>
+        <pin num="12" name="12" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="PWR1">
+      <fields>
+        <field name="Reference">PWR1</field>
+        <field name="Value">SSSS811101</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="RST1">
+      <fields>
+        <field name="Reference">RST1</field>
+        <field name="Value">EVQPUC02K</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S1">
+      <fields>
+        <field name="Reference">S1</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S10">
+      <fields>
+        <field name="Reference">S10</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S11">
+      <fields>
+        <field name="Reference">S11</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S12">
+      <fields>
+        <field name="Reference">S12</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S13">
+      <fields>
+        <field name="Reference">S13</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S14">
+      <fields>
+        <field name="Reference">S14</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S15">
+      <fields>
+        <field name="Reference">S15</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S16">
+      <fields>
+        <field name="Reference">S16</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S17">
+      <fields>
+        <field name="Reference">S17</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S18">
+      <fields>
+        <field name="Reference">S18</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S19">
+      <fields>
+        <field name="Reference">S19</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S2">
+      <fields>
+        <field name="Reference">S2</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S20">
+      <fields>
+        <field name="Reference">S20</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S21">
+      <fields>
+        <field name="Reference">S21</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S3">
+      <fields>
+        <field name="Reference">S3</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S4">
+      <fields>
+        <field name="Reference">S4</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S5">
+      <fields>
+        <field name="Reference">S5</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S6">
+      <fields>
+        <field name="Reference">S6</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S7">
+      <fields>
+        <field name="Reference">S7</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S8">
+      <fields>
+        <field name="Reference">S8</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="S9">
+      <fields>
+        <field name="Reference">S9</field>
+        <field name="Value">MX hotswap</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="fridakeys" part="U1">
+      <fields>
+        <field name="Reference">U1</field>
+        <field name="Value">nice!nano V2 external module</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="RAW/BAT+" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="RST" type="input"/>
+        <pin num="4" name="3V3_OUT" type="power_out"/>
+        <pin num="5" name="C0" type="output"/>
+        <pin num="6" name="C1" type="output"/>
+        <pin num="7" name="C2" type="output"/>
+        <pin num="8" name="C3" type="output"/>
+        <pin num="9" name="C4" type="output"/>
+        <pin num="10" name="C5" type="output"/>
+        <pin num="11" name="unused_GPIO" type="bidirectional"/>
+        <pin num="12" name="unused_GPIO" type="bidirectional"/>
+        <pin num="13" name="unused_GPIO" type="bidirectional"/>
+        <pin num="14" name="R3" type="bidirectional"/>
+        <pin num="15" name="R2" type="bidirectional"/>
+        <pin num="16" name="R1" type="bidirectional"/>
+        <pin num="17" name="R0" type="bidirectional"/>
+        <pin num="18" name="unused_GPIO" type="bidirectional"/>
+        <pin num="19" name="unused_GPIO" type="bidirectional"/>
+        <pin num="20" name="unused_GPIO" type="bidirectional"/>
+        <pin num="21" name="GND" type="power_in"/>
+        <pin num="22" name="GND" type="power_in"/>
+        <pin num="23" name="unused_GPIO" type="bidirectional"/>
+        <pin num="24" name="unused_GPIO" type="bidirectional"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="fridakeys">
+      <uri>${KIPRJMOD}/fridakeys.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/BAT_P" class="Default">
+      <node ref="JST1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="PWR1" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="2" name="/C0" class="Default">
+      <node ref="MCU1B" pin="5" pinfunction="5_5" pintype="passive"/>
+      <node ref="S1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S3" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="C0_5" pintype="output"/>
+    </net>
+    <net code="3" name="/C1" class="Default">
+      <node ref="MCU1B" pin="6" pinfunction="6_6" pintype="passive"/>
+      <node ref="S4" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S5" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S6" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="C1_6" pintype="output"/>
+    </net>
+    <net code="4" name="/C2" class="Default">
+      <node ref="MCU1B" pin="7" pinfunction="7_7" pintype="passive"/>
+      <node ref="S7" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S8" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S9" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="C2_7" pintype="output"/>
+    </net>
+    <net code="5" name="/C3" class="Default">
+      <node ref="MCU1B" pin="8" pinfunction="8_8" pintype="passive"/>
+      <node ref="S10" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S11" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S12" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S19" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="C3_8" pintype="output"/>
+    </net>
+    <net code="6" name="/C4" class="Default">
+      <node ref="MCU1B" pin="9" pinfunction="9_9" pintype="passive"/>
+      <node ref="S13" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S14" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S15" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S20" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="C4_9" pintype="output"/>
+    </net>
+    <net code="7" name="/C5" class="Default">
+      <node ref="MCU1B" pin="10" pinfunction="10_10" pintype="passive"/>
+      <node ref="S16" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S17" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S18" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="S21" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="C5_10" pintype="output"/>
+    </net>
+    <net code="8" name="/GND" class="Default">
+      <node ref="JST1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="MCU1A" pin="21" pinfunction="21_21" pintype="passive"/>
+      <node ref="MCU1A" pin="22" pinfunction="22_22" pintype="passive"/>
+      <node ref="MCU1B" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RST1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="RST1" pin="3" pinfunction="3_3" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="U1" pin="21" pinfunction="GND_21" pintype="power_in"/>
+      <node ref="U1" pin="22" pinfunction="GND_22" pintype="power_in"/>
+    </net>
+    <net code="9" name="/R0" class="Default">
+      <node ref="D12" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D15" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D18" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D3" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D6" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D9" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="MCU1A" pin="17" pinfunction="17_17" pintype="passive"/>
+      <node ref="U1" pin="17" pinfunction="R0_17" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="/R1" class="Default">
+      <node ref="D11" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D14" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D17" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D5" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D8" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="MCU1A" pin="16" pinfunction="16_16" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="R1_16" pintype="bidirectional"/>
+    </net>
+    <net code="11" name="/R2" class="Default">
+      <node ref="D1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D10" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D13" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D16" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D4" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D7" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="MCU1A" pin="15" pinfunction="15_15" pintype="passive"/>
+      <node ref="U1" pin="15" pinfunction="R2_15" pintype="bidirectional"/>
+    </net>
+    <net code="12" name="/R3" class="Default">
+      <node ref="D19" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D20" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="D21" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="MCU1A" pin="14" pinfunction="14_14" pintype="passive"/>
+      <node ref="U1" pin="14" pinfunction="R3_14" pintype="bidirectional"/>
+    </net>
+    <net code="13" name="/RAW" class="Default">
+      <node ref="MCU1B" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="PWR1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="RAW/BAT+_1" pintype="power_in"/>
+    </net>
+    <net code="14" name="/RST" class="Default">
+      <node ref="MCU1B" pin="3" pinfunction="3_3" pintype="passive"/>
+      <node ref="RST1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="RST1" pin="4" pinfunction="4_4" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="RST_3" pintype="input"/>
+    </net>
+    <net code="15" name="/VCC" class="Default">
+      <node ref="MCU1B" pin="4" pinfunction="4_4" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="3V3_OUT_4" pintype="power_out"/>
+    </net>
+    <net code="16" name="/far_home_SW" class="Default">
+      <node ref="D21" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S21" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="17" name="/index_bottom_SW" class="Default">
+      <node ref="D13" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S13" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="18" name="/index_home_SW" class="Default">
+      <node ref="D14" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S14" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="19" name="/index_top_SW" class="Default">
+      <node ref="D15" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S15" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="20" name="/inner_bottom_SW" class="Default">
+      <node ref="D16" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S16" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="21" name="/inner_home_SW" class="Default">
+      <node ref="D17" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S17" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="22" name="/inner_top_SW" class="Default">
+      <node ref="D18" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S18" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="23" name="/mid_home_SW" class="Default">
+      <node ref="D20" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S20" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="24" name="/middle_bottom_SW" class="Default">
+      <node ref="D10" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S10" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="25" name="/middle_home_SW" class="Default">
+      <node ref="D11" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S11" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="26" name="/middle_top_SW" class="Default">
+      <node ref="D12" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S12" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="27" name="/near_home_SW" class="Default">
+      <node ref="D19" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S19" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="28" name="/outer_bottom_SW" class="Default">
+      <node ref="D1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S1" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="29" name="/outer_home_SW" class="Default">
+      <node ref="D2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S2" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="30" name="/outer_top_SW" class="Default">
+      <node ref="D3" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S3" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="31" name="/pinky_bottom_SW" class="Default">
+      <node ref="D4" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S4" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="32" name="/pinky_home_SW" class="Default">
+      <node ref="D5" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S5" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="33" name="/pinky_top_SW" class="Default">
+      <node ref="D6" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S6" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="34" name="/ring_bottom_SW" class="Default">
+      <node ref="D7" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S7" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="35" name="/ring_home_SW" class="Default">
+      <node ref="D8" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S8" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="36" name="/ring_top_SW" class="Default">
+      <node ref="D9" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="S9" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="37" name="unconnected-(MCU1A-Pad13)" class="Default">
+      <node ref="MCU1A" pin="13" pinfunction="13_13" pintype="passive+no_connect"/>
+    </net>
+    <net code="38" name="unconnected-(MCU1A-Pad18)" class="Default">
+      <node ref="MCU1A" pin="18" pinfunction="18_18" pintype="passive+no_connect"/>
+    </net>
+    <net code="39" name="unconnected-(MCU1A-Pad19)" class="Default">
+      <node ref="MCU1A" pin="19" pinfunction="19_19" pintype="passive+no_connect"/>
+    </net>
+    <net code="40" name="unconnected-(MCU1A-Pad20)" class="Default">
+      <node ref="MCU1A" pin="20" pinfunction="20_20" pintype="passive+no_connect"/>
+    </net>
+    <net code="41" name="unconnected-(MCU1A-Pad23)" class="Default">
+      <node ref="MCU1A" pin="23" pinfunction="23_23" pintype="passive+no_connect"/>
+    </net>
+    <net code="42" name="unconnected-(MCU1A-Pad24)" class="Default">
+      <node ref="MCU1A" pin="24" pinfunction="24_24" pintype="passive+no_connect"/>
+    </net>
+    <net code="43" name="unconnected-(MCU1B-Pad11)" class="Default">
+      <node ref="MCU1B" pin="11" pinfunction="11_11" pintype="passive+no_connect"/>
+    </net>
+    <net code="44" name="unconnected-(MCU1B-Pad12)" class="Default">
+      <node ref="MCU1B" pin="12" pinfunction="12_12" pintype="passive+no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(PWR1-Pad3)" class="Default">
+      <node ref="PWR1" pin="3" pinfunction="3_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(U1-unused_GPIO-Pad11)" class="Default">
+      <node ref="U1" pin="11" pinfunction="unused_GPIO_11" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(U1-unused_GPIO-Pad12)" class="Default">
+      <node ref="U1" pin="12" pinfunction="unused_GPIO_12" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(U1-unused_GPIO-Pad13)" class="Default">
+      <node ref="U1" pin="13" pinfunction="unused_GPIO_13" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(U1-unused_GPIO-Pad18)" class="Default">
+      <node ref="U1" pin="18" pinfunction="unused_GPIO_18" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(U1-unused_GPIO-Pad19)" class="Default">
+      <node ref="U1" pin="19" pinfunction="unused_GPIO_19" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(U1-unused_GPIO-Pad20)" class="Default">
+      <node ref="U1" pin="20" pinfunction="unused_GPIO_20" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(U1-unused_GPIO-Pad23)" class="Default">
+      <node ref="U1" pin="23" pinfunction="unused_GPIO_23" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="53" name="unconnected-(U1-unused_GPIO-Pad24)" class="Default">
+      <node ref="U1" pin="24" pinfunction="unused_GPIO_24" pintype="bidirectional+no_connect"/>
+    </net>
+  </nets>
+</export>

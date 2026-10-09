@@ -17,7 +17,7 @@ render_env = os.environ.copy()
 if sys.platform.startswith('linux'):
     render_env['QT_QPA_PLATFORM'] = 'offscreen'
 for side in ('left', 'right'):
-    subprocess.run(['openscad', '-o', str(OUT/f'case-{side}.png'), '--render',
+    subprocess.run(['openscad', '-o', str(OUT/f'case-{side}.png'), '--preview',
                     '--imgsize=1200,900', '--viewall', '--autocenter', '--colorscheme=Tomorrow',
                     '-D', f'side="{side}"', str(ROOT/'case/sandwich.scad')], check=True, env=render_env)
 print('Updated both case assembly previews from the committed OpenSCAD model')

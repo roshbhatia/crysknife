@@ -1,0 +1,22 @@
+(footprint "D8"
+        (layer "B.Cu")
+        (at 202.4 66.675 90)
+        (property "Reference" "D8"
+            (at 0 0 90)
+            (layer "B.SilkS")
+            hide
+            (effects (font (size 1 1) (thickness 0.15)))
+        )
+        
+      (fp_line (start 0.25 0) (end 0.75 0) (layer "B.SilkS") (stroke (width 0.1) (type solid)))
+      (fp_line (start 0.25 0.4) (end -0.35 0) (layer "B.SilkS") (stroke (width 0.1) (type solid)))
+      (fp_line (start 0.25 -0.4) (end 0.25 0.4) (layer "B.SilkS") (stroke (width 0.1) (type solid)))
+      (fp_line (start -0.35 0) (end 0.25 -0.4) (layer "B.SilkS") (stroke (width 0.1) (type solid)))
+      (fp_line (start -0.35 0) (end -0.35 0.55) (layer "B.SilkS") (stroke (width 0.1) (type solid)))
+      (fp_line (start -0.35 0) (end -0.35 -0.55) (layer "B.SilkS") (stroke (width 0.1) (type solid)))
+      (fp_line (start -0.75 0) (end -0.35 0) (layer "B.SilkS") (stroke (width 0.1) (type solid)))
+        
+      (pad "1" smd rect (at -1.65 0 90) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask") (net 32 "R1"))
+      (pad "2" smd rect (at 1.65 0 90) (size 0.9 1.2) (layers "B.Cu" "B.Paste" "B.Mask") (net 14 "mirror_ring_home_SW"))
+        
+    )

@@ -112,11 +112,11 @@ def descriptor(side):
             "outline": [convert(p) for p in outline], "silkscreen": silkscreen}
 
 
-def jsx(data, routing):
-    lines = [f'import artwork from "../models/{data["side"]}-artwork"', 'export default () => (',
+def jsx(data):
+    lines = [f'import artwork from "../models/{data["side"]}-artwork"', 'export default ({ routing = true }: { routing?: boolean }) => (',
              f'<board solderMaskColor="white" silkscreenColor="black" outline={{{json.dumps(data["outline"])}}} layers={{2}} thickness={{1.6}} '
-             f'autorouter="auto-local" routingDisabled={{{str(not routing).lower()}}} '
-             f'placementDrcChecksDisabled={{{str(routing).lower()}}} '
+             'autorouter="auto-local" routingDisabled={!routing} '
+             'placementDrcChecksDisabled={routing} '
              'minTraceWidth={0.25} minTraceToPadEdgeClearance={0.2} minViaEdgeToPadEdgeClearance={0.25} '
              'minTraceToHoleEdgeClearance={0.3} '
              'minBoardEdgeClearance={0.55} minViaHoleDiameter={0.3} minViaPadDiameter={0.6}>']
@@ -168,6 +168,8 @@ if __name__ == "__main__":
         module = 'type Rectangle = [number, number, number, number, "top" | "bottom"]\nconst artwork: Rectangle[] = [\n'
         module += ',\n'.join(json.dumps(rect, separators=(',', ':')) for rect in rectangles)
         (MODELS/f'{side}-artwork.ts').write_text(module+'\n]\nexport default artwork\n')
+        (GENERATED / f"{side}-board.circuit.tsx").write_text(jsx(data))
         for routing, suffix in ((False, "placement"), (True, "routed")):
-            (GENERATED / f"{side}-{suffix}.circuit.tsx").write_text(jsx(data, routing))
+            wrapper = f'import Board from "./{side}-board.circuit"\nexport default () => <Board routing={{{str(routing).lower()}}} />\n'
+            (GENERATED / f"{side}-{suffix}.circuit.tsx").write_text(wrapper)
         print(f'{side}: {len(data["pads"])} copper pads, {len(data["holes"])} holes')

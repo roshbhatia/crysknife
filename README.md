@@ -29,13 +29,13 @@ KiCad merges copper into the original footprints, fills ground pours, and checks
 GitHub Actions runs the pinned KiCad container and builds all three ZMK images.
 Local KiCad container commands need a running Docker service; generation does not.
 
-Generated artifacts stay under `build/`:
+Build caches and intermediate evidence stay under `build/`:
 
 - `pcb/`: placement PCBs, routed PCBs, DRC reports, and silkscreen previews.
 - `tscircuit/`: React routing evidence and white PCB appearance previews for both faces.
 - `schematic/`: separate KiCad schematics, independent pin mapping, ERC reports, netlists, and PDFs.
 - `manufacturing/quote-only/`: BOM/CPL candidates with explicit unresolved supplier requirements.
-- `case/`: five flat sandwich layers per half in DXF/SVG and OpenSCAD assembly files.
+- `case/`: bent bottom flat patterns, damping sheets, top plates, and 3D assemblies.
 
 ## Electronics and assembly
 
@@ -65,7 +65,6 @@ ERC and DRC cannot prove assembly quality, switch fit, charging temperature, or 
 The right half remains ZMK central. The keymap provides QWERTY, symbols, navigation, function keys, and five Bluetooth profiles.
 ZMK and its dependencies remain pinned in `firmware/config/west.lock.yml`.
 The firmware workflow builds left, right, and settings-reset images, with compiled devicetree and Kconfig evidence.
-The former PS/2 driver and TrackPoint circuit have been removed.
 
 ## PCB artwork
 
@@ -83,18 +82,19 @@ Installed keycaps and components can cover artwork; the PCB previews show bare b
 
 ## Sandwich case
 
-OpenSCAD exports flat bottom, spacer, plate, gasket, and bezel contours; no printed parts are needed.
-Six external M2 standoffs hold each assembly. The floating plate/PCB use perimeter gaskets.
-USB, power, and reset remain accessible from the side.
+Each half uses a bent aluminum bottom, flat neoprene liner, and clear acrylic top.
+Six M2 standoffs join the plates through matching holes.
+The controller side stays open for USB, power, reset, and Bluetooth.
+No printed parts are needed.
 
-The large battery adds 9 mm to the previous case reservation.
-The nominal stack has a 3 mm nonconductive bottom, six 3 mm spacer rings, a 1.5 mm switch plate, and a 3 mm bezel.
-PCB underside clearance is 13.9 mm; plate-to-PCB clearance is 3.5 mm.
-Compressed gaskets measure 1 mm below the plate and 0.5 mm above it.
-The battery's 64 × 40 × 8.5 mm reservation sits beneath the key field, clear of the controller RF exclusion.
-A foam retainer and insulating cover must prevent movement and contact with switch pins.
-Actual supplier material thickness, component protrusion, cell dimensions, and gasket travel require a prototype measurement.
-Cutting exports are dimensional drafts until SendCutSend accepts the selected materials and tolerances.
+Edit [case/parameters.scad](case/parameters.scad), then regenerate the case and its previews.
+The current stock is 1.6002 mm aluminum, acrylic, and neoprene.
+Use 20 mm standoffs with 1 mm nylon shims. The two bottom flanges bend upward 90 degrees.
+The battery reservation is 64 × 40 × 8.5 mm beneath each PCB.
+Secure it with foam and an insulating cover. Add a dielectric liner above the metal floor.
+Use the exported switch-fit coupon to test the acrylic and actual Outemu switches before final plate cutting.
+
+[SendCutSend instructions](manufacturing/sendcutsend/README.md) list the materials, bend directions, and remaining fit checks.
 
 ## Release gates
 
@@ -117,3 +117,9 @@ These files open from a clean checkout. Build caches and dependencies stay ignor
 ![Right front](previews/right.png)
 ![Left back](previews/left-bottom.png)
 ![Right back](previews/right-bottom.png)
+
+Engineering exports live in [out/](out/README.md).
+Vendor review files live in [manufacturing/jlcpcb/](manufacturing/jlcpcb/README.md) and [manufacturing/sendcutsend/](manufacturing/sendcutsend/README.md).
+
+![Left case](previews/case-left.png)
+![Right case](previews/case-right.png)

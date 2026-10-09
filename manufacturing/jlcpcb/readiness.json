@@ -1,0 +1,40 @@
+{
+  "status": "NOT ORDER READY",
+  "catalog_checked": "2026-10-08",
+  "coordinate_system": "KiCad footprint origin; millimeters; X right, Y up; PCB origin 0,0",
+  "placement_validation": "Pickup offsets, polarity and factory rotations require assembler review",
+  "remaining_gates": [
+    "Current manufacturer drawings, footprint fit, pickup origins and rotations accepted by assembler",
+    "Exact supplier stock and Standard two-face mixed SMT/THT assembly quote accepted",
+    "Factory accepts C5504443 socket sourcing and soldering; matching nice!nano header insertion and assembled height verified",
+    "Adafruit 2011 plug polarity, 500 mA BOOST setting, charging temperature and physical case fit",
+    "Physical prototype keyboard, Bluetooth and charging tests"
+  ],
+  "boards": [
+    {
+      "side": "left",
+      "factory_parts": 47,
+      "factory_sockets": 21,
+      "factory_diodes": 21,
+      "factory_controller_sockets": 2,
+      "excluded": {
+        "MCU1": "Controller outline only; purchase nice!nano v2 separately and solder its two matching header strips",
+        "ART1": "Silkscreen geometry; no physical component"
+      },
+      "through_hole_battery_connector": "JST1"
+    },
+    {
+      "side": "right",
+      "factory_parts": 47,
+      "factory_sockets": 21,
+      "factory_diodes": 21,
+      "factory_controller_sockets": 2,
+      "excluded": {
+        "MCU1": "Controller outline only; purchase nice!nano v2 separately and solder its two matching header strips",
+        "ART1": "Silkscreen geometry; no physical component"
+      },
+      "through_hole_battery_connector": "JST1"
+    }
+  ],
+  "digital_evidence": "../../out/validation.json"
+}

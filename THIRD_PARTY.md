@@ -13,7 +13,8 @@ Revision `48935f54b456ff1503d78d6b17d9d146b54e8ade` remains in the immutable dep
 Its selected footprints use MIT and CC BY-NC-SA 4.0 licenses, as declared in each source file.
 Diode, controller, and power-switch sources use CC BY-NC-SA 4.0.
 MX socket, battery, and reset footprints use MIT.
-No upstream footprint files are edited or vendored.
+No upstream footprint source files are edited or vendored.
+The `out/` snapshots embed generated KiCad footprint geometry for editing.
 The local controller adapter preserves pin positions and nets, sets 1 mm drills, and splits contacts into two factory socket footprints.
 
 `assets/frida.png` is an unchanged copy of `/Users/roshan/Desktop/frida.png`, supplied by the user.
@@ -23,7 +24,6 @@ The original source image remains unchanged.
 `assets/ibm-plex-mono-bold.ttf` comes from [Google Fonts](https://github.com/google/fonts/tree/2eb0b48d5f760f62e286216f0859a8c540dbc1bd/ofl/ibmplexmono).
 The selected face is IBM Plex Mono Bold. Its OFL is preserved in `assets/LICENSE.ibm-plex-mono`.
 All visible PCB text uses this face as portable silkscreen geometry.
-The older Ioskeley Mono and KingjolA assets remain unused.
 
 Column stagger dimensions are measured from the [Piantor left PCB](https://github.com/beekeeb/piantor/blob/cd847afb4f9a86e8c1c8e36f243140644013afb2/pcb/left/keyboard_pcb.kicad_pcb).
 The source uses 18 mm horizontal and 17 mm vertical pitch; this design uses 20 mm MX pitch.

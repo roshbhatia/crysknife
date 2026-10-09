@@ -43,6 +43,6 @@ Record measurements in `prototype-results.json`; an empty result does not pass.
 ## Case and suppliers
 
 Record actual plate thickness and switch retention after cutting.
-Check minimum/maximum cut tolerances, gasket compression, standoff length, bolt clearance, and anti-slip feet.
+Check minimum/maximum cut tolerances, rubber thickness, bend clearance, standoff and shim length, bolt clearance, and anti-slip feet.
 Supplier AOI and bare-board electrical testing supplement these tests; they do not replace them.
 Release only after all required results are recorded and the supplier accepts the exact revision and assembly scope.

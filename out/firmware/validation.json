@@ -1,0 +1,11 @@
+{
+  "source_revision": "ac70b21f646ae2efef01606aa83f1e5ddef30cfe",
+  "ci": "https://github.com/roshbhatia/fridakeys/actions/runs/37874342680",
+  "target": "nice_nano_v2",
+  "status": "all three builds passed; physical keyboard tests pending",
+  "sha256": {
+    "left": "69b4a245bd1c5674e15f980655bd4a2e183cead0b4743a74d6c034d65bb030eb",
+    "right": "056fe94adfe85a941e270e0fb9bef532e6fb04b262c2fe102b5cab4119752522",
+    "settings_reset": "0dd6be82134d011c8ee58794940f87e03b4eaf8e859ab336ef123bca190eef3a"
+  }
+}

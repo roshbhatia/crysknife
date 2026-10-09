@@ -84,9 +84,9 @@ References: [board and autorouter](https://docs.tscircuit.com/elements/board),
 
 Enter `nix develop .` and run `npm ci --prefix tscircuit` once.
 Start `tsci dev` with the command above, then select the left or right entry.
-Edit the corresponding `generated/*-routed.circuit.tsx` to experiment with board geometry, pad placement, colors, or routing constraints.
+Edit the corresponding `generated/*-board.circuit.tsx` to experiment with board geometry, pad placement, colors, or routing constraints.
 The `models/*-artwork.ts` arrays contain `[x, y, width, height, layer]` rectangles in millimeters.
-Both placement and routed entries share those artwork arrays.
+Both placement and routed entries share one board component and one artwork array per half.
 
 The generated files are editable snapshots. `npm run route` replaces them from the Ergogen sources and artwork generator.
 For lasting changes, edit `ergogen/layout.yaml`, `ergogen/pcb.yaml`, `scripts/add_artwork.py`, or `scripts/generate_tscircuit.py`.
@@ -98,4 +98,7 @@ Fresh front and back PNGs are committed in [`../previews/`](../previews/).
 Run `nix develop . --command python3 scripts/save_previews.py` after routing to refresh them.
 Open [`../case/sandwich.scad`](../case/sandwich.scad) in OpenSCAD for the editable mechanical assembly.
 Its geometry is committed beside it, so no ignored build directory is needed.
-The 3D case model shows reserved envelopes; controller, socket, switch, and battery fit still need physical checks.
+The case model shows reserved envelopes. Controller, socket, switch, and battery fit still need physical checks.
+
+Checked KiCad projects and 3D exports live in [`../out/`](../out/README.md).
+Vendor review files have separate directories under `manufacturing/`.

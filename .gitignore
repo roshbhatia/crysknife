@@ -3,3 +3,7 @@ node_modules/
 build/
 .DS_Store
 .tscircuit/
+out/**/*.kicad_prl
+out/**/fp-info-cache
+out/**/_autosave-*
+out/**/backups/

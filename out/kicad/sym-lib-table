@@ -1,0 +1,1 @@
+(sym_lib_table (version 7) (lib (name "fridakeys") (type "KiCad") (uri "${KIPRJMOD}/fridakeys.kicad_sym") (options "") (descr "Local carrier symbols and typed external module")))

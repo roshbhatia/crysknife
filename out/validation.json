@@ -1,0 +1,21 @@
+{
+  "pcb_revision": "cd6cefb1198ccc791e95e00e276830f096db2a71",
+  "pcb_ci": "https://github.com/roshbhatia/fridakeys/actions/runs/37874961792",
+  "status": "digital checks passed; supplier and physical approval pending",
+  "boards": {
+    "left": {
+      "erc_issues": 0,
+      "drc_errors": 0,
+      "unconnected": 0,
+      "library_warnings": 49,
+      "sha256": "730c1b8b35902ab451832bbb11cf0d518a7f00dc8afd3e0cb062109da0d19ba9"
+    },
+    "right": {
+      "erc_issues": 0,
+      "drc_errors": 0,
+      "unconnected": 0,
+      "library_warnings": 49,
+      "sha256": "2757b07913f93082dda9d8d2ca1d4ce32e7a7d750b0ae832d19efeccfc60ddbd"
+    }
+  }
+}
