@@ -1,0 +1,63 @@
+case/parameters.scad
+  s_df88920dc610de::t_f4de473ebe546f 22
+scripts/generate_assembly.py
+  s_df88920dc610de::t_7ab78ba8f66944 3,50-62,65,69-70,76,85
+  s_df88920dc610de::t_9c4ad549bebad1 71
+  s_df88920dc610de::t_bc2f2aeaae0f6c 45
+manufacturing/README.md
+  s_df88920dc610de::t_dba11e91b1d95f 31,48
+  s_df88920dc610de::t_d893547cdce3e0 30,32-36,46-47,49-54,59,61,63,72,76,83-84
+manufacturing/jlcpcb/placement-readback.json
+  s_df88920dc610de::t_e6dd05780f98e5 1-856
+manufacturing/jlcpcb/right-bom.csv
+  s_df88920dc610de::t_92b62c8824cee1 4-6
+scripts/generate_case.py
+  s_df88920dc610de::t_b6d2ba5d23877f 28-29,31-32,123-125
+manufacturing/parts.json
+  s_df88920dc610de::t_92b62c8824cee1 2,20,57,84
+  s_df88920dc610de::t_f4de473ebe546f 3,9-11,13-19,47-48,50-56,73-75,77-83,98-99
+manufacturing/jlcpcb/placement-corrections.json
+  s_df88920dc610de::t_7ab78ba8f66944 1-12
+manufacturing/jlcpcb/right-cpl.csv
+  s_df88920dc610de::t_92b62c8824cee1 2-47
+out/mechanical-checks.json
+  s_df88920dc610de::t_dba11e91b1d95f 1-53,55-152,154-200
+manufacturing/header-fit.json
+  s_df88920dc610de::t_bc2f2aeaae0f6c 22
+  s_df88920dc610de::t_f4de473ebe546f 3,9-10,21,23,25-32
+manufacturing/jlcpcb/README.md
+  s_df88920dc610de::t_d893547cdce3e0 17,26-27,34-37
+  s_df88920dc610de::t_92b62c8824cee1 11-14
+scripts/check_supplier_placement.py
+  s_df88920dc610de::t_e12c2c8ed4a32b 1-44
+manufacturing/jlcpcb/left-bom.csv
+  s_df88920dc610de::t_92b62c8824cee1 4-6
+manufacturing/jlcpcb/left-cpl.csv
+  s_df88920dc610de::t_92b62c8824cee1 2-47
+manufacturing/physical-tests.md
+  s_df88920dc610de::t_d893547cdce3e0 23,34
+manufacturing/battery.json
+  s_df88920dc610de::t_f4de473ebe546f 19-21,26-28
+manufacturing/reference-builds.md
+  s_df88920dc610de::t_d893547cdce3e0 60,63
+manufacturing/jlcpcb/prototype-changes.md
+  s_df88920dc610de::t_ee6978f809e19b 1-62
+manufacturing/jlcpcb/readiness.json
+  s_df88920dc610de::t_80219726c0c629 3-6,10-11,47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "288297b5901f96f8e24360bab4fbd2d297246142",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
