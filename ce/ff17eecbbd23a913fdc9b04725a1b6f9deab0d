@@ -1,0 +1,21 @@
+ergogen/trackpoint.js
+  s_df88920dc610de::t_9499e8117fd006 19,22,24,27-28
+scripts/check_electrical.py
+  s_df88920dc610de::t_59ba6f81fd30fa 68-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ceff17eecbbd23a913fdc9b04725a1b6f9deab0d",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
