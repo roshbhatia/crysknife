@@ -1,0 +1,44 @@
+scripts/check_electrical.py
+  s_df88920dc610de::t_11eadcaca093e6 32-38
+scripts/check_conversion_guards.py
+  s_df88920dc610de::t_3b7299fc491075 20
+ergogen/pcb.yaml
+  s_df88920dc610de::t_f9f2c45f8d545b 33
+scripts/check_placement.py
+  s_df88920dc610de::t_57d4142a97a769 58-64
+  s_df88920dc610de::t_11eadcaca093e6 20,48-49,51-53,57,66,68-69
+ergogen/controller_sockets.js
+  s_df88920dc610de::t_f9f2c45f8d545b 1-7,9-28,30-51
+  s_df88920dc610de::t_3f02c7f0993c11 8,29
+scripts/generate_assembly.py
+  s_df88920dc610de::t_11eadcaca093e6 34-35,73
+manufacturing/README.md
+  s_df88920dc610de::t_4885c09ac06b59 15,18-19,40,42-49,51-56,58-64,66-73
+scripts/generate_pcbs.cjs
+  s_df88920dc610de::t_f9f2c45f8d545b 20
+README.md
+  s_df88920dc610de::t_4885c09ac06b59 4,55-62
+  s_df88920dc610de::t_c2928af8505d7d 63,188,199,243
+tscircuit/README.md
+  s_df88920dc610de::t_4885c09ac06b59 68
+THIRD_PARTY.md
+  s_df88920dc610de::t_d73c0811fe427e 39-41
+manufacturing/parts.json
+  s_df88920dc610de::t_b0f138c03373c0 94-103,107,113
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b4718d653d4d6b1f8fbafcf0c5566ab508f165a2",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
