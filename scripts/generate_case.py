@@ -7,7 +7,8 @@ import sys
 import xml.etree.ElementTree as ET
 
 from shapely import affinity
-from shapely.geometry import Polygon, box, LineString
+from shapely.ops import unary_union
+from shapely.geometry import Polygon, box, Point
 
 from generate_tscircuit import descriptor
 from kicad_sexp import child, children, parse
@@ -47,31 +48,22 @@ for side in ("left", "right"):
     assert all(shape.buffer(2.5).covers(cutout) for cutout in cutouts), "Switch cutout crosses plate boundary"
     assert all(a.distance(b) >= 1 for i, a in enumerate(cutouts) for b in cutouts[i+1:]), "Insufficient switch plate web"
     cx, cy = components["MCU1"]
-    electronics = box(cx-10, cy-21, cx+10, cy+21)
-    assert all(electronics.distance(cutout) >= 1 for cutout in cutouts), "Controller opening clips a switch"
-    x0, y0, x1, y1 = shape.bounds
-    rx, ry = components["RST1"]
-    px, py = components["PWR1"]
-    openings = box(cx-10 if side == "left" else x0-10, py-4,
-                   x1+10 if side == "left" else cx+10, y1+10)
-    wall = shape.buffer(expansion).difference(shape.buffer(0.8)).difference(openings)
-    assert wall.is_valid and wall.geom_type == "Polygon", "Mounting area is disconnected"
-    bolt_region = wall.buffer(-3.9)
-    candidates = []
-    boundary = shape.buffer(5.3).exterior
-    for index in range(180):
-        p = boundary.interpolate(boundary.length*index/180)
-        if bolt_region.covers(p):
-            candidates.append(p)
-    assert len(candidates) >= 6
-    bolts = [min(candidates, key=lambda p: p.x)]
-    while len(bolts) < 6:
-        p = max(candidates, key=lambda p: min(p.distance(existing) for existing in bolts))
-        assert all(p.distance(existing) >= 15 for existing in bolts)
-        bolts.append(p)
+    electronics = box(cx-parameters["controller_width"]/2, cy-parameters["controller_length"]/2,
+                      cx+parameters["controller_width"]/2, cy+parameters["controller_length"]/2)
+    bolts = [Point(components[f"MH{n}"]) for n in range(1,5)]
+    mounts = [hole for hole in data["holes"] if hole["ref"].startswith("MH")]
+    assert len(mounts) == len(bolts) == 4
+    mount_diameter = mounts[0]["diameter"]
+    assert all(hole["diameter"] == mount_diameter for hole in mounts)
+    assert mount_diameter >= parameters["standoff_diameter"]+0.5
+    plate_material = shape.buffer(expansion, join_style="mitre").difference(unary_union(cutouts))
+    bolt_margin = parameters["bolt_diameter"]/2 + 1.5*parameters["plate_thickness"]
     for p in bolts:
-        assert p.distance(shape) >= 4.6
-        assert wall.covers(p.buffer(3.9)), "Standoff crosses the plate opening"
+        assert shape.covers(p.buffer(mount_diameter/2+0.5)), "Mounting hole crosses PCB edge"
+        assert plate_material.covers(p.buffer(bolt_margin)), "Insufficient material around plate screw"
+    keycaps = [affinity.translate(affinity.rotate(box(-9,-9,9,9), a), x,y) for x,y,a in keys]
+    minimum_keycap_gap = min(a.distance(b) for i,a in enumerate(keycaps) for b in keycaps[i+1:])
+    assert minimum_keycap_gap >= 0.5, "Adjacent keycaps overlap or leave insufficient clearance"
     desired_battery_center = [(components["S8"][i]+components["S11"][i])/2 for i in (0, 1)]
     rf_exclusion = box(cx-14, cy-23, cx+14, cy+23)
     battery_candidates = []
@@ -79,7 +71,8 @@ for side in ("left", "right"):
         for dy in range(-15, 16):
             bx, by = desired_battery_center[0]+dx, desired_battery_center[1]+dy
             envelope = box(bx-32, by-20, bx+32, by+20)
-            if shape.buffer(-2).covers(envelope) and envelope.distance(rf_exclusion) >= 10:
+            if (shape.buffer(-2).covers(envelope) and envelope.distance(rf_exclusion) >= 10
+                    and all(envelope.distance(p) >= parameters["standoff_diameter"]/2+0.5 for p in bolts)):
                 battery_candidates.append((dx*dx+dy*dy, bx, by))
     assert battery_candidates, "No protected large-battery envelope fits clear of RF"
     _, bx, by = min(battery_candidates)
@@ -87,43 +80,20 @@ for side in ("left", "right"):
     battery_envelope = box(bx-32, by-20, bx+32, by+20)
     assert under_pcb_clearance-parameters["damping_thickness"]-0.5-8.5-0.5 >= 4.4, "Battery collides with underside component reservation"
     values = [outline, keys, [[p.x, p.y] for p in bolts], components["MCU1"],
-              components["RST1"], components["PWR1"], list(shape.bounds), battery_center]
+              components["RST1"], components["PWR1"], list(shape.bounds), battery_center, mount_diameter]
     geometries.append(f"{side}_geometry = {json.dumps(values)};")
-    flange_x = shape.bounds[2] + expansion + parameters['flange_clearance']
-    t, deduction = parameters['bottom_thickness'], parameters['bend_deduction']
-    bend_x = flange_x + t - deduction/2
-    bend_lines = [LineString([(sign*bend_x, parameters['flange_y_min']),
-                              (sign*bend_x, parameters['flange_y_max'])]) for sign in (-1,1)]
-    minimum_bend_hole_distance = min(p.distance(line) - parameters['bolt_diameter']/2 for p in bolts for line in bend_lines)
-    assert minimum_bend_hole_distance >= 0.472*25.4/2, 'Bolt hole enters the press-brake deformation zone'
-    corner_relief = bend_x - (shape.bounds[2]+expansion)
-    assert corner_relief >= 0.118*25.4, 'Insufficient natural corner relief'
-    assert parameters['flange_height'] > parameters['bend_radius']
-    assert 2*flange_x >= 2*parameters['flange_height'], 'U-channel tooling cannot reach the base'
-    assert parameters['flange_height'] >= 0.303*25.4, 'Flange below supplier minimum'
-    assert flange_x-(abs(cx)+14) >= 10, 'Bent metal enters the controller RF reservation'
-    physical_checks[side] = (cutouts, bolts, openings, bend_lines)
-    guide = ['<svg xmlns="http://www.w3.org/2000/svg" width="200mm" height="150mm" viewBox="-100 -75 200 150">']
-    for line in bend_lines:
-        (x0,y0),(x1,y1) = line.coords
-        guide.append(f'<path d="M {x0} {-y0} L {x1} {-y1}" fill="none" stroke="blue" stroke-width="0.3"/>')
-    guide.append('</svg>')
-    (OUTPUT/f'{side}-bend-lines.svg').write_text('\n'.join(guide)+'\n')
-    bends = {'material':'5052 H32 aluminum', 'thickness_mm':t, 'angle_degrees':90, 'direction':'both flanges up',
-             'radius_mm':parameters['bend_radius'], 'deduction_mm':deduction, 'flange_height_mm':parameters['flange_height'],
-             'flat_bend_lines_mm':[list(line.coords) for line in bend_lines],
-             'minimum_hole_to_bend_mm':minimum_bend_hole_distance, 'natural_corner_relief_mm':corner_relief,
-             'status':'supplier bend simulation and physical fit pending',
-             'source':'https://sendcutsend.com/bending-calculator/'}
-    (OUTPUT/f'{side}-bends.json').write_text(json.dumps(bends,indent=2)+'\n')
+    physical_checks[side] = (cutouts, bolts, electronics)
     reports.append({"side": side, "keys": len(keys), "pcb_area_mm2": shape.area,
                     "minimum_plate_web_mm": min(a.distance(b) for i, a in enumerate(cutouts) for b in cutouts[i+1:]),
-                    "bolts": values[2], "side_apertures": ["USB", "RST", "PWR"],
+                    "bolts": values[2], "standoff_count": 4, "pcb_mount_hole_mm": mount_diameter,
+                    "minimum_keycap_gap_mm": minimum_keycap_gap, "controls": "accessible through open plate sides",
                     "switch": "Outemu Medium-Low Black; standard MX socket footprint",
                     "pcb_to_plate_gap_mm": parameters["plate_to_pcb_gap"], "plate_thickness_mm": parameters["plate_thickness"],
                     "under_pcb_clearance_mm": under_pcb_clearance, "bottom_thickness_mm": parameters["bottom_thickness"],
                     "standoff_height_mm": parameters["standoff_height"], "standoff_shim_mm": parameters["standoff_shim"],
-                    "damping_thickness_mm": parameters["damping_thickness"], "bends": bends,
+                    "damping_thickness_mm": parameters["damping_thickness"], "bends": False,
+                    "controller": {"mount": "face up beneath carrier", "covered_by_plate": True,
+                                   "reserved_gap_mm": parameters["controller_gap"], "height_requires_samples": True},
                     "battery": {"sku": "Adafruit 2011", "capacity_mAh": 2000,
                                 "nominal_mm": [60, 36, 7], "reserved_mm": [64, 40, 8.5],
                                 "center_mm": battery_center, "rf_clearance_mm": battery_envelope.distance(rf_exclusion),
@@ -158,7 +128,7 @@ def exported_shape(path):
 
 
 for side in ("left", "right"):
-    cutouts, bolts, openings, bend_lines = physical_checks[side]
+    cutouts, bolts, electronics = physical_checks[side]
     report = next(item for item in reports if item["side"] == side)
     report["exports"] = {}
     for part in ("bottom-flat", "plate", "damping"):
@@ -173,20 +143,11 @@ for side in ("left", "right"):
         if part in ("bottom-flat", "plate", "damping"):
             assert all(actual.intersection(p.buffer(1.08)).area < 0.0001 for p in bolts), "Export blocks bolt hole"
         if part == "plate":
-            assert actual.intersection(openings.buffer(-0.01)).area < 0.0001, "Export blocks side access"
+            assert actual.covers(electronics.buffer(-0.01)), "Top plate does not cover controller"
         report["exports"][part] = {"area_mm2": actual.area, "closed_contours": contours}
     subprocess.run(["openscad", "-o", str(OUTPUT / f"{side}-assembly.csg"),
                     "-D", f'side="{side}"', str(ROOT / "case/sandwich.scad")], check=True, env=export_env)
-    dxf = (OUTPUT/f'{side}-bottom-flat.dxf').read_text()
-    marker = '  0\nENDSEC'
-    entity_start = dxf.index('ENTITIES')
-    end_entities = dxf.index(marker, entity_start)
-    entities = ''
-    for line in bend_lines:
-        (x0,y0),(x1,y1) = line.coords
-        entities += f'  0\nLINE\n  8\n0\n 10\n{x0}\n 20\n{y0}\n 30\n0\n 11\n{x1}\n 21\n{y1}\n 31\n0\n'
-    (OUTPUT/f'{side}-bottom-bent.dxf').write_text(dxf[:end_entities]+entities+dxf[end_entities:])
-    print(f"{side}: exported three case layers, 21 switch cutouts and six standoff holes")
+    print(f"{side}: exported three flat case layers, 21 switch cutouts and four standoff holes")
 (OUTPUT / "mechanical-checks.json").write_text(json.dumps(reports, indent=2)+"\n")
 
 for extension in ('dxf', 'svg'):

@@ -17,7 +17,13 @@ for side in ("left", "right"):
         assert len(list(artwork[0].Pads())) == 0
         assert artwork[0].GetLayer() == pcbnew.F_Cu
     footprints = [fp for fp in board.GetFootprints() if fp.GetReference() != "ART1"]
-    assert len(footprints) == 48, (side, len(footprints))
+    assert len(footprints) == 52, (side, len(footprints))
+    mounts = [fp for fp in footprints if fp.GetReference().startswith("MH")]
+    assert len(mounts) == 4
+    for fp in mounts:
+        pads = list(fp.Pads())
+        assert len(pads) == 1 and pads[0].GetAttribute() == pcbnew.PAD_ATTRIB_NPTH
+        assert pads[0].GetDrillSize().x == pcbnew.FromMM(5)
     keys = [fp for fp in footprints if fp.GetReference().startswith("S")]
     diodes = [fp for fp in footprints if fp.GetReference().startswith("D")]
     assert len(keys) == len(diodes) == 21
@@ -49,7 +55,7 @@ for side in ("left", "right"):
     controllers[side] = sockets
     assert controller.GetLayer() == pcbnew.F_Cu
     assert not list(controller.Pads())
-    assert all(fp.GetLayer() == pcbnew.F_Cu and len(list(fp.Pads())) == 12 for fp in sockets)
+    assert all(fp.GetLayer() == pcbnew.B_Cu and len(list(fp.Pads())) == 12 for fp in sockets)
     pads = [pad for socket in sockets for pad in socket.Pads()]
     assert len(pads) == 24
     assert {p.GetNumber() for p in pads} == {str(n) for n in range(1, 25)}
@@ -63,7 +69,7 @@ for side in ("left", "right"):
         assert abs(pad.GetPosition().x-center.x-pcbnew.FromMM(column)) <= 1
         assert abs(pad.GetPosition().y-center.y-pcbnew.FromMM(-12.7+2.54*row)) <= 1
     switches[side] = {fp.GetReference(): fp for fp in keys}
-    print(f"{side}: 21 bottom-side MX sockets, 21 polarized diodes, two factory-soldered controller sockets")
+    print(f"{side}: 21 bottom-side MX sockets, 21 polarized diodes, two bottom-side factory-soldered controller sockets")
 
 left_pins = {p.GetNumber(): p.GetNetname() for fp in controllers["left"] for p in fp.Pads()}
 right_pins = {p.GetNumber(): p.GetNetname() for fp in controllers["right"] for p in fp.Pads()}

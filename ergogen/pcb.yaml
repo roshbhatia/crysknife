@@ -28,6 +28,42 @@ pcbs:
           resist: true
           shift: [horizontal_diode_shift, vertical_diode_shift]
           rotate: 90
+      mount_outer_top:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_outer_home
+        params:
+          hole_size: 5
+          hole_drill: 5
+        adjust:
+          shift: [0.5 ks, 0.5 kp]
+      mount_outer_bottom:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_outer_bottom
+        params:
+          hole_size: 5
+          hole_drill: 5
+        adjust:
+          shift: [0.5 ks, 0.5 kp]
+      mount_inner_top:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_index_home
+        params:
+          hole_size: 5
+          hole_drill: 5
+        adjust:
+          shift: [0.5 ks, 9]
+      mount_inner_bottom:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_index_bottom
+        params:
+          hole_size: 5
+          hole_drill: 5
+        adjust:
+          shift: [0.5 ks, -11]
       controller:
         what: crysknife/nice_nano_socketed
         where:
@@ -93,6 +129,10 @@ pcbs:
     $extends: pcbs.crysknife_left
     outlines.board.outline: right__pcb_outline
     footprints:
+      mount_outer_top.asym: clone
+      mount_outer_bottom.asym: clone
+      mount_inner_top.asym: clone
+      mount_inner_bottom.asym: clone
       switches.asym: clone
       diodes.asym: clone
       controller:

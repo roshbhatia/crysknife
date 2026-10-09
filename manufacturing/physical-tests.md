@@ -11,7 +11,8 @@ Record measurements in `prototype-results.json`; an empty result does not pass.
 3. Measure all 24 controller contacts against the schematic. Verify RAW, GND, RST, and VCC without relying on orientation alone.
 4. Verify no hard short between BAT_P/GND or RAW/GND. Record resistance and meter mode.
 5. Confirm battery plug red wire reaches JST1 pin 2 and black wire reaches pin 1.
-6. Measure each actual battery, controller gap, pin protrusion, and USB height.
+6. Measure each actual battery, controller gap, pin protrusion, and USB height. Confirm the controller faces up beneath the carrier.
+   Receiver openings face down; module header pins point up.
 7. Fit headers without forcing or leaving any contact partly seated. Repeat insertion/removal ten times, then repeat continuity checks.
 8. Fit 21 switches per half. Verify retention, complete travel, keycap clearance, and socket support during insertion.
 9. Fit the battery with removable foam retention and an insulating cover. Verify no cell pressure, pin contact, trapped lead, or rattle.
@@ -43,6 +44,6 @@ Record measurements in `prototype-results.json`; an empty result does not pass.
 ## Case and suppliers
 
 Record actual plate thickness and switch retention after cutting.
-Check minimum/maximum cut tolerances, rubber thickness, bend clearance, standoff and shim length, bolt clearance, and anti-slip feet.
+Check minimum/maximum cut tolerances, rubber thickness, controller clearance, standoff and shim length, bolt clearance, and anti-slip feet.
 Supplier AOI and bare-board electrical testing supplement these tests; they do not replace them.
 Release only after all required results are recorded and the supplier accepts the exact revision and assembly scope.

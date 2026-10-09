@@ -41,10 +41,9 @@ for side in ('left', 'right'):
     with zipfile.ZipFile(jlc/f'{side}-gerbers.zip','w',zipfile.ZIP_DEFLATED) as archive:
         for file in sorted((quote/f'gerbers/{side}').iterdir()):
             archive.writestr(zipfile.ZipInfo(file.name, (1980,1,1,0,0,0)), file.read_bytes(), compress_type=zipfile.ZIP_DEFLATED)
-    for part in ('bottom-bent','plate','damping'):
+    for part in ('bottom-flat','plate','damping'):
         shutil.copyfile(ROOT/f'build/case/{side}-{part}.dxf', scs/f'{side}-{part}.dxf')
-    for name in ('bends.json','bend-lines.svg'):
-        shutil.copyfile(ROOT/f'build/case/{side}-{name}', scs/f'{side}-{name}')
+
 for name in ('crysknife.kicad_sym','sym-lib-table','fp-lib-table'):
     shutil.copyfile(evidence/f'schematic/{name}', kicad/name)
 shutil.copytree(evidence/'schematic/crysknife.pretty', kicad/'crysknife.pretty', dirs_exist_ok=True)

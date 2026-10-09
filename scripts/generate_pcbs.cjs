@@ -9,10 +9,13 @@ const library = process.env.ERGOGEN_FOOTPRINTS;
 assert(library, 'Run this command in the repository Nix shell.');
 const footprintNames = [
   'switch_mx', 'diode_tht_sod123', 'power_switch_smd_side',
-  'reset_switch_smd_side', 'battery_connector_jst_ph_2',
+  'reset_switch_smd_side', 'battery_connector_jst_ph_2', 'mounting_hole_npth',
 ];
 for (const name of footprintNames) {
-  ergogen.inject(`ceoloide/${name}`, require(path.join(library, `${name}.js`)));
+  const footprint = require(path.join(library, `${name}.js`));
+  ergogen.inject(`ceoloide/${name}`, name === 'mounting_hole_npth'
+    ? {...footprint, body: p => footprint.body({...p, ref_hide: 'hide'})}
+    : footprint);
 }
 const controller = require(path.join(library, 'mcu_nice_nano.js'));
 ergogen.inject('crysknife/nice_nano_socketed', require('../ergogen/controller_sockets.js')(controller));

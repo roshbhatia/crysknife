@@ -38,9 +38,11 @@ The right JST1 ground pad connects directly to the ground pour; its soldering he
 
 ## Controller assembly requirements
 
-Use one genuine nice!nano V2 per half, mounted face up.
+Use one genuine nice!nano V2 per half, mounted face up beneath the carrier PCB.
 The user permits limited soldering on these two modules.
-JLCPCB must solder all four receiver socket strips onto the carrier PCBs.
+JLCPCB must solder all four receiver socket strips onto the bottom faces of the carrier PCBs.
+Receiver openings face down. The module header pins point up into them.
+Keep the module face up; turning it over changes the pin mapping.
 Each socket is Mill-Max 315-43-112-41-003000, [JLCPCB C5504443](https://jlcpcb.com/partdetail/6420580-315_43_112_41003000/C5504443).
 Catalog presence does not guarantee stock; pre-order or consignment acceptance remains required.
 The socket footprint retains the original controller contact positions and net numbers.

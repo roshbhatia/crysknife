@@ -2,39 +2,30 @@
   {
     "side": "left",
     "keys": 21,
-    "pcb_area_mm2": 10184.663394536183,
-    "minimum_plate_web_mm": 4.0,
+    "pcb_area_mm2": 10871.048471777038,
+    "minimum_plate_web_mm": 6.0,
     "bolts": [
       [
-        -75.67642530481645,
-        28.872101113646433
+        -51.736047600000006,
+        15.257055699999995
       ],
       [
-        75.27139268149558,
-        -26.848820935285087
+        -51.736047600000006,
+        -4.742944300000005
       ],
       [
-        18.993079264804862,
-        49.83239027311527
+        28.263952399999994,
+        26.257055699999995
       ],
       [
-        -10.441534890796369,
-        -30.351350483976
-      ],
-      [
-        -72.89495256173609,
-        -32.29568652942739
-      ],
-      [
-        -30.538940395179814,
-        48.61453438673225
+        28.263952399999994,
+        -13.742944300000005
       ]
     ],
-    "side_apertures": [
-      "USB",
-      "RST",
-      "PWR"
-    ],
+    "standoff_count": 4,
+    "pcb_mount_hole_mm": 5.0,
+    "minimum_keycap_gap_mm": 1.464585122995807,
+    "controls": "accessible through open plate sides",
     "switch": "Outemu Medium-Low Black; standard MX socket footprint",
     "pcb_to_plate_gap_mm": 3.5,
     "plate_thickness_mm": 1.6002,
@@ -43,40 +34,12 @@
     "standoff_height_mm": 20.0,
     "standoff_shim_mm": 1.0,
     "damping_thickness_mm": 1.6002,
-    "bends": {
-      "material": "5052 H32 aluminum",
-      "thickness_mm": 1.6002,
-      "angle_degrees": 90,
-      "direction": "both flanges up",
-      "radius_mm": 0.889,
-      "deduction_mm": 2.4384,
-      "flange_height_mm": 10.0,
-      "flat_bend_lines_mm": [
-        [
-          [
-            -83.75749290487184,
-            -26.0
-          ],
-          [
-            -83.75749290487184,
-            26.0
-          ]
-        ],
-        [
-          [
-            83.75749290487184,
-            -26.0
-          ],
-          [
-            83.75749290487184,
-            26.0
-          ]
-        ]
-      ],
-      "minimum_hole_to_bend_mm": 7.428446164534591,
-      "natural_corner_relief_mm": 3.8810000000000002,
-      "status": "supplier bend simulation and physical fit pending",
-      "source": "https://sendcutsend.com/bending-calculator/"
+    "bends": false,
+    "controller": {
+      "mount": "face up beneath carrier",
+      "covered_by_plate": true,
+      "reserved_gap_mm": 5.0,
+      "height_requires_samples": true
     },
     "battery": {
       "sku": "Adafruit 2011",
@@ -92,8 +55,8 @@
         8.5
       ],
       "center_mm": [
-        -8.986507095128161,
-        14.308592803453678
+        -9.736047600000006,
+        17.757055699999995
       ],
       "rf_clearance_mm": 21.704000000000008,
       "underside_component_reservation_mm": 4.4,
@@ -103,55 +66,46 @@
     "status": "mechanical draft; switch height, battery, controller fit require physical verification",
     "exports": {
       "bottom-flat": {
-        "area_mm2": 16049.972709202988,
-        "closed_contours": 7
+        "area_mm2": 12021.3534939445,
+        "closed_contours": 5
       },
       "plate": {
-        "area_mm2": 8609.9866519479,
-        "closed_contours": 28
+        "area_mm2": 7905.359332064404,
+        "closed_contours": 26
       },
       "damping": {
-        "area_mm2": 14494.206127009493,
-        "closed_contours": 7
+        "area_mm2": 11973.079488527499,
+        "closed_contours": 5
       }
     }
   },
   {
     "side": "right",
     "keys": 21,
-    "pcb_area_mm2": 10184.66339512511,
-    "minimum_plate_web_mm": 4.0,
+    "pcb_area_mm2": 10871.048471777038,
+    "minimum_plate_web_mm": 6.0,
     "bolts": [
       [
-        -75.67649290487184,
-        -23.515087223349624
+        51.736047600000006,
+        15.257055699999995
       ],
       [
-        75.18875240719343,
-        33.18987257056336
+        51.736047600000006,
+        -4.742944300000005
       ],
       [
-        -18.204524865960067,
-        49.930959573484614
+        -28.263952399999994,
+        26.257055699999995
       ],
       [
-        9.916450655042588,
-        -30.947857393542908
-      ],
-      [
-        74.25970264403432,
-        -31.142129522183616
-      ],
-      [
-        28.75789627330092,
-        48.837164903129576
+        -28.263952399999994,
+        -13.742944300000005
       ]
     ],
-    "side_apertures": [
-      "USB",
-      "RST",
-      "PWR"
-    ],
+    "standoff_count": 4,
+    "pcb_mount_hole_mm": 5.0,
+    "minimum_keycap_gap_mm": 1.464585122995807,
+    "controls": "accessible through open plate sides",
     "switch": "Outemu Medium-Low Black; standard MX socket footprint",
     "pcb_to_plate_gap_mm": 3.5,
     "plate_thickness_mm": 1.6002,
@@ -160,40 +114,12 @@
     "standoff_height_mm": 20.0,
     "standoff_shim_mm": 1.0,
     "damping_thickness_mm": 1.6002,
-    "bends": {
-      "material": "5052 H32 aluminum",
-      "thickness_mm": 1.6002,
-      "angle_degrees": 90,
-      "direction": "both flanges up",
-      "radius_mm": 0.889,
-      "deduction_mm": 2.4384,
-      "flange_height_mm": 10.0,
-      "flat_bend_lines_mm": [
-        [
-          [
-            -83.75749290487184,
-            -26.0
-          ],
-          [
-            -83.75749290487184,
-            26.0
-          ]
-        ],
-        [
-          [
-            83.75749290487184,
-            -26.0
-          ],
-          [
-            83.75749290487184,
-            26.0
-          ]
-        ]
-      ],
-      "minimum_hole_to_bend_mm": 6.981000000000003,
-      "natural_corner_relief_mm": 3.8810000000000002,
-      "status": "supplier bend simulation and physical fit pending",
-      "source": "https://sendcutsend.com/bending-calculator/"
+    "bends": false,
+    "controller": {
+      "mount": "face up beneath carrier",
+      "covered_by_plate": true,
+      "reserved_gap_mm": 5.0,
+      "height_requires_samples": true
     },
     "battery": {
       "sku": "Adafruit 2011",
@@ -209,8 +135,8 @@
         8.5
       ],
       "center_mm": [
-        8.986507095128161,
-        14.308592803452001
+        9.736047600000006,
+        17.757055699999995
       ],
       "rf_clearance_mm": 21.704000000000008,
       "underside_component_reservation_mm": 4.4,
@@ -220,16 +146,16 @@
     "status": "mechanical draft; switch height, battery, controller fit require physical verification",
     "exports": {
       "bottom-flat": {
-        "area_mm2": 16049.972791075497,
-        "closed_contours": 7
+        "area_mm2": 12021.353493944502,
+        "closed_contours": 5
       },
       "plate": {
-        "area_mm2": 8609.986785980393,
-        "closed_contours": 28
+        "area_mm2": 7905.359332064404,
+        "closed_contours": 26
       },
       "damping": {
-        "area_mm2": 14494.206237037995,
-        "closed_contours": 7
+        "area_mm2": 11973.0794885275,
+        "closed_contours": 5
       }
     }
   }

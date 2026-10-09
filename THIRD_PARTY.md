@@ -32,3 +32,8 @@ Upstream PCB, circuit, and case files are not included. Its repository uses GPL-
 
 The controller socket adapter retains the pinned nice!nano net mapping and splits its pads into two factory assembly footprints.
 Socket dimensions reference the [Mill-Max 315-43-112-41-003000 manufacturer drawing](https://static6.arrow.com/aropdfconversion/2e225be7d9212620894362dafa7ce735623fe9ca/315-43-112-41-003000.pdf).
+
+The four case mounts follow the distributed pattern in the [Corne MX plate](https://github.com/foostan/crkbd/blob/63366fb7f51cf2a796462fdd90527e99dd126055/plates/3x6/pcb/plate-top-cherrymx.kicad_pcb).
+Their positions are adapted to this layout, with 5 mm carrier holes around 4 mm standoffs and 2.2 mm plate screw holes.
+The mounting-hole footprint comes from the same pinned ceoloide library and uses MIT.
+No Corne PCB or plate source is vendored.

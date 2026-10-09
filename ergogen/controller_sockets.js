@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 
 module.exports = controller => ({
-  params: controller.params,
+  params: {...controller.params, socket_side: 'B'},
   body: p => {
     assert.equal(p.reversible, false);
     assert.equal(p.include_extra_pins, false);
@@ -33,17 +33,17 @@ module.exports = controller => ({
       assert.equal(contacts.length, 12);
       const relocated = contacts.map(pad => pad.replace(/\(at [\d.e+-]+ ([\d.e+-]+) 0\)/,
         (_, y) => `(at 0 ${(Number(y)-1.27).toFixed(6)} 0)`)).join('\n');
-      return `(footprint "crysknife:MillMax_315_1x12" (layer "F.Cu")
+      return `(footprint "crysknife:MillMax_315_1x12" (layer "${p.socket_side}.Cu")
         (at ${Number(at[1])+x} ${Number(at[2])+1.27} 0)
-        (property "Reference" "${p.ref}${index === 0 ? 'A' : 'B'}" (at 0 -16 0) (layer "F.Fab")
+        (property "Reference" "${p.ref}${index === 0 ? 'A' : 'B'}" (at 0 -16 0) (layer "${p.socket_side}.Fab")
           (effects (font (size 1 1) (thickness 0.15))))
-        (property "Value" "315-43-112-41-003000" (at 0 16 0) (layer "F.Fab")
+        (property "Value" "315-43-112-41-003000" (at 0 16 0) (layer "${p.socket_side}.Fab")
           (effects (font (size 1 1) (thickness 0.15))))
         (attr through_hole)
         (fp_rect (start -1.27 -15.24) (end 1.27 15.24)
-          (stroke (width 0.1) (type default)) (fill none) (layer "F.Fab"))
+          (stroke (width 0.1) (type default)) (fill none) (layer "${p.socket_side}.Fab"))
         (fp_rect (start -1.52 -15.49) (end 1.52 15.49)
-          (stroke (width 0.05) (type default)) (fill none) (layer "F.CrtYd"))
+          (stroke (width 0.05) (type default)) (fill none) (layer "${p.socket_side}.CrtYd"))
         ${relocated})`;
     });
     return outline+sockets.join('\n');

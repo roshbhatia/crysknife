@@ -55,7 +55,7 @@
     {
       "reference_pattern": "MCU1[AB]",
       "footprint": "crysknife:MillMax_315_1x12",
-      "side": "F",
+      "side": "B",
       "manufacturer": "Mill-Max",
       "mpn": "315-43-112-41-003000",
       "lcsc": "C5504443",
@@ -64,8 +64,12 @@
     }
   ],
   "excluded_references": {
-    "MCU1": "Controller outline only; purchase nice!nano v2 separately and solder its two matching header strips",
-    "ART1": "Silkscreen geometry; no physical component"
+    "MCU1": "Controller projection only; nice!nano V2 mounts face up below the carrier",
+    "ART1": "Silkscreen geometry; no physical component",
+    "MH1": "Mechanical hole for a case standoff; no assembly part",
+    "MH2": "Mechanical hole for a case standoff; no assembly part",
+    "MH3": "Mechanical hole for a case standoff; no assembly part",
+    "MH4": "Mechanical hole for a case standoff; no assembly part"
   },
   "remaining_gates": [
     "Current manufacturer drawings, footprint fit, pickup origins and rotations accepted by assembler",

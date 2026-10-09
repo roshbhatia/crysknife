@@ -82,7 +82,7 @@ units:
   screw_head_diameter: screw_head_radius * 2
   spacer_radius: 2.15 # M2 standoffs
   spacer_diameter: spacer_radius * 2
-  fillet_radius: 0.5
+  fillet_radius: 0
   pwr_trace_width: 0.25
   gnd_trace_width: 0.25
   signal_trace_width: 0.15
@@ -97,8 +97,8 @@ units:
   internal_distance_between_plates: 4
 
   # Thumb splay
-  splay_thumb_middle: 15
-  splay_thumb_far: 15
+  splay_thumb_middle: 20
+  splay_thumb_far: 20
 
 points:
   zones:
@@ -215,7 +215,7 @@ points:
           - thumb_key
       anchor:
         ref: matrix_middle_bottom
-        shift: [0.5 ks, -kp -3]
+        shift: [0.5 ks + 4, -kp -11]
       columns:
         near:
           key:
@@ -333,19 +333,17 @@ points:
         - ref: thumbfan_near_home
           shift: [-ks * 0.47 - 0.01, -kp * 0.475 - 0.05]
     plate_outline_bottom_3:
-      key.tags:
-        - helper
+      key.tags: [helper]
       anchor:
-        - ref: thumbfan_far_home
-          shift: [-ks * 0.725 - 0.028,kp * 0.475 - 0.009]
-          affect: ['x','y']
+        ref: thumbfan_mid_home
+        shift: [0.5 ks, -0.5 kp]
+        affect: [x, y]
     plate_outline_bottom_4:
-      key.tags:
-        - helper
+      key.tags: [helper]
       anchor:
-        - ref: thumbfan_far_home
-          shift: [-ks * 0.725 - 0.028,-kp * 0.48 + 0.023]
-          affect: ['x','y']
+        ref: thumbfan_far_home
+        shift: [-0.5 ks, -0.5 kp]
+        affect: [x, y]
 
     mcu_cover_top_left:
       key.tags:
@@ -360,21 +358,15 @@ points:
         - ref: mcu_cover_top_left
           shift: [ks + 0.72,0]
     mcu_cover_bottom_right:
-      key.tags:
-        - helper
+      key.tags: [helper]
       anchor:
-        - ref: mcu_cover_top_right
-          shift: [0,-kp * 3.2 + 0.339]
-          rotate: (splay_thumb_middle + splay_thumb_far) * 2
+        ref: thumbfan_far_home
+        shift: [0.5 ks, -0.5 kp]
     mcu_cover_bottom_left:
-      key.tags:
-        - helper
+      key.tags: [helper]
       anchor:
-        - aggregate:
-            method: intersect
-            parts:
-              - ref: mcu_cover_top_left
-              - ref: mcu_cover_bottom_right
+        ref: matrix_inner_bottom
+        shift: [ks * 0.53 + 0.043, -kp * 0.4]
 
     plate_additional_outline_top:
       key.tags:
@@ -389,14 +381,10 @@ points:
         - ref: mcu_cover_bottom_right
           shift: [-0.63,0]
     plate_additional_outline_bottom_left:
-      key.tags:
-        - helper
+      key.tags: [helper]
       anchor:
-        - aggregate:
-            method: intersect
-            parts:
-              - ref: plate_additional_outline_top
-              - ref: plate_additional_outline_bottom_right
+        ref: mcu_cover_bottom_left
+        shift: [-1.03, 0]
 
     screw_pcb_left_top:
       key.tags:
@@ -623,6 +611,7 @@ outlines:
     - what: outline
       name: _backplate_outline
       fillet: fillet_radius
+
   pcb:
     - what: outline
       name: _pcb_outline

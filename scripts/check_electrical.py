@@ -35,6 +35,7 @@ for side in ("left", "right"):
     controller = {**pads("MCU1A"), **pads("MCU1B")}
     for ref in ("MCU1A", "MCU1B"):
         assert footprints[ref][1] == "crysknife:MillMax_315_1x12"
+        assert child(footprints[ref], "layer")[1] == "B.Cu"
         assert all(child(pad, "drill")[1] == "1" for pad in children(footprints[ref], "pad"))
     assert all(controller[pin] == net for pin, net in expected_pins.items()), (side, controller)
     gpio_nets = {gpio: controller[str(pin)] for pin, gpio in gpio_by_pin.items()}
@@ -67,7 +68,7 @@ for side in ("left", "right"):
     assert pads("RST1") == {"1": "GND", "2": "RST", "3": "GND", "4": "RST"}
     assert not any(ref.startswith("TP") for ref in footprints)
     evidence.append({"side": side, "unique_matrix_positions": len(key_coordinates),
-                     "controller_pin_mapping": "matches nice!nano v2 face-up pinout",
+                     "controller_pin_mapping": "matches nice!nano v2 face-up pinout beneath the carrier",
                      "diode_direction": "col2row; diode cathode pad 1 to row",
                      "power_path": "JST pin 2 BAT_P through PWR1 to nice!nano RAW; JST pin 1 GND",
                      "reset": "momentary RST to GND", "matrix_positions": sorted(key_coordinates)})

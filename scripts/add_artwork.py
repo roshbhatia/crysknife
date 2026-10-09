@@ -23,6 +23,18 @@ minimum_feature = 0.2
 artwork_alpha = Image.open(raster).convert("RGBA").getchannel("A")
 artwork_alpha = artwork_alpha.crop(artwork_alpha.getbbox())
 
+font = ImageFont.truetype(str(root / "assets/ibm-plex-mono-bold.ttf"), 512)
+
+
+def glyph_pixels(label, max_width, max_height):
+    bounds = font.getbbox(label)
+    mask = Image.new("L", (bounds[2]-bounds[0], bounds[3]-bounds[1]))
+    ImageDraw.Draw(mask).text((-bounds[0], -bounds[1]), label, font=font, fill=255)
+    grid = minimum_feature
+    mask.thumbnail((round(max_width/grid), round(max_height/grid)), Image.Resampling.LANCZOS)
+    return [((col+0.5-mask.width/2)*grid, (row+0.5-mask.height/2)*grid)
+            for row in range(mask.height) for col in range(mask.width) if mask.getpixel((col,row)) >= 100]
+
 
 for side in ("left", "right"):
     board_path = root / f"build/pcb/crysknife_{side}.kicad_pcb"
@@ -47,7 +59,8 @@ for side in ("left", "right"):
             px = fx + x * math.cos(angle) + y * math.sin(angle)
             py = fy - x * math.sin(angle) + y * math.cos(angle)
             size = list(map(float, child(pad, "size")[1:3]))
-            keepouts.append((px, py, math.hypot(*size) / 2 + 0.3))
+            radius = max(size)/2 if pad[3] == "circle" else math.hypot(*size)/2
+            keepouts.append((px, py, radius+0.3))
     silk_segments = []
     silk_boxes = []
     for footprint in children(board, "footprint"):
@@ -125,9 +138,25 @@ for side in ("left", "right"):
 
     min_x, min_y = [min(p[i] for p in outline) for i in (0, 1)]
     max_x, max_y = [max(p[i] for p in outline) for i in (0, 1)]
+    def clear_pixel(x, y, grid):
+        return clear_silk(x, y, grid/math.sqrt(2)) and inside(x, y) and edge_clearance(x, y) > grid/math.sqrt(2)+0.4 and all(
+            math.hypot(x-px, y-py) > radius+grid/math.sqrt(2) for px, py, radius in keepouts)
+
     title_center = 110 if side == "left" else 225
-    lettering_boxes = [(title_center, 69.5, 36, 6), (title_center, 88, 32, 5.2),
-                       (title_center, 91, 36, 4.6)]
+    author_samples = glyph_pixels("by @roshbhatia", 26, 2.2)
+    author_candidates = []
+    for x in range(102,173,2):
+        cx = x if side == "left" else 335-x
+        for cy in range(94,119):
+            if all(clear_pixel(cx+direction*lx, cy+ly, minimum_feature)
+                   for lx,ly in author_samples for direction in (-1,1)):
+                author_candidates.append(((x-140)**2+(cy-103)**2,cx,cy))
+    assert author_candidates, (side, "No clear position for author lettering")
+    _, author_x, author_y = min(author_candidates)
+    legends = [("crysknife", title_center, 65, 34, 4),
+               ("v1.0.0", title_center, 85, 30, 3.2),
+               ("by @roshbhatia", author_x, author_y, 26, 2.2)]
+    lettering_boxes = [(cx,cy,width+2,height+2) for _,cx,cy,width,height in legends]
     original_labels = []
     for footprint in children(board, "footprint"):
         placement = child(footprint, "at")
@@ -238,34 +267,17 @@ for side in ("left", "right"):
         row += 1
     top_pixels = list(pixels)
     bottom_pixels = list(pixels)
-    font = ImageFont.truetype(str(root / "assets/ibm-plex-mono-bold.ttf"), 512)
-
-    def clear_pixel(x, y, grid):
-        return clear_silk(x, y, grid/math.sqrt(2)) and inside(x, y) and edge_clearance(x, y) > grid/math.sqrt(2)+0.4 and all(
-            math.hypot(x-px, y-py) > radius+grid/math.sqrt(2) for px, py, radius in keepouts)
-
     def lettering(label, cx, cy, max_width, max_height, rotation=0):
-        box = font.getbbox(label)
-        mask = Image.new("L", (box[2]-box[0], box[3]-box[1]))
-        ImageDraw.Draw(mask).text((-box[0], -box[1]), label, font=font, fill=255)
         grid = minimum_feature
-        mask.thumbnail((round(max_width/grid), round(max_height/grid)), Image.Resampling.LANCZOS)
-        for row in range(mask.height):
-            for col in range(mask.width):
-                if mask.getpixel((col, row)) < 100:
-                    continue
-                lx, ly = (col+0.5-mask.width/2)*grid, (row+0.5-mask.height/2)*grid
-                for face, direction in [(top_pixels, 1), (bottom_pixels, -1)]:
-                    x = cx+direction*lx*math.cos(rotation)+ly*math.sin(rotation)
-                    y = cy-direction*lx*math.sin(rotation)+ly*math.cos(rotation)
-                    clear = clear_pixel(x, y, grid)
-                    assert clear, (side, label, x, y, "Lettering overlaps a pad or board edge")
-                    face.append((x-grid/2, y-grid/2, x+grid/2, y+grid/2))
+        for lx, ly in glyph_pixels(label, max_width, max_height):
+            for face, direction in [(top_pixels, 1), (bottom_pixels, -1)]:
+                x = cx+direction*lx*math.cos(rotation)+ly*math.sin(rotation)
+                y = cy-direction*lx*math.sin(rotation)+ly*math.cos(rotation)
+                assert clear_pixel(x, y, grid), (side, label, x, y, "Lettering overlaps a pad or board edge")
+                face.append((x-grid/2, y-grid/2, x+grid/2, y+grid/2))
 
-    for label, cy, max_width, max_height in [
-        ("crysknife", 69.5, 34, 4), ("v1.0.0", 88, 30, 3.2), ("by @roshbhatia", 91, 34, 2.6),
-    ]:
-        lettering(label, title_center, cy, max_width, max_height)
+    for label, cx, cy, max_width, max_height in legends:
+        lettering(label, cx, cy, max_width, max_height)
     for label, x, y, width, height, angle in original_labels:
         lettering(label, x, y, width, height, angle)
     for name, cx, cy, tx, ty in arrows:

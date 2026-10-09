@@ -59,7 +59,7 @@ def check(side, stage):
         else:
             assert key not in net_keys.values(), source
     holes = [n for n in data if n["type"] == "pcb_hole"]
-    assert len(holes) == len(expected["holes"]) == 109
+    assert len(holes) == len(expected["holes"]) == 113
     for source, actual in zip(expected["holes"], holes):
         for axis in ("x", "y"):
             close(actual[axis], source[axis])
@@ -102,7 +102,7 @@ def check(side, stage):
         diagnostics.append({"error_id": error["pcb_error_id"], "exact_clearance_mm": clearance})
     (ROOT / f"build/tscircuit/{side}-{stage}-parity.json").write_text(
         json.dumps({"pads": len(pads), "holes": len(holes), "verified_overlap_diagnostics": diagnostics}, indent=2))
-    print(f"{side} {stage}: all {len(pads)} pads, 109 holes, outline, and net memberships match")
+    print(f"{side} {stage}: all {len(pads)} pads, {len(holes)} holes, outline, and net memberships match")
 
 
 if __name__ == "__main__":

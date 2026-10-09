@@ -16,7 +16,7 @@ for side in ("left", "right"):
     data = json.loads((ROOT / f"build/tscircuit/{side}.json").read_text())
     board = pcbnew.LoadBoard(str(ROOT / f"build/pcb/crysknife_{side}.kicad_pcb"))
     pads = {(fp.GetReference(), i): pad for fp in board.GetFootprints() for i, pad in enumerate(fp.Pads())}
-    count = 230
+    count = 234
     assert len(pads) == len(data["pads"]) + len(data["holes"]) == count
     for expected in data["pads"] + data["holes"]:
         actual = pads[(expected["ref"], expected["index"])]
