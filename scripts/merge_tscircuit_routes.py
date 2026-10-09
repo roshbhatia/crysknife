@@ -114,10 +114,12 @@ for side in ("left", "right"):
         assert len(finishing) <= 2, "Unexpected extra reset escape vias"
     for index, (source, first) in enumerate(created_vias):
         for other_source, second in created_vias[index+1:]:
-            if first.GetNetCode() == second.GetNetCode():
-                continue
+            same_net = first.GetNetCode() == second.GetNetCode()
             a, b = coordinates(first), coordinates(second)
-            radii = pcbnew.ToMM(first.GetWidth(pcbnew.F_Cu)+second.GetWidth(pcbnew.F_Cu))/2
+            if same_net:
+                radii = pcbnew.ToMM(first.GetDrillValue()+second.GetDrillValue())/2
+            else:
+                radii = pcbnew.ToMM(first.GetWidth(pcbnew.F_Cu)+second.GetWidth(pcbnew.F_Cu))/2
             distance = math.hypot(a["x"]-b["x"], a["y"]-b["y"])
             before = distance-radii
             if before >= 0.25:
@@ -136,12 +138,15 @@ for side in ("left", "right"):
             after = math.dist(tuple(coordinates(moving).values()), tuple(coordinates(fixed).values()))-radii
             assert after >= 0.29999
             finishing.append({"net": moving.GetNetname(), "via": moving_source["pcb_via_id"], "from": start, "to": target,
-                              "opposite_net": fixed.GetNetname(), "via_clearance_before_mm": before, "via_clearance_after_mm": after})
+                              "opposite_net": fixed.GetNetname(), "clearance_kind": "drill" if same_net else "copper",
+                              "via_clearance_before_mm": before, "via_clearance_after_mm": after})
     for index, (_, first) in enumerate(created_vias):
         for _, second in created_vias[index+1:]:
             if first.GetNetCode() != second.GetNetCode():
                 gap = math.dist(tuple(coordinates(first).values()), tuple(coordinates(second).values()))-pcbnew.ToMM(first.GetWidth(pcbnew.F_Cu)+second.GetWidth(pcbnew.F_Cu))/2
                 assert gap >= 0.24999, (side, "Via finishing introduced another clearance defect", gap)
+            drill_gap = math.dist(tuple(coordinates(first).values()), tuple(coordinates(second).values()))-pcbnew.ToMM(first.GetDrillValue()+second.GetDrillValue())/2
+            assert drill_gap >= 0.24999, (side, "Via drills need more clearance", drill_gap)
     (ROOT / f"build/pcb/{side}-route-finishing.json").write_text(json.dumps(finishing, indent=2)+"\n")
     output = ROOT / f"build/pcb/crysknife_{side}_routed.kicad_pcb"
     pcbnew.SaveBoard(str(output), board)
