@@ -9,8 +9,6 @@ reset = data[4];
 power = data[5];
 pcb_z = bottom_thickness + standoff_height + standoff_shim;
 plate_z = pcb_z + pcb_thickness + plate_to_pcb_gap;
-tray_height = plate_z - 0.3;
-pcb_clearance = 0.6;
 
 module control_openings(clearance=0) {
     translate([controller[0],controller[1]+12,pcb_z-controller_gap-0.5])

@@ -41,11 +41,9 @@ module spacer(d, h, faces = 48) {
     }
 }
 module assembly() {
-    if (part == "printed-assembly") color([0.65,0.8,0.9,0.6])
+    if (part == "sleeved-assembly") color([0.65,0.8,0.9,0.6])
         import(str("../manufacturing/jlc3dp/",side,"-sleeve.stl"));
-    if (part == "printed-assembly") color([0.8,0.92,1,0.3])
-        import(str("../manufacturing/jlc3dp/",side,"-tray.stl"));
-    else color([0.12,0.12,0.12]) bottom();
+    color([0.12,0.12,0.12]) bottom();
     color([0.1,0.1,0.1]) translate([0,0,bottom_thickness]) linear_extrude(damping_thickness) damping();
     color([0.25,0.3,0.4]) translate([battery[0]-30,battery[1]-18,bottom_thickness+damping_thickness+0.5]) cube([60,36,7]);
     color([0.97,0.97,0.97]) translate([0,0,pcb_z+exploded]) linear_extrude(pcb_thickness) pcb_shape();
@@ -54,8 +52,7 @@ module assembly() {
     color([0.7,0.7,0.7]) translate([controller[0]-4.5,controller[1]+10,pcb_z-controller_gap])
         cube([9,7,controller_component_height]);
     color([0.8,0.92,1,0.35]) translate([0,0,plate_z+2*exploded])
-        if (part == "printed-assembly") import(str("../manufacturing/jlc3dp/",side,"-plate.stl"));
-        else linear_extrude(plate_thickness) plate();
+        linear_extrude(plate_thickness) plate();
     for (p = bolts) color([0.25,0.25,0.25]) translate([p[0],p[1],bottom_thickness])
         spacer(standoff_across_flats/cos(30),standoff_height,6);
     for (p = bolts) color([0.9,0.9,0.9]) translate([p[0],p[1],bottom_thickness+standoff_height])
@@ -69,9 +66,10 @@ if (part == "bottom") bottom();
 else if (part == "bottom-flat") bottom_flat();
 else if (part == "damping") damping();
 else if (part == "plate") plate();
+else if (part == "plate-solid") linear_extrude(plate_thickness) plate();
 else if (part == "switch-fit-coupon") difference() {
     square([90,24],center=true);
     for (i=[0:3]) translate([-30+i*20,0]) square(13.9+i*0.1,center=true);
 }
-else if (part == "assembly" || part == "printed-assembly") assembly();
+else if (part == "assembly" || part == "sleeved-assembly") assembly();
 else assert(false, "Expected bottom, bottom-flat, damping, plate, or assembly");

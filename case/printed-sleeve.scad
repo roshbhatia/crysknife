@@ -1,7 +1,6 @@
 side = "left";
 $fn = 48;
-include <tray-geometry.scad>
-include <printed-parameters.scad>
+include <sleeve-geometry.scad>
 include <plate-geometry.scad>
 keys = data[1];
 
@@ -12,13 +11,10 @@ screw_recess_diameter = 8;
 screw_recess_depth = 2.5;
 lip_clearance = 0.3;
 lip_height = 1.6;
-lip_overlap = 1.2;
+lip_overlap = 1.8;
 keycap_keepout = 20;
-lip_z = plate_z + plate_thickness + rim_height + lip_clearance;
+lip_z = plate_z + plate_thickness + lip_clearance;
 opening_clearance = 1;
-grip_interference = 0.2;
-grip_height = 4;
-grip_z = 5.3;
 inner_expansion = outline_expansion + sleeve_clearance;
 outer_expansion = inner_expansion + sleeve_wall;
 
@@ -38,11 +34,6 @@ difference() {
                 offset(delta=outer_expansion) polygon(outline);
                 offset(delta=outline_expansion-lip_overlap) polygon(outline);
                 bolt_holes(washer_diameter+1.5);
-            }
-        translate([0,0,grip_z]) linear_extrude(grip_height)
-            difference() {
-                offset(delta=inner_expansion+0.01) polygon(outline);
-                offset(delta=outline_expansion-grip_interference) polygon(outline);
             }
     }
     control_openings(opening_clearance);

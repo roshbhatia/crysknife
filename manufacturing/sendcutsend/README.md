@@ -1,7 +1,8 @@
 # SendCutSend review files
 
 Each half uses a flat metal bottom plate, rubber sheet, and clear acrylic top plate.
-The corners are square. Four M2 screws pass through the top plate and carrier, then thread into standoffs below the PCB.
+The corners are square. The plate outline extends 4 mm beyond the PCB, 1.5 mm more than the previous drawings.
+Four M2 screws pass through the top plate and carrier, then thread into standoffs below the PCB.
 
 | File | Material | Thickness | Process |
 | --- | --- | --- | --- |
@@ -12,8 +13,8 @@ The corners are square. Four M2 screws pass through the top plate and carrier, t
 
 All dimensions use millimeters. The metal plates have no bends.
 The top plate covers the electronics area. Controllers sit face up beneath the carrier PCBs.
-USB, power, and reset remain accessible through the open sides.
-The two outer bottom key cutouts have at least 4 mm of PCB clearance and 6.5 mm of acrylic edge clearance.
+With the optional [TPU case](../jlc3dp/README.md), USB, power, and reset use dedicated side openings.
+The two outer bottom key cutouts have at least 4 mm of PCB clearance and 8 mm of acrylic edge clearance.
 
 Use this stack at each of the four mounting positions:
 
@@ -55,8 +56,8 @@ This keeps the PCB artwork visible and gives the base a finished surface.
 
 | Choice | Result for this design |
 | --- | --- |
-| Current .125 in aluminum base | About 107 g per half. Roughly 7.8 times the base bending stiffness of .063 in stock at the same outline and alloy. |
-| Optional .063 in aluminum base | Light; about 54 g per half before finishing and hardware. Regenerate models before changing stock. |
+| Current .125 in aluminum base | About 113 g per half. Roughly 7.8 times the base bending stiffness of .063 in stock at the same outline and alloy. |
+| Optional .063 in aluminum base | Light; about 57 g per half before finishing and hardware. Regenerate models before changing stock. |
 | .063 in clear acrylic top | Matches the modeled switch latch thickness. Cut the fit coupon first. |
 | .063 in plain neoprene floor | A removable damping layer. It does not suspend the switch plate. |
 | .118 in polycarbonate top | Requires redesigned switch retention, screw holes, and routed internal corners. It cannot replace the current plate directly. |
@@ -79,7 +80,8 @@ Combining tumbling and anodizing requires a custom quote. The standard finish ch
 [Polycarbonate](https://sendcutsend.com/materials/polycarbonate/) starts at .118 in and uses CNC routing.
 Catalog availability does not mean these uploaded parts have been accepted.
 
-Use four small silicone desk feet per half and metal M2 standoffs with protective washers.
+Use metal M2 standoffs with protective washers.
+The TPU case supplies a closed desk-contact surface. Use separate silicone feet when assembling without it.
 Source these separately unless the supplier confirms the exact hardware.
 Do not use foam compression or screw torque to adjust battery clearance.
 The floor rubber can reduce vibration, but the rigid standoffs make this a sandwich mount, not a floating gasket mount.

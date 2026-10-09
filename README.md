@@ -14,11 +14,11 @@ The top plate covers the controllers. USB, power, and reset remain accessible fr
 
 ![Case](previews/case-left.png)
 
-A [printed tray and plate prototype](manufacturing/jlc3dp/README.md) is also available in frosted or clear resin.
-It uses the same four M2 mounting locations and controller stack.
-Removable translucent TPU sleeves add a flexible exterior around the rigid trays.
+A [TPU sleeve](manufacturing/jlc3dp/README.md) wraps the flat plate sandwich.
+Its closed bottom covers the screw heads. A retaining lip wraps over the top plate edge.
+The sleeve forms the case walls. No rigid printed tray is needed.
 
-![Printed case prototype](previews/printed-case-left.png)
+![Sleeved case](previews/printed-fit-left.png)
 
 ## Edit the design
 

@@ -1,114 +1,104 @@
 {
   "left-plate": {
-    "triangles": 1352,
+    "triangles": 1276,
     "connected": true,
     "closed": true,
     "euler_characteristic": -48,
     "dimensions_mm": [
-      149.984408,
-      108.723692,
-      2.600199
+      153.0578,
+      112.02345199999999,
+      1.6002
     ],
-    "m2_holes_open": true,
-    "stl_sha256": "ec5689b2108558dc5db63f00ba74b2460b469412d2cc7d85dff5f6380724fbf5"
+    "m2_holes_open": true
   },
-  "left-tray": {
-    "triangles": 1184,
+  "left-bottom": {
+    "triangles": 856,
     "connected": true,
     "closed": true,
-    "euler_characteristic": -8,
+    "euler_characteristic": -6,
     "dimensions_mm": [
-      149.984408,
-      108.723692,
-      23.974998
+      153.0578,
+      112.02345199999999,
+      3.175
     ],
-    "pcb_wall_clearance_mm": 0.6,
-    "under_pcb_clearance_mm": 16.0,
-    "m2_holes_open": true,
-    "stl_sha256": "28dfcc1b9986f0997df484610b04bfd001d7755a4887c8b29c3fa41571b1354c"
+    "m2_holes_open": true
   },
   "left-sleeve": {
-    "triangles": 1424,
+    "triangles": 1260,
     "connected": true,
     "closed": true,
     "euler_characteristic": 0,
     "dimensions_mm": [
-      155.10672,
-      114.223296,
-      32.875199
+      158.180136,
+      117.523056,
+      31.875199000000002
     ],
     "retaining_lip_height_mm": 1.6,
-    "retaining_lip_overlap_mm": 1.2,
+    "retaining_lip_overlap_mm": 1.8,
     "retaining_lip_vertical_clearance_mm": 0.3,
-    "retaining_lip_contact_area_mm2": 537.354,
+    "retaining_lip_contact_area_mm2": 819.062,
     "keycap_keepout_mm": 20.0,
-    "tray_clearance_mm": 0.5,
+    "plate_edge_clearance_mm": 0.5,
     "wall_thickness_mm": 2.0,
     "bottom_thickness_mm": 4.1,
     "bottom_closed": true,
     "screw_recess_diameter_mm": 8.0,
     "screw_recess_depth_mm": 2.5,
     "maximum_screw_head_and_washer_height_mm": 2.5,
-    "grip_band_interference_mm": 0.2,
     "screw_heads_accessible_after_sleeve_removal": true,
     "physical_fit_verified": false,
     "m2_holes_open": false,
-    "stl_sha256": "c572fb7ba1b19b0ba27bed7ce3506da3d23e0d793258d0438afe1d360b4bdd43"
+    "stl_sha256": "2f1177ecf474a08f6a08cb397355fe5e0eac133869cf755624a5ca0b60302abf"
   },
   "right-plate": {
-    "triangles": 1352,
+    "triangles": 1276,
     "connected": true,
     "closed": true,
     "euler_characteristic": -48,
     "dimensions_mm": [
-      149.984408,
-      108.723692,
-      2.600199
+      153.0578,
+      112.02345199999999,
+      1.6002
     ],
-    "m2_holes_open": true,
-    "stl_sha256": "a11c6f24d3f7298666f27765041ccd59907b8645e71cb40058e7dd67c1ca37a8"
+    "m2_holes_open": true
   },
-  "right-tray": {
-    "triangles": 1184,
+  "right-bottom": {
+    "triangles": 856,
     "connected": true,
     "closed": true,
-    "euler_characteristic": -8,
+    "euler_characteristic": -6,
     "dimensions_mm": [
-      149.984408,
-      108.723692,
-      23.974998
+      153.0578,
+      112.02345199999999,
+      3.175
     ],
-    "pcb_wall_clearance_mm": 0.6,
-    "under_pcb_clearance_mm": 16.0,
-    "m2_holes_open": true,
-    "stl_sha256": "9945cdb961a8788ad4d173ea95a37271c919bd8a4398687955a25394586348d9"
+    "m2_holes_open": true
   },
   "right-sleeve": {
-    "triangles": 1424,
+    "triangles": 1260,
     "connected": true,
     "closed": true,
     "euler_characteristic": 0,
     "dimensions_mm": [
-      155.10672,
-      114.223296,
-      32.875199
+      158.180136,
+      117.523056,
+      31.875199000000002
     ],
     "retaining_lip_height_mm": 1.6,
-    "retaining_lip_overlap_mm": 1.2,
+    "retaining_lip_overlap_mm": 1.8,
     "retaining_lip_vertical_clearance_mm": 0.3,
-    "retaining_lip_contact_area_mm2": 537.354,
+    "retaining_lip_contact_area_mm2": 819.063,
     "keycap_keepout_mm": 20.0,
-    "tray_clearance_mm": 0.5,
+    "plate_edge_clearance_mm": 0.5,
     "wall_thickness_mm": 2.0,
     "bottom_thickness_mm": 4.1,
     "bottom_closed": true,
     "screw_recess_diameter_mm": 8.0,
     "screw_recess_depth_mm": 2.5,
     "maximum_screw_head_and_washer_height_mm": 2.5,
-    "grip_band_interference_mm": 0.2,
     "screw_heads_accessible_after_sleeve_removal": true,
     "physical_fit_verified": false,
     "m2_holes_open": false,
-    "stl_sha256": "a868abb1a1464ebfd1c9b45bc22d9825ede16d3ec58534cf1930950b30f19b3e"
+    "stl_sha256": "a6d1707d0bec9b700ca81d043e48966d90079e887efbc1f669f92fca64e1f986"
   }
 }

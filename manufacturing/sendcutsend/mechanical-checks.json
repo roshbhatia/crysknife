@@ -50,8 +50,11 @@
     "controller": {
       "mount": "face up beneath carrier",
       "covered_by_plate": true,
-      "reserved_gap_mm": 5.0,
-      "height_requires_samples": true
+      "reserved_gap_mm": 8.0,
+      "minimum_header_stack_mm": 7.434,
+      "floor_clearance_above_damping_mm": 4.7998,
+      "height_requires_samples": true,
+      "usb_cable_fit_requires_samples": true
     },
     "battery": {
       "sku": "Adafruit 2011",
@@ -78,21 +81,21 @@
     "status": "mechanical draft; switch height, battery, controller fit require physical verification",
     "exports": {
       "bottom-flat": {
-        "area_mm2": 12486.474169926,
+        "area_mm2": 13222.298267272003,
         "closed_contours": 5
       },
       "plate": {
-        "area_mm2": 8370.480435855903,
+        "area_mm2": 9106.304533201905,
         "closed_contours": 26
       },
       "damping": {
-        "area_mm2": 12416.930387067001,
+        "area_mm2": 13152.754484413003,
         "closed_contours": 5
       }
     },
     "outer_bottom_plate_clearance_mm": {
-      "S1": 6.633131305374657,
-      "S4": 9.499955699999994
+      "S1": 8.133177630474869,
+      "S4": 10.999955699999994
     }
   },
   {
@@ -146,8 +149,11 @@
     "controller": {
       "mount": "face up beneath carrier",
       "covered_by_plate": true,
-      "reserved_gap_mm": 5.0,
-      "height_requires_samples": true
+      "reserved_gap_mm": 8.0,
+      "minimum_header_stack_mm": 7.434,
+      "floor_clearance_above_damping_mm": 4.7998,
+      "height_requires_samples": true,
+      "usb_cable_fit_requires_samples": true
     },
     "battery": {
       "sku": "Adafruit 2011",
@@ -174,21 +180,21 @@
     "status": "mechanical draft; switch height, battery, controller fit require physical verification",
     "exports": {
       "bottom-flat": {
-        "area_mm2": 12486.474169926,
+        "area_mm2": 13222.298267271997,
         "closed_contours": 5
       },
       "plate": {
-        "area_mm2": 8370.480435855905,
+        "area_mm2": 9106.304533201903,
         "closed_contours": 26
       },
       "damping": {
-        "area_mm2": 12416.930387067001,
+        "area_mm2": 13152.754484412999,
         "closed_contours": 5
       }
     },
     "outer_bottom_plate_clearance_mm": {
-      "S1": 6.633131305374658,
-      "S4": 9.499955699999994
+      "S1": 8.133177630474869,
+      "S4": 10.999955699999994
     }
   }
 ]

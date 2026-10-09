@@ -55,7 +55,7 @@
     "build_days": 3,
     "shipping_estimate_alone": 10.59,
     "quoted_design": "closed 4.1 mm bottom; four internal 8 mm diameter, 2.5 mm deep blind screw-head recesses; 0.2 mm grip band interference",
-    "current_design": "closed bottom with 1.6 mm retaining lip overlapping plate by 1.2 mm; quote pending",
+    "current_design": "closed bottom with 1.6 mm lip overlapping flat top plate by 1.8 mm; quote pending",
     "quote_matches_current_models": false
   },
   "combined_quote": {
@@ -82,5 +82,11 @@
     "quote_matches_current_models": false
   },
   "current_models_match_cart": false,
-  "cart_url": "https://jlc3dp.com/shopcart/cart?source=3D"
+  "cart_url": "https://jlc3dp.com/shopcart/cart?source=3D",
+  "current_required_files": [
+    "left-sleeve.stl",
+    "right-sleeve.stl"
+  ],
+  "current_design": "flat acrylic/aluminum sandwich with TPU walls and bottom; no rigid resin tray",
+  "cart_needs_revision": "Remove four obsolete resin parts and replace both sleeves before ordering this version."
 }
