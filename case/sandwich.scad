@@ -5,6 +5,7 @@ $fn = 48;
 
 include <parameters.scad>
 include <geometry.scad>
+include <plate-geometry.scad>
 
 data = side == "left" ? left_geometry : right_geometry;
 outline = data[0];
@@ -25,11 +26,6 @@ module pcb_shape() {
         for (p = bolts) translate(p) circle(d=data[8]);
     }
 }
-module perimeter() { offset(delta = outline_expansion) polygon(outline); }
-module bolt_holes() { for (p = bolts) translate(p) circle(d = bolt_diameter); }
-module key_holes() {
-    for (key = keys) translate([key[0], key[1]]) rotate(key[2]) square(switch_cutout, center = true);
-}
 module bottom_flat() { difference() { perimeter(); bolt_holes(); } }
 module damping() {
     difference() {
@@ -38,11 +34,6 @@ module damping() {
     }
 }
 module bottom() { linear_extrude(bottom_thickness) bottom_flat(); }
-module plate() {
-    difference() {
-        perimeter(); bolt_holes(); key_holes();
-    }
-}
 module spacer(d, h, faces = 48) {
     difference() {
         cylinder(d=d,h=h,$fn=faces);
@@ -50,7 +41,9 @@ module spacer(d, h, faces = 48) {
     }
 }
 module assembly() {
-    color([0.12,0.12,0.12]) bottom();
+    if (part == "printed-assembly") color([0.8,0.92,1,0.3])
+        import(str("../manufacturing/jlc3dp/",side,"-tray.stl"));
+    else color([0.12,0.12,0.12]) bottom();
     color([0.1,0.1,0.1]) translate([0,0,bottom_thickness]) linear_extrude(damping_thickness) damping();
     color([0.25,0.3,0.4]) translate([battery[0]-30,battery[1]-18,bottom_thickness+damping_thickness+0.5]) cube([60,36,7]);
     color([0.97,0.97,0.97]) translate([0,0,pcb_z+exploded]) linear_extrude(pcb_thickness) pcb_shape();
@@ -58,7 +51,9 @@ module assembly() {
         cube([controller_width,controller_length,controller_board_thickness]);
     color([0.7,0.7,0.7]) translate([controller[0]-4.5,controller[1]+10,pcb_z-controller_gap])
         cube([9,7,controller_component_height]);
-    color([0.8,0.92,1,0.35]) translate([0,0,plate_z+2*exploded]) linear_extrude(plate_thickness) plate();
+    color([0.8,0.92,1,0.35]) translate([0,0,plate_z+2*exploded])
+        if (part == "printed-assembly") import(str("../manufacturing/jlc3dp/",side,"-plate.stl"));
+        else linear_extrude(plate_thickness) plate();
     for (p = bolts) color([0.25,0.25,0.25]) translate([p[0],p[1],bottom_thickness])
         spacer(standoff_across_flats/cos(30),standoff_height,6);
     for (p = bolts) color([0.9,0.9,0.9]) translate([p[0],p[1],bottom_thickness+standoff_height])
@@ -76,5 +71,5 @@ else if (part == "switch-fit-coupon") difference() {
     square([90,24],center=true);
     for (i=[0:3]) translate([-30+i*20,0]) square(13.9+i*0.1,center=true);
 }
-else if (part == "assembly") assembly();
+else if (part == "assembly" || part == "printed-assembly") assembly();
 else assert(false, "Expected bottom, bottom-flat, damping, plate, or assembly");

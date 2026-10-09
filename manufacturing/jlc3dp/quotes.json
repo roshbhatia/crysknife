@@ -1,0 +1,43 @@
+{
+  "checked_on": "2026-10-09",
+  "currency": "USD",
+  "quantity_per_file": 1,
+  "files": [
+    "left-tray.stl",
+    "right-tray.stl",
+    "left-plate.stl",
+    "right-plate.stl"
+  ],
+  "material": "8001 Resin",
+  "finishes": {
+    "matte": {
+      "color": "Translucent",
+      "surface_finish": "Fine Sanding",
+      "tray_each": 14.0,
+      "plate_each": 3.44,
+      "total": 34.88,
+      "build_days": 4
+    },
+    "clear": {
+      "color": "Transparent",
+      "surface_finish": "Oil Spraying",
+      "tray_each": 15.86,
+      "plate_each": 5.09,
+      "total": 41.9,
+      "build_days": 5
+    }
+  },
+  "shipping_estimate": {
+    "amount": 10.59,
+    "service": "Global Standard Direct Line",
+    "transit_business_days": [
+      8,
+      13
+    ],
+    "address_confirmed": false
+  },
+  "quote_url": "https://jlc3dp.com/3d-printing-quote?spm=Jlc3dp.Homepage.1006",
+  "browser_state": "guest quote, matte selected; not saved to account",
+  "order_submitted": false,
+  "factory_review_complete": false
+}

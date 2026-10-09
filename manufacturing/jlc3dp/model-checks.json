@@ -1,0 +1,58 @@
+{
+  "left-plate": {
+    "triangles": 1352,
+    "connected": true,
+    "closed": true,
+    "euler_characteristic": -48,
+    "dimensions_mm": [
+      149.984408,
+      108.723692,
+      2.600199
+    ],
+    "m2_holes_open": true,
+    "stl_sha256": "ec5689b2108558dc5db63f00ba74b2460b469412d2cc7d85dff5f6380724fbf5"
+  },
+  "left-tray": {
+    "triangles": 1184,
+    "connected": true,
+    "closed": true,
+    "euler_characteristic": -8,
+    "dimensions_mm": [
+      149.984408,
+      108.723692,
+      23.974998
+    ],
+    "pcb_wall_clearance_mm": 0.6,
+    "under_pcb_clearance_mm": 16.0,
+    "m2_holes_open": true,
+    "stl_sha256": "9d238a2c9f5a288715ed19cc7f8e7b24118f51dd1ec6ef752d88c6f0422f50a3"
+  },
+  "right-plate": {
+    "triangles": 1352,
+    "connected": true,
+    "closed": true,
+    "euler_characteristic": -48,
+    "dimensions_mm": [
+      149.984408,
+      108.723692,
+      2.600199
+    ],
+    "m2_holes_open": true,
+    "stl_sha256": "a11c6f24d3f7298666f27765041ccd59907b8645e71cb40058e7dd67c1ca37a8"
+  },
+  "right-tray": {
+    "triangles": 1184,
+    "connected": true,
+    "closed": true,
+    "euler_characteristic": -8,
+    "dimensions_mm": [
+      149.984408,
+      108.723692,
+      23.974998
+    ],
+    "pcb_wall_clearance_mm": 0.6,
+    "under_pcb_clearance_mm": 16.0,
+    "m2_holes_open": true,
+    "stl_sha256": "bbedcce9dc4ef437a8b886110f8509b17cf127bf21a5921b7d1cc6ff1a0be07d"
+  }
+}

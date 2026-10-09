@@ -14,6 +14,11 @@ The top plate covers the controllers. USB, power, and reset remain accessible fr
 
 ![Case](previews/case-left.png)
 
+A [printed tray and plate prototype](manufacturing/jlc3dp/README.md) is also available in frosted or clear resin.
+It uses the same four M2 mounting locations and controller stack.
+
+![Printed case prototype](previews/printed-case-left.png)
+
 ## Edit the design
 
 - [Layout](ergogen/layout.yaml): key spacing and column stagger.
@@ -46,6 +51,7 @@ python3 scripts/generate_assembly.py
 python3 scripts/check_assembly_guards.py
 npm run case
 python3 scripts/check_case_models.py
+python3 scripts/export_printed_case.py
 python3 scripts/save_previews.py
 ```
 
@@ -56,6 +62,7 @@ A separate workflow builds the left, right, and settings-reset firmware.
 
 JLCPCB files are in [manufacturing/jlcpcb/](manufacturing/jlcpcb/README.md).
 SendCutSend files are in [manufacturing/sendcutsend/](manufacturing/sendcutsend/README.md).
+Printed case files and quotes are in [manufacturing/jlc3dp/](manufacturing/jlc3dp/README.md).
 The [assembly guide](manufacturing/README.md) lists parts, controller headers, battery connections, and soldering work.
 
 The design still needs supplier approval and a physical prototype test before ordering a production batch.

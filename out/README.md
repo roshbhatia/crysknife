@@ -1,7 +1,7 @@
 # Engineering exports
 
 - `kicad/`: editable routed boards, complete schematics, local libraries, schematic PDFs, and exported netlists.
-- `3d/`: flat metal bottoms and case assemblies in 3MF format.
+- `3d/`: flat metal bottoms, case assemblies, and printed trays and plates in 3MF format.
 - `firmware/`: verified UF2 builds for each half and settings reset.
 - `validation.json`: PCB check revision, reports, and board hashes.
 
