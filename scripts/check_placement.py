@@ -23,7 +23,7 @@ for side in ("left", "right"):
     for fp in mounts:
         pads = list(fp.Pads())
         assert len(pads) == 1 and pads[0].GetAttribute() == pcbnew.PAD_ATTRIB_NPTH
-        assert pads[0].GetDrillSize().x == pcbnew.FromMM(5)
+        assert pads[0].GetDrillSize().x == pads[0].GetDrillSize().y == pcbnew.FromMM(2.2), (side, fp.GetReference(), "Expected round M2 clearance hole")
     keys = [fp for fp in footprints if fp.GetReference().startswith("S")]
     diodes = [fp for fp in footprints if fp.GetReference().startswith("D")]
     assert len(keys) == len(diodes) == 21
