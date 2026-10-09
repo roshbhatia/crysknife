@@ -74,6 +74,7 @@ units:
   middle_stagger: 5
   index_stagger: -5
   inner_stagger: -2
+  outer_bottom_extension: 4
 
   # Physical measures
   screw_radius: 1.1 # M2 screws
@@ -536,8 +537,10 @@ outlines:
         - ref: plate_outline_bottom_3
         - ref: plate_outline_bottom_2
         - ref: plate_outline_bottom_1
+        - ref: matrix_pinky_bottom
+          shift: [0.5 ks + 2, -0.5 kp - outer_bottom_extension]
         - ref: matrix_outer_bottom
-          shift: [-ks * 0.47 +0.012, -kp * 0.485 -0.025]
+          shift: [-0.5 ks - 2, -0.5 kp - outer_bottom_extension]
   _plate_outline:
     - what: outline
       name: _matrix_outline

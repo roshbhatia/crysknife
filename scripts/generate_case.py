@@ -44,8 +44,19 @@ for side in ("left", "right"):
         if ref.startswith("S") and ref[1:].isdigit():
             keys.append([x, y, float(at[3]) if len(at) > 3 else 0])
     assert len(keys) == 21
+    outer_cutout_margins = {}
+    outer_bottom_cutouts = {}
+    for ref in ('S1', 'S4'):
+        x, y = components[ref]
+        cutout = box(x-parameters['switch_cutout']/2, y-parameters['switch_cutout']/2,
+                     x+parameters['switch_cutout']/2, y+parameters['switch_cutout']/2)
+        assert shape.covers(cutout), f'{ref}: outer bottom cutout crosses PCB edge'
+        margin = shape.boundary.distance(cutout)
+        assert margin >= 4, f'{ref}: outer bottom PCB margin is below 4 mm'
+        outer_cutout_margins[ref] = margin
+        outer_bottom_cutouts[ref] = cutout
     cutouts = [affinity.translate(affinity.rotate(box(-parameters["switch_cutout"]/2, -parameters["switch_cutout"]/2, parameters["switch_cutout"]/2, parameters["switch_cutout"]/2), a), x, y) for x, y, a in keys]
-    assert all(shape.buffer(2.5).covers(cutout) for cutout in cutouts), "Switch cutout crosses plate boundary"
+    assert all(shape.buffer(expansion, join_style='mitre').covers(cutout) for cutout in cutouts), "Switch cutout crosses plate boundary"
     assert all(a.distance(b) >= 1 for i, a in enumerate(cutouts) for b in cutouts[i+1:]), "Insufficient switch plate web"
     cx, cy = components["MCU1"]
     electronics = box(cx-parameters["controller_width"]/2, cy-parameters["controller_length"]/2,
@@ -82,8 +93,9 @@ for side in ("left", "right"):
     values = [outline, keys, [[p.x, p.y] for p in bolts], components["MCU1"],
               components["RST1"], components["PWR1"], list(shape.bounds), battery_center, mount_diameter]
     geometries.append(f"{side}_geometry = {json.dumps(values)};")
-    physical_checks[side] = (cutouts, bolts, electronics)
+    physical_checks[side] = (cutouts, bolts, electronics, outer_bottom_cutouts)
     reports.append({"side": side, "keys": len(keys), "pcb_area_mm2": shape.area,
+                    "outer_bottom_pcb_clearance_mm": outer_cutout_margins,
                     "minimum_plate_web_mm": min(a.distance(b) for i, a in enumerate(cutouts) for b in cutouts[i+1:]),
                     "bolts": values[2], "standoff_count": 4, "pcb_mount_hole_mm": mount_diameter,
                     "minimum_keycap_gap_mm": minimum_keycap_gap, "controls": "accessible through open plate sides",
@@ -128,7 +140,7 @@ def exported_shape(path):
 
 
 for side in ("left", "right"):
-    cutouts, bolts, electronics = physical_checks[side]
+    cutouts, bolts, electronics, outer_bottom_cutouts = physical_checks[side]
     report = next(item for item in reports if item["side"] == side)
     report["exports"] = {}
     for part in ("bottom-flat", "plate", "damping"):
@@ -144,6 +156,12 @@ for side in ("left", "right"):
             assert all(actual.intersection(p.buffer(1.08)).area < 0.0001 for p in bolts), "Export blocks bolt hole"
         if part == "plate":
             assert actual.covers(electronics.buffer(-0.01)), "Top plate does not cover controller"
+            outer_plate_margins = {}
+            for ref, cutout in outer_bottom_cutouts.items():
+                margin = actual.exterior.distance(cutout)
+                assert margin >= 4 + expansion - 0.01, f'{ref}: exported outer bottom plate margin is too small'
+                outer_plate_margins[ref] = margin
+            report['outer_bottom_plate_clearance_mm'] = outer_plate_margins
         report["exports"][part] = {"area_mm2": actual.area, "closed_contours": contours}
     subprocess.run(["openscad", "-o", str(OUTPUT / f"{side}-assembly.csg"),
                     "-D", f'side="{side}"', str(ROOT / "case/sandwich.scad")], check=True, env=export_env)

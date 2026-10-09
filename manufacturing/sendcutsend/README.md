@@ -13,6 +13,7 @@ The corners are square. Four M2 standoffs pass through the carrier and join matc
 All dimensions use millimeters. The metal plates have no bends.
 The top plate covers the electronics area. Controllers sit face up beneath the carrier PCBs.
 USB, power, and reset remain accessible through the open sides.
+The two outer bottom key cutouts have at least 4 mm of PCB clearance and 6.5 mm of acrylic edge clearance.
 
 Use four round 20 mm M2 standoffs, with a maximum 4 mm body diameter, and four 1 mm nylon shims per half.
 The shims sit between the standoffs and the top plate.
@@ -42,8 +43,8 @@ This keeps the PCB artwork visible and gives the base a finished surface.
 
 | Choice | Result for this design |
 | --- | --- |
-| Current .125 in aluminum base | About 103 g per half. Roughly 7.8 times the base bending stiffness of .063 in stock at the same outline and alloy. |
-| Optional .063 in aluminum base | Light; about 52 g per half before finishing and hardware. Regenerate models before changing stock. |
+| Current .125 in aluminum base | About 107 g per half. Roughly 7.8 times the base bending stiffness of .063 in stock at the same outline and alloy. |
+| Optional .063 in aluminum base | Light; about 54 g per half before finishing and hardware. Regenerate models before changing stock. |
 | .063 in clear acrylic top | Matches the modeled switch latch thickness. Cut the fit coupon first. |
 | .063 in plain neoprene floor | A removable damping layer. It does not suspend the switch plate. |
 | .118 in polycarbonate top | Requires redesigned switch retention, screw holes, and routed internal corners. It cannot replace the current plate directly. |

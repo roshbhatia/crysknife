@@ -2,23 +2,27 @@
   {
     "side": "left",
     "keys": 21,
-    "pcb_area_mm2": 10871.048471777038,
+    "pcb_area_mm2": 11312.641824277038,
+    "outer_bottom_pcb_clearance_mm": {
+      "S1": 4.133154991945615,
+      "S4": 7.0
+    },
     "minimum_plate_web_mm": 6.0,
     "bolts": [
       [
-        -51.736047600000006,
+        -50.4310476,
         15.257055699999995
       ],
       [
-        -51.736047600000006,
+        -50.4310476,
         -4.742944300000005
       ],
       [
-        28.263952399999994,
+        29.5689524,
         26.257055699999995
       ],
       [
-        28.263952399999994,
+        29.5689524,
         -13.742944300000005
       ]
     ],
@@ -55,7 +59,7 @@
         8.5
       ],
       "center_mm": [
-        -9.736047600000006,
+        -8.4310476,
         17.757055699999995
       ],
       "rf_clearance_mm": 21.704000000000008,
@@ -66,39 +70,47 @@
     "status": "mechanical draft; switch height, battery, controller fit require physical verification",
     "exports": {
       "bottom-flat": {
-        "area_mm2": 12021.3534939445,
+        "area_mm2": 12486.474169926,
         "closed_contours": 5
       },
       "plate": {
-        "area_mm2": 7905.359332064404,
+        "area_mm2": 8370.480435855903,
         "closed_contours": 26
       },
       "damping": {
-        "area_mm2": 11973.079488527499,
+        "area_mm2": 12438.200056217498,
         "closed_contours": 5
       }
+    },
+    "outer_bottom_plate_clearance_mm": {
+      "S1": 6.633131305374657,
+      "S4": 9.499955699999994
     }
   },
   {
     "side": "right",
     "keys": 21,
-    "pcb_area_mm2": 10871.048471777038,
+    "pcb_area_mm2": 11312.641824277038,
+    "outer_bottom_pcb_clearance_mm": {
+      "S1": 4.13315499194561,
+      "S4": 7.0
+    },
     "minimum_plate_web_mm": 6.0,
     "bolts": [
       [
-        51.736047600000006,
+        50.4310476,
         15.257055699999995
       ],
       [
-        51.736047600000006,
+        50.4310476,
         -4.742944300000005
       ],
       [
-        -28.263952399999994,
+        -29.5689524,
         26.257055699999995
       ],
       [
-        -28.263952399999994,
+        -29.5689524,
         -13.742944300000005
       ]
     ],
@@ -135,7 +147,7 @@
         8.5
       ],
       "center_mm": [
-        9.736047600000006,
+        8.4310476,
         17.757055699999995
       ],
       "rf_clearance_mm": 21.704000000000008,
@@ -146,17 +158,21 @@
     "status": "mechanical draft; switch height, battery, controller fit require physical verification",
     "exports": {
       "bottom-flat": {
-        "area_mm2": 12021.353493944502,
+        "area_mm2": 12486.474169926,
         "closed_contours": 5
       },
       "plate": {
-        "area_mm2": 7905.359332064404,
+        "area_mm2": 8370.480435855905,
         "closed_contours": 26
       },
       "damping": {
-        "area_mm2": 11973.0794885275,
+        "area_mm2": 12438.200056217498,
         "closed_contours": 5
       }
+    },
+    "outer_bottom_plate_clearance_mm": {
+      "S1": 6.633131305374658,
+      "S4": 9.499955699999994
     }
   }
 ]
