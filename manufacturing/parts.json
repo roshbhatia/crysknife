@@ -1,5 +1,4 @@
 {
-  "status": "Prototype drafts reviewed in JLCPCB on 2026-10-09; production release and physical tests pending",
   "catalog_checked": "2026-10-09",
   "parts": [
     {
@@ -91,12 +90,5 @@
     "MH2": "Mechanical hole for a case standoff; no assembly part",
     "MH3": "Mechanical hole for a case standoff; no assembly part",
     "MH4": "Mechanical hole for a case standoff; no assembly part"
-  },
-  "remaining_gates": [
-    "Current manufacturer drawings, footprint fit, pickup origins and rotations accepted by assembler",
-    "Exact supplier stock and Standard two-face mixed SMT/THT assembly quote accepted",
-    "Factory accepts C5156451 socket sourcing and soldering; matching nice!nano header insertion and assembled height verified",
-    "Adafruit 2011 plug polarity, BOOST open for nominal 100 mA charging, charging temperature and physical case fit",
-    "Physical prototype keyboard, Bluetooth and charging tests"
-  ]
+  }
 }

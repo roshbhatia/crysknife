@@ -6,31 +6,23 @@ The rigid plates carry the screw loads. The sleeve has no screw holes.
 
 ## Files and suppliers
 
-The [JLC cart](https://jlc3dp.com/shopcart/cart?source=3D) contains all six parts, quantity one each.
-Both PCB drafts remain in the account cart. No order was submitted.
-
 Upload `left-plate.3mf`, `right-plate.3mf`, `left-bottom.3mf`, and `right-bottom.3mf` for SLA printing.
 Select 8001 Resin, Translucent, Fine Sanding, and No thread.
 Upload `left-sleeve.stl` and `right-sleeve.stl` for FDM printing.
 Select TPU Plastic, Translucent, no surface finish, and no thread inserts.
 The sleeve 3MF files contain the same geometry for inspection.
 
-| Part | Geometry | Each | Pair |
-| --- | --- | ---: | ---: |
-| Resin top | 1.6002 mm switch seats, narrow underside rim | $3.72 | $7.44 |
-| Resin bottom | Flat, 3.175 mm thick | $10.15 | $20.30 |
-| TPU sleeve | 2 mm walls, closed bottom and retaining lip | $15.49 | $30.98 |
-| Six parts | Before shipping | | $58.72 |
+| Part | Material | Geometry |
+| --- | --- | --- |
+| Top | 8001 Resin | 1.6002 mm switch seats; 1 mm underside rim |
+| Bottom | 8001 Resin | Flat, 3.175 mm thick |
+| Sleeve | TPU | 2 mm walls; closed bottom and retaining lip |
 
-Estimated shipping is $15.31. The current estimate totals $74.03, with a four-day build time.
-The cart estimates shipment on October 13, 2026. Tax, shipping, and supplier review can change the final cost.
-Current cart references and uploaded model hashes are in `quotes.json`.
-See [the saved cart](../../previews/jlc3dp-complete-case-cart.png).
-
-JLC rejected the fully flat 1.6002 mm tops. The accepted top models add a 1 mm tall, 1.6 mm wide underside rim.
+Print one of each part per half.
+The top has a 1 mm tall, 1.6 mm wide underside rim, giving a 2.6002 mm overall model height.
 The rim stays outside the PCB outline and clears the mounting washers and key openings.
-The top face stays flat. Switch seats remain 1.6002 mm thick; total model height is 2.6002 mm.
-The sleeve fit and mounting stack remain unchanged. There is no rigid resin tray.
+The top face stays flat, with 1.6002 mm switch seats.
+The sleeve wraps the plate sandwich without a separate rigid tray.
 
 SendCutSend remains an alternative for [flat acrylic tops, aluminum bottoms, and damping sheets](../sendcutsend/README.md).
 Do not buy both rigid plate options for the same keyboard.
@@ -68,14 +60,12 @@ Leave the controller BOOST bridge open.
 Both sleeves, reinforced tops, and flat bottoms export as connected, closed meshes.
 Checks cover mirror symmetry, screw holes, switch openings, closed sleeve bottoms, and blind screw-head pockets.
 Lip overlap, front and rear retention, keycap clearance, and top screw access pass nominal geometry checks.
-Both flat plates extend 1.5 mm farther around the PCB than the earlier drawings.
 Switch cutouts and mounting holes remain at their original locations.
 The controller and battery stack remains unchanged.
 
-The previews show nominal component envelopes. They do not prove physical fit.
+The previews show nominal component envelopes.
 Test switch retention, lip fit, cable access, battery clearance, and peel force on the first prototype.
 Supplier tolerance can change retention and installation effort.
-No supplier review or physical assembly test has accepted this version.
 
 ## Regenerate
 

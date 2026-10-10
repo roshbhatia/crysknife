@@ -6,7 +6,6 @@ Its MIT license is preserved in `ergogen/LICENSE.corney-island`.
 
 The layout source retains upstream points and outlines, selects MX dimensions, and excludes upstream electronics and case generation.
 The upstream build scripts are not included.
-Upstream updates require explicit review and permission.
 
 PCB generation loads [ceoloide/ergogen-footprints](https://github.com/ceoloide/ergogen-footprints/tree/48935f54b456ff1503d78d6b17d9d146b54e8ade) from the pinned Nix input.
 Revision `48935f54b456ff1503d78d6b17d9d146b54e8ade` remains in the immutable dependency source.

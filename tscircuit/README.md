@@ -60,7 +60,7 @@ The rounded battery pad specifies zero drill offsets explicitly.
 Undefined offsets crash the live copper checks; JSON serialization drops those fields and can conceal the cause.
 The build renders both named React entries and checks their live, unmodified database before JSON serialization.
 Runtime errors, routing errors, and copper shorts fail the build.
-Post-build routing checks remain an additional gate.
+Post-build checks validate the finished routes.
 Warnings about generic pad symbols and missing manufacturer metadata remain visible.
 
 The KiCad job independently checks every descriptor against `pcbnew`.
@@ -73,7 +73,6 @@ The final KiCad DRC validates the finished route. React previews remain autorout
 It preserves footprint references, solder mask, paste, exact outlines, and knife artwork.
 The routed board check requires zero unconnected items and no violations except library-resolution warnings.
 KiCad independently checks the complete schematic and its exported netlist against all carrier pins.
-Factory acceptance and physical fit remain separate gates.
 
 References: [board and autorouter](https://docs.tscircuit.com/elements/board),
 [CLI export](https://docs.tscircuit.com/command-line/tsci-export),
@@ -101,4 +100,4 @@ Its geometry is committed beside it, so no ignored build directory is needed.
 The case model shows reserved envelopes. Controller, socket, switch, and battery fit still need physical checks.
 
 Checked KiCad projects and 3D exports live in [`../out/`](../out/README.md).
-Vendor review files have separate directories under `manufacturing/`.
+Vendor files have separate directories under `manufacturing/`.

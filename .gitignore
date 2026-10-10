@@ -7,3 +7,5 @@ out/**/*.kicad_prl
 out/**/fp-info-cache
 out/**/_autosave-*
 out/**/backups/
+
+.playwright-mcp/

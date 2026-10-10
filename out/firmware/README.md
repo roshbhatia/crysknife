@@ -9,5 +9,4 @@ Use `left.uf2` for the left module and `right.uf2` for the right module.
 For initial setup or split pairing recovery, flash `settings_reset.uf2` to both modules first, then flash their matching keyboard files.
 Keep both halves powered while they pair. Connect the computer to `crysknife` through the right half.
 
-Build success does not prove the assembled keyboard works.
-Complete the continuity, polarity, key, Bluetooth, and charging checks in `manufacturing/physical-tests.md` before normal battery use.
+Follow the [startup checks](../../manufacturing/physical-tests.md) for continuity, battery polarity, keys, Bluetooth, and charging.

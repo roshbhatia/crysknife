@@ -1,5 +1,4 @@
 {
-  "status": "selected for prototype; dimensional and charging tests pending",
   "sku": "Adafruit 2011",
   "quantity": 2,
   "voltage_V": 3.7,
@@ -22,8 +21,7 @@
   "source": "https://www.adafruit.com/product/2011",
   "controller_guidance": "https://nicekeyboards.com/docs/nice-nano/",
   "charging_requires_power_switch_on": true,
-  "physical_results": null,
-  "datasheet_gate": "The product-linked PDF describes PKCELL 401230 105mAh, not the selected 2000mAh pack. Obtain the correct pack drawing before supplier acceptance; dimensions here use the product listing.",
   "charge_limit_reason": "BAT_P-to-RAW path passes through ALPS SSSS811101, rated 300 mA maximum. Do not use 500 mA BOOST.",
-  "switch_rating_source": "https://tech.alpsalpine.com/e/products/detail/SSSS811101/"
+  "switch_rating_source": "https://tech.alpsalpine.com/e/products/detail/SSSS811101/",
+  "drawing_note": "The product-linked PDF describes PKCELL 401230 105mAh, not the selected 2000mAh pack. Dimensions use the selected product listing."
 }

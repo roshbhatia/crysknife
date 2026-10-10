@@ -1,5 +1,5 @@
 {
-  "validation": "JLC rendered body outlines, pads, holes and diode cathodes rechecked on both halves, 2026-10-09. Socket body orientation corrected by 180 degrees. Production review and physical testing remain pending.",
+  "validation": "JLC rendered body outlines, pads, holes and diode cathodes rechecked on both halves, 2026-10-09. Socket body orientation corrected by 180 degrees.",
   "coordinates": "Offsets use native CPL X right and Y up, rotated by the native footprint angle. Supplier bottom rotations use the mirrored model convention.",
   "parts": {
     "C41430893": {

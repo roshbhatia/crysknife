@@ -64,14 +64,8 @@ Our 2000 mAh cells follow [nice!nano charging guidance](https://nicekeyboards.co
 They sit below the key field, rather than beneath the controller as in many small-battery builds.
 Dimensions, polarity, retention, charging, and radio performance still need measurements.
 
-The custom case uses four standoffs, a 1.6 mm clear acrylic plate, a 1.6 mm neoprene floor, and a 3.175 mm aluminum base.
+The custom case uses four standoffs with either printed resin plates or acrylic and aluminum plates.
+A removable TPU sleeve provides the walls, floor, and retaining lip.
 Our wider lower edge and cutout-clearance guards address the two outer bottom keys.
 The neoprene is floor damping. The rigid standoffs do not provide a floating gasket mount.
 Published builds do not prove switch latch retention or sound with this material stack.
-
-## Ordering decision
-
-The source comparison supports ordering a small prototype after JLCPCB accepts the exact parts and assembly files.
-It does not support calling the keyboard a tested, drop-in product.
-Keep the remaining [factory gates](jlcpcb/readiness.json) and [physical tests](physical-tests.md).
-Measure the controller stack and test the acrylic coupon before ordering the full case.

@@ -1,7 +1,7 @@
-# SendCutSend review files
+# SendCutSend
 
 Each half uses a flat metal bottom plate, rubber sheet, and clear acrylic top plate.
-The corners are square. The plate outline extends 4 mm beyond the PCB, 1.5 mm more than the previous drawings.
+The corners are square. The plate outline extends 4 mm beyond the PCB.
 Four M2 screws pass through the top plate and carrier, then thread into standoffs below the PCB.
 
 | File | Material | Thickness | Process |
@@ -33,7 +33,7 @@ Use this stack at each of the four mounting positions:
 Use M2 × 12 mm screws from the top and M2 × 6 mm screws from the bottom, with one 0.5 mm protective washer under each head.
 Nominal thread engagement is 3.8 mm above and 2.325 mm below. Confirm the supplied thread depths and lengths before assembly.
 Both plates and the PCB have 2.2 mm screw holes. The floor rubber has 5.2 mm body-clearance holes.
-The lower standoffs stop beneath the PCB; their bodies no longer pass through it.
+The lower standoffs stop beneath the PCB.
 Use light screw torque to protect the acrylic. Check that washers clear nearby switches.
 
 The rubber lines the metal floor. Add a separate dielectric liner between the metal and electronics.
@@ -46,7 +46,6 @@ The default is 14 mm. [Acrylic cutting tolerance](https://sendcutsend.com/materi
 [Neoprene stock](https://sendcutsend.com/materials/neoprene/) also requires a thickness check.
 
 Test plate flex, corner stability, controller clearance, and battery fit on the assembled prototype.
-These are review files. No supplier quote or production order has been accepted.
 
 ## Material and finish choices
 
@@ -78,7 +77,6 @@ Combining tumbling and anodizing requires a custom quote. The standard finish ch
 [Clear acrylic](https://sendcutsend.com/materials/acrylic/) is available at .063 in, with a published cutting tolerance of ±.009 in.
 [Neoprene](https://sendcutsend.com/materials/neoprene/) is waterjet cut at .063 in with the same published cutting tolerance.
 [Polycarbonate](https://sendcutsend.com/materials/polycarbonate/) starts at .118 in and uses CNC routing.
-Catalog availability does not mean these uploaded parts have been accepted.
 
 Use metal M2 standoffs with protective washers.
 The TPU case supplies a closed desk-contact surface. Use separate silicone feet when assembling without it.

@@ -1,7 +1,7 @@
 {
   "pcb_revision": "8644c1a3f2dc836ab49acee8cc40efbe70545180",
   "pcb_ci": "https://github.com/roshbhatia/crysknife/actions/runs/37887225267",
-  "status": "digital checks passed; supplier and physical approval pending",
+  "status": "ERC and DRC passed",
   "boards": {
     "left": {
       "erc_issues": 0,

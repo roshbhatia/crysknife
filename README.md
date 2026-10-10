@@ -3,20 +3,31 @@
 A 42-key wireless split keyboard with MX hotswap sockets, ZMK firmware, and a 2000 mAh battery in each half.
 It uses nice!nano V2 controllers, white PCBs, and a knife illustration and poem lines on both PCB faces.
 
+## PCB
+
+<details open>
+<summary>Front</summary>
+
 ![Left PCB](previews/left.png)
 ![Right PCB](previews/right.png)
 
+</details>
+
+<details>
+<summary>Back</summary>
+
+![Left PCB back](previews/left-bottom.png)
+![Right PCB back](previews/right-bottom.png)
+
+</details>
+
 ## Case
 
-A clear acrylic top plate sits above a flat aluminum bottom plate.
-Four standoffs hold each half together. A flat rubber layer is intended to damp vibration above the metal floor.
-The top plate covers the controllers. USB, power, and reset remain accessible from the side.
+Each half uses two rigid plates, four M2 standoffs, and a removable TPU sleeve.
+The sleeve has a closed bottom and a lip that grips the top plate. USB, power, and reset have side openings.
 
-![Case](previews/case-left.png)
-
-A [TPU sleeve](manufacturing/jlc3dp/README.md) wraps the flat plate sandwich.
-Its closed bottom covers the screw heads. A retaining lip wraps over the top plate edge.
-The sleeve forms the case walls. No rigid printed tray is needed.
+The printed version uses translucent resin plates. The top keeps 1.6 mm switch seats and adds a narrow underside rim.
+Flat acrylic tops and aluminum bottoms are an alternative from SendCutSend.
 
 ![Sleeved case](previews/printed-fit-left.png)
 
@@ -50,6 +61,7 @@ python3 scripts/check_electrical.py
 python3 scripts/generate_schematic.py
 python3 scripts/generate_assembly.py
 python3 scripts/check_assembly_guards.py
+python3 scripts/check_supplier_placement.py
 npm run case
 python3 scripts/check_case_models.py
 python3 scripts/export_printed_case.py
@@ -63,8 +75,5 @@ A separate workflow builds the left, right, and settings-reset firmware.
 
 JLCPCB files are in [manufacturing/jlcpcb/](manufacturing/jlcpcb/README.md).
 SendCutSend files are in [manufacturing/sendcutsend/](manufacturing/sendcutsend/README.md).
-Printed case files and quotes are in [manufacturing/jlc3dp/](manufacturing/jlc3dp/README.md).
+Printed case files are in [manufacturing/jlc3dp/](manufacturing/jlc3dp/README.md).
 The [assembly guide](manufacturing/README.md) lists parts, controller headers, battery connections, and soldering work.
-
-The design still needs supplier approval and a physical prototype test before ordering a production batch.
-The remaining checks cover controller fit, charging, wireless operation, and plate fit.

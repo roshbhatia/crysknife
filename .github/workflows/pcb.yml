@@ -1,4 +1,4 @@
-name: PCB draft checks
+name: PCB checks
 
 on:
   push:
@@ -74,11 +74,11 @@ jobs:
       - run: kicad-cli pcb drc --format json --output build/pcb/left-routed-drc.json build/pcb/crysknife_left_routed.kicad_pcb
       - run: kicad-cli pcb drc --format json --output build/pcb/right-routed-drc.json build/pcb/crysknife_right_routed.kicad_pcb
       - run: python3 scripts/check_drc_draft.py --routed
-      - run: mkdir -p build/manufacturing/quote-only/gerbers/left build/manufacturing/quote-only/gerbers/right
-      - run: kicad-cli pcb export gerbers --layers F.Cu,B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts --output build/manufacturing/quote-only/gerbers/left/ build/pcb/crysknife_left_routed.kicad_pcb
-      - run: kicad-cli pcb export gerbers --layers F.Cu,B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts --output build/manufacturing/quote-only/gerbers/right/ build/pcb/crysknife_right_routed.kicad_pcb
-      - run: kicad-cli pcb export drill --output build/manufacturing/quote-only/gerbers/left/ build/pcb/crysknife_left_routed.kicad_pcb
-      - run: kicad-cli pcb export drill --output build/manufacturing/quote-only/gerbers/right/ build/pcb/crysknife_right_routed.kicad_pcb
+      - run: mkdir -p build/manufacturing/assembly/gerbers/left build/manufacturing/assembly/gerbers/right
+      - run: kicad-cli pcb export gerbers --layers F.Cu,B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts --output build/manufacturing/assembly/gerbers/left/ build/pcb/crysknife_left_routed.kicad_pcb
+      - run: kicad-cli pcb export gerbers --layers F.Cu,B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts --output build/manufacturing/assembly/gerbers/right/ build/pcb/crysknife_right_routed.kicad_pcb
+      - run: kicad-cli pcb export drill --output build/manufacturing/assembly/gerbers/left/ build/pcb/crysknife_left_routed.kicad_pcb
+      - run: kicad-cli pcb export drill --output build/manufacturing/assembly/gerbers/right/ build/pcb/crysknife_right_routed.kicad_pcb
       - run: kicad-cli pcb export svg --mode-single --black-and-white --fit-page-to-board --exclude-drawing-sheet --layers F.SilkS,Edge.Cuts --output build/pcb/left-silkscreen.svg build/pcb/crysknife_left_routed.kicad_pcb
       - run: kicad-cli pcb export svg --mode-single --black-and-white --fit-page-to-board --exclude-drawing-sheet --layers F.SilkS,Edge.Cuts --output build/pcb/right-silkscreen.svg build/pcb/crysknife_right_routed.kicad_pcb
       - run: kicad-cli pcb export svg --mode-single --black-and-white --fit-page-to-board --exclude-drawing-sheet --layers B.SilkS,Edge.Cuts --output build/pcb/left-bottom-silkscreen.svg build/pcb/crysknife_left_routed.kicad_pcb

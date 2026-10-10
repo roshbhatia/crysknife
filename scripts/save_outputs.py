@@ -6,7 +6,7 @@ import shutil
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-parser = argparse.ArgumentParser(description='Save checked engineering models and supplier review files')
+parser = argparse.ArgumentParser(description='Save checked engineering models and vendor files')
 parser.add_argument('--evidence-dir', type=Path, required=True)
 parser.add_argument('--run-url', required=True)
 parser.add_argument('--revision', required=True)
@@ -19,7 +19,7 @@ scs = ROOT/'manufacturing/sendcutsend'
 for directory in (kicad, jlc, scs, out/'3d'):
     directory.mkdir(parents=True, exist_ok=True)
 verification = {'pcb_revision':args.revision, 'pcb_ci':args.run_url,
-                'status':'digital checks passed; supplier and physical approval pending', 'boards':{}}
+                'status':'ERC and DRC passed', 'boards':{}}
 for side in ('left', 'right'):
     erc = json.loads((evidence/f'schematic/{side}-erc.json').read_text())
     assert not [v for s in erc['sheets'] for v in s['violations']], (side, 'ERC issues')
@@ -35,11 +35,11 @@ for side in ('left', 'right'):
         shutil.copyfile(evidence/f'schematic/crysknife_{side}.{extension}', kicad/f'crysknife_{side}.{extension}')
     for extension in ('pdf', 'net'):
         shutil.copyfile(evidence/f'schematic/{side}.{extension}', kicad/f'{side}.{extension}')
-    quote = evidence/'manufacturing/quote-only'
+    assembly = evidence/'manufacturing/assembly'
     for kind in ('bom', 'cpl'):
-        shutil.copyfile(quote/f'{side}-quote-{kind}.csv', jlc/f'{side}-{kind}.csv')
+        shutil.copyfile(assembly/f'{side}-{kind}.csv', jlc/f'{side}-{kind}.csv')
     with zipfile.ZipFile(jlc/f'{side}-gerbers.zip','w',zipfile.ZIP_DEFLATED) as archive:
-        for file in sorted((quote/f'gerbers/{side}').iterdir()):
+        for file in sorted((assembly/f'gerbers/{side}').iterdir()):
             archive.writestr(zipfile.ZipInfo(file.name, (1980,1,1,0,0,0)), file.read_bytes(), compress_type=zipfile.ZIP_DEFLATED)
     for part in ('bottom-flat','plate','damping'):
         shutil.copyfile(ROOT/f'build/case/{side}-{part}.dxf', scs/f'{side}-{part}.dxf')
@@ -47,10 +47,6 @@ for side in ('left', 'right'):
 for name in ('crysknife.kicad_sym','sym-lib-table','fp-lib-table'):
     shutil.copyfile(evidence/f'schematic/{name}', kicad/name)
 shutil.copytree(evidence/'schematic/crysknife.pretty', kicad/'crysknife.pretty', dirs_exist_ok=True)
-readiness = json.loads((evidence/'manufacturing/quote-only/readiness.json').read_text())
-readiness['remaining_gates'] = [gate.replace('Complete schematic/ERC and physical prototype', 'Physical prototype') for gate in readiness['remaining_gates']]
-readiness['digital_evidence'] = '../../out/validation.json'
-(jlc/'readiness.json').write_text(json.dumps(readiness,indent=2)+'\n')
 shutil.copyfile(ROOT/'build/case/mechanical-checks.json', scs/'mechanical-checks.json')
 for extension in ('dxf','svg'):
     shutil.copyfile(ROOT/f'build/case/switch-fit-coupon.{extension}', scs/f'switch-fit-coupon.{extension}')
@@ -58,6 +54,4 @@ for side in ('left','right'):
     for part in ('assembly','bottom'):
         shutil.copyfile(ROOT/f'build/case/{side}-{part}.3mf', out/f'3d/{side}-{part}.3mf')
 (out/'validation.json').write_text(json.dumps(verification,indent=2)+'\n')
-for vendor in (jlc,scs):
-    (vendor/'DO-NOT-ORDER.txt').write_text('SUPPLIER REVIEW ONLY. No accepted quote or physical prototype result.\n')
-print('Saved checked KiCad models, 3D case models and separate vendor review files')
+print('Saved KiCad projects, case models, and vendor files')

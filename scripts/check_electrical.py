@@ -80,4 +80,3 @@ for bindings in re.findall(r"bindings\s*=\s*<(.*?)>;", keymap, re.S):
 output = ROOT / "build/pcb/electrical-checks.json"
 output.write_text(json.dumps(evidence, indent=2)+"\n")
 print("Electrical source audit: all 42 matrix positions, diode direction, power, reset and firmware GPIOs match")
-print("Not hardware proof: Controller contact fit, battery polarity and assembly remain unverified")

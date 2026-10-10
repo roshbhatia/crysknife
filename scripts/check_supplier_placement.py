@@ -8,7 +8,7 @@ from kicad_sexp import child, children, parse
 ROOT = Path(__file__).resolve().parents[1]
 readback = json.loads((ROOT/'manufacturing/jlcpcb/placement-readback.json').read_text())
 for side in ('left', 'right'):
-    path = ROOT/f'build/manufacturing/quote-only/{side}-quote-cpl.csv'
+    path = ROOT/f'build/manufacturing/assembly/{side}-cpl.csv'
     with path.open() as stream:
         exported = {p['Designator']: p for p in csv.DictReader(stream)}
     live = {p['reference']: p for p in readback['boards'][side]}
@@ -19,7 +19,7 @@ for side in ('left', 'right'):
         assert actual['layer'] == {'Top': 'T', 'Bottom': 'B'}[expected['Layer']]
         for key, field in [('x', 'Mid X'), ('y', 'Mid Y'), ('rotation', 'Rotation')]:
             assert abs(actual[key]-float(expected[field])) < 0.0015, (side, ref, field)
-    with (ROOT/f'build/manufacturing/quote-only/{side}-quote-bom.csv').open() as stream:
+    with (ROOT/f'build/manufacturing/assembly/{side}-bom.csv').open() as stream:
         for group in csv.DictReader(stream):
             for ref in group['Designator'].split(','):
                 assert live[ref]['lcsc'] == group['LCSC Part #'], (side, ref)
