@@ -60,8 +60,9 @@ It also describes several other header types and heights. Matching pitch alone d
 Our selected HCTL receivers and Mill-Max 350 male strips have drawing-checked diameters, but their full seated height remains unmeasured.
 We did not find a documented build with that exact pair in our face-up underside arrangement.
 
-Our 2000 mAh cells follow [nice!nano charging guidance](https://nicekeyboards.com/docs/nice-nano/getting-started/), with BOOST left OPEN for nominal 100 mA because the carrier power switch is rated 300 mA.
+Our 750 mAh prototype uses [nice!nano charging guidance](https://nicekeyboards.com/docs/nice-nano/getting-started/), with BOOST left OPEN for nominal 100 mA because the carrier power switch is rated 300 mA.
 They sit below the key field, rather than beneath the controller as in many small-battery builds.
+The [battery review](battery-750-review.md) records conservative pack and charging assumptions.
 Dimensions, polarity, retention, charging, and radio performance still need measurements.
 
 The custom case uses four standoffs with either printed resin plates or acrylic and aluminum plates.

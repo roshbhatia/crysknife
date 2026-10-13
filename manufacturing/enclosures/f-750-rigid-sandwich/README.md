@@ -36,4 +36,5 @@ Physical header, cable, pack, switch, material, and RF tests remain in [startup 
 
 The [battery review](../../battery-750-review.md) contains the published evidence and conservative charging/pack assumptions.
 Supplier quotes and existing cart entries must use these files and the current sleep-enabled firmware; earlier taller packets are stale.
+Use the [current sleep firmware and validation](../../../out/firmware/validation.json), built in CI `38452289623`.
 No supplier communication or order has occurred.
