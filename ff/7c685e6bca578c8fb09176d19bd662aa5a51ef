@@ -1,0 +1,42 @@
+manufacturing/enclosures/height-review.md
+  s_df88920dc610de::t_89a0c9060f929e 1-29,31-67,70-123
+  s_df88920dc610de::t_3b498e34cfad0e 68-69
+case/variants/lower.py
+  s_df88920dc610de::t_d175ba90edfbb5 17-49,51-90
+manufacturing/enclosures/e-thin-rigid-sandwich/mesh-checks.json
+  s_df88920dc610de::t_6cc3e4549bb7ba 1-32
+case/variants/generate.py
+  s_df88920dc610de::t_d8f7c672496991 63,77
+case/variants/height_review.py
+  s_df88920dc610de::t_6caff13360a499 1-134
+manufacturing/enclosures/README.md
+  s_df88920dc610de::t_5f1ae3ecd69561 21-23
+manufacturing/enclosures/e-thin-rigid-sandwich/checks.json
+  s_df88920dc610de::t_8bc32ad70186f3 1-86
+manufacturing/enclosures/e-thin-rigid-sandwich/hardware.csv
+  s_df88920dc610de::t_564ca5e9714ffe 1-13
+manufacturing/enclosures/e-thin-rigid-sandwich/left-feet.json
+  s_df88920dc610de::t_13167ce63e4b1b 1-23
+manufacturing/enclosures/e-thin-rigid-sandwich/right-feet.json
+  s_df88920dc610de::t_7b3a892c3310ab 1-23
+manufacturing/enclosures/height-review.csv
+  s_df88920dc610de::t_e74844b19e9dfb 1-8
+manufacturing/enclosures/height-review.json
+  s_df88920dc610de::t_c9270b67ae6f67 1-128
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ff7c685e6bca578c8fb09176d19bd662aa5a51ef",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
