@@ -1,0 +1,8 @@
+Variant,Desk-to-front mm,Desk-to-plate-top mm,Example cap top H=10 mm,Desk contact mm,Physical height measured
+E  Thin rigid sandwich,26.8004,26.8004,36.8004,2.5,False
+Flat 3.175 mm baseline,28.3752,28.3752,38.3752,2.5,False
+A  Original TPU sleeve,31.8752,29.9752,39.9752,4.1,False
+B  CNC rigid tray,28.3752,28.3752,38.3752,2.5,False
+C  Printed rigid tray,28.3752,28.3752,38.3752,2.5,False
+D  Suspension without TPU,34.8752,30.3752,40.3752,2.5,False
+D  Suspension with TPU,38.3752,31.9752,41.9752,4.1,False

@@ -60,7 +60,7 @@ class SleeveMesh:
         vertices=[cq.Vector(float(x)+self.offset,float(y),float(z)-9) for x,y,z in re.findall(r'vertex\s+(\S+)\s+(\S+)\s+(\S+)',self.path.read_text())]
         return vertices,[tuple(range(i,i+3)) for i in range(0,len(vertices),3)]
 
-def render(parts,path,section=False):
+def render(parts,path,section=False,bounds=None):
     import numpy as np
     vertices=[];triangles=[]
     for shape,color in parts:
@@ -74,6 +74,7 @@ def render(parts,path,section=False):
             triangles.append((projected,np.array(color)*min(1,shade)))
             vertices.extend(projected)
     v=np.array(vertices);minimum=v[:,:2].min(axis=0);maximum=v[:,:2].max(axis=0)
+    if bounds is not None:minimum,maximum=np.array(bounds[0]),np.array(bounds[1])
     w,h=1500,720;scale=min((w-70)/(maximum[0]-minimum[0]),(h-70)/(maximum[1]-minimum[1]))
     pixels=np.full((h,w,3),[246,245,241],dtype=np.uint8);depth=np.full((h,w),-np.inf)
     for pts,color in triangles:

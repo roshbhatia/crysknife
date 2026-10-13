@@ -18,6 +18,9 @@ A useful process hybrid is C's printed tray with B's flat CNC PMMA top: outline,
 The unused rim pocket in C's tray remains clear. Keep C's lower gasket and rigid mounting hardware.
 Do not combine C's reinforced top with B's tray: B lacks the matching underside rim pocket.
 
+The [assembled-height review](height-review.md) removes the exploded gaps and adds a separate thin-floor candidate.
+RFQs remain on hold during that review.
+
 ## Images
 
 ![Four enclosure concepts](../../previews/enclosures/comparison.png)

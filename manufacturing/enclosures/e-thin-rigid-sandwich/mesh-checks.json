@@ -1,0 +1,32 @@
+[
+  {
+    "file": "right-rf-insert.stl",
+    "triangles": 84,
+    "closed": true
+  },
+  {
+    "file": "right-bottom.stl",
+    "triangles": 1128,
+    "closed": true
+  },
+  {
+    "file": "left-top.stl",
+    "triangles": 1532,
+    "closed": true
+  },
+  {
+    "file": "right-top.stl",
+    "triangles": 1532,
+    "closed": true
+  },
+  {
+    "file": "left-bottom.stl",
+    "triangles": 1128,
+    "closed": true
+  },
+  {
+    "file": "left-rf-insert.stl",
+    "triangles": 84,
+    "closed": true
+  }
+]

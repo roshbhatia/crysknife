@@ -1,0 +1,13 @@
+Part,Specification,Quantity for complete pair
+clear acrylic top plate,1.6002 mm; unchanged 14 mm square seats,2
+5052 H32 aluminum bottom,1.6002 mm; preserve RF opening; deburr both faces,2
+PMMA RF insert,1.6002 mm; flush inner floor; exterior seam retention,2
+M2 metal female/female standoff,15 mm; 4 mm flats; minimum 5 mm thread depth,8
+M2 nylon spacer,3 mm; 4 mm OD; 2.2 mm bore,8
+M2 nylon washer,0.5 mm; 5.5 mm OD; includes shims and head protection,40
+M2 top screw,12 mm; verify 3.7998 mm engagement,8
+M2 bottom screw,4 mm; verify 1.8998 mm engagement; head plus washer <=2.1 mm,8
+non-slip foot,2.5 mm installed height; 4 per half; control compression/desk clearance,8
+floor damping pad,existing 1.6002 mm profile; no new internal layer,2
+battery retention and dielectric cover,within existing allowance; no cell pressure or exposed contacts,2
+RF insert retention,underside-only nonconductive seam bond; no extra interior thickness,2

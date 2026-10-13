@@ -1,0 +1,86 @@
+[
+  {
+    "side": "left",
+    "floor_mm": 1.6002,
+    "feet_mm": 2.5,
+    "under_pcb_mm": 16.0,
+    "plate_top_from_desk_mm": 26.800400000000003,
+    "reserved_stack_spare_mm": 0.49980000000000047,
+    "controller_floor_gap_above_pad_mm": 4.7998,
+    "lower_screw_mm": 4,
+    "lower_thread_engagement_mm": 1.8998,
+    "upper_thread_engagement_mm": 3.7997999999999994,
+    "maximum_bottom_head_washer_mm": 2.1,
+    "desk_clearance_under_fastener_mm": 0.3999999999999999,
+    "pcb_xy_and_switch_geometry_unchanged": true,
+    "physical_fit_verified": false,
+    "parts": {
+      "top": {
+        "volume_mm3": 14571.882885215186,
+        "dimensions_mm": [
+          153.05780784080312,
+          112.02347570300897,
+          1.6002002000000672
+        ]
+      },
+      "bottom": {
+        "volume_mm3": 19134.24531884159,
+        "dimensions_mm": [
+          153.0578078408031,
+          112.02347570300896,
+          1.6002002000000433
+        ]
+      },
+      "rf-insert": {
+        "volume_mm3": 1965.2840355391286,
+        "dimensions_mm": [
+          27.500000200000017,
+          45.50000020000002,
+          1.6002002000000202
+        ]
+      }
+    }
+  },
+  {
+    "side": "right",
+    "floor_mm": 1.6002,
+    "feet_mm": 2.5,
+    "under_pcb_mm": 16.0,
+    "plate_top_from_desk_mm": 26.800400000000003,
+    "reserved_stack_spare_mm": 0.49980000000000047,
+    "controller_floor_gap_above_pad_mm": 4.7998,
+    "lower_screw_mm": 4,
+    "lower_thread_engagement_mm": 1.8998,
+    "upper_thread_engagement_mm": 3.7997999999999994,
+    "maximum_bottom_head_washer_mm": 2.1,
+    "desk_clearance_under_fastener_mm": 0.3999999999999999,
+    "pcb_xy_and_switch_geometry_unchanged": true,
+    "physical_fit_verified": false,
+    "parts": {
+      "top": {
+        "volume_mm3": 14571.882885215204,
+        "dimensions_mm": [
+          153.0578078408031,
+          112.02347570300896,
+          1.600200200000046
+        ]
+      },
+      "bottom": {
+        "volume_mm3": 19134.245318841604,
+        "dimensions_mm": [
+          153.0578078408031,
+          112.02347570300896,
+          1.6002002000000428
+        ]
+      },
+      "rf-insert": {
+        "volume_mm3": 1965.284035539129,
+        "dimensions_mm": [
+          27.500000200000017,
+          45.50000020000002,
+          1.6002002000000202
+        ]
+      }
+    }
+  }
+]
