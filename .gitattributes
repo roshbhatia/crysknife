@@ -1,0 +1,3 @@
+manufacturing/enclosures/**/*.step -diff
+manufacturing/enclosures/**/*.stl -diff
+manufacturing/enclosures/**/*.dxf -diff

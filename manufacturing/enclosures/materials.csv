@@ -1,0 +1,17 @@
+Option,Part,Material alternatives,Finish request,Note
+A,top,CNC PMMA,Clear polish or satin,1.6002 mm switch seat; corner-relief coupon
+A,bottom,CNC aluminum,Deburr and optional anodize,RF opening requires non-metal insert
+A,pmma-bottom,CNC PMMA,Clear polish or satin,Replaces metal bottom and RF insert
+A,rf-insert,CNC PMMA,Clear polish,Flush floor; bond only from underside
+A,sleeve,TPU 95A,As printed matte,Existing sleeve; Elecrow capability unconfirmed
+B,tray,CNC aluminum or CNC PMMA,Deburr/anodize for aluminum; clear polish or satin for PMMA,Split RF insert geometry supplied
+B,top,CNC PMMA,Clear polish or satin,Thin latch seats need manufacturing review
+B,rf-insert,CNC PMMA,Clear polish,Flush non-metal RF section
+C,tray,Translucent SLA resin,Matte/frosted or clear finishing,Exact resin and cure required; listed resin is brittle
+C,top,Translucent SLA resin,Matte/frosted or clear finishing,1.6002 mm seats; 1 mm underside reinforcement
+D,tray,CNC aluminum or CNC PMMA,Deburr/anodize or clear/satin,Outer hard stops set gasket compression
+D,top,CNC PMMA,Clear polish or satin,Floating plate; no contact with outer frame bolts
+D,frame,CNC PMMA,Clear polish or satin,Fixed frame clamps upper gasket
+D,rf-insert,CNC PMMA,Clear polish,Flush non-metal RF section
+D,sleeve,TPU 95A,As printed matte,Optional new size; grips fixed frame; Elecrow capability unconfirmed
+B/C/D,gasket,Closed-cell silicone foam,Cut sheet,2.0 +/-0.1 mm free; 1.5 mm installed; compression curve required

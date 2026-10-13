@@ -14,6 +14,9 @@
       devShells = nixpkgs.lib.genAttrs systems (system:
         let pkgs = import nixpkgs { inherit system; };
         in {
+          enclosures = pkgs.mkShell {
+            packages = [ pkgs.python312 pkgs.uv pkgs.openscad ];
+          };
           default = pkgs.mkShell {
             packages = [
               pkgs.nodejs_24

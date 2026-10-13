@@ -1,0 +1,39 @@
+Option,File stem,Quantity,X mm,Y mm,Z mm,Condition
+a-tpu-cnc-plates,left-top,1,153.0578,112.0235,1.6009,required
+a-tpu-cnc-plates,left-bottom,1,153.0578,112.0235,3.175,metal-bottom choice only
+a-tpu-cnc-plates,left-pmma-bottom,1,153.0578,112.0235,3.175,replaces metal bottom and RF insert
+a-tpu-cnc-plates,left-rf-insert,1,27.5,45.5,3.175,metal-bottom choice only
+a-tpu-cnc-plates,left-sleeve,1,158.180136,117.523056,31.875199,original TPU sleeve
+a-tpu-cnc-plates,right-top,1,153.0578,112.0235,1.6009,required
+a-tpu-cnc-plates,right-bottom,1,153.0578,112.0235,3.175,metal-bottom choice only
+a-tpu-cnc-plates,right-pmma-bottom,1,153.0578,112.0235,3.175,replaces metal bottom and RF insert
+a-tpu-cnc-plates,right-rf-insert,1,27.5,45.5,3.175,metal-bottom choice only
+a-tpu-cnc-plates,right-sleeve,1,158.180136,117.523056,31.875199,original TPU sleeve
+b-cnc-rigid-tray,left-top,1,165.3514,125.2225,1.6009,required
+b-cnc-rigid-tray,left-lower-gasket,1,161.8534,120.2241,1.5,cut 2 mm sheet; STEP shows installed 1.5 mm
+b-cnc-rigid-tray,left-rf-insert,1,27.5,45.5,23.975,required
+b-cnc-rigid-tray,left-tray,1,165.3514,125.2225,23.975,required
+b-cnc-rigid-tray,right-top,1,165.3514,125.2225,1.6009,required
+b-cnc-rigid-tray,right-lower-gasket,1,161.8534,120.2241,1.5,cut 2 mm sheet; STEP shows installed 1.5 mm
+b-cnc-rigid-tray,right-rf-insert,1,27.5,45.5,23.975,required
+b-cnc-rigid-tray,right-tray,1,165.3514,125.2225,23.975,required
+c-printed-tray-plate,left-top,1,165.3514,125.2225,2.6005,required
+c-printed-tray-plate,left-lower-gasket,1,161.8534,120.2241,1.5,cut 2 mm sheet; STEP shows installed 1.5 mm
+c-printed-tray-plate,left-tray,1,165.3514,125.2225,23.975,required
+c-printed-tray-plate,right-top,1,165.3514,125.2225,2.6005,required
+c-printed-tray-plate,right-lower-gasket,1,161.8534,120.2241,1.5,cut 2 mm sheet; STEP shows installed 1.5 mm
+c-printed-tray-plate,right-tray,1,165.3514,125.2225,23.975,required
+d-suspended-hybrid,left-top,1,165.3514,125.2225,1.6009,required
+d-suspended-hybrid,left-lower-gasket,1,161.8534,120.2241,1.5,cut 2 mm sheet; STEP shows installed 1.5 mm
+d-suspended-hybrid,left-frame,1,173.5471,134.0219,3.0,required
+d-suspended-hybrid,left-upper-gasket,1,161.8534,120.2241,1.5,cut 2 mm sheet; STEP shows installed 1.5 mm
+d-suspended-hybrid,left-rf-insert,1,27.5,45.5,25.975,required
+d-suspended-hybrid,left-tray,1,173.5471,134.0219,29.3752,required
+d-suspended-hybrid,left-sleeve,1,178.6694,139.5215,38.3752,optional custom TPU exterior
+d-suspended-hybrid,right-top,1,165.3514,125.2225,1.6009,required
+d-suspended-hybrid,right-lower-gasket,1,161.8534,120.2241,1.5,cut 2 mm sheet; STEP shows installed 1.5 mm
+d-suspended-hybrid,right-frame,1,173.5471,134.0219,3.0,required
+d-suspended-hybrid,right-upper-gasket,1,161.8534,120.2241,1.5,cut 2 mm sheet; STEP shows installed 1.5 mm
+d-suspended-hybrid,right-rf-insert,1,27.5,45.5,25.975,required
+d-suspended-hybrid,right-tray,1,173.5471,134.0219,29.3752,required
+d-suspended-hybrid,right-sleeve,1,178.6694,139.5215,38.3752,optional custom TPU exterior

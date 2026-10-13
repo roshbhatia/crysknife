@@ -31,6 +31,8 @@ Flat acrylic tops and aluminum bottoms are an alternative from SendCutSend.
 
 ![Sleeved case](previews/printed-fit-left.png)
 
+Compare [four enclosure alternatives](manufacturing/enclosures/README.md): CNC plates with TPU, CNC trays, printed cases, and gasket hybrids.
+
 ## Edit the design
 
 - [Layout](ergogen/layout.yaml): key spacing and column stagger.

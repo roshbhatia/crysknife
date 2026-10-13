@@ -1,0 +1,154 @@
+[
+  {
+    "variant": "d-suspended-hybrid",
+    "side": "left",
+    "quantity": 1,
+    "support": "gasket-only plate/PCB module; four external frame bolts; 0.3 mm lower travel stop",
+    "under_pcb_mm": 18,
+    "reserved_stack_spare_mm": 2.4998,
+    "switch_seat_mm": 1.6002,
+    "controller_gap_mm": 8,
+    "battery_rf_clearance_mm": 21.704000000000008,
+    "parts": {
+      "top": {
+        "dimensions_mm": [
+          165.3514,
+          125.2225,
+          1.6009
+        ],
+        "volume_mm3": 19471.743,
+        "solids": 1
+      },
+      "lower-gasket": {
+        "dimensions_mm": [
+          161.8534,
+          120.2241,
+          1.5
+        ],
+        "volume_mm3": 2099.729,
+        "solids": 2
+      },
+      "frame": {
+        "dimensions_mm": [
+          173.5471,
+          134.0219,
+          3.0
+        ],
+        "volume_mm3": 15313.39,
+        "solids": 1
+      },
+      "upper-gasket": {
+        "dimensions_mm": [
+          161.8534,
+          120.2241,
+          1.5
+        ],
+        "volume_mm3": 2099.729,
+        "solids": 2
+      },
+      "rf-insert": {
+        "dimensions_mm": [
+          27.5,
+          45.5,
+          25.975
+        ],
+        "volume_mm3": 4051.579,
+        "solids": 1
+      },
+      "tray": {
+        "dimensions_mm": [
+          173.5471,
+          134.0219,
+          29.3752
+        ],
+        "volume_mm3": 171179.648,
+        "solids": 1
+      },
+      "sleeve": {
+        "dimensions_mm": [
+          178.6694,
+          139.5215,
+          38.3752
+        ],
+        "volume_mm3": 121774.066,
+        "solids": 1
+      }
+    }
+  },
+  {
+    "variant": "d-suspended-hybrid",
+    "side": "right",
+    "quantity": 1,
+    "support": "gasket-only plate/PCB module; four external frame bolts; 0.3 mm lower travel stop",
+    "under_pcb_mm": 18,
+    "reserved_stack_spare_mm": 2.4998,
+    "switch_seat_mm": 1.6002,
+    "controller_gap_mm": 8,
+    "battery_rf_clearance_mm": 21.704000000000008,
+    "parts": {
+      "top": {
+        "dimensions_mm": [
+          165.3514,
+          125.2225,
+          1.6009
+        ],
+        "volume_mm3": 19471.743,
+        "solids": 1
+      },
+      "lower-gasket": {
+        "dimensions_mm": [
+          161.8534,
+          120.2241,
+          1.5
+        ],
+        "volume_mm3": 2099.729,
+        "solids": 2
+      },
+      "frame": {
+        "dimensions_mm": [
+          173.5471,
+          134.0219,
+          3.0
+        ],
+        "volume_mm3": 15313.39,
+        "solids": 1
+      },
+      "upper-gasket": {
+        "dimensions_mm": [
+          161.8534,
+          120.2241,
+          1.5
+        ],
+        "volume_mm3": 2099.729,
+        "solids": 2
+      },
+      "rf-insert": {
+        "dimensions_mm": [
+          27.5,
+          45.5,
+          25.975
+        ],
+        "volume_mm3": 4051.579,
+        "solids": 1
+      },
+      "tray": {
+        "dimensions_mm": [
+          173.5471,
+          134.0219,
+          29.3752
+        ],
+        "volume_mm3": 171179.648,
+        "solids": 1
+      },
+      "sleeve": {
+        "dimensions_mm": [
+          178.6694,
+          139.5215,
+          38.3752
+        ],
+        "volume_mm3": 121774.066,
+        "solids": 1
+      }
+    }
+  }
+]

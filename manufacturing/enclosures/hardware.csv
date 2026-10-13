@@ -1,0 +1,49 @@
+Option,Part,Specification,Quantity for left/right pair,Condition
+common,Assembled carrier PCB,Existing left/right PCB files; supplier-specific placement approval,2,required
+common,nice!nano V2,Genuine controller; BOOST open,2,required
+common,Male headers,Mill-Max 350-10-112-00-006000; 12 round pins per strip,4,required
+common,Battery,Protected Adafruit 2011; 3.7 V 2000 mAh; verify plug polarity,2,required
+common,MX switches,Existing MX footprint; verify actual latch retention,42,required
+common,Keycaps,1U; nominal 20 mm keepout,42,required
+a-tpu-cnc-plates,M2 female/female standoff,15 mm; 4 mm flats; 5 mm thread depth,8,required
+a-tpu-cnc-plates,Nylon M2 spacer,3 mm long; 4 mm OD; 2.2 mm bore,8,required
+a-tpu-cnc-plates,Nylon M2 washer,0.5 mm; 5.5 mm OD; includes stacked lower shims and head protection,40,required
+a-tpu-cnc-plates,M2 top screw,12 mm,8,required
+a-tpu-cnc-plates,M2 bottom screw,6 mm,8,required
+a-tpu-cnc-plates,Floor damping,Existing 1.6002 mm pad; keep full cavity allowance,2,required
+a-tpu-cnc-plates,Dielectric/battery cover,Nonconductive liner within existing protection allowance; no extra cavity layers,2,required
+a-tpu-cnc-plates,Battery foam/retainer,Within existing battery protection envelope; no cell pressure,2,required
+a-tpu-cnc-plates,RF insert retention,Underside-only nonconductive seam bond; flush inner floor,2,metal bottom/tray only
+b-cnc-rigid-tray,M2 female/female standoff,15 mm; 4 mm flats; 5 mm thread depth,8,required
+b-cnc-rigid-tray,Nylon M2 spacer,3 mm long; 4 mm OD; 2.2 mm bore,8,required
+b-cnc-rigid-tray,Nylon M2 washer,0.5 mm; 5.5 mm OD; includes stacked lower shims and head protection,40,required
+b-cnc-rigid-tray,M2 top screw,12 mm,8,required
+b-cnc-rigid-tray,M2 bottom screw,6 mm,8,required
+b-cnc-rigid-tray,Lower gasket cut set,Closed-cell silicone foam; 2.0 +/-0.1 mm free; 3 mm wide; no added adhesive layer,2,required
+b-cnc-rigid-tray,Floor damping,Existing 1.6002 mm pad; keep full cavity allowance,2,required
+b-cnc-rigid-tray,Dielectric/battery cover,Nonconductive liner within existing protection allowance; no extra cavity layers,2,required
+b-cnc-rigid-tray,Battery foam/retainer,Within existing battery protection envelope; no cell pressure,2,required
+b-cnc-rigid-tray,RF insert retention,Underside-only nonconductive seam bond; flush inner floor,2,metal bottom/tray only
+b-cnc-rigid-tray,Silicone feet,Four per half; external to tray,8,without TPU sleeve
+c-printed-tray-plate,M2 female/female standoff,15 mm; 4 mm flats; 5 mm thread depth,8,required
+c-printed-tray-plate,Nylon M2 spacer,3 mm long; 4 mm OD; 2.2 mm bore,8,required
+c-printed-tray-plate,Nylon M2 washer,0.5 mm; 5.5 mm OD; includes stacked lower shims and head protection,40,required
+c-printed-tray-plate,M2 top screw,12 mm,8,required
+c-printed-tray-plate,M2 bottom screw,6 mm,8,required
+c-printed-tray-plate,Lower gasket cut set,Closed-cell silicone foam; 2.0 +/-0.1 mm free; 3 mm wide; no added adhesive layer,2,required
+c-printed-tray-plate,Floor damping,Existing 1.6002 mm pad; keep full cavity allowance,2,required
+c-printed-tray-plate,Dielectric/battery cover,Nonconductive liner within existing protection allowance; no extra cavity layers,2,required
+c-printed-tray-plate,Battery foam/retainer,Within existing battery protection envelope; no cell pressure,2,required
+c-printed-tray-plate,Silicone feet,Four per half; external to tray,8,without TPU sleeve
+d-suspended-hybrid,Nylon M2 spacer,3 mm long; 4 mm OD; 2.2 mm bore,8,required
+d-suspended-hybrid,Nylon M2 washer,0.5 mm; includes PCB gap shims and head protection,40,required
+d-suspended-hybrid,M2 module screw,10 mm; joins only plate/PCB,8,required
+d-suspended-hybrid,M2 frame screw,35 mm; head/washer height <=2.5 mm,8,required
+d-suspended-hybrid,M2 thin nut,1.6 mm high; eight module nuts plus eight outer frame nuts,16,required
+d-suspended-hybrid,Lower gasket cut set,Closed-cell silicone foam; 2.0 +/-0.1 mm free; 3 mm wide; no added adhesive layer,2,required
+d-suspended-hybrid,Upper gasket cut set,Same foam; 1.5 mm installed height,2,required
+d-suspended-hybrid,Floor damping,Existing 1.6002 mm pad; keep full cavity allowance,2,required
+d-suspended-hybrid,Dielectric/battery cover,Nonconductive liner within existing protection allowance; no extra cavity layers,2,required
+d-suspended-hybrid,Battery foam/retainer,Within existing battery protection envelope; no cell pressure,2,required
+d-suspended-hybrid,RF insert retention,Underside-only nonconductive seam bond; flush inner floor,2,metal bottom/tray only
+d-suspended-hybrid,Silicone feet,Four per half; external to tray,8,without TPU sleeve

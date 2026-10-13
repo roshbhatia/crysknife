@@ -1,0 +1,100 @@
+[
+  {
+    "variant": "a-tpu-cnc-plates",
+    "side": "left",
+    "quantity": 1,
+    "support": "rigid original M2 standoffs; TPU exterior only",
+    "under_pcb_mm": 16,
+    "reserved_stack_spare_mm": 0.4998,
+    "switch_seat_mm": 1.6002,
+    "controller_gap_mm": 8,
+    "battery_rf_clearance_mm": 21.704000000000008,
+    "parts": {
+      "top": {
+        "dimensions_mm": [
+          153.0578,
+          112.0235,
+          1.6009
+        ],
+        "volume_mm3": 14492.666,
+        "solids": 1
+      },
+      "bottom": {
+        "dimensions_mm": [
+          153.0578,
+          112.0235,
+          3.175
+        ],
+        "volume_mm3": 37964.772,
+        "solids": 1
+      },
+      "pmma-bottom": {
+        "dimensions_mm": [
+          153.0578,
+          112.0235,
+          3.175
+        ],
+        "volume_mm3": 41980.766,
+        "solids": 1
+      },
+      "rf-insert": {
+        "dimensions_mm": [
+          27.5,
+          45.5,
+          3.175
+        ],
+        "volume_mm3": 3899.373,
+        "solids": 1
+      }
+    }
+  },
+  {
+    "variant": "a-tpu-cnc-plates",
+    "side": "right",
+    "quantity": 1,
+    "support": "rigid original M2 standoffs; TPU exterior only",
+    "under_pcb_mm": 16,
+    "reserved_stack_spare_mm": 0.4998,
+    "switch_seat_mm": 1.6002,
+    "controller_gap_mm": 8,
+    "battery_rf_clearance_mm": 21.704000000000008,
+    "parts": {
+      "top": {
+        "dimensions_mm": [
+          153.0578,
+          112.0235,
+          1.6009
+        ],
+        "volume_mm3": 14492.666,
+        "solids": 1
+      },
+      "bottom": {
+        "dimensions_mm": [
+          153.0578,
+          112.0235,
+          3.175
+        ],
+        "volume_mm3": 37964.772,
+        "solids": 1
+      },
+      "pmma-bottom": {
+        "dimensions_mm": [
+          153.0578,
+          112.0235,
+          3.175
+        ],
+        "volume_mm3": 41980.766,
+        "solids": 1
+      },
+      "rf-insert": {
+        "dimensions_mm": [
+          27.5,
+          45.5,
+          3.175
+        ],
+        "volume_mm3": 3899.373,
+        "solids": 1
+      }
+    }
+  }
+]

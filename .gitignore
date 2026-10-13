@@ -9,3 +9,4 @@ out/**/_autosave-*
 out/**/backups/
 
 .playwright-mcp/
+.venv/

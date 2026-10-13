@@ -1,0 +1,14 @@
+[
+  {
+    "side": "left",
+    "top": "b-cnc-rigid-tray",
+    "tray": "c-printed-tray-plate",
+    "intersection_mm3": 0.0
+  },
+  {
+    "side": "right",
+    "top": "b-cnc-rigid-tray",
+    "tray": "c-printed-tray-plate",
+    "intersection_mm3": 0.0
+  }
+]

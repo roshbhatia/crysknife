@@ -1,0 +1,72 @@
+[
+  {
+    "variant": "a-tpu-cnc-plates",
+    "side": "left",
+    "intersection_volumes_mm3": {}
+  },
+  {
+    "variant": "a-tpu-cnc-plates",
+    "side": "right",
+    "intersection_volumes_mm3": {}
+  },
+  {
+    "variant": "b-cnc-rigid-tray",
+    "side": "left",
+    "intersection_volumes_mm3": {
+      "plate/tray": 0.0,
+      "plate/lower gasket": 0.0
+    }
+  },
+  {
+    "variant": "b-cnc-rigid-tray",
+    "side": "right",
+    "intersection_volumes_mm3": {
+      "plate/tray": 0.0,
+      "plate/lower gasket": 0.0
+    }
+  },
+  {
+    "variant": "c-printed-tray-plate",
+    "side": "left",
+    "intersection_volumes_mm3": {
+      "plate/tray": 0.0,
+      "plate/lower gasket": 0.0
+    }
+  },
+  {
+    "variant": "c-printed-tray-plate",
+    "side": "right",
+    "intersection_volumes_mm3": {
+      "plate/tray": 0.0,
+      "plate/lower gasket": 0.0
+    }
+  },
+  {
+    "variant": "d-suspended-hybrid",
+    "side": "left",
+    "intersection_volumes_mm3": {
+      "plate/tray": 0.0,
+      "plate/lower gasket": 0.0,
+      "plate/frame": 0.0,
+      "plate/upper gasket": 0.0,
+      "tray/frame": 0.0,
+      "sleeve/frame": 0.0,
+      "sleeve/tray": 0.0,
+      "sleeve/plate": 0.0
+    }
+  },
+  {
+    "variant": "d-suspended-hybrid",
+    "side": "right",
+    "intersection_volumes_mm3": {
+      "plate/tray": 0.0,
+      "plate/lower gasket": 0.0,
+      "plate/frame": 0.0,
+      "plate/upper gasket": 0.0,
+      "tray/frame": 0.0,
+      "sleeve/frame": 0.0,
+      "sleeve/tray": 0.0,
+      "sleeve/plate": 0.0
+    }
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "variant": "c-printed-tray-plate",
+    "side": "left",
+    "quantity": 1,
+    "support": "original rigid M2 standoffs bypass the external gasket",
+    "under_pcb_mm": 16,
+    "reserved_stack_spare_mm": 0.4998,
+    "switch_seat_mm": 1.6002,
+    "controller_gap_mm": 8,
+    "battery_rf_clearance_mm": 21.704000000000008,
+    "parts": {
+      "top": {
+        "dimensions_mm": [
+          165.3514,
+          125.2225,
+          2.6005
+        ],
+        "volume_mm3": 20409.558,
+        "solids": 1
+      },
+      "lower-gasket": {
+        "dimensions_mm": [
+          161.8534,
+          120.2241,
+          1.5
+        ],
+        "volume_mm3": 2099.729,
+        "solids": 2
+      },
+      "tray": {
+        "dimensions_mm": [
+          165.3514,
+          125.2225,
+          23.975
+        ],
+        "volume_mm3": 106907.029,
+        "solids": 1
+      }
+    }
+  },
+  {
+    "variant": "c-printed-tray-plate",
+    "side": "right",
+    "quantity": 1,
+    "support": "original rigid M2 standoffs bypass the external gasket",
+    "under_pcb_mm": 16,
+    "reserved_stack_spare_mm": 0.4998,
+    "switch_seat_mm": 1.6002,
+    "controller_gap_mm": 8,
+    "battery_rf_clearance_mm": 21.704000000000008,
+    "parts": {
+      "top": {
+        "dimensions_mm": [
+          165.3514,
+          125.2225,
+          2.6005
+        ],
+        "volume_mm3": 20409.558,
+        "solids": 1
+      },
+      "lower-gasket": {
+        "dimensions_mm": [
+          161.8534,
+          120.2241,
+          1.5
+        ],
+        "volume_mm3": 2099.729,
+        "solids": 2
+      },
+      "tray": {
+        "dimensions_mm": [
+          165.3514,
+          125.2225,
+          23.975
+        ],
+        "volume_mm3": 106907.029,
+        "solids": 1
+      }
+    }
+  }
+]

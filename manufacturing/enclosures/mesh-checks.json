@@ -1,0 +1,202 @@
+[
+  {
+    "file": "d-suspended-hybrid/left-tray.stl",
+    "triangles": 2964,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/right-rf-insert.stl",
+    "triangles": 60,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/left-sleeve.stl",
+    "triangles": 1844,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/right-tray.stl",
+    "triangles": 2964,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/left-top.stl",
+    "triangles": 34444,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/left-lower-gasket.stl",
+    "triangles": 1160,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/right-top.stl",
+    "triangles": 34444,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/right-upper-gasket.stl",
+    "triangles": 1160,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/right-sleeve.stl",
+    "triangles": 1844,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/left-rf-insert.stl",
+    "triangles": 60,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/left-frame.stl",
+    "triangles": 1752,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/right-lower-gasket.stl",
+    "triangles": 1160,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/right-frame.stl",
+    "triangles": 1752,
+    "closed": true
+  },
+  {
+    "file": "d-suspended-hybrid/left-upper-gasket.stl",
+    "triangles": 1160,
+    "closed": true
+  },
+  {
+    "file": "b-cnc-rigid-tray/left-tray.stl",
+    "triangles": 2832,
+    "closed": true
+  },
+  {
+    "file": "b-cnc-rigid-tray/right-rf-insert.stl",
+    "triangles": 60,
+    "closed": true
+  },
+  {
+    "file": "b-cnc-rigid-tray/right-tray.stl",
+    "triangles": 2832,
+    "closed": true
+  },
+  {
+    "file": "b-cnc-rigid-tray/left-top.stl",
+    "triangles": 34444,
+    "closed": true
+  },
+  {
+    "file": "b-cnc-rigid-tray/left-lower-gasket.stl",
+    "triangles": 1160,
+    "closed": true
+  },
+  {
+    "file": "b-cnc-rigid-tray/right-top.stl",
+    "triangles": 34444,
+    "closed": true
+  },
+  {
+    "file": "b-cnc-rigid-tray/left-rf-insert.stl",
+    "triangles": 60,
+    "closed": true
+  },
+  {
+    "file": "b-cnc-rigid-tray/right-lower-gasket.stl",
+    "triangles": 1160,
+    "closed": true
+  },
+  {
+    "file": "c-printed-tray-plate/left-tray.stl",
+    "triangles": 3062,
+    "closed": true
+  },
+  {
+    "file": "c-printed-tray-plate/right-tray.stl",
+    "triangles": 3064,
+    "closed": true
+  },
+  {
+    "file": "c-printed-tray-plate/left-top.stl",
+    "triangles": 3084,
+    "closed": true
+  },
+  {
+    "file": "c-printed-tray-plate/left-lower-gasket.stl",
+    "triangles": 1160,
+    "closed": true
+  },
+  {
+    "file": "c-printed-tray-plate/right-top.stl",
+    "triangles": 3084,
+    "closed": true
+  },
+  {
+    "file": "c-printed-tray-plate/right-lower-gasket.stl",
+    "triangles": 1160,
+    "closed": true
+  },
+  {
+    "file": "coupons/resin-switch-fit.stl",
+    "triangles": 116,
+    "closed": true
+  },
+  {
+    "file": "coupons/cnc-switch-fit.stl",
+    "triangles": 6172,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/right-rf-insert.stl",
+    "triangles": 84,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/left-sleeve.stl",
+    "triangles": 1260,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/right-bottom.stl",
+    "triangles": 1128,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/left-top.stl",
+    "triangles": 34444,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/right-top.stl",
+    "triangles": 34444,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/left-bottom.stl",
+    "triangles": 1128,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/left-pmma-bottom.stl",
+    "triangles": 1112,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/right-sleeve.stl",
+    "triangles": 1260,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/left-rf-insert.stl",
+    "triangles": 84,
+    "closed": true
+  },
+  {
+    "file": "a-tpu-cnc-plates/right-pmma-bottom.stl",
+    "triangles": 1112,
+    "closed": true
+  }
+]
