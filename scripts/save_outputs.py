@@ -41,7 +41,7 @@ for side in ('left', 'right'):
     with zipfile.ZipFile(jlc/f'{side}-gerbers.zip','w',zipfile.ZIP_DEFLATED) as archive:
         for file in sorted((assembly/f'gerbers/{side}').iterdir()):
             archive.writestr(zipfile.ZipInfo(file.name, (1980,1,1,0,0,0)), file.read_bytes(), compress_type=zipfile.ZIP_DEFLATED)
-    for part in ('bottom-flat','plate','damping'):
+    for part in ('bottom-flat','rf-insert','plate','damping'):
         shutil.copyfile(ROOT/f'build/case/{side}-{part}.dxf', scs/f'{side}-{part}.dxf')
 
 for name in ('crysknife.kicad_sym','sym-lib-table','fp-lib-table'):

@@ -52,7 +52,7 @@ See [JLC TPU guidance](https://jlc3dp.com/help/article/tpu).
 ## Stack and checks
 
 Use the four M2 mounting locations and hardware from the SendCutSend assembly guide.
-The PCB retains 16 mm of space above the rigid bottom plate.
+The PCB retains 14 mm of space above the rigid bottom plate.
 Keep the controller face up underneath the PCB, with USB toward the rear.
 Keep the battery beside it. Retain the dielectric liner and floor damping sheet.
 Leave the controller BOOST bridge open.
@@ -61,7 +61,10 @@ Both sleeves, reinforced tops, and flat bottoms export as connected, closed mesh
 Checks cover mirror symmetry, screw holes, switch openings, closed sleeve bottoms, and blind screw-head pockets.
 Lip overlap, front and rear retention, keycap clearance, and top screw access pass nominal geometry checks.
 Switch cutouts and mounting holes remain at their original locations.
-The controller and battery stack remains unchanged.
+The lower stack uses 12 mm standoffs plus 2 mm nylon spacers for the 750 mAh pack.
+The sleeve lip and USB/reset/power openings move down 2 mm.
+Old cart models and quotes use the taller stack; replace files before requesting a fresh quote.
+This printed resin bottom is monolithic; the metal RF opening belongs to the separate F aluminum floor.
 
 The previews show nominal component envelopes.
 Test switch retention, lip fit, cable access, battery clearance, and peel force on the first prototype.

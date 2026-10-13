@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'manufacturing/enclosures'
 PREVIEW = ROOT / 'previews/enclosures'
 PARAM = {k: float(v) for k,v in re.findall(r'^(\w+) = (-?[\d.]+);$', (ROOT/'case/parameters.scad').read_text(), re.M)}
+PARAM.update(json.loads((ROOT/'case/variants/baseline-2000.json').read_text())['parameter_overrides'])
 DATA = {s.split('_geometry')[0]: json.loads(s.split(' = ')[1].rstrip(';')) for s in (ROOT/'case/geometry.scad').read_text().splitlines()}
 FLOOR = PARAM['bottom_thickness']
 UNDER_PCB = PARAM['standoff_height'] + PARAM['standoff_shim']
@@ -144,8 +145,7 @@ if __name__ == '__main__':
                 # Import unchanged TPU exterior; exact original lips and control cutouts.
                 # STEP for TPU is intentionally omitted; original watertight STL is the manufacturing model.
                 import shutil
-                shutil.copy2(ROOT/f'manufacturing/jlc3dp/{side}-sleeve.stl',output/f'{side}-sleeve.stl')
-                shutil.copy2(ROOT/f'manufacturing/jlc3dp/{side}-sleeve.3mf',output/f'{side}-sleeve.3mf')
+                assert (output/f'{side}-sleeve.stl').exists() and (output/f'{side}-sleeve.3mf').exists(), 'Restore archived 2000 mAh sleeves from the recorded baseline revision'
                 support='rigid original M2 standoffs; TPU exterior only'
             else:
                 cavity=pcb.buffer(4.5,join_style=1,resolution=12)

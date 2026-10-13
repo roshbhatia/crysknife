@@ -1,7 +1,28 @@
 {
-  "status": "candidate only; adoption blocked by missing supplied-pack specifications",
-  "selected_battery": "Adafruit 2011",
-  "candidate": "Typeractive Liter 403450 750 mAh",
+  "status": "adopted for conservative prototype; not vendor-qualified or physically tested",
+  "selected_battery": "Typeractive Liter 403450",
+  "prototype_assumptions": {
+    "protected_pack_max_mm": [
+      54,
+      38,
+      5
+    ],
+    "growth_and_fit_allowance_mm": 1.5,
+    "xy_wire_corridor_mm": [
+      10,
+      2
+    ],
+    "charge_current_basis": "100 mA = 0.133 C. Conservative prototype assumption for the documented 4.2 V rechargeable LiPo; supplied-pack charge-current and temperature limits are not published.",
+    "charging_temperature_assumption_C": [
+      10,
+      35
+    ],
+    "wire_handling": "Keep the lead-end 10 mm corridor clear for a loose bend; return surplus cable through the outer 2 mm side corridor. Measure wire diameter and bend radius; enlarge enclosure if this cannot fit without pressure.",
+    "retention": "Combined 0.5 mm soft foam/dielectric liner below; loose nonconductive end/side tabs retain the protective wrap, never clamp the pouch. 0.5 mm cover/air above; no extra interior layers.",
+    "design_status": "adopted for conservative prototype; not vendor-qualified or physically tested",
+    "charging_stop_assumption_C": 40,
+    "charging_stop_temperature_rise_C": 10
+  },
   "nominal_dimensions_mm": [
     50,
     34,
@@ -14,7 +35,7 @@
   },
   "polarity_evidence": "Product photo suggests matching wiring; supplied plug requires meter confirmation",
   "protection_evidence": "Liter 403450 listing specifies protection; Typeractive photo shows a circuit board. Exact supplied assembly is not documented.",
-  "missing": [
+  "unverified_vendor_specs": [
     "Supplied-pack standard/maximum charge current and temperature limits",
     "Protected-pack maximum dimensions, cable length and bend allowance",
     "Supplied-pack polarity and protection cutoffs"
@@ -23,40 +44,33 @@
     "current_mA": 100,
     "BOOST": "OPEN"
   },
-  "conditional_stack": {
-    "battery_reservation_mm": 5.5,
+  "active_stack": {
+    "battery_reservation_mm": 6.5,
     "battery_xy_reservation_mm": [
       64,
       40
     ],
-    "under_pcb_mm": 13.0,
+    "under_pcb_mm": 14.0,
     "reserved_stack_margin_mm": 0.4998,
-    "controller_to_floor_pad_mm": 1.7998,
-    "height_reduction_mm": 3.0,
-    "manufacturing_geometry_changed": false,
+    "controller_to_floor_pad_mm": 2.7998,
+    "height_reduction_mm": 2.0,
+    "manufacturing_geometry_changed": true,
     "physical_tested": false
   },
   "profiles": [
     {
-      "name": "Current 2000 / 3.175 mm floor",
+      "name": "Archived 2000 / 3.175 mm floor",
       "floor_mm": 3.175,
-      "under_pcb_mm": 16.0,
+      "under_pcb_mm": 16,
       "nominal_cell_mm": 7,
       "desk_to_plate_mm": 28.3752
     },
     {
-      "name": "Conditional 750 / 3.175 mm floor",
+      "name": "Active 750 / 3.175 mm floor",
       "floor_mm": 3.175,
-      "under_pcb_mm": 13.0,
-      "nominal_cell_mm": 4,
-      "desk_to_plate_mm": 25.3752
-    },
-    {
-      "name": "Conditional 750 / thin E floor",
-      "floor_mm": 1.6002,
-      "under_pcb_mm": 13.0,
-      "nominal_cell_mm": 4,
-      "desk_to_plate_mm": 23.8004
+      "under_pcb_mm": 14.0,
+      "nominal_cell_mm": 5,
+      "desk_to_plate_mm": 26.3752
     }
   ],
   "runtime_assumptions": {

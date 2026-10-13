@@ -1,7 +1,8 @@
 bottom_thickness = 3.175;
 plate_thickness = 1.6002;
-standoff_height = 15;
-standoff_shim = 1;
+standoff_height = 12;
+standoff_shim = 2;
+standoff_shim_diameter = 4;
 pcb_thickness = 1.6;
 plate_to_pcb_gap = 3.5;
 outline_expansion = 4;

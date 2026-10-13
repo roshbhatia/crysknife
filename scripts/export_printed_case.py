@@ -66,7 +66,7 @@ for side in ('left', 'right'):
         for extension in extensions:
             target = model_path.with_suffix(f'.{extension}')
             subprocess.run(['openscad', '-o', str(target), '-D', f'side="{side}"',
-                            '-D', f'part="{"plate-solid" if part == "plate" else part}"', str(source)], check=True)
+                            '-D', f'part="{"plate-solid" if part == "plate" else part}"', '-D', 'rf_window=false', str(source)], check=True)
         report = check_model(model_path)
         mesh = read_mesh(model_path)
         meshes[f'{side}-{part}'] = mesh
@@ -152,7 +152,7 @@ for side in ('left', 'right'):
         source = ROOT/f'case/printed-{part}.scad' if part not in ('case', 'fit') else ROOT/'case/sandwich.scad'
         arguments = ['openscad', '-o', str(ROOT/f'previews/printed-{part}-{side}.png'),
                      '--preview', '--imgsize=1200,900', '--viewall', '--autocenter',
-                     '--colorscheme=Tomorrow', '-D', f'side="{side}"']
+                     '--colorscheme=Tomorrow', '-D', f'side="{side}"', '-D', 'rf_window=false']
         if part in ('case', 'fit'):
             arguments += ['-D', 'part="sleeved-assembly"', '-D', 'exploded=5' if part == 'case' else 'exploded=0']
         subprocess.run(arguments+[str(source)], check=True)

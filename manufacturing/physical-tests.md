@@ -8,7 +8,11 @@
 - Confirm battery red reaches JST1 pin 2 and black reaches pin 1 with a meter.
 - Fit the controllers face up below the carrier. Check full seating, USB access, and clearance above the bottom plate.
 - Fit all switches and keycaps. Check latch retention, full travel, screw clearance, and sleeve installation.
-- Secure batteries without cell pressure or trapped wires.
+- Measure the protected pack against the assumed 54 × 38 × 5 mm bounds and the 64 × 40 × 6.5 mm reservation.
+- Secure batteries without cell pressure or trapped wires; fit the leads in the reserved corridor without folding or tension.
+- Check the floor PET liner, protected terminals, and loose end tabs. Do not add foam layers to force fit.
+- Check all four loaded feet, floor flex, screw clearances, and actual 12 mm standoff/2 mm shim heights.
+- A larger pack or cable needs a taller/larger case; do not force it into this prototype.
 
 ## USB and Bluetooth
 
@@ -29,7 +33,9 @@ Repeat with right USB power: the right must stay awake; the battery-powered left
 
 Leave BOOST open on both modules for nominal 100 mA charging.
 Measure charging current, battery voltage, and temperature at low, middle, and near-full charge.
-Use the battery's specified temperature and voltage limits.
+For this prototype, start charging at 10–35°C ambient; stop at 40°C cell temperature or a 10°C rise.
+These are conservative test assumptions, not published pack ratings. Check that charge termination does not exceed 4.2 V.
+Replace a visibly swollen or damaged pack. The growth allowance is not a permission to continue using a damaged cell.
 Check charge termination, low-battery recovery, and power-off behavior.
 Measure current during typing, idle, sleep, and reconnect to estimate runtime.
 Record measurements with the PCB and firmware revisions used for the test.

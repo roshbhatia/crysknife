@@ -1,27 +1,50 @@
 {
-  "sku": "Adafruit 2011",
+  "sku": "Typeractive Liter 403450",
   "quantity": 2,
   "voltage_V": 3.7,
-  "capacity_mAh": 2000,
+  "capacity_mAh": 750,
   "protected": true,
   "connector": "2-pin JST-PH; verify red wire to carrier JST1 pin 2",
   "nominal_dimensions_mm": [
-    60,
-    36,
-    7
+    50,
+    34,
+    4
   ],
   "case_reservation_mm": [
     64,
     40,
-    8.5
+    6.5
   ],
   "charge_current_mA": 100,
   "controller": "genuine nice!nano V2 with BOOST solder bridge OPEN on each module",
   "extra_user_solder_joints": 0,
-  "source": "https://www.adafruit.com/product/2011",
+  "source": "https://typeractive.xyz/products/lithium-battery-750mah",
   "controller_guidance": "https://nicekeyboards.com/docs/nice-nano/",
   "charging_requires_power_switch_on": true,
   "charge_limit_reason": "BAT_P-to-RAW path passes through ALPS SSSS811101, rated 300 mA maximum. Do not use 500 mA BOOST.",
   "switch_rating_source": "https://tech.alpsalpine.com/e/products/detail/SSSS811101/",
-  "drawing_note": "The product-linked PDF describes PKCELL 401230 105mAh, not the selected 2000mAh pack. Dimensions use the selected product listing."
+  "protection_basis": "Matching Liter 403450 listing specifies protection; Typeractive photo shows a protection PCB. Exact supplied protection cutoffs are unverified.",
+  "prototype_assumptions": {
+    "protected_pack_max_mm": [
+      54,
+      38,
+      5
+    ],
+    "growth_and_fit_allowance_mm": 1.5,
+    "xy_wire_corridor_mm": [
+      10,
+      2
+    ],
+    "charge_current_basis": "100 mA = 0.133 C. Conservative prototype assumption for the documented 4.2 V rechargeable LiPo; supplied-pack charge-current and temperature limits are not published.",
+    "charging_temperature_assumption_C": [
+      10,
+      35
+    ],
+    "wire_handling": "Keep the lead-end 10 mm corridor clear for a loose bend; return surplus cable through the outer 2 mm side corridor. Measure wire diameter and bend radius; enlarge enclosure if this cannot fit without pressure.",
+    "retention": "Combined 0.5 mm soft foam/dielectric liner below; loose nonconductive end/side tabs retain the protective wrap, never clamp the pouch. 0.5 mm cover/air above; no extra interior layers.",
+    "design_status": "adopted for conservative prototype; not vendor-qualified or physically tested",
+    "charging_stop_assumption_C": 40,
+    "charging_stop_temperature_rise_C": 10
+  },
+  "pack_qualification_source": "https://bihuade.com/products/37v-403450-750mah-liter-energy-battery-rechargeable-battery-for-smart-phone-dvd-mp3-mp4-led-lamp-camera"
 }

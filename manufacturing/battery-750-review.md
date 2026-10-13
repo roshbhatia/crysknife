@@ -1,72 +1,82 @@
-# 750 mAh battery review
+# 750 mAh prototype
 
-The Typeractive 750 mAh pack is a thinner candidate. Adoption remains blocked by missing supplied-pack specifications.
-The selected protected Adafruit 2011 pack and all manufacturing CAD remain unchanged. RFQs remain on hold.
+The active design adopts two Typeractive Liter 403450 batteries and a 14 mm under-PCB space.
+The prototype uses conservative engineering assumptions where supplied-pack limits are unpublished.
+No supplier inquiry, quote submission, purchase, or physical qualification occurred.
 
-## Connector and charging
+## Evidence and assumptions
 
-[Typeractive](https://typeractive.xyz/products/lithium-battery-750mah) lists Liter 403450, 3.7 V, 750 mAh, nominally 50 × 34 × 4 mm.
-Its two-pin JST-PH 2.0 mm plug matches the existing S2B-PH-K-S(LF)(SN) connector series.
-No PCB connector change is indicated. The “No Jack” option includes the battery plug; the extra jack is unnecessary.
+[Typeractive](https://typeractive.xyz/products/lithium-battery-750mah) lists 3.7 V, 750 mAh, nominal 50 × 34 × 4 mm, and a two-pin JST-PH 2.0 mm plug.
+The [matching Liter listing](https://bihuade.com/products/37v-403450-750mah-liter-energy-battery-rechargeable-battery-for-smart-phone-dvd-mp3-mp4-led-lamp-camera) specifies 4.2 V charging and protection against overcharge, overdischarge, overcurrent, and shorts.
+The Typeractive photo shows a protection board. Exact supplied protection cutoffs and charging limits remain unverified.
 
-JST1 pin 1 is GND and pin 2 is BAT_P.
-With lead entry above the contact windows, the official photo maps black to circuit 1 and red to circuit 2.
-This matches the JST housing drawing and carrier polarity, but does not guarantee the supplied pack wiring.
-Compare the received plug against the [JST drawing](https://www.jst-mfg.com/product/pdf/eng/ePH.pdf) and measure it before connection.
-No adapter is anticipated if the supplied pack matches that wiring.
-If it differs, select a correctly wired purchased pack or a verified purchased adapter and recheck cable clearance.
-Do not repin the live battery plug.
+Use the “No Jack” battery option. The existing S2B-PH-K-S(LF)(SN) PCB connector stays in place.
+With lead entry above the contact windows, the photo maps black to JST circuit 1 and red to circuit 2.
+This matches carrier GND/BAT_P and the [JST housing drawing](https://www.jst-mfg.com/product/pdf/eng/ePH.pdf).
+Measure the actual plug before connection; a matching shell alone does not prove polarity.
+No adapter or repinning is expected. If actual polarity differs, use a correctly wired purchased assembly.
 
-The [Liter 403450 listing](https://bihuade.com/products/37v-403450-750mah-liter-energy-battery-rechargeable-battery-for-smart-phone-dvd-mp3-mp4-led-lamp-camera) specifies 4.2 V charging and protection against overcharge, overdischarge, overcurrent, and shorts.
-Typeractive's photo shows a circuit board beneath the tape. These support compatibility but do not identify the supplied protection revision or cutoffs.
-Neither listing gives supplied-pack charging-current limits, charging-temperature limits, maximum protected dimensions, or lead length.
-Those specifications must confirm 100 mA charging and the reserved envelope before adoption.
-The [nice!nano guide](https://nicekeyboards.com/docs/nice-nano/getting-started/) also requires checking battery polarity.
+Keep genuine nice!nano V2 BOOST open and nominal 100 mA charging.
+That is 0.133 C for this pack, a conservative prototype assumption for the documented rechargeable 4.2 V LiPo.
+It stays below the carrier's 300 mA power-switch rating. Published chemistry supports the choice; it does not qualify charging performance.
+Use 10–35°C ambient for first charging tests; stop at 40°C cell temperature or a 10°C rise.
+These are engineering test limits, not vendor ratings. Measure current, temperature, termination, and low-battery recovery.
 
-Keep BOOST open and nominal 100 mA charging. The carrier power switch is rated 300 mA.
-Protection circuitry does not replace correct charging or the first-article temperature and termination tests.
+## Pack, leads, and retention
 
-## Conditional height
+| Input | Prototype design value | Basis |
+| --- | --- | --- |
+| Nominal pack | 50 × 34 × 4 mm | Seller listing |
+| Protected-pack bounds | 54 × 38 × 5 mm | Assumption: extra length/width and 1 mm thickness for protection/tolerance |
+| Full reservation | 64 × 40 × 6.5 mm | Protected pack plus wire corridor and 1.5 mm vertical growth/fit allowance |
+| Lead-end corridor | 10 mm × 38 mm | Loose cable turn and surplus cable; never over the pouch |
+| Side corridor | 2 mm | Assumed small insulated lead bundle; measure actual wire/bend fit |
+| Foam and dielectric liner | 0.5 mm combined | Existing protection budget; PET liner and soft support |
+| Cover and air | 0.5 mm combined | Existing upper insulation budget |
 
-![Conditional sections](../previews/enclosures/heights/battery-750-conditional.png)
+Place the protected pack off-centre within the reservation to leave the full 10 mm lead-end corridor.
+Rotate the pack so the leads emerge into that corridor. The arrangement mirrors between halves.
+Use loose nonconductive tabs on the protective wrap or side/end stops. Do not screw or strap the pouch down tightly.
+The 1.5 mm allowance accommodates design uncertainty; replace a visibly swollen/damaged cell.
+If the actual protected pack or cable exceeds these bounds, increase the enclosure before assembly.
+Keep the existing battery reservation at least 21.704 mm from the controller RF exclusion.
 
-If the complete protected pack fits 4 mm nominal thickness, retain the existing 1.5 mm extra battery reservation.
-That gives 5.5 mm, plus 0.5 mm foam, 0.5 mm cover/air, 4.4 mm component reservation, and 1.6002 mm floor damping.
-A 13 mm under-PCB space leaves the same 0.4998 mm summed allowance as the current 16 mm stack.
-This is an envelope calculation, not a measured clearance or a validated swelling specification.
-Keep the existing 64 × 40 mm XY reservation until the full pack and cable dimensions are confirmed.
+## Active height and files
 
-The controller remains face up under the PCB with its 8 mm gap and unchanged pin mapping.
-At 13 mm, its board underside sits 1.7998 mm above the floor pad.
-The 7.434 mm header drawing lower bound does not prove actual seated height. USB cable fit still needs measurement.
+![Installed pair](../previews/enclosures/f-750/assembled-pair.png)
 
-| Construction | Current 2000 mAh | Conditional 750 mAh |
+The reserved sum is 6.5 + 4.4 + 0.5 + 0.5 + 1.6002 = 13.5002 mm.
+A 14 mm under-PCB space leaves 0.4998 mm, preserving the prior nominal stack allowance.
+The active supports use 12 mm standoffs plus one 2 mm nylon spacer beneath each PCB mount.
+The upper 3 mm spacer and 0.5 mm washer preserve the original 3.5 mm plate gap.
+
+| Datum | Active F | Original flat 2000 mAh |
 | --- | ---: | ---: |
-| Flat 3.175 mm floor, 2.5 mm feet | 28.3752 mm | 25.3752 mm |
-| E 1.6002 mm floor, 2.5 mm feet | 26.8004 mm | 23.8004 mm |
+| Under PCB | 14 mm | 16 mm |
+| Desk to plate top, with reference 2.5 mm feet | 26.3752 mm | 28.3752 mm |
+| Controller underside above floor damping | 2.7998 mm | 4.7998 mm |
+| Front/plate edge, without keycaps or screw heads | 26.3752 mm | 28.3752 mm |
 
-Heights measure desk to switch-seat upper surface, without keycaps or screw heads.
-The conditional reduction is 3 mm. It needs shorter supports and new sleeve geometry if a sleeve is used.
-No smaller-stack STEP/STL files are released because the pack envelope and cable access remain unresolved.
+The reduction is 2 mm, rather than the earlier conditional 3 mm.
+The larger protected-pack assumption retains an extra millimetre for uncertainty.
+The face-up controller keeps its 8 mm gap; this exceeds the 7.434 mm header drawing lower bound by 0.566 mm.
+The lower bound does not prove seated height. Measure actual header seating and USB plug clearance.
 
-For one working pair, the flat 3.175 mm floor is the simpler stiffness baseline.
-E can save another 1.5748 mm, but its thinner floor needs a strength test.
-Aluminum requires the existing nonmetal RF window and dielectric battery/controller insulation.
-Retain USB/reset/power access, switch-seat thickness, PCB mounts, battery retention without pouch pressure, and antenna clearance.
-The A–D alternatives remain available; no enclosure is selected by this review.
+The [F package](enclosures/f-750-rigid-sandwich/README.md) contains pair-sized STEP/STL/DXF and hardware files.
+It uses a 3.175 mm aluminum floor for stiffness, with a flush PMMA RF insert and outside-only seam retention.
+The top stays at 1.6002 mm with unchanged 14 mm switch seats and four PCB mounting positions.
+The shortened TPU sleeve remains optional. USB/reset/power windows follow the lower electronics position.
+A–E remain separate taller alternatives. No suspended mount or new pointing/display hardware is added.
 
-## Runtime and sleep
+## Runtime and checks
 
-The [pinned ZMK profiler](https://github.com/zmkfirmware/zmk/blob/5b51501fead672c41b5cfb396f3dafe0894bf4e9/docs/src/components/power-estimate.js) predicts the 750 mAh right central at 35–55 days without deep sleep.
+The [pinned ZMK profiler](https://github.com/zmkfirmware/zmk/blob/5b51501fead672c41b5cfb396f3dafe0894bf4e9/docs/src/components/power-estimate.js) predicts 35–55 days for the right central without sleep.
 It predicts 86–133 days with eight hours awake and sixteen hours actually asleep daily.
-These are profiler ranges, not measurements or statistical confidence intervals.
-Assumptions include nice!nano V2, one host profile, 2% typing while awake, and no lighting or display.
-The left peripheral has lower estimated current; the right central limits pair runtime.
-[The generated JSON](battery-750-review.json) includes both capacities, both roles, formulas, and source revisions.
-Regenerate with `nix develop --command python3 scripts/review_battery_750.py`.
+These are estimates, not measured runtime or confidence intervals.
+Assumptions include nice!nano V2, one host profile, 2% typing while awake, and no lighting/display.
+[The generated JSON](battery-750-review.json) records both capacities and roles.
+ZMK's verified fifteen-minute sleep firmware remains unchanged; wake each sleeping half locally before typing.
 
-Both keyboard shields enable [deep sleep](https://zmk.dev/docs/config/power) after fifteen minutes of battery-powered inactivity.
-USB power prevents automatic deep sleep. Matrix `wakeup-source` remains enabled; GPIO mappings and central role remain unchanged.
-Each sleeping half needs a local keypress. A sleeping right central cannot receive a Bluetooth wake from the left.
-Wait for split and host reconnection before typing; the wake press may not reach the host.
-Test every local wake key, bonds, reconnect delay, one-sided typing, USB behavior, and sleep current on the assembled pair.
+Regenerate the review with `nix develop --command python3 scripts/review_battery_750.py`.
+Regenerate F with `nix develop .#enclosures --command uv run --locked --project case/variants python case/variants/compact.py`.
+The [startup checks](physical-tests.md) cover actual pack/cable fit, polarity, charging, floor/feet, headers, retention, sleep, reconnect, and RF performance.

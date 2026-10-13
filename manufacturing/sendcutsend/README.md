@@ -7,6 +7,7 @@ Four M2 screws pass through the top plate and carrier, then thread into standoff
 | File | Material | Thickness | Process |
 | --- | --- | --- | --- |
 | `*-bottom-flat.dxf` | 5052 H32 aluminum | .125 in / 3.175 mm | Laser cut, deburr, black anodize |
+| `*-rf-insert.dxf` | Clear acrylic RF window insert | .125 in / 3.175 mm | Laser cut |
 | `*-plate.dxf` | Clear acrylic | .063 in / 1.6002 mm | Laser cut |
 | `*-damping.dxf` | Neoprene | .063 in / 1.6002 mm | Waterjet cut |
 | `switch-fit-coupon.dxf` | Same clear acrylic | Same stock as top plates | Test switch fit first |
@@ -20,23 +21,27 @@ Use this stack at each of the four mounting positions:
 
 | Part, from bottom to top | Dimension | Quantity per half |
 | --- | --- | --- |
-| Female/female metal M2 standoff | 15 mm length, 4 mm across flats, 5 mm thread depth | 4 |
-| Nylon M2 washer below PCB | 0.5 mm thick, 5.5 mm outer diameter | 8, stacked in pairs |
+| Female/female metal M2 standoff | 12 mm length, 4 mm across flats, through M2 thread | 4 |
+| Unthreaded nylon M2 spacer below PCB | 2 mm long, 4 mm outer diameter, 2.2 mm bore | 4 |
 | Carrier PCB | 1.6 mm thick, 2.2 mm hole | 1 |
 | Nylon M2 washer above PCB | 0.5 mm thick, 5.5 mm outer diameter | 4 |
 | Unthreaded nylon M2 spacer | 3 mm long, 4 mm outer diameter, 2.2 mm bore | 4 |
 | Clear top plate | 1.6002 mm thick, 2.2 mm hole | 1 |
 
-[RS PRO 224-0440](https://uk.rs-online.com/web/p/standoffs/2240440) provides the specified metal standoff dimensions.
+[Würth 970120244](https://www.we-online.com/components/products/datasheet/970120244.pdf) specifies 12 mm length, 4 mm flats, and a through M2 thread.
+[Würth 960020010](https://www.we-online.com/components/products/datasheet/960020010.pdf) specifies the lower 2 mm spacer, including ±0.1 mm length tolerance.
 [Würth 960030010](https://www.we-online.com/components/products/datasheet/960030010.pdf) provides the nylon spacer dimensions.
 [Vital Parts WASH028](https://www.vital-parts.co.uk/nylon-washers/29530-wash028) provides the 0.5 mm nylon washers.
 Use M2 × 12 mm screws from the top and M2 × 6 mm screws from the bottom, with one 0.5 mm protective washer under each head.
-Nominal thread engagement is 3.8 mm above and 2.325 mm below. Confirm the supplied thread depths and lengths before assembly.
+Nominal thread engagement is 2.8 mm above and 2.325 mm below. Confirm the supplied thread depths and lengths before assembly.
 Both plates and the PCB have 2.2 mm screw holes. The floor rubber has 5.2 mm body-clearance holes.
 The lower standoffs stop beneath the PCB.
 Use light screw torque to protect the acrylic. Check that washers clear nearby switches.
 
-The rubber lines the metal floor. Add a separate dielectric liner between the metal and electronics.
+The metal floor has a 28 × 46 mm RF opening covering the controller exclusion.
+Fit the PMMA insert flush inside, with 0.25 mm edge clearance and exterior-only nonconductive seam retention.
+No metal fasteners or conductive coating may bridge this window.
+The rubber lines the metal floor. Include the dielectric liner within the 0.5 mm foam/liner budget beneath the battery.
 Secure each battery with foam and an insulating cover. Keep wires clear of screws and edges.
 
 The coupon has four square holes: 13.9, 14.0, 14.1, and 14.2 mm, from left to right.
@@ -80,7 +85,7 @@ Combining tumbling and anodizing requires a custom quote. The standard finish ch
 
 Use metal M2 standoffs with protective washers.
 The TPU case supplies a closed desk-contact surface. Use separate silicone feet when assembling without it.
-Source these separately unless the supplier confirms the exact hardware.
+The [active F hardware list](../enclosures/f-750-rigid-sandwich/hardware.csv) specifies quantities for one pair.
 Do not use foam compression or screw torque to adjust battery clearance.
 The floor rubber can reduce vibration, but the rigid standoffs make this a sandwich mount, not a floating gasket mount.
 Compare sound, flex, grip, and keycap removal on the prototype before choosing the final material stack.

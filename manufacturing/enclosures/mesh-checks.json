@@ -140,6 +140,46 @@
     "closed": true
   },
   {
+    "file": "f-750-rigid-sandwich/right-rf-insert.stl",
+    "triangles": 20,
+    "closed": true
+  },
+  {
+    "file": "f-750-rigid-sandwich/right-damping.stl",
+    "triangles": 1112,
+    "closed": true
+  },
+  {
+    "file": "f-750-rigid-sandwich/right-bottom.stl",
+    "triangles": 1128,
+    "closed": true
+  },
+  {
+    "file": "f-750-rigid-sandwich/left-top.stl",
+    "triangles": 1532,
+    "closed": true
+  },
+  {
+    "file": "f-750-rigid-sandwich/right-top.stl",
+    "triangles": 1532,
+    "closed": true
+  },
+  {
+    "file": "f-750-rigid-sandwich/left-bottom.stl",
+    "triangles": 1128,
+    "closed": true
+  },
+  {
+    "file": "f-750-rigid-sandwich/left-damping.stl",
+    "triangles": 1112,
+    "closed": true
+  },
+  {
+    "file": "f-750-rigid-sandwich/left-rf-insert.stl",
+    "triangles": 20,
+    "closed": true
+  },
+  {
     "file": "coupons/resin-switch-fit.stl",
     "triangles": 116,
     "closed": true
@@ -197,6 +237,36 @@
   {
     "file": "a-tpu-cnc-plates/right-pmma-bottom.stl",
     "triangles": 1112,
+    "closed": true
+  },
+  {
+    "file": "e-thin-rigid-sandwich/right-rf-insert.stl",
+    "triangles": 84,
+    "closed": true
+  },
+  {
+    "file": "e-thin-rigid-sandwich/right-bottom.stl",
+    "triangles": 1128,
+    "closed": true
+  },
+  {
+    "file": "e-thin-rigid-sandwich/left-top.stl",
+    "triangles": 1532,
+    "closed": true
+  },
+  {
+    "file": "e-thin-rigid-sandwich/right-top.stl",
+    "triangles": 1532,
+    "closed": true
+  },
+  {
+    "file": "e-thin-rigid-sandwich/left-bottom.stl",
+    "triangles": 1128,
+    "closed": true
+  },
+  {
+    "file": "e-thin-rigid-sandwich/left-rf-insert.stl",
+    "triangles": 84,
     "closed": true
   }
 ]

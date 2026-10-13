@@ -25,12 +25,22 @@ reports = []
 physical_checks = {}
 parameters = {name: float(value) for name, value in re.findall(
     r'^(\w+) = (-?[\d.]+);$', (ROOT/'case/parameters.scad').read_text(), re.M)}
+battery_spec = json.loads((ROOT/'manufacturing/battery.json').read_text())
+reserved_x, reserved_y, reserved_z = battery_spec['case_reservation_mm']
+component_reservation, foam, cover = 4.4, 0.5, 0.5
+minimum_under_pcb = reserved_z + component_reservation + foam + cover + parameters['damping_thickness']
+(ROOT/'case/battery.scad').write_text(
+    f"battery_nominal = {json.dumps(battery_spec['nominal_dimensions_mm'])};\n"
+    f"battery_protected = {json.dumps(battery_spec.get('prototype_assumptions', {}).get('protected_pack_max_mm', battery_spec['nominal_dimensions_mm']))};\n"
+    f"battery_reserved = {json.dumps(battery_spec['case_reservation_mm'])};\n"
+    f"battery_component_reservation = {component_reservation};\n"
+    f"battery_foam = {foam};\nbattery_cover = {cover};\n")
 headers = json.loads((ROOT/'manufacturing/header-fit.json').read_text())
 assert parameters['controller_gap'] >= headers['minimum_body_stack_mm'] + 0.5, "Controller gap cannot fit the selected receiver/header stack"
 under_pcb_clearance = parameters['standoff_height'] + parameters['standoff_shim']
 controller_floor_clearance = under_pcb_clearance - parameters['controller_gap'] - parameters['controller_board_thickness'] - parameters['damping_thickness']
 assert controller_floor_clearance >= 1, "Controller needs room for insulation above the metal floor"
-assert under_pcb_clearance >= 13.9 + parameters["damping_thickness"]
+assert under_pcb_clearance >= minimum_under_pcb + 0.4997, "Preserve the reserved stack margin"
 assert abs(parameters["plate_to_pcb_gap"]-parameters["upper_spacer_height"]-parameters["upper_spacer_shim"]) < 1e-6
 thread_engagement = {}
 for name, stack in (("top", parameters["plate_thickness"]+parameters["screw_head_washer"]+parameters["plate_to_pcb_gap"]+parameters["pcb_thickness"]+parameters["standoff_shim"]),
@@ -93,15 +103,15 @@ for side in ("left", "right"):
     for dx in range(-20, 21):
         for dy in range(-15, 16):
             bx, by = desired_battery_center[0]+dx, desired_battery_center[1]+dy
-            envelope = box(bx-32, by-20, bx+32, by+20)
+            envelope = box(bx-reserved_x/2, by-reserved_y/2, bx+reserved_x/2, by+reserved_y/2)
             if (shape.buffer(-2).covers(envelope) and envelope.distance(rf_exclusion) >= 10
                     and all(envelope.distance(p) >= hardware_radius+0.5 for p in bolts)):
                 battery_candidates.append((dx*dx+dy*dy, bx, by))
-    assert battery_candidates, "No protected large-battery envelope fits clear of RF"
+    assert battery_candidates, "No reserved battery/wire envelope fits clear of RF"
     _, bx, by = min(battery_candidates)
     battery_center = [bx, by]
-    battery_envelope = box(bx-32, by-20, bx+32, by+20)
-    assert under_pcb_clearance-parameters["damping_thickness"]-0.5-8.5-0.5 >= 4.4, "Battery collides with underside component reservation"
+    battery_envelope = box(bx-reserved_x/2, by-reserved_y/2, bx+reserved_x/2, by+reserved_y/2)
+    assert under_pcb_clearance >= minimum_under_pcb, "Battery collides with underside component reservation"
     values = [outline, keys, [[p.x, p.y] for p in bolts], components["MCU1"],
               components["RST1"], components["PWR1"], list(shape.bounds), battery_center, mount_diameter]
     geometries.append(f"{side}_geometry = {json.dumps(values)};")
@@ -115,7 +125,9 @@ for side in ("left", "right"):
                     "pcb_to_plate_gap_mm": parameters["plate_to_pcb_gap"], "plate_thickness_mm": parameters["plate_thickness"],
                     "under_pcb_clearance_mm": under_pcb_clearance, "bottom_thickness_mm": parameters["bottom_thickness"],
                     "standoff_height_mm": parameters["standoff_height"], "standoff_shim_mm": parameters["standoff_shim"],
+                    "standoff_shim_diameter_mm": parameters["standoff_shim_diameter"],
                     "upper_spacer_mm": parameters["upper_spacer_height"], "upper_spacer_shim_mm": parameters["upper_spacer_shim"],
+                    "rf_window_mm": [28, 46], "rf_insert_edge_clearance_mm": 0.25,
                     "top_screw_mm": parameters["top_screw_length"], "bottom_screw_mm": parameters["bottom_screw_length"],
                     "nominal_thread_engagement_mm": thread_engagement,
                     "damping_thickness_mm": parameters["damping_thickness"], "bends": False,
@@ -123,8 +135,10 @@ for side in ("left", "right"):
                                    "reserved_gap_mm": parameters["controller_gap"], "minimum_header_stack_mm": headers['minimum_body_stack_mm'],
                                    "floor_clearance_above_damping_mm": controller_floor_clearance,
                                    "height_requires_samples": True, "usb_cable_fit_requires_samples": True},
-                    "battery": {"sku": "Adafruit 2011", "capacity_mAh": 2000,
-                                "nominal_mm": [60, 36, 7], "reserved_mm": [64, 40, 8.5],
+                    "battery": {"sku": battery_spec["sku"], "capacity_mAh": battery_spec["capacity_mAh"],
+                                "nominal_mm": battery_spec["nominal_dimensions_mm"], "reserved_mm": battery_spec["case_reservation_mm"],
+                                "prototype_assumptions": battery_spec.get("prototype_assumptions", {}),
+                                "reserved_stack_margin_mm": under_pcb_clearance-minimum_under_pcb,
                                 "center_mm": battery_center, "rf_clearance_mm": battery_envelope.distance(rf_exclusion),
                                 "underside_component_reservation_mm": 4.4, "foam_mm": 0.5,
                                 "insulating_cover_and_air_mm": 0.5},
@@ -160,7 +174,7 @@ for side in ("left", "right"):
     cutouts, bolts, electronics, outer_bottom_cutouts = physical_checks[side]
     report = next(item for item in reports if item["side"] == side)
     report["exports"] = {}
-    for part in ("bottom-flat", "plate", "damping"):
+    for part in ("bottom-flat", "rf-insert", "plate", "damping"):
         for extension in ("dxf", "svg"):
             subprocess.run(["openscad", "-o", str(OUTPUT / f"{side}-{part}.{extension}"),
                             "-D", f'side="{side}"', "-D", f'part="{part}"',
@@ -169,7 +183,7 @@ for side in ("left", "right"):
         assert actual.geom_type == "Polygon", (side, part, "Disconnected case pieces")
         if part == "plate":
             assert all(actual.intersection(c.buffer(-0.01)).area < 0.0001 for c in cutouts), "Export blocks switch cutout"
-        if part in ("bottom-flat", "plate", "damping"):
+        if part in ("bottom-flat", "rf-insert", "plate", "damping"):
             assert all(actual.intersection(p.buffer(1.08)).area < 0.0001 for p in bolts), "Export blocks bolt hole"
         if part == "plate":
             assert actual.covers(electronics.buffer(-0.01)), "Top plate does not cover controller"
@@ -182,7 +196,7 @@ for side in ("left", "right"):
         report["exports"][part] = {"area_mm2": actual.area, "closed_contours": contours}
     subprocess.run(["openscad", "-o", str(OUTPUT / f"{side}-assembly.csg"),
                     "-D", f'side="{side}"', str(ROOT / "case/sandwich.scad")], check=True, env=export_env)
-    print(f"{side}: exported three flat case layers, 21 switch cutouts and four standoff holes")
+    print(f"{side}: exported flat case profiles, 21 switch cutouts and four standoff holes")
 (OUTPUT / "mechanical-checks.json").write_text(json.dumps(reports, indent=2)+"\n")
 
 for extension in ('dxf', 'svg'):

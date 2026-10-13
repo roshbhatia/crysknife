@@ -1,0 +1,18 @@
+Part,Specification,Quantity for complete pair
+Typeractive Liter 403450 battery,750 mAh; protected prototype assumption; No Jack option,2
+nice!nano V2,face up below carrier; BOOST open; use current sleep UF2,2
+Mill-Max 350-10-112-00-006000 male strip,12 round pins; two per controller,4
+MX switches and 1U keycaps,42 each; switches user-owned,42
+clear acrylic top,1.6002 mm; laser cut; 14 mm square latch seats,2
+5052 H32 aluminum floor,3.175 mm; RF opening; deburr and insulate,2
+PMMA RF insert,3.175 mm; flush interior; exterior-only nonconductive seam retention,2
+Würth 970120244 M2 standoff,12 mm; 4 mm flats; through M2 thread; drawing checked,8
+Würth 960020010 lower spacer,2 mm +/-0.1; 4 mm OD; 2.2 mm bore; one per mount,8
+M2 nylon washer,0.5 mm; 5.5 mm OD; one above PCB and one under each screw head,24
+M2 nylon spacer,3 mm; 4 mm OD; 2.2 mm bore,8
+M2 top screw,12 mm; 2.7998 mm nominal engagement,8
+M2 bottom screw,6 mm; 2.325 mm nominal engagement; head+washer <=2.1 mm,8
+non-slip feet,8 mm diameter reference; 2.5 mm installed height; four per half,8
+floor damping sheet,1.6002 mm total; existing flat neoprene profile,2
+foam and dielectric liner,0.5 mm combined below cell; PET liner across conductive floor,2
+insulating cover and air,"0.5 mm total above cell; loose nonconductive end tabs, no pouch pressure",2

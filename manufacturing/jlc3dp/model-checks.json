@@ -33,7 +33,7 @@
     "dimensions_mm": [
       158.180136,
       117.523056,
-      31.875199000000002
+      29.875199000000002
     ],
     "retaining_lip_height_mm": 1.6,
     "retaining_lip_overlap_mm": 1.8,
@@ -50,7 +50,7 @@
     "screw_heads_accessible_after_sleeve_removal": true,
     "physical_fit_verified": false,
     "m2_holes_open": false,
-    "stl_sha256": "85b7889938b206159cdcf0bceb299f2344e011e57c50257172d5531d10bff25b"
+    "stl_sha256": "ee274f2729fdaf7b974a82ff5fb43ca8c9f7fd52b833d5869231b0301815d230"
   },
   "right-plate": {
     "triangles": 1352,
@@ -86,7 +86,7 @@
     "dimensions_mm": [
       158.180136,
       117.523056,
-      31.875199000000002
+      29.875199000000002
     ],
     "retaining_lip_height_mm": 1.6,
     "retaining_lip_overlap_mm": 1.8,
@@ -103,6 +103,6 @@
     "screw_heads_accessible_after_sleeve_removal": true,
     "physical_fit_verified": false,
     "m2_holes_open": false,
-    "stl_sha256": "f48ff891a39a5e1ff5e9d353500d87b62d862602838bf5c9d0e18f6826968d5d"
+    "stl_sha256": "d0a6c99b50e304a3fc9a53a3b98725f97bac77ff86515e390077055ae34ef5c2"
   }
 }

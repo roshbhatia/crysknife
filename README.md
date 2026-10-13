@@ -1,6 +1,6 @@
 # crysknife
 
-A 42-key wireless split keyboard with MX hotswap sockets, ZMK firmware, and a 2000 mAh battery in each half.
+A 42-key wireless split keyboard with MX hotswap sockets, ZMK firmware, and a 750 mAh battery in each half.
 It uses nice!nano V2 controllers, white PCBs, and a knife illustration and poem lines on both PCB faces.
 
 ## PCB

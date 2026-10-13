@@ -1,0 +1,9 @@
+Part,Quantity,Material,Thickness mm,Files,Dimensions mm
+left-top,1,clear acrylic; laser cut,1.6002,left-top.step / .stl / .dxf,"[153.05780784080312, 112.02347570300897, 1.6002002000000672]"
+left-bottom,1,5052 H32 aluminum,3.175,left-bottom.step / .stl / .dxf,"[153.0578078408031, 112.02347570300896, 3.175000200000043]"
+left-rf-insert,1,clear PMMA,3.175,left-rf-insert.step / .stl / .dxf,"[27.500000200000038, 45.50000020000003, 3.1750002000000315]"
+left-damping,1,neoprene,1.6002,left-damping.step / .stl / .dxf,"[153.05780784080312, 112.02347570300897, 1.6002002000000632]"
+right-top,1,clear acrylic; laser cut,1.6002,right-top.step / .stl / .dxf,"[153.0578078408031, 112.02347570300896, 1.600200200000046]"
+right-bottom,1,5052 H32 aluminum,3.175,right-bottom.step / .stl / .dxf,"[153.0578078408031, 112.02347570300896, 3.175000200000042]"
+right-rf-insert,1,clear PMMA,3.175,right-rf-insert.step / .stl / .dxf,"[27.500000200000038, 45.50000020000003, 3.1750002000000315]"
+right-damping,1,neoprene,1.6002,right-damping.step / .stl / .dxf,"[153.0578078408031, 112.02347570300896, 1.6002002000000433]"

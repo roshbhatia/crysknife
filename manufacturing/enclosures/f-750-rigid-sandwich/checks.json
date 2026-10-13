@@ -1,0 +1,192 @@
+[
+  {
+    "side": "left",
+    "quantity": 1,
+    "battery": "Typeractive Liter 403450",
+    "floor_mm": 3.175,
+    "under_pcb_mm": 14.0,
+    "desk_to_plate_mm": 26.3752,
+    "reserved_stack_margin_mm": 0.4998,
+    "controller_floor_above_damping_mm": 2.7998,
+    "header_gap_above_drawing_minimum_mm": 0.566,
+    "battery_reserved_mm": [
+      64,
+      40,
+      6.5
+    ],
+    "assumed_protected_pack_mm": [
+      54,
+      38,
+      5
+    ],
+    "protected_pack_center_mm": [
+      -13.4310476,
+      18.757055699999995
+    ],
+    "battery_wire_corridor_mm": [
+      10,
+      2
+    ],
+    "battery_to_RF_mm": 21.704,
+    "top_thread_engagement_mm": 2.7998,
+    "bottom_thread_engagement_mm": 2.325,
+    "reference_feet_mm": 2.5,
+    "feet_positions_mm": [
+      [
+        -71.0,
+        -27.0
+      ],
+      [
+        -69.0,
+        33.0
+      ],
+      [
+        71.0,
+        -37.0
+      ],
+      [
+        39.0,
+        43.0
+      ]
+    ],
+    "desk_fastener_clearance_mm": 0.4,
+    "physical_fit_verified": false,
+    "parts": {
+      "top": {
+        "volume_mm3": 14571.882885215191,
+        "dimensions_mm": [
+          153.05780784080312,
+          112.02347570300897,
+          1.6002002000000672
+        ],
+        "closed_STL": true,
+        "STEP_roundtrip": true
+      },
+      "bottom": {
+        "volume_mm3": 37964.77245801905,
+        "dimensions_mm": [
+          153.0578078408031,
+          112.02347570300896,
+          3.175000200000043
+        ],
+        "closed_STL": true,
+        "STEP_roundtrip": true
+      },
+      "rf-insert": {
+        "volume_mm3": 3899.3324312014456,
+        "dimensions_mm": [
+          27.500000200000038,
+          45.50000020000003,
+          3.1750002000000315
+        ],
+        "closed_STL": true,
+        "STEP_roundtrip": true
+      },
+      "damping": {
+        "volume_mm3": 21046.88195655571,
+        "dimensions_mm": [
+          153.05780784080312,
+          112.02347570300897,
+          1.6002002000000632
+        ],
+        "closed_STL": true,
+        "STEP_roundtrip": true
+      }
+    }
+  },
+  {
+    "side": "right",
+    "quantity": 1,
+    "battery": "Typeractive Liter 403450",
+    "floor_mm": 3.175,
+    "under_pcb_mm": 14.0,
+    "desk_to_plate_mm": 26.3752,
+    "reserved_stack_margin_mm": 0.4998,
+    "controller_floor_above_damping_mm": 2.7998,
+    "header_gap_above_drawing_minimum_mm": 0.566,
+    "battery_reserved_mm": [
+      64,
+      40,
+      6.5
+    ],
+    "assumed_protected_pack_mm": [
+      54,
+      38,
+      5
+    ],
+    "protected_pack_center_mm": [
+      13.4310476,
+      18.757055699999995
+    ],
+    "battery_wire_corridor_mm": [
+      10,
+      2
+    ],
+    "battery_to_RF_mm": 21.704,
+    "top_thread_engagement_mm": 2.7998,
+    "bottom_thread_engagement_mm": 2.325,
+    "reference_feet_mm": 2.5,
+    "feet_positions_mm": [
+      [
+        71.0,
+        -27.0
+      ],
+      [
+        69.0,
+        33.0
+      ],
+      [
+        -71.0,
+        -37.0
+      ],
+      [
+        -39.0,
+        43.0
+      ]
+    ],
+    "desk_fastener_clearance_mm": 0.4,
+    "physical_fit_verified": false,
+    "parts": {
+      "top": {
+        "volume_mm3": 14571.882885215215,
+        "dimensions_mm": [
+          153.0578078408031,
+          112.02347570300896,
+          1.600200200000046
+        ],
+        "closed_STL": true,
+        "STEP_roundtrip": true
+      },
+      "bottom": {
+        "volume_mm3": 37964.772458019055,
+        "dimensions_mm": [
+          153.0578078408031,
+          112.02347570300896,
+          3.175000200000042
+        ],
+        "closed_STL": true,
+        "STEP_roundtrip": true
+      },
+      "rf-insert": {
+        "volume_mm3": 3899.3324312014456,
+        "dimensions_mm": [
+          27.500000200000038,
+          45.50000020000003,
+          3.1750002000000315
+        ],
+        "closed_STL": true,
+        "STEP_roundtrip": true
+      },
+      "damping": {
+        "volume_mm3": 21046.88195655571,
+        "dimensions_mm": [
+          153.0578078408031,
+          112.02347570300896,
+          1.6002002000000433
+        ],
+        "closed_STL": true,
+        "STEP_roundtrip": true
+      }
+    }
+  }
+]

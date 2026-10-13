@@ -1,7 +1,10 @@
 # Enclosure alternatives
 
-Four separate concepts for one complete left/right keyboard pair. No option is selected.
-PCB layout, switch centres, 14 mm latch seats, controller orientation, battery position, and firmware remain unchanged.
+A–D retain the original 2000 mAh comparison geometry. No material or suspended-mount option is selected.
+The active [F prototype](f-750-rigid-sandwich/README.md) uses a 750 mAh battery and a lower rigid stack.
+A–E remain separate, taller alternatives. `case/variants/baseline-2000.json` preserves their lower-stack inputs.
+The archived A sleeve stays with its original exports; current JLC3DP sleeves use the smaller F stack.
+PCB layout, switch centres, 14 mm latch seats, controller orientation, battery position, remain unchanged in the A–D comparison; current firmware separately enables 15-minute sleep.
 These packages contain mechanical models and drawings. They do not change PCB assembly files.
 
 | Option | Construction | Support and feel target | Trade-offs |

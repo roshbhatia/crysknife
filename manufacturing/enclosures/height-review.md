@@ -1,6 +1,8 @@
-# Assembled height review
+# Original 2000 mAh height comparison
 
-RFQs remain on hold. This review changes no PCB, electronics, firmware, battery selection, or existing A–D geometry.
+This archived comparison records A–E with the original 2000 mAh envelope.
+The current [F prototype](f-750-rigid-sandwich/README.md) uses 750 mAh and a lower 14 mm stack.
+The original comparison geometries remain separate. RFQs remain on hold.
 The earlier image was exploded: A's sleeve moved down 9 mm, tops moved up 8 mm, and D's frame moved up 14 mm.
 Those gaps are not part of the installed keyboard.
 
