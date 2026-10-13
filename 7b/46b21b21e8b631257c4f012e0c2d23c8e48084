@@ -1,0 +1,26 @@
+manufacturing/README.md
+  s_df88920dc610de::t_08fae1cad09ea2 49-51
+scripts/review_battery_750.py
+  s_df88920dc610de::t_6282cf16945f36 78-106
+  s_df88920dc610de::t_fcc09c70d086c4 1-77,107-108
+manufacturing/battery-750-review.json
+  s_df88920dc610de::t_dd39a32169bbc8 1-163
+manufacturing/battery-750-review.md
+  s_df88920dc610de::t_a19b5da98db105 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7b46b21b21e8b631257c4f012e0c2d23c8e48084",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
