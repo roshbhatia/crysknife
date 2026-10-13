@@ -1,0 +1,163 @@
+{
+  "status": "candidate only; adoption blocked by missing supplied-pack specifications",
+  "selected_battery": "Adafruit 2011",
+  "candidate": "Typeractive Liter 403450 750 mAh",
+  "nominal_dimensions_mm": [
+    50,
+    34,
+    4
+  ],
+  "connector": "2-pin JST-PH 2.0 mm",
+  "carrier_polarity": {
+    "1": "GND",
+    "2": "BAT_P"
+  },
+  "polarity_evidence": "Product photo suggests matching wiring; supplied plug requires meter confirmation",
+  "protection_evidence": "Liter 403450 listing specifies protection; Typeractive photo shows a circuit board. Exact supplied assembly is not documented.",
+  "missing": [
+    "Supplied-pack standard/maximum charge current and temperature limits",
+    "Protected-pack maximum dimensions, cable length and bend allowance",
+    "Supplied-pack polarity and protection cutoffs"
+  ],
+  "charging": {
+    "current_mA": 100,
+    "BOOST": "OPEN"
+  },
+  "conditional_stack": {
+    "battery_reservation_mm": 5.5,
+    "battery_xy_reservation_mm": [
+      64,
+      40
+    ],
+    "under_pcb_mm": 13.0,
+    "reserved_stack_margin_mm": 0.4998,
+    "controller_to_floor_pad_mm": 1.7998,
+    "height_reduction_mm": 3.0,
+    "manufacturing_geometry_changed": false,
+    "physical_tested": false
+  },
+  "profiles": [
+    {
+      "name": "Current 2000 / 3.175 mm floor",
+      "floor_mm": 3.175,
+      "under_pcb_mm": 16.0,
+      "nominal_cell_mm": 7,
+      "desk_to_plate_mm": 28.3752
+    },
+    {
+      "name": "Conditional 750 / 3.175 mm floor",
+      "floor_mm": 3.175,
+      "under_pcb_mm": 13.0,
+      "nominal_cell_mm": 4,
+      "desk_to_plate_mm": 25.3752
+    },
+    {
+      "name": "Conditional 750 / thin E floor",
+      "floor_mm": 1.6002,
+      "under_pcb_mm": 13.0,
+      "nominal_cell_mm": 4,
+      "desk_to_plate_mm": 23.8004
+    }
+  ],
+  "runtime_assumptions": {
+    "zmk_revision": "5b51501fead672c41b5cfb396f3dafe0894bf4e9",
+    "nice_nano": 2,
+    "host_profiles": 1,
+    "typing_fraction_awake": 0.02,
+    "lights_and_display": false,
+    "board_quiescent_uA": 18,
+    "self_discharge_percent_per_30_days": 5,
+    "effective_capacity_fraction": 0.85,
+    "worst_capacity_fraction": 0.8,
+    "worst_current_multiplier": 1.2,
+    "range": "average +/- (average - worst); not a statistical confidence interval",
+    "sleep_model": "8 hours awake and 16 hours actually asleep; excludes entry delay and wake bursts",
+    "measured_on_crysknife": false
+  },
+  "runtime": {
+    "750": {
+      "right_central": {
+        "no_sleep": {
+          "current_uA": 590.6833,
+          "average_days": 44.97,
+          "profiler_range_days": [
+            35.27,
+            54.67
+          ]
+        },
+        "8h_awake_16h_sleep": {
+          "current_uA": 243.6167,
+          "average_days": 109.03,
+          "profiler_range_days": [
+            85.52,
+            132.55
+          ]
+        }
+      },
+      "left_peripheral": {
+        "no_sleep": {
+          "current_uA": 97.3833,
+          "average_days": 272.76,
+          "profiler_range_days": [
+            213.93,
+            331.59
+          ]
+        },
+        "8h_awake_16h_sleep": {
+          "current_uA": 79.1833,
+          "average_days": 335.46,
+          "profiler_range_days": [
+            263.1,
+            407.81
+          ]
+        }
+      }
+    },
+    "2000": {
+      "right_central": {
+        "no_sleep": {
+          "current_uA": 677.4889,
+          "average_days": 104.55,
+          "profiler_range_days": [
+            82.0,
+            127.1
+          ]
+        },
+        "8h_awake_16h_sleep": {
+          "current_uA": 330.4222,
+          "average_days": 214.37,
+          "profiler_range_days": [
+            168.14,
+            260.61
+          ]
+        }
+      },
+      "left_peripheral": {
+        "no_sleep": {
+          "current_uA": 184.1889,
+          "average_days": 384.57,
+          "profiler_range_days": [
+            301.62,
+            467.52
+          ]
+        },
+        "8h_awake_16h_sleep": {
+          "current_uA": 165.9889,
+          "average_days": 426.74,
+          "profiler_range_days": [
+            334.69,
+            518.78
+          ]
+        }
+      }
+    }
+  },
+  "sources": [
+    "https://typeractive.xyz/products/lithium-battery-750mah",
+    "https://bihuade.com/products/37v-403450-750mah-liter-energy-battery-rechargeable-battery-for-smart-phone-dvd-mp3-mp4-led-lamp-camera",
+    "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+    "https://nicekeyboards.com/docs/nice-nano/getting-started/",
+    "https://github.com/zmkfirmware/zmk/blob/5b51501fead672c41b5cfb396f3dafe0894bf4e9/docs/src/data/power.js",
+    "https://github.com/zmkfirmware/zmk/blob/5b51501fead672c41b5cfb396f3dafe0894bf4e9/docs/src/components/power-estimate.js"
+  ]
+}

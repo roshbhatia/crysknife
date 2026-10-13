@@ -46,6 +46,9 @@ JST1 pin 1 is GND; pin 2 is BAT_P. Check the real plug polarity with a meter bef
 The power switch connects BAT_P to RAW, so charging requires PWR on.
 USB powers the controller even with PWR off. [battery.json](battery.json) records the selected pack and charge settings.
 
+The [750 mAh review](battery-750-review.md) records a thinner candidate and its missing specifications.
+The current battery selection and manufacturing geometry remain unchanged.
+
 ## Case and startup
 
 Use four M2 mounts per half. The [plate guide](sendcutsend/README.md) lists the standoffs, spacers, washers, and screw lengths.
