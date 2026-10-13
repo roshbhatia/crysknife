@@ -1,0 +1,23 @@
+out/firmware/README.md
+  s_df88920dc610de::t_08fae1cad09ea2 12-17
+manufacturing/physical-tests.md
+  s_df88920dc610de::t_08fae1cad09ea2 22-27
+firmware/boards/shields/crysknife/Kconfig.defconfig
+  s_df88920dc610de::t_08fae1cad09ea2 6-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f8aebf19c4ef0a224acdb2d259af161feadcd241",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
