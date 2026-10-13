@@ -1,0 +1,21 @@
+manufacturing/enclosures/f-750-rigid-sandwich/README.md
+  s_df88920dc610de::t_c8142a6d28d89a 39
+manufacturing/reference-builds.md
+  s_df88920dc610de::t_e10bdd7cfa3ae9 63,65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "baa51408f35afca535f0a42f121078c66b98769e",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
