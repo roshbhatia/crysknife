@@ -52,6 +52,7 @@ for extension in ('dxf','svg'):
     shutil.copyfile(ROOT/f'build/case/switch-fit-coupon.{extension}', scs/f'switch-fit-coupon.{extension}')
 for side in ('left','right'):
     for part in ('assembly','bottom'):
-        shutil.copyfile(ROOT/f'build/case/{side}-{part}.3mf', out/f'3d/{side}-{part}.3mf')
+        name = 'metal-bottom' if part == 'bottom' else part
+        shutil.copyfile(ROOT/f'build/case/{side}-{part}.3mf', out/f'3d/{side}-{name}.3mf')
 (out/'validation.json').write_text(json.dumps(verification,indent=2)+'\n')
 print('Saved KiCad projects, case models, and vendor files')
