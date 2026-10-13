@@ -10,7 +10,8 @@ Its two-pin JST-PH 2.0 mm plug matches the existing S2B-PH-K-S(LF)(SN) connector
 No PCB connector change is indicated. The “No Jack” option includes the battery plug; the extra jack is unnecessary.
 
 JST1 pin 1 is GND and pin 2 is BAT_P.
-The official connector photo suggests matching red/black wiring, but does not specify circuit numbers or guarantee supplied-pack polarity.
+With lead entry above the contact windows, the official photo maps black to circuit 1 and red to circuit 2.
+This matches the JST housing drawing and carrier polarity, but does not guarantee the supplied pack wiring.
 Compare the received plug against the [JST drawing](https://www.jst-mfg.com/product/pdf/eng/ePH.pdf) and measure it before connection.
 No adapter is anticipated if the supplied pack matches that wiring.
 If it differs, select a correctly wired purchased pack or a verified purchased adapter and recheck cable clearance.
