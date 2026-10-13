@@ -1,0 +1,72 @@
+manufacturing/enclosures/mesh-checks.json
+  s_df88920dc610de::t_443ca336bc26a9 1-202
+manufacturing/enclosures/hybrid-checks.json
+  s_df88920dc610de::t_ff380a2adfb5a4 1-14
+manufacturing/enclosures/README.md
+  s_df88920dc610de::t_aa9fd1fff158e6 31
+  s_df88920dc610de::t_8140ac2cb44961 1-30,32-77,80-91,93-115,117-130,135-138
+  s_df88920dc610de::t_cf616f24b927fe 92
+  s_df88920dc610de::t_3ef97a9e67d2c3 78-79,116,131-134
+case/variants/generate.py
+  s_df88920dc610de::t_991b04fec6a871 15-18
+  s_df88920dc610de::t_5c399c02093ed8 64-100,102-172,176-211,213-225,227-242,244-245
+  s_df88920dc610de::t_6594a230c50a5b 101,173-174
+  s_df88920dc610de::t_45204873d3bdbd 212
+case/variants/present.py
+  s_df88920dc610de::t_8a4ef825456912 1-51,53-71,73-83,92-111,113-114,116-117,119-124
+  s_df88920dc610de::t_aa9fd1fff158e6 72,118
+  s_df88920dc610de::t_991b04fec6a871 84-91
+case/variants/validate.py
+  s_df88920dc610de::t_3ef97a9e67d2c3 38-61
+  s_df88920dc610de::t_c6bac49322eebb 1-37
+README.md
+  s_df88920dc610de::t_aa9fd1fff158e6 34-35
+manufacturing/enclosures/materials.csv
+  s_df88920dc610de::t_cf616f24b927fe 1-17
+.gitattributes
+  s_df88920dc610de::t_7af06e89899714 1-3
+.gitignore
+  s_df88920dc610de::t_4bb1083d1c4386 12
+case/variants/coupons.py
+  s_df88920dc610de::t_394c0330b3c185 1-31
+case/variants/pyproject.toml
+  s_df88920dc610de::t_5be0950e6b9067 1-5
+case/variants/uv.lock
+  s_df88920dc610de::t_a0563cc4364b93 1-665
+flake.nix
+  s_df88920dc610de::t_562208687a894f 17-19
+manufacturing/enclosures/a-tpu-cnc-plates/checks.json
+  s_df88920dc610de::t_2537314a14dae8 1-100
+manufacturing/enclosures/assembly-checks.json
+  s_df88920dc610de::t_c90352f27895d0 1-72
+manufacturing/enclosures/b-cnc-rigid-tray/checks.json
+  s_df88920dc610de::t_fc2f1713ad1be6 1-100
+manufacturing/enclosures/c-printed-tray-plate/checks.json
+  s_df88920dc610de::t_fa771a08093580 1-82
+manufacturing/enclosures/hardware.csv
+  s_df88920dc610de::t_85320447866b2d 1-49
+manufacturing/enclosures/parts.csv
+  s_df88920dc610de::t_4795628aebb730 1-39
+manufacturing/enclosures/checks.json
+  s_df88920dc610de::t_9720eb61e84eb1 1-430
+manufacturing/enclosures/d-suspended-hybrid/checks.json
+  s_df88920dc610de::t_efbddbf84769d8 1-154
+manufacturing/enclosures/d-suspended-hybrid/right-frame-holes.json
+  s_df88920dc610de::t_6013ebf96bb80a 1-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "812ad419095666a5b42a7bf26f369164be41e6c7",
+  "prompts": {},
+  "sessions": {
+    "s_df88920dc610de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11759-620b-7752-a1ac-a6f7edceadf8",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Roshan Bhatia <rshnbhatia@gmail.com>"
+    }
+  }
+}
