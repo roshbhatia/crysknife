@@ -1,11 +1,53 @@
 {
-  "source_revision": "5326b6df996872d7e44c5d19a173de9d02c6fdb1",
-  "ci": "https://github.com/roshbhatia/crysknife/actions/runs/37878071100",
+  "source_revision": "f8aebf19c4ef0a224acdb2d259af161feadcd241",
+  "ci": "https://github.com/roshbhatia/crysknife/actions/runs/38452289623",
   "target": "nice_nano_v2",
   "status": "all three builds passed; physical keyboard tests pending",
+  "baseline_ci": "https://github.com/roshbhatia/crysknife/actions/runs/37878071100",
   "sha256": {
-    "left": "69b4a245bd1c5674e15f980655bd4a2e183cead0b4743a74d6c034d65bb030eb",
-    "right": "8c316e9e2e688db55482e78b285404eb7e09cd6904a66ef5e149d692ba18f913",
+    "left": "a4ab30bbeb84d289f1d0e13c03a006d1e44312ef849eb477390c2ec51ac94795",
+    "right": "2c04f195cbb1232d0b97915925d77811af4132a31b1ab939aad2dd1f633fc61f",
     "settings_reset": "0dd6be82134d011c8ee58794940f87e03b4eaf8e859ab336ef123bca190eef3a"
+  },
+  "compiled_checks": {
+    "left": {
+      "role": "peripheral",
+      "config": {
+        "CONFIG_ZMK_IDLE_TIMEOUT": "30000",
+        "CONFIG_ZMK_SLEEP": "y",
+        "CONFIG_PM_DEVICE": "y",
+        "CONFIG_ZMK_IDLE_SLEEP_TIMEOUT": "900000",
+        "CONFIG_ZMK_PM_DEVICE_SUSPEND_RESUME": "y",
+        "CONFIG_POWEROFF": "y"
+      },
+      "matrix_wakeup_source": true,
+      "matrix_direction": "col2row",
+      "DTS_identical_to_baseline": true,
+      "config_sha256": "17b23fdd5337c31f03dcb5aef45af4a3e13f3cd5d1d00c91ed27bb934600c0ef",
+      "dts_sha256": "81169629b336c30044a23d39c1c3add8a442bbeae0382e5bcd96fd92c0b647df",
+      "manifest_sha256": "ae6aa901847f1cdd9c3c3ab7b534b7b8cff655fa287d16df71bd0365d87fd9fd",
+      "physical_wake_tested": false
+    },
+    "right": {
+      "role": "central",
+      "config": {
+        "CONFIG_ZMK_IDLE_TIMEOUT": "30000",
+        "CONFIG_ZMK_SLEEP": "y",
+        "CONFIG_PM_DEVICE": "y",
+        "CONFIG_ZMK_IDLE_SLEEP_TIMEOUT": "900000",
+        "CONFIG_ZMK_PM_DEVICE_SUSPEND_RESUME": "y",
+        "CONFIG_POWEROFF": "y"
+      },
+      "matrix_wakeup_source": true,
+      "matrix_direction": "col2row",
+      "DTS_identical_to_baseline": true,
+      "config_sha256": "03e70bec7202084bfa92d8b34b274d7ce49ce3d1badf9dedc281a026494b24c1",
+      "dts_sha256": "385b3ed98fcd9a4b60563434dbe5a43561459e87246a4223c15c28d248e65914",
+      "manifest_sha256": "ae6aa901847f1cdd9c3c3ab7b534b7b8cff655fa287d16df71bd0365d87fd9fd",
+      "physical_wake_tested": false
+    },
+    "settings_reset": {
+      "UF2_identical_to_baseline": true
+    }
   }
 }
